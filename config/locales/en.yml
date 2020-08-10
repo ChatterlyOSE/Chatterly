@@ -79,10 +79,10 @@ en:
     posts_with_replies: Toots and replies
     reserved_username: The username is reserved
     roles:
-      admin: Admin
+      admin: Chatterly Employee
       bot: Bot
       group: Group
-      moderator: Mod
+      moderator: Chatterly Safety Team
     unavailable: Profile unavailable
     unfollow: Unfollow
   admin:
