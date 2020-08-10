@@ -772,17 +772,17 @@ en:
   errors:
     '400': The request you submitted was invalid or malformed.
     '403': You don't have permission to view this page.
-    '404': The page you are looking for isn't here.
+    '404': I think you've taken a wrong turn, there's nothing here.
     '406': This page is not available in the requested format.
-    '410': The page you were looking for doesn't exist here anymore.
+    '410': We have a problem Houston, the page is gone.
     '422':
       content: Security verification failed. Are you blocking cookies?
       title: Security verification failed
     '429': Too many requests
     '500':
-      content: We're sorry, but something went wrong on our end.
+      content: We're sorry, but something went wrong on our end. We have been notified of this error, and are working to resolve it.
       title: This page is not correct
-    '503': The page could not be served due to a temporary server failure.
+    '503': We're sorry, we seem to be experiencing high server load. We're working to resolve this as soon as possible.
     noscript_html: To use the Chatterly, please enable JavaScript. Alternatively, try one of the <a href="%{apps_path}">native apps</a> for Chatterly Mobile for your platform.
   existing_username_validator:
     not_found: could not find a local user with that username
@@ -1095,7 +1095,7 @@ en:
       windows_phone: Windows Phone
     revoke: Revoke
     revoke_success: Session successfully revoked
-    title: Sessions
+    title: Where am I logged in?
   settings:
     account: Account
     account_settings: Account settings
@@ -1256,8 +1256,8 @@ en:
     title: "%{instance} Terms of Service and Privacy Policy"
   themes:
     contrast: Chatterly (High contrast)
-    default: Chatterly (Dark)
-    mastodon-light: Chatterly (Light)
+    default: Lights Out (Dark)
+    mastodon-light: Sunny Outside (Light)
   time:
     formats:
       default: "%b %d, %Y, %H:%M"
