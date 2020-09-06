@@ -2,16 +2,16 @@
 en_GB:
   about:
     about_hashtag_html: These are public toots tagged with <strong>#%{hashtag}</strong>. You can interact with them if you have an account anywhere in the fediverse.
-    about_mastodon_html: Mastodon is a social network based on open web protocols and free, open-source software. It is decentralized like e-mail.
+    about_mastodon_html: Chatterly is a social network based on open web protocols and free, open-source software. It is decentralized like e-mail.
     about_this: About
     active_count_after: active
     active_footnote: Monthly Active Users (MAU)
     administered_by: 'Administered by:'
     api: API
     apps: Mobile apps
-    apps_platforms: Use Mastodon from iOS, Android and other platforms
+    apps_platforms: Use Chatterly from iOS, Android and other platforms
     browse_directory: Browse a profile directory and filter by interests
-    browse_public_posts: Browse a live stream of public posts on Mastodon
+    browse_public_posts: Browse a live stream of public posts on Chatterly
     contact: Contact
     contact_missing: Not set
     contact_unavailable: N/A
@@ -20,10 +20,10 @@ en_GB:
     extended_description_html: |
       <h3>1A good place for rules</h3>2
       <p>3The extended description has not been set up yet.</p>4
-    federation_hint_html: With an account on %{instance} you'll be able to follow people on any Mastodon server and beyond.
+    federation_hint_html: With an account on %{instance} you'll be able to follow people on any Chatterly server and beyond.
     generic_description: "%{domain} is one server in the network"
     get_apps: Try a mobile app
-    hosted_on: Mastodon hosted on %{domain}
+    hosted_on: ChatterlyOSE hosted on %{domain}
     learn_more: Learn more
     privacy_policy: Privacy policy
     see_whats_happening: See what's happening
@@ -39,7 +39,7 @@ en_GB:
       one: user
       other: users
     user_count_before: Home to
-    what_is_mastodon: What is Mastodon?
+    what_is_mastodon: What is Chatterly?
   accounts:
     choices_html: "%{name}'s choices:"
     follow: Follow
@@ -971,9 +971,9 @@ en_GB:
       <p>Originally adapted from the <a href="https://github.com/discourse/discourse">Discourse privacy policy</a>.</p>
     title: "%{instance} Terms of Service and Privacy Policy"
   themes:
-    contrast: Mastodon (High contrast)
-    default: Mastodon (Dark)
-    mastodon-light: Mastodon (Light)
+    contrast: Chatterly (High contrast)
+    default: Chatterly (Dark)
+    mastodon-light: Chatterly (Light)
   time:
     formats:
       default: "%b %d, %Y, %H:%M"

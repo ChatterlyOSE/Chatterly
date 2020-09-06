@@ -33,7 +33,7 @@ module ApplicationHelper
 
   def available_sign_up_path
     if closed_registrations?
-      'https://joinmastodon.org/#getting-started'
+      'https://chatterly.me'
     else
       new_user_registration_path
     end
