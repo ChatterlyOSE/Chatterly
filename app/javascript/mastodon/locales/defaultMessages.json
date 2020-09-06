@@ -172,7 +172,7 @@
         "id": "error.unexpected_crash.explanation"
       },
       {
-        "defaultMessage": "Try refreshing the page. If that does not help, you may still be able to use Mastodon through a different browser or native app.",
+        "defaultMessage": "Try refreshing the page. If that does not help, you may still be able to use Chatterly through a different browser or native app.",
         "id": "error.unexpected_crash.next_steps"
       },
       {
@@ -1211,7 +1211,7 @@
         "id": "search_results.statuses"
       },
       {
-        "defaultMessage": "Searching toots by their content is not enabled on this Mastodon server.",
+        "defaultMessage": "Searching toots by their content is not enabled on Chatterly.",
         "id": "search_results.statuses_fts_disabled"
       },
       {
@@ -3048,7 +3048,7 @@
   {
     "descriptors": [
       {
-        "defaultMessage": "Your draft will be lost if you leave Mastodon.",
+        "defaultMessage": "Your draft will be lost if you leave Chatterly.",
         "id": "ui.beforeunload"
       }
     ],
