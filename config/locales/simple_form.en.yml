@@ -171,7 +171,7 @@ en:
         text: Why do you want to join?
       notification_emails:
         digest: Send digest e-mails
-        favourite: Someone favourited your status
+        favourite: Someone favorited your status
         follow: Someone followed you
         follow_request: Someone requested to follow you
         mention: Someone mentioned you

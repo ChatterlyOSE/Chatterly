@@ -962,9 +962,9 @@ en:
         other: "%{count} new notifications since your last visit \U0001F418"
       title: In your absence...
     favourite:
-      body: 'Your status was favourited by %{name}:'
-      subject: "%{name} favourited your status"
-      title: New favourite
+      body: 'Your status was favorited by %{name}:'
+      subject: "%{name} favorited your status"
+      title: New favorite
     follow:
       body: "%{name} is now following you!"
       subject: "%{name} is now following you"
@@ -1056,8 +1056,8 @@ en:
     reason_html: "<strong>Why is this step necessary?</strong> <code>%{instance}</code> might not be the server where you are registered, so we need to redirect you to your home server first."
   remote_interaction:
     favourite:
-      proceed: Proceed to favourite
-      prompt: 'You want to favourite this toot:'
+      proceed: Proceed to favorite
+      prompt: 'You want to favorite this toot:'
     reblog:
       proceed: Proceed to boost
       prompt: 'You want to boost this toot:'

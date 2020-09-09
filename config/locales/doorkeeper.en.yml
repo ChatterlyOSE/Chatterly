@@ -127,7 +127,7 @@ en:
       read:accounts: see accounts information
       read:blocks: see your blocks
       read:bookmarks: see your bookmarks
-      read:favourites: see your favourites
+      read:favourites: see your favorites
       read:filters: see your filters
       read:follows: see your follows
       read:lists: see your lists
@@ -140,7 +140,7 @@ en:
       write:accounts: modify your profile
       write:blocks: block accounts and domains
       write:bookmarks: bookmark statuses
-      write:favourites: favourite statuses
+      write:favourites: favorite statuses
       write:filters: create filters
       write:follows: follow people
       write:lists: create lists
