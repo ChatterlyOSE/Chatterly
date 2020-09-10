@@ -650,7 +650,7 @@ en:
     discovery: Discovery
     localization:
       body: Chatterly is translated by volunteers.
-      guide_link: https://crowdin.com/project/chatterlyose
+      guide_link: https://crowdin.com/project/chatterly
       guide_link_text: Everyone can contribute.
     sensitive_content: Sensitive content
     toot_layout: Toot layout
@@ -1270,8 +1270,9 @@ en:
     title: "%{instance} Terms of Service and Privacy Policy"
   themes:
     contrast: Chatterly (High contrast)
-    default: Lights Out (Dark)
+    default: Kinda (Dark)
     mastodon-light: Sunny Outside (Light)
+    black-out: Lights Off (Pure Black)
   time:
     formats:
       default: "%b %d, %Y, %H:%M"
