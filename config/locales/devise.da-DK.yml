@@ -1,0 +1,114 @@
+da:
+  devise:
+    confirmations:
+      confirmed: Din e-mail-adresse er bekræftet.
+      send_instructions: Du modtager en e-mail med instruktioner for, hvordan du kan bekræfte din e-mailadresse på et par minutter. Kontrollér spammappen, hvis du ikke har modtaget denne e-mail.
+      send_paranoid_instructions: Hvis din e-mail-adresse findes i vores database, modtager du en e-mail med instruktioner om, hvordan du kan bekræfte din e-mailadresse på et par minutter. Kontrollér spammappen, hvis du ikke har modtaget denne e-mail.
+    failure:
+      already_authenticated: Du er allerede logget på.
+      inactive: Din konto er ikke aktiveret endnu.
+      invalid: Ugyldigt %{authentication_keys} eller kodeord.
+      last_attempt: Du har et forsøg mere, før din konto er låst.
+      locked: Din konto er låst.
+      not_found_in_database: Ugyldigt %{authentication_keys} eller kodeord.
+      pending: Din konto er stadig under kontrol.
+      timeout: Sessionen er udløbet. Vær venlig at logge på igen for at fortsætte.
+      unauthenticated: Du skal logge på eller melde dig, inden du fortsætter.
+      unconfirmed: Du skal bekræfte din e-mail-adresse, før du fortsætter.
+    mailer:
+      confirmation_instructions:
+        action: Kontrollér e-mail-adresse
+        action_with_app: Bekræft og vend tilbage til %{app}
+        explanation: Du har oprettet en konto på %{host} med denne e-mail-adresse. Du er et klik fra aktivering af den. Hvis det ikke var dig, så ignorer denne e-mail.
+        explanation_when_pending: Du har ansøgt om en invitation til %{host} med denne e-mailadresse. Når du har bekræftet din e-mail-adresse, gennemgår vi din ansøgning. Du kan logge på for at ændre dine oplysninger eller slette din konto, men du kan ikke få adgang til de fleste af funktionerne, før din konto er godkendt. Hvis din applikation er afvist, vil dine data blive fjernet, så der ikke kræves yderligere handling fra dig. Hvis det ikke var dig, så ignorer denne e-mail.
+        extra_html: Undersøg også <a href="%{terms_path}">reglerne for serveren</a> og <a href="%{policy_path}">vores vilkår for service</a>.
+        subject: 'Chatterly: Bekræftelsesinstruktioner for %{instance}'
+        title: Kontrollér e-mail-adresse
+      email_changed:
+        explanation: 'E-mailadressen til din konto er ved at blive ændret til:'
+        extra: Hvis du ikke har ændret din e-mailadresse, er det sandsynligt, at der er nogen, der har fået adgang til din konto. Skift kodeord med det samme, eller kontakt serveradministratoren, hvis du er låst ude af din konto.
+        subject: 'Chatterly: E-mail-ændret'
+        title: Ny e-mail-adresse
+      password_change:
+        explanation: Kodeordet for din konto er ændret.
+        extra: Hvis du ikke har ændret din adgangskode, er det sandsynligt, at der er nogen, der har fået adgang til din konto. Skift kodeord med det samme, eller kontakt serveradministratoren, hvis du er låst ude af din konto.
+        subject: 'Chatterly: Kodeord ændret'
+        title: Kodeord ændret
+      reconfirmation_instructions:
+        explanation: Bekræft den nye adresse for at ændre din e-mailadresse.
+        extra: Hvis denne change ikke er startet af dig, skal du ignorere denne e-mail. E-mail-adressen for Chatterly-kontoen ændres ikke, før du har adgang til linket ovenfor.
+        subject: 'Chatterly: Bekræft e-mail for %{instance}'
+        title: Kontrollér e-mail-adresse
+      reset_password_instructions:
+        action: Skift kodeord
+        explanation: Du har anmodet om et nyt kodeord til din konto.
+        extra: Hvis du ikke har anmodet om dette, skal du ignorere denne e-mail. Adgangskoden ændres ikke, før du har adgang til linket ovenfor, og opret et nyt.
+        subject: 'Chatterly: Reset kodeordsinstruktioner'
+        title: Nulstil kodeord
+      two_factor_disabled:
+        explanation: To faktorvalidering for din konto er deaktiveret. Logon er nu muligt ved brug af kun e-mail-adresse og kodeord.
+        subject: 'Chatterly: To faktorvalidering deaktiveret'
+        title: 2FA deaktiveret
+      two_factor_enabled:
+        explanation: Der er aktiveret to faktorvalidering for din konto. Et token, der er genereret af det parerede TOTP-program, skal bruges til logon.
+        subject: 'Chatterly: To-faktorvalidering aktiveret'
+        title: 2FA er aktiveret
+      two_factor_recovery_codes_changed:
+        explanation: De tidligere retableringskoder er blevet ugyldige, og der er genereret nye.
+        subject: 'Chatterly: Retableringskoder med to faktoren'
+        title: 2FA retableringskoder ændret
+      unlock_instructions:
+        subject: 'Chattly: Unlock instructions'
+      webauthn_credential:
+        added:
+          explanation: Følgende sikkerhedsnøgle er tilføjet til din konto
+          subject: 'Chatterly: Ny sikkerhedsnøgle'
+          title: Der er tilføjet en ny sikkerhedsnøgle
+        deleted:
+          explanation: Følgende sikkerhedsnøgle er slettet fra din konto
+          subject: 'Chatterly: Sikkerhedsnøgle slettet'
+          title: En af dine sikkerhedsnøgler er slettet
+      webauthn_disabled:
+        explanation: Validering med sikkerhedsnøgler er deaktiveret for din konto. Logon er nu kun mulig ved brug af det token, der er genereret af den parerede TOTP-app.
+        subject: 'Chatterly: Validering med sikkerhedsnøgler deaktiveret'
+        title: Sikkerhedsnøgler er deaktiveret
+      webauthn_enabled:
+        explanation: Sikkerhedsnøglevalidering er aktiveret for din konto. Din sikkerhedsnøgle kan nu bruges til logon.
+        subject: 'Chatterly: Sikkerhedsnøglevalidering aktiveret'
+        title: Sikkerhedsnøgler aktiveret
+    omniauth_callbacks:
+      failure: Kan ikke validere dig fra %{kind} , fordi "%{reason}".
+      success: Valideret fra %{kind} konto.
+    passwords:
+      no_token: Du kan ikke få adgang til denne side uden at komme fra en e-mail med nulstilling af kodeord. Hvis du kommer fra en e-mail med nulstilling af kodeord, skal du sørge for, at du har brugt den fuldstændige URL, der er angivet.
+      send_instructions: Hvis din e-mail-adresse findes i vores database, vil du modtage et link til retablering efter kodeord på din e-mailadresse om et par minutter. Kontrollér spammappen, hvis du ikke har modtaget denne e-mail.
+      send_paranoid_instructions: Hvis din e-mail-adresse findes i vores database, vil du modtage et link til retablering efter kodeord på din e-mailadresse om et par minutter. Kontrollér spammappen, hvis du ikke har modtaget denne e-mail.
+      updated: Kodeordet er ændret. Du er nu logget på.
+      updated_not_active: Kodeordet er ændret.
+    registrations:
+      destroyed: '-Farvel. Din konto er annulleret. Vi håber at se dig snart igen.'
+      signed_up: '-Velkommen! Du er logget på.'
+      signed_up_but_inactive: Du er logget på. Men vi kunne ikke skrive dig ind, fordi din konto endnu ikke er aktiveret.
+      signed_up_but_locked: Du er logget på. Men vi kunne ikke skrive dig ind, fordi din konto er låst.
+      signed_up_but_pending: Der er sendt en meddelelse med et bekræftelseslink til din e-mail-adresse. Når du har klikket på linket, gennemgår vi din applikation. Du får besked, hvis den er godkendt.
+      signed_up_but_unconfirmed: Der er sendt en meddelelse med et bekræftelseslink til din e-mail-adresse. Følg linket for at aktivere din konto. Kontrollér spammappen, hvis du ikke har modtaget denne e-mail.
+      update_needs_confirmation: Du opdaterede din konto, men vi er nødt til at verificere din nye e-mailadresse. Kontrollér e-mailen, og følg bekræftelses-linket for at bekræfte din nye e-mail-adresse. Kontrollér spammappen, hvis du ikke har modtaget denne e-mail.
+      updated: Din konto er opdateret.
+    sessions:
+      already_signed_out: Signeret uden fejl.
+      signed_in: Logget med succes.
+      signed_out: Signeret uden fejl.
+    unlocks:
+      send_instructions: Du modtager en e-mail med instruktioner for, hvordan du kan låse din konto op på et par minutter. Kontrollér spammappen, hvis du ikke har modtaget denne e-mail.
+      send_paranoid_instructions: Hvis din konto findes, modtager du en e-mail med instruktioner for, hvordan du kan låse den op om et par minutter. Kontrollér spammappen, hvis du ikke har modtaget denne e-mail.
+      unlocked: Din konto er ikke låst. Vær venlig at logge på for at fortsætte.
+  errors:
+    messages:
+      already_confirmed: er allerede bekræftet, prøv at logge på
+      confirmation_period_expired: skal bekræftes inden for %{period}, skal du anmode om en ny
+      expired: er udløbet, skal du anmode om en ny
+      not_found: ikke fundet
+      not_locked: er ikke låst
+      not_saved:
+        one: '1 fejl forbudt dette %{resource} fra at blive gemt:'
+        other: "%{count} Fejl, som er forbudt denne %{resource} fra at blive gemt:"

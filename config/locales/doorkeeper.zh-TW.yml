@@ -1,0 +1,150 @@
+zh-TW:
+  activerecord:
+    attributes:
+      doorkeeper/application:
+        name: 應用程式名稱
+        redirect_uri: 重新導向 URI
+        scopes: 斯科佩斯
+        website: 應用程式網站
+    errors:
+      models:
+        doorkeeper/application:
+          attributes:
+            redirect_uri:
+              fragment_present: 不能包含片段。
+              invalid_uri: 必須是有效的 URI。
+              relative_uri: 必須是絕對 URI。
+              secured_uri: 必須是 HTTPS/SSL URI。
+  doorkeeper:
+    applications:
+      buttons:
+        authorize: 授權
+        cancel: 取消
+        destroy: 德弗魯瓦
+        edit: 編輯
+        submit: 提交
+      confirmations:
+        destroy: 你確定嗎？
+      edit:
+        title: 編輯應用程式
+      form:
+        error: 糟了 檢查表單以取得可能的錯誤
+      help:
+        native_redirect_uri: 使用 %{native_redirect_uri} 進行本端測試
+        redirect_uri: 每個 URI 使用一行
+        scopes: 以空格區隔範圍。 保留空白以使用預設範圍。
+      index:
+        application: 應用
+        callback_url: 回呼 URL
+        delete: 刪除
+        empty: 您沒有應用程式。
+        name: 名字
+        new: 新建應用程式
+        scopes: 斯科佩斯
+        show: 顯示
+        title: 您的應用程式
+      new:
+        title: 新建應用程式
+      show:
+        actions: Actions
+        application_id: 用戶端金鑰
+        callback_urls: 回呼 URL
+        scopes: 斯科佩斯
+        secret: 用戶端密碼
+        title: 'Application： %{name}'
+    authorizations:
+      buttons:
+        authorize: 授權
+        deny: 戴尼
+      error:
+        title: 發生錯誤
+      new:
+        able_to: 它將能夠
+        prompt: 應用程式 %{client_name} 要求存取您的帳戶
+        title: 需要授權
+      show:
+        title: 複製此授權碼，並將其貼至應用程式。
+    authorized_applications:
+      buttons:
+        revoke: 勒沃克
+      confirmations:
+        revoke: 你確定嗎？
+      index:
+        application: 應用
+        created_at: 授權
+        date_format: "%Y-%m-%d %H:%M:%S"
+        scopes: 斯科佩斯
+        title: 您的授權應用程式
+    errors:
+      messages:
+        access_denied: 資源擁有者或授權伺服器拒絕了要求。
+        credential_flow_not_configured: 資源擁有者密碼認證流程失敗，因為未配置 Doorkeeper.configure.resource_owner_from_credentials 。
+        invalid_client: 用戶端鑑別失敗，因為用戶端不明、不包括用戶端鑑別，或不支援的鑑別方法。
+        invalid_grant: 提供的授權授與無效、過期、已撤銷、不符合授權要求中使用的重新導向 URI ，或已發出至另一個用戶端。
+        invalid_redirect_uri: 併入的重新導向 URI 無效。
+        invalid_request: 要求遺漏必要的參數，包括不受支援的參數值，或其他形態異常。
+        invalid_resource_owner: 提供的資源擁有者認證無效，或找不到資源擁有者
+        invalid_scope: 所要求的範圍無效、不明或形態異常。
+        invalid_token:
+          expired: 存取記號已過期
+          revoked: 已撤銷存取記號
+          unknown: 存取記號無效
+        resource_owner_authenticator_not_configured: 資源擁有者尋找失敗，因為 Doorkeegper.configure.resource_owner_authenticator 未配置。
+        server_error: 授權伺服器發現非預期的狀況，導致它無法完成要求。
+        temporarily_unavailable: 由於暫時超載或維護伺服器，授權伺服器目前無法處理要求。
+        unauthorized_client: 用戶端未獲授權，無法使用此方法執行此要求。
+        unsupported_grant_type: 授權伺服器不支援授權類型。
+        unsupported_response_type: 授權伺服器不支援此回應類型。
+    flash:
+      applications:
+        create:
+          notice: 已建立應用程式。
+        destroy:
+          notice: 已刪除應用程式。
+        update:
+          notice: 已更新應用程式。
+      authorized_applications:
+        destroy:
+          notice: 已撤銷應用程式。
+    layouts:
+      admin:
+        nav:
+          applications: 申請
+          oauth2_provider: OAuth2 提供者
+      application:
+        title: 需要 OAuth 授權
+    scopes:
+      "admin:read": 讀取伺服器上的所有資料
+      "admin:read:accounts": 讀取所有帳戶的機密性資訊
+      "admin:read:reports": 讀取所有報告和報告帳戶的機密性資訊
+      "admin:write": 修改伺服器上的所有資料
+      "admin:write:accounts": 對帳戶執行控管動作
+      "admin:write:reports": 對報告執行控管動作
+      follow: 修改帳戶關係
+      push: 接收推送通知
+      read: 讀取您的所有帳戶資料
+      "read:accounts": 查看帳戶資訊
+      "read:blocks": 看看你的積木
+      "read:bookmarks": 查看您的書籤
+      "read:favourites": 看你的最愛
+      "read:filters": 查看您的過濾器
+      "read:follows": 看你的
+      "read:lists": 查看您的清單
+      "read:mutes": 看看你的手
+      "read:notifications": 查看您的通知
+      "read:reports": 查看您的報告
+      "read:search": 以您的名義搜尋
+      "read:statuses": 查看所有狀態
+      write: 修改您的所有帳戶資料
+      "write:accounts": 修改設定檔
+      "write:blocks": 區塊帳戶和網域
+      "write:bookmarks": 書籤狀態
+      "write:favourites": 喜好狀態
+      "write:filters": 建立過濾器
+      "write:follows": 跟隨人
+      "write:lists": 建立清單
+      "write:media": 上傳媒體檔案
+      "write:mutes": 靜音人員和交談
+      "write:notifications": 清除您的通知
+      "write:reports": 報告其他人
+      "write:statuses": 發佈狀態

@@ -1,0 +1,150 @@
+pt:
+  activerecord:
+    attributes:
+      doorkeeper/application:
+        name: Nome do aplicativo
+        redirect_uri: URI de redirecionamento
+        scopes: Escopos
+        website: Website do aplicativo
+    errors:
+      models:
+        doorkeeper/application:
+          attributes:
+            redirect_uri:
+              fragment_present: não pode conter um fragmento.
+              invalid_uri: deve ser um URI válido.
+              relative_uri: deve ser um URI absoluto.
+              secured_uri: deve ser um URI HTTPS/SSL.
+  doorkeeper:
+    applications:
+      buttons:
+        authorize: Autorizar
+        cancel: Cancelar
+        destroy: Destruir
+        edit: Editar
+        submit: Enviar
+      confirmations:
+        destroy: Você tem certeza?
+      edit:
+        title: Editar aplicação
+      form:
+        error: Whoops! Confira seu formulário para possíveis erros
+      help:
+        native_redirect_uri: Use %{native_redirect_uri} para testes locais
+        redirect_uri: Use uma linha por URI
+        scopes: Separe escopos com espaços. Deixe em branco para usar os escopos padrão.
+      index:
+        application: Aplicação
+        callback_url: URL de callback
+        delete: Excluir
+        empty: Você não tem aplicativos.
+        name: Nome
+        new: Novo aplicativo
+        scopes: Escopos
+        show: Mostrar
+        title: Seus aplicativos
+      new:
+        title: Novo aplicativo
+      show:
+        actions: Ações
+        application_id: Chave do cliente
+        callback_urls: URLs de callback
+        scopes: Escopos
+        secret: Segredo do cliente
+        title: 'Aplicação: %{name}'
+    authorizations:
+      buttons:
+        authorize: Autorizar
+        deny: Negar
+      error:
+        title: Ocorreu um erro
+      new:
+        able_to: Ele será capaz de
+        prompt: Aplicativo %{client_name} solicita acesso à sua conta
+        title: Autorização necessária
+      show:
+        title: Copie este código de autorização e cole-o no aplicativo.
+    authorized_applications:
+      buttons:
+        revoke: Revogar
+      confirmations:
+        revoke: Você tem certeza?
+      index:
+        application: Aplicação
+        created_at: Autorizado
+        date_format: "%Y-%m-%d %H:%M:%S"
+        scopes: Escopos
+        title: Seus aplicativos autorizados
+    errors:
+      messages:
+        access_denied: O proprietário do recurso ou servidor de autorização negou o pedido.
+        credential_flow_not_configured: O Resource Owner Password Credenciais flow falhou devido a Doorkeeper.configure.resource_owner_from_credenciais ser desconfigurado.
+        invalid_client: A autenticação do cliente falhou devido a um cliente desconhecido, sem autenticação de cliente incluído ou método de autenticação não suportado.
+        invalid_grant: A concessão de autorização fornecida é inválida, expirado, revogado, não corresponde à URI de redirecionamento utilizado na solicitação de autorização ou foi emitido para outro cliente.
+        invalid_redirect_uri: O uri de redirecionamento incluído não é válido.
+        invalid_request: A solicitação está faltando um parâmetro necessário, inclui um valor de parâmetro não suportado, ou está de outra forma malformado.
+        invalid_resource_owner: As credenciais do proprietário do recurso fornecido não são válidas, ou proprietário de recurso não pode ser encontrado
+        invalid_scope: O escopo solicitado é inválido, desconhecido ou malformado.
+        invalid_token:
+          expired: O token de acesso expirado
+          revoked: O token de acesso foi revogado
+          unknown: O token de acesso é inválido
+        resource_owner_authenticator_not_configured: O Resource Owner localiza-se devido a Doorkeeper.configure.resource_owner_authenticator sendo unconfiged.
+        server_error: O servidor de autorização encontrou uma condição inesperada que o impediu de cumprir o pedido.
+        temporarily_unavailable: O servidor de autorização é atualmente incapaz de tratar o pedido devido a uma sobrecarga temporária ou manutenção do servidor.
+        unauthorized_client: O cliente não está autorizado a realizar essa solicitação usando este método.
+        unsupported_grant_type: O tipo de concessão de autorização não é suportado pelo servidor de autorização.
+        unsupported_response_type: O servidor de autorização não suporta este tipo de resposta.
+    flash:
+      applications:
+        create:
+          notice: Aplicativo criado.
+        destroy:
+          notice: Aplicativo excluído.
+        update:
+          notice: Aplicativo atualizado.
+      authorized_applications:
+        destroy:
+          notice: Aplicativo revogado.
+    layouts:
+      admin:
+        nav:
+          applications: Aplicativos
+          oauth2_provider: OAuth2 Provedor
+      application:
+        title: Autorização de OAuth necessária
+    scopes:
+      "admin:read": leia todos os dados do servidor
+      "admin:read:accounts": ler informações sensíveis de todas as contas
+      "admin:read:reports": ler informações sensíveis de todos os relatórios e relatos informados
+      "admin:write": modificar todos os dados do servidor
+      "admin:write:accounts": executar ações de moderação em contas
+      "admin:write:reports": executar ações de moderação em relatórios
+      follow: modificar relações de conta
+      push: receber suas notificações push
+      read: leia todos os dados da sua conta
+      "read:accounts": ver informações de contas
+      "read:blocks": veja seus blocos
+      "read:bookmarks": veja seus favoritos
+      "read:favourites": veja seus favoritos
+      "read:filters": veja seus filtros
+      "read:follows": veja seus seguir
+      "read:lists": veja suas listas
+      "read:mutes": veja suas mudas
+      "read:notifications": veja suas notificações
+      "read:reports": veja seus relatórios
+      "read:search": busca em seu nome
+      "read:statuses": ver todos os status
+      write: modificar todos os dados da sua conta
+      "write:accounts": modifique seu perfil
+      "write:blocks": contas de blocos e domínios
+      "write:bookmarks": statuses de marca
+      "write:favourites": status favorito
+      "write:filters": criar filtros
+      "write:follows": seguir pessoas
+      "write:lists": criar listas
+      "write:media": carregar arquivos de mídia
+      "write:mutes": mudas pessoas e conversas
+      "write:notifications": limpar suas notificações
+      "write:reports": relatar outras pessoas
+      "write:statuses": publicar status

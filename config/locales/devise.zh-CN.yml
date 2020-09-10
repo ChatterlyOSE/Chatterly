@@ -1,0 +1,113 @@
+zh-CN:
+  devise:
+    confirmations:
+      confirmed: 您的电子邮件地址已成功确认。
+      send_instructions: 您将收到一封电子邮件，其中包含有关如何在几分钟内确认您的电子邮件地址的指示信息。 如果您没有收到此电子邮件，请检查您的垃圾邮件文件夹。
+      send_paranoid_instructions: 如果您的电子邮件地址存在于我们的数据库中，那么您将收到一封电子邮件，其中包含有关如何在几分钟内确认您的电子邮件地址的指示信息。 如果您没有收到此电子邮件，请检查您的垃圾邮件文件夹。
+    failure:
+      already_authenticated: 您已登录。
+      inactive: 您的帐户尚未激活。
+      invalid: '%{authentication_keys} 或密码无效。'
+      last_attempt: 您的帐户被锁定之前还有一个尝试。
+      locked: 您的帐户已锁定。
+      not_found_in_database: '%{authentication_keys} 或密码无效。'
+      pending: 您的帐户仍在复审中。
+      timeout: 您的会话已到期。 请再次登录以继续。
+      unauthenticated: 您需要在继续前登录或注册。
+      unconfirmed: 您必须先确认您的电子邮件地址，然后再继续。
+    mailer:
+      confirmation_instructions:
+        action: 验证电子邮件地址
+        action_with_app: 确认并返回至 %{app}
+        explanation: 您已使用此电子邮件地址在 %{host} 创建了帐户。 您可以单击以取消激活它。 如果不是这样，请忽略此电子邮件。
+        explanation_when_pending: 您已使用此电子邮件地址申请邀请到 %{host} 。 确认您的电子邮件地址后，我们将复审您的申请。 您可以登录以更改详细信息或删除您的帐户，但在帐户获得批准之前，无法访问大部分功能。 如果应用程序被拒绝，那么将除去您的数据，因此不会需要您执行进一步的操作。 如果不是这样，请忽略此电子邮件。
+        extra_html: Please also check out <a href="%{terms_path}">the rules of the server</a> and <a href="%{policy_path}">our terms of service</a>.
+        subject: 'Chatter特利 : %{instance} 的确认指示信息'
+        title: 验证电子邮件地址
+      email_changed:
+        explanation: '您帐户的电子邮件地址正在更改为:'
+        extra: 如果您未更改电子邮件，那么可能会有人访问您的帐户。 请立即更改您的密码或联系服务器管理员 ( 如果您已锁定您的帐户) 。
+        subject: '聊天 : 电子邮件已更改'
+        title: 新电子邮件地址
+      password_change:
+        explanation: 已更改帐户的密码。
+        extra: 如果您未更改密码，那么可能有人已获得您的帐户访问权。 请立即更改您的密码或联系服务器管理员 ( 如果您已锁定您的帐户) 。
+        subject: 'Chatter特利 : 密码已更改'
+        title: 密码已更改
+      reconfirmation_instructions:
+        explanation: 确认新地址以更改您的电子邮件。
+        extra: 如果此更改未由您启动，请忽略此电子邮件。 在您访问上面的链接之前， Chatterh 帐户的电子邮件地址不会更改。
+        subject: '聊天 : 确认电子邮件 %{instance}'
+        title: 验证电子邮件地址
+      reset_password_instructions:
+        action: 更改密码
+        explanation: 您已请求您的帐户的新密码。
+        extra: 如果您未请求此电子邮件，请忽略此电子邮件。 在您访问以上链接并创建新密码之前，您的密码不会更改。
+        subject: 'Chatterreat : 重置密码指示信息'
+        title: 密码重置
+      two_factor_disabled:
+        explanation: 已禁用帐户的双因素认证。 现在只能使用电子邮件地址和密码登录。
+        subject: '交谈: 禁用双因素认证'
+        title: 已禁用 2FA
+      two_factor_enabled:
+        explanation: 已对您的帐户启用了双因素认证。 登录时需要由配对的 TOTP 应用程序生成的令牌。
+        subject: '交谈: 启用了双因素认证'
+        title: 已启用 2FA
+      two_factor_recovery_codes_changed:
+        explanation: 先前的恢复代码已失效，并且已生成新代码。
+        subject: '畅谈 : 重新生成的两个因子恢复代码'
+        title: 已更改 2FA 恢复代码
+      unlock_instructions:
+        subject: 'Chatterter:Unlock 指令'
+      webauthn_credential:
+        added:
+          explanation: 已将以下安全密钥添加到您的帐户
+          subject: 'Chatterter:New security key'
+          title: 已添加新的安全密钥
+        deleted:
+          explanation: 已从您的帐户中删除以下安全密钥
+          subject: 'Chatterdeter:Security 密钥已删除'
+          title: 其中一个安全密钥已删除
+      webauthn_disabled:
+        explanation: 已禁用帐户的安全性密钥认证。 现在，只能使用配对的 TOTP 应用程序生成的令牌登录。
+        subject: 'Chatter东风 : 已禁用安全密钥认证'
+        title: 已禁用安全密钥
+      webauthn_enabled:
+        explanation: 已对您的帐户启用了安全密钥认证。 您的安全密钥现在可以用于登录。
+        subject: '交谈: 已启用安全密钥认证'
+        title: 已启用安全密钥
+    omniauth_callbacks:
+      failure: 无法从 %{kind} 认证您，因为 "%{reason} " 。
+      success: 已从 %{kind} 帐户成功认证。
+    passwords:
+      no_token: 无法从密码重置电子邮件中访问此页面。 如果您来自密码重置电子邮件，请确保您使用了提供的完整 URL 。
+      send_instructions: 如果您的电子邮件地址存在于我们的数据库中，那么您将在几分钟内收到电子邮件地址处的密码恢复链接。 如果您没有收到此电子邮件，请检查您的垃圾邮件文件夹。
+      send_paranoid_instructions: 如果您的电子邮件地址存在于我们的数据库中，那么您将在几分钟内收到电子邮件地址处的密码恢复链接。 如果您没有收到此电子邮件，请检查您的垃圾邮件文件夹。
+      updated: 已成功更改密码。 您已登录。
+      updated_not_active: 已成功更改密码。
+    registrations:
+      destroyed: 再见 ! 已成功取消您的帐户。 我们希望能很快再见到你
+      signed_up: 欢迎 ! 您已成功注册。
+      signed_up_but_inactive: 您已成功注册。 但是，由于您的帐户尚未激活，因此我们无法登录您。
+      signed_up_but_locked: 您已成功注册。 但是，由于您的帐户已锁定，因此我们无法登录您。
+      signed_up_but_pending: 具有确认链接的消息已发送到您的电子邮件地址。 单击链接后，我们将复审您的应用程序。 如果批准，将通知您。
+      signed_up_but_unconfirmed: 具有确认链接的消息已发送到您的电子邮件地址。 请关注链接以激活您的帐户。 如果您没有收到此电子邮件，请检查您的垃圾邮件文件夹。
+      update_needs_confirmation: 您已成功更新帐户，但我们需要验证您的新电子邮件地址。 请检查您的电子邮件并关注确认链接以确认您的新电子邮件地址。 如果您没有收到此电子邮件，请检查您的垃圾邮件文件夹。
+      updated: 已成功更新您的帐户。
+    sessions:
+      already_signed_out: 已成功注销。
+      signed_in: 已成功登录。
+      signed_out: 已成功注销。
+    unlocks:
+      send_instructions: 您将收到一封电子邮件，其中包含有关如何在几分钟内解锁您的帐户的指示信息。 如果您没有收到此电子邮件，请检查您的垃圾邮件文件夹。
+      send_paranoid_instructions: 如果您的帐户存在，您将收到一封电子邮件，其中包含有关如何在几分钟内解锁的指示信息。 如果您没有收到此电子邮件，请检查您的垃圾邮件文件夹。
+      unlocked: 已成功解锁您的帐户。 请登录以继续。
+  errors:
+    messages:
+      already_confirmed: 已确认，请尝试登录
+      confirmation_period_expired: 需要在 %{period}内确认，请请求新的
+      expired: 已到期，请请求新的
+      not_found: 未找到
+      not_locked: 未锁定
+      not_saved:
+        other: "%{count} 位错误禁止保存此 %{resource}:"

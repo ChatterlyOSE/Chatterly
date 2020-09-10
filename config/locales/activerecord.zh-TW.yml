@@ -1,0 +1,16 @@
+zh-TW:
+  activerecord:
+    attributes:
+      poll:
+        expires_at: 截止時間
+        options: 肖塞斯
+    errors:
+      models:
+        account:
+          attributes:
+            username:
+              invalid: 只有字母、數字和底線
+        status:
+          attributes:
+            reblog:
+              taken: 狀態已存在

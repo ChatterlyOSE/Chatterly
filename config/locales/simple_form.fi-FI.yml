@@ -1,0 +1,194 @@
+fi:
+  simple_form:
+    hints:
+      account_alias:
+        acct: Määritä käyttäjänimi @domain, jonka haluat siirtää
+      account_migration:
+        acct: Määritä käyttäjänimi @domain, jonka haluat siirtää
+      account_warning_preset:
+        text: Voit käyttää toot-syntaksia, kuten URL-osoitteita, hashtageja ja mainintoja
+        title: Vapaaehtoinen. Ei näy vastaanottajalle
+      admin_account_action:
+        include_statuses: Käyttäjä näkee, mitkä tootit ovat aiheuttaneet maltillisen toiminnan tai varoituksen
+        send_email_notification: Käyttäjä saa selvityksen siitä, mitä heidän tililleen tapahtui
+        text_html: Optional. You can use toot syntax. You can <a href="%{path}">add warning presets</a> to save time
+        type_html: Valitse, mitä tehdä <strong>%{acct}</strong>
+        warning_preset_id: Vapaaehtoinen. Voit vielä lisätä mukautetun tekstin esivalinnan loppuun
+      announcement:
+        all_day: Kun olet tarkistanut, näkyviin tulee vain aikajanan päivämäärät.
+        ends_at: Vapaaehtoinen. Annossementti julkaistaan automaattisesti tällä hetkellä
+        scheduled_at: Älä julkaise ilmoitusta välittömästi.
+        starts_at: Vapaaehtoinen. Jos ilmoitus on sidottu tiettyyn kellonaikaan,
+        text: Voit käyttää toot-syntaksia. Ole hyvä ja ota huomioon avaruus, ilmoitus siirtyy käyttäjän näytölle
+      defaults:
+        autofollow: Henkilöt, jotka allekirjoittavat kutsun, seuraavat sinua automaattisesti
+        avatar: PNG, GIF or JPG. At most %{size}. Will be downscaled to %{dimensions}px
+        bot: Tämä tili toteuttaa pääasiassa automatisoituja toimia, joita ei ehkä valvota
+        context: Yksi tai useita konteksteja, joissa suodatinta on käytettävä
+        current_password: Suojaustarkoituksia varten anna nykyisen tilin salasana
+        current_username: Vahvistaaksesi, anna nykyisen tilin käyttäjätunnus
+        digest: Vain pitkän poissaolon jälkeen ja vain, jos olet saanut henkilökohtaisia viestejä poissaollessasi
+        discoverable: Profiilihakemisto on toinen tapa, jolla tili voi tavoittaa laajemman yleisön
+        email: Teille lähetetään vahvistusviesti.
+        fields: Voit määrittää enintään 4 kohdetta taulukon taulukkona
+        header: PNG, GIF or JPG. At most %{size}. Will be downscaled to %{dimensions}px
+        inbox_url: Kopioi URL-osoite viestin etusivulta, jota haluat käyttää
+        irreversible: Suodattimet katoavat peruuttamattomasti, vaikka suodatin poistetaan myöhemmin.
+        locale: Käyttöliittymän, sähköpostiviestien ja työntöilmoitusten kieli
+        locked: Edellyttää, että haluat hyväksyä seuraajat manuaalisesti
+        password: Käytä vähintään 8 merkkiä
+        phrase: Vastataan riippumatta tekstin tai sisältövaroituksen sisällöstä.
+        scopes: Sovelluksen avulla voidaan käyttää sovellusrajapintoa. Jos valitset ylätason ulottuvuuden, sinun ei tarvitse valita yksittäisiä.
+        setting_aggregate_reblogs: Älä näytä uusia korotuksia toots, jotka on äskettäin vahvistettu (koskee vain äskettäin saatu tehoste)
+        setting_default_sensitive: Herkkä media on piilotettu oletusarvoisesti, ja se voidaan paljastaa klikkaamalla
+        setting_display_media_default: Piilota tiedotusvälineet aroiksi
+        setting_display_media_hide_all: Piilota aina
+        setting_display_media_show_all: Näytä aina media
+        setting_hide_network: Ketä seuraat ja kuka seuraa sinua ei näy profiilissasi
+        setting_noindex: Vaikutti julkiseen profiiliin ja tilasivulle
+        setting_show_application: Sovellus, jota käytät toot-sovelluksen käyttöön, tulee näkyviin
+        setting_use_blurhash: Säteilyarvot perustuvat piiloleikkien väreihin.
+        setting_use_pending_items: Piilota aikajanan päivitykset napsahduksen taakse sen sijaan, että syötät automaattisesti
+        username: Käyttäjätunnuksesi on yksilöllinen %{domain}.
+        whole_word: Kun avainsana tai lause on aakkosnumeerinen, sitä käytetään vain, jos se vastaa koko sanaa.
+      domain_allow:
+        domain: Tämä verkkoalue voi noutaa tietoja tästä palvelimesta, ja saapuvat tiedot käsitellään ja tallennetaan.
+      email_domain_block:
+        domain: Tämä voi olla verkkoalueen nimi, joka näkyy sähköpostiosoitteessa, MX-tietue, jonka verkkoalue ratkaisee, tai IP-osoite, johon MX-tietue ratkaisee. Ne tarkistetaan, kun käyttäjä on ilmoittautunut, ja ilmoitukset hylätään.
+        with_dns_records: Määritetyn verkkoalueen DNS-tietueiden selvitys yritetään tehdä, ja tulokset estyy myös
+      featured_tag:
+        name: 'Saatat haluta käyttää yhtä näistä:'
+      form_challenge:
+        current_password: Saavutte turvatulle alueelle.
+      imports:
+        data: Toinen Mastodon-palvelimesta viety CSV-tiedosto
+      invite_request:
+        text: Tämä auttaa meitä tarkistamaan hakemuksesi
+      sessions:
+        otp: 'Anna puhelimeesi luoma kahden tekijän koodi tai käytä jotakin elvytyskoodistasi:'
+        webauthn: Jos se on USB-avain, varmista, että se lisätään ja, jos tarpeen, taputa sitä.
+      tag:
+        name: Voit vain muuttaa kasing kirjaimia, esimerkiksi tehdä siitä luettavampi
+      user:
+        chosen_languages: Kun tarkistus on valittuna, vain valitut kielet näkyvät julkisissa aikaulottuvuuksissa.
+    labels:
+      account:
+        fields:
+          name: Merkki
+          value: Sisältö
+      account_alias:
+        acct: Vanhan tilin käsittely
+      account_migration:
+        acct: Uuden tilin käsittely
+      account_warning_preset:
+        text: Nykyinen teksti
+        title: Osasto
+      admin_account_action:
+        include_statuses: Sisällytä tiedot sähköpostiviestiin
+        send_email_notification: Ilmoita käyttäjälle sähköpostitse
+        text: Mukautettu varoitus
+        type: Toimi
+        types:
+          disable: Poista sisäänkirjaus
+          none: Älä tee mitään
+          silence: Hiljaisuus
+          suspend: Poistettavat tilitiedot Suspend ja peruuttamattomasti
+        warning_preset_id: Käytä varoitusta
+      announcement:
+        all_day: Koko päivän tapahtuma
+        ends_at: Tapahtuman loppu
+        scheduled_at: Aikataulun julkaisu
+        starts_at: Tapahtuman alku
+        text: Annossementti
+      defaults:
+        autofollow: Kutsu seuraamaan tiliäsi
+        avatar: Avatar
+        bot: Tämä on botin tili.
+        chosen_languages: Suodatinkielet
+        confirm_new_password: Vahvasta uusi salasana
+        confirm_password: Vahvasta salasana
+        context: Suodatusympäristö
+        current_password: Nykyinen salasana
+        data: Data
+        discoverable: Luettelo tämän tilin luettelosta
+        display_name: Näyttönimi
+        email: Sähköpostiosoite
+        expires_in: Eroa myöhemmin
+        fields: Profiilit
+        header: Header
+        inbox_url: Välilaatikon URL-osoite
+        irreversible: Pudota piilon sijasta
+        locale: Interfacen kieli
+        locked: Lukitustili
+        max_uses: Maxin käyttömäärä
+        new_password: Uusi salasana
+        note: Bio
+        otp_attempt: Kaksikerroinkoodi
+        password: Salasana
+        phrase: Avainsana tai lause
+        setting_advanced_layout: Ota käyttöön kehittynyt Web-liittymä
+        setting_aggregate_reblogs: Ryhmä tehostaa aikatauluja
+        setting_auto_play_gif: Automaatti-animoidut GIF:t
+        setting_boost_modal: Näytä vahvistusvalintaikkuna ennen vahvistusta
+        setting_crop_images: Crop-kuvat ei-laajennetuissa typyissä 16x9
+        setting_default_language: Postituskieli
+        setting_default_privacy: Yksityisyyden hallussapito
+        setting_default_sensitive: Merkitse media aina herkiksi
+        setting_delete_modal: Näytä vahvistusvalintaikkuna ennen uutin poistoa
+        setting_display_media: Medianäyttö
+        setting_display_media_default: Oletusarvo
+        setting_display_media_hide_all: Piilota kaikki
+        setting_display_media_show_all: Näytä kaikki
+        setting_expand_spoilers: Laajenna aina sisältövaroituksissa merkittyjä typyjä
+        setting_hide_network: Piilota verkostoasi
+        setting_noindex: Opt-hakuohjelman indeksointi
+        setting_reduce_motion: Vähennetään animaatioita
+        setting_show_application: Läheinen sovellus, jota käytetään konnan lähettämiseen
+        setting_system_font_ui: Käytä järjestelmän oletusfonttia
+        setting_theme: Sivuston teema
+        setting_trends: Näytä päivän trendit
+        setting_unfollow_modal: Näytä vahvistusvalintaikkuna ennen seuraajaa
+        setting_use_blurhash: Näytä värikkäitä gradientimia piilotetussa mediassa
+        setting_use_pending_items: Hidas tila
+        severity: Vakavuus
+        sign_in_token_attempt: Turvakoodi
+        type: Tuo tyyppi
+        username: Käyttäjätunnus
+        username_or_email: Userimi tai Email
+        whole_word: Koko sana
+      email_domain_block:
+        with_dns_records: Sisällytä MX-tietueet ja verkkoalueen sivut
+      featured_tag:
+        name: Hashtag
+      interactions:
+        must_be_follower: Muiden kuin seuraajien ryhmäilmoitukset
+        must_be_following: Ryhmä-ilmoitukset ihmisistä, joita et seuraa
+        must_be_following_dm: Estää viestejä ihmisiltä, joita et seuraa.
+      invite:
+        comment: Kommentti
+      invite_request:
+        text: Miksi haluat liittyä?
+      notification_emails:
+        digest: Lähetä digimit sähköpostit
+        favourite: Joku on suositellut statustasi
+        follow: Joku seurasi sinua.
+        follow_request: Joku halusi seurata sinua.
+        mention: Joku mainitsi sinut.
+        pending_account: Uusi tili on tarkistettava
+        reblog: Joku on vahvistanut asemasi.
+        report: Uusi raportti on lähetetty
+        trending_tag: Tarkistamaton hashtag on trendit
+      tag:
+        listable: Salli tämän hashtagin näkyvän haussa ja profiilihakemistossa
+        name: Hashtag
+        trendable: Salli tämän hashtagin esiintyä trendeissä
+        usable: Voit käyttää tätä hashtagia
+    'no': 'Ei'
+    recommended: Suositeltava
+    required:
+      mark: "*"
+      text: Vaaditaan
+    title:
+      sessions:
+        webauthn: Käytä yksi suojausavaimistasi
+    'yes': 'Kyllä'

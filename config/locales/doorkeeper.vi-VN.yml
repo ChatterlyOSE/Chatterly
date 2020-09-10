@@ -1,0 +1,150 @@
+vi:
+  activerecord:
+    attributes:
+      doorkeeper/application:
+        name: Tên ứng dụng
+        redirect_uri: Resdirect URI
+        scopes: Phạm vi
+        website: Website ứng dụng
+    errors:
+      models:
+        doorkeeper/application:
+          attributes:
+            redirect_uri:
+              fragment_present: không thể chứa một mảnh.
+              invalid_uri: phải là URI hợp lệ.
+              relative_uri: phải là một URI tuyệt đối.
+              secured_uri: phải là URI HTTPS/SSL.
+  doorkeeper:
+    applications:
+      buttons:
+        authorize: Ủy quyền
+        cancel: Hủy
+        destroy: Hủy bỏ
+        edit: Chỉnh sửa
+        submit: Gửi
+      confirmations:
+        destroy: Anh chắc chứ?
+      edit:
+        title: Sửa ứng dụng
+      form:
+        error: Whoops! Kiểm tra biểu mẫu có thể có lỗi
+      help:
+        native_redirect_uri: Sử dụng %{native_redirect_uri} để kiểm tra nội bộ
+        redirect_uri: Dùng một dòng cho mỗi URI
+        scopes: Phạm vi riêng biệt với không gian. Để trống để sử dụng phạm vi mặc định.
+      index:
+        application: Ứng dụng
+        callback_url: URL gọi lại
+        delete: '& Xoá'
+        empty: Bạn không có ứng dụng.
+        name: Tên
+        new: Ứng dụng mới
+        scopes: Phạm vi
+        show: Hiển thị
+        title: Ứng dụng
+      new:
+        title: Ứng dụng mới
+      show:
+        actions: Hành động
+        application_id: Khóa máy khách
+        callback_urls: URL gọi lại
+        scopes: Phạm vi
+        secret: Bí mật khách
+        title: 'Ứng dụng: %{name}'
+    authorizations:
+      buttons:
+        authorize: Ủy quyền
+        deny: Từ chối
+      error:
+        title: Đã xảy ra lỗi
+      new:
+        able_to: Nó sẽ có thể.
+        prompt: Ứng dụng %{client_name} yêu cầu truy cập vào tài khoản của bạn
+        title: Yêu cầu phải
+      show:
+        title: Sao chép mã ủy quyền này và dán nó vào ứng dụng.
+    authorized_applications:
+      buttons:
+        revoke: Thu hồi
+      confirmations:
+        revoke: Anh chắc chứ?
+      index:
+        application: Ứng dụng
+        created_at: Được phép
+        date_format: "%Y-%m-%d %H:%M:%S"
+        scopes: Phạm vi
+        title: Ứng dụng được ủy quyền
+    errors:
+      messages:
+        access_denied: Chủ tài nguyên hoặc máy chủ ủy quyền đã tư ̀ chối yêu cầu.
+        credential_flow_not_configured: Không thể thực hiện luồng chứng danh mật khẩu tài nguyên do Doorkeeper.configure.resource_owner_from_chứng danh không được cấu hình.
+        invalid_client: Không thể xác thực máy khách do máy khách không xác định, không có xác thực máy khách, hoặc phương thức xác thực không được
+        invalid_grant: Tài trợ ủy quyền được cung cấp không hợp lệ, đã hết hạn, bị thu hồi, không khớp với URI chuyển hướng được sử dụng trong yêu cầu ủy quyền, hoặc được cấp cho khách hàng khác.
+        invalid_redirect_uri: Uri trực tiếp được bao gồm uri không hợp lệ.
+        invalid_request: Yêu cầu bị thiếu một tham sô ́ yêu cầu, có chứa một giá trị tham sô ́ không được hô ̃ trợ, hoặc không được tạo thành
+        invalid_resource_owner: Chứng danh chủ sở hữu tài nguyên được cung cấp không hợp lệ, hoặc không thể tìm thấy chủ tài nguyên.
+        invalid_scope: Phạm vi yêu cầu không hợp lệ, không xác định, hoặc dạng sai.
+        invalid_token:
+          expired: Token truy cập đã hết hạn
+          revoked: Token truy cập bị hủy bỏ
+          unknown: Token truy cập không hợp lệ
+        resource_owner_authenticator_not_configured: Tìm thấy Chủ sở hữu Tài nguyên không thành công do Doorkeeper.resource_owner_authenticator không được cấu hình.
+        server_error: Máy chủ ủy quyền gặp phải một điều kiện không mong muốn ngăn nó thực hiện yêu cầu.
+        temporarily_unavailable: Máy chủ xác thực hiện không thể xử lý yêu cầu do quá tải tạm thời hoặc bảo trì máy chủ.
+        unauthorized_client: Khách hàng không được phép thực hiện yêu cầu này bằng phương thức này.
+        unsupported_grant_type: Kiểu cấp cho phép không được hô ̃ trợ bởi máy chủ ủy quyền.
+        unsupported_response_type: Máy chủ ủy quyền không hô ̃ trợ kiểu phản hồi này.
+    flash:
+      applications:
+        create:
+          notice: Ứng dụng được tạo.
+        destroy:
+          notice: Ứng dụng bị xóa.
+        update:
+          notice: Ứng dụng được cập nhật
+      authorized_applications:
+        destroy:
+          notice: Ứng dụng bị thu hồi
+    layouts:
+      admin:
+        nav:
+          applications: Ứng dụng
+          oauth2_provider: Nhà cung cấp OAuth2
+      application:
+        title: Yêu cầu ủy quyền OAuth
+    scopes:
+      "admin:read": đọc tất cả dư ̃ liệu trên máy chủ
+      "admin:read:accounts": đọc thông tin nhạy cảm của mọi tài khoản
+      "admin:read:reports": đọc thông tin nhạy cảm của tất cả báo cáo và báo cáo
+      "admin:write": sửa tất cả dư ̃ liệu trên máy chủ
+      "admin:write:accounts": thực hiện thao tác ôn hoà trên tài khoản
+      "admin:write:reports": thực hiện thao tác ôn hoà trên báo cáo
+      follow: điều chỉnh quan hệ
+      push: nhận được thông báo rush
+      read: đọc tất cả dữ liệu tài khoản của bạn
+      "read:accounts": xem thông tin về
+      "read:blocks": xem các khối đá
+      "read:bookmarks": xem các đánh dấu của bạn
+      "read:favourites": Hãy nhìn những thiên tài
+      "read:filters": Xem bộ lọc
+      "read:follows": xem các bạn sau
+      "read:lists": xem danh sách
+      "read:mutes": xem bài hát của bạn
+      "read:notifications": xem các thông báo
+      "read:reports": xem báo cáo
+      "read:search": tìm kiếm thay cho bạn
+      "read:statuses": xem tất cả trạng thái
+      write: điều chỉnh tất cả dư ̃ liệu tài khoản
+      "write:accounts": điều chỉnh cấu hình
+      "write:blocks": tài khoản và tên miền
+      "write:bookmarks": Trạng thái của dấu trang
+      "write:favourites": trạng thái yêu thích
+      "write:filters": tạo bộ lọc
+      "write:follows": theo mọi người
+      "write:lists": tạo danh sách
+      "write:media": tải tập tin media
+      "write:mutes": mọi người và hội thoại câm
+      "write:notifications": Xóa thông báo
+      "write:reports": báo cáo người khác
+      "write:statuses": phát hành chính sách

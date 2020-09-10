@@ -1,0 +1,194 @@
+ar:
+  simple_form:
+    hints:
+      account_alias:
+        acct: قم بتحديد username@domain للحساب الذي ترغب في نقله من
+      account_migration:
+        acct: قم بتحديد username@domain للحساب الذي ترغب في نقله الى
+      account_warning_preset:
+        text: يمكنك استخدام صيغة tot ، مثل URLs و hashtags ويشير الى
+        title: اختياري. غير مرئي للمستلم
+      admin_account_action:
+        include_statuses: سيقوم المستخدم بمعرفة أي tots تسببت في تصرف الاعتدال أو التحذير
+        send_email_notification: سيقوم المستخدم باستلام شرح لما حدث مع الحساب الخاص بهم
+        text_html: اختياري. يمكنك استخدام صيغة tot. يمكنك <a href="%{path}">اضافة press-presdets</a> لحفظ الوقت
+        type_html: حدد ما يجب القيام به مع <strong>%{acct}</strong>
+        warning_preset_id: اختياري. مازال يمكنك اضافة نص مهيأ لانهاء ما تم تحديده مسبقا
+      announcement:
+        all_day: عند تعليم هذا الاختيار ، سيتم عرض التواريخ الخاصة بمدى الوقت فقط
+        ends_at: اختياري. سيتم الغاء نشر الاعلان آليا في هذا الوقت
+        scheduled_at: اترك المجال خاليا لنشر الاشعار في الحال
+        starts_at: اختياري. في حالة ربط الاعلان الخاص بك بمدى زمني معين
+        text: يمكنك استخدام صيغة tot. برجاء مراعاة المساحة التي سيتم تنفيذ الاعلان عليها على شاشة المستخدم
+      defaults:
+        autofollow: سيتبعك الأشخاص الذين يوقعون خلال الاستدعاء آليا
+        avatar: PNG ، GIF أو JPG. على الأكثر %{size}. سيتم تخفيضه الى %{dimensions}px
+        bot: يقوم هذا الحساب أساسا بتنفيذ تصرفات آلية وقد لا يتم مراقبته
+        context: واحد أو أكثر من الصيغ التي يجب أن ينطبق عليها مرشح البيانات
+        current_password: لأغراض السرية ، رجاء ادخال كلمة السرية للحساب الجاري
+        current_username: للتأكيد ، برجاء ادخال اسم المستخدم للحساب الحالي
+        digest: يتم ارسالها بعد فترة طويلة من عدم الفعالية وفقط اذا كنت قد قمت باستلام أي رسائل شخصية في غيابك
+        discoverable: دليل ملف المواصفات هو طريقة أخرى يمكن من خلالها وصول الحساب الخاص بك الى جمهور أعرض
+        email: سيتم ارسال رسالة بريد الكتروني للتأكيد
+        fields: يمكنك الحصول على ما يصل الى 4 بنود معروضة كجدول في ملف المواصفات الخاص بك
+        header: PNG ، GIF أو JPG. على الأكثر %{size}. سيتم تخفيضه الى %{dimensions}px
+        inbox_url: قم بنسخ عنوان URL من الصفحة الأمامية للترحيل الذي ترغب في استخدامه
+        irreversible: tots التي تم ترشيحها ستختفي بطريقة لا رجعة فيها ، حتى اذا تم ازالة مرشح البيانات في وقت لاحق
+        locale: اللغة الخاصة بواجهة تعامل المستخدم والبريد الالكتروني واعلام الدفع
+        locked: يتطلب منك اعتماد الأتباع يدويا
+        password: استخدم 8 حروف على الأقل
+        phrase: سيتم المطابقة بغض النظر عن وجود غلاف في تحذير نص أو محتويات للتمرين
+        scopes: ما هي برامج APIs التي سيسمح للتطبيق بالتوصل اليها. اذا قمت بتحديد نطاق ذو أعلى مستوى ، لا تحتاج الى تحديد نطاق منفرد.
+        setting_aggregate_reblogs: لا تقم بعرض boots جديدة بالنسبة الى tots التي تم تعزيزها مؤخرا (يؤثر فقط على boots التي تم استلامها حديثا)
+        setting_default_sensitive: يتم اخفاء وسط التخزين بصفة مفترضة ويمكن أن يتم الكشف عنه بالضغط على
+        setting_display_media_default: اخفاء علامة تم تعليمها على أنها حساسة
+        setting_display_media_hide_all: اخفاء وسط التخزين دائما
+        setting_display_media_show_all: عرض وسط التخزين دائما
+        setting_hide_network: من الذي تتبعه والذي يتبعك لن يتم عرضه في ملف المواصفات الخاص بك
+        setting_noindex: يؤثر على ملف المواصفات العام وصفحات الحالة الخاصة بك
+        setting_show_application: سيتم عرض التطبيق الذي تقوم باستخدامه في السخام في المشاهدة المفصلة ل tots الخاص بك
+        setting_use_blurhash: وتستند المشعاع على ألوان الصور المخفية ولكنها تقوم بقطع أي تفاصيل.
+        setting_use_pending_items: اخفاء التحديثات في الجدول الزمني خلف الضغط بدلا من التصفح الآلي لوحدة المعلومات المسترجعة
+        username: اسم المستخدم الخاص بك سيكون متفرد في %{domain}
+        whole_word: عندما تكون الكلمة المرشدة أو العبارة أبجدية عددية فقط ، سيتم تطبيقها فقط اذا كانت تتطابق مع الكلمة بالكامل
+      domain_allow:
+        domain: سيتمكن هذا النطاق من احضار البيانات من وحدة الخدمة هذه وسيتم تشغيل وتخزين البيانات الواردة منه
+      email_domain_block:
+        domain: يمكن أن يكون هذا هو اسم النطاق الذي يتم عرضه في عنوان البريد الالكتروني ، أو سجل MX الذي يقوم النطاق بحله ، أو عنوان IP الخاص بوحدة الخدمة التي يقوم سجل MX بحلها. وسيتم التحقق منها عند توقيع المستخدم وسيتم رفض اللافتات.
+        with_dns_records: سيتم اجراء محاولة لحل سجلات DNS الخاصة بالنطاق المحدد وسيتم أيضا منع ظهور النتائج
+      featured_tag:
+        name: 'قد ترغب في استخدام واحدة من هذه :'
+      form_challenge:
+        current_password: أنت تدخل منطقة آمنة
+      imports:
+        data: تم ارسال ملف CSV من وحدة خدمة Mastodon أخرى
+      invite_request:
+        text: هذا سيساعدنا في مراجعة التطبيق الخاص بك
+      sessions:
+        otp: 'قم بادخال كود-عامل تم تكوينه بواسطة تطبيق التليفون الخاص بك أو قم باستخدام أحد أكواد الاستعادة الخاصة بك :'
+        webauthn: اذا كان مفتاح USB الخاص به تأكد من ادراجه ، واذا لزم الأمر ، قم باستخدامه.
+      tag:
+        name: يمكنك فقط تغيير غلاف الحروف ، على سبيل المثال ، لجعله أكثر سهولة في القراءة
+      user:
+        chosen_languages: عند تعليمه ، سيتم عرض فقط في اللغات المحددة في جداول زمنية عامة
+    labels:
+      account:
+        fields:
+          name: التسمية
+          value: المحتويات
+      account_alias:
+        acct: مقبض Handle الحساب القديم
+      account_migration:
+        acct: التعامل مع الحساب الجديد
+      account_warning_preset:
+        text: نص المقدم
+        title: العنوان
+      admin_account_action:
+        include_statuses: تضمين التقارير التي تم تسجيلها في البريد الالكتروني
+        send_email_notification: اعلام المستخدم بكل بريد الكتروني
+        text: تحذير مهيأ
+        type: الإجراء
+        types:
+          disable: الغاء اتاحة بدء الاتصال
+          none: لا تفعل شيئا
+          silence: صمت
+          suspend: تعليق بيانات الحساب وحذفها بطريقة لا رجعة فيها
+        warning_preset_id: استخدام المقدم للتحذير
+      announcement:
+        all_day: حدث طوال اليوم
+        ends_at: نهاية الحدث
+        scheduled_at: جدول زمني للنشر
+        starts_at: بدء الحدث
+        text: اشعارات
+      defaults:
+        autofollow: دعوة الى اتباع الحساب الخاص بك
+        avatar: أفاتار
+        bot: هذا حساب الروبوت
+        chosen_languages: لغات المرشح
+        confirm_new_password: تأكيد كلمة السرية الجديدة
+        confirm_password: تأكيد كلمة السرية
+        context: سياق ترشيح البيانات
+        current_password: كلمة السرية الحالية
+        data: البيانات
+        discoverable: عرض هذا الحساب على الدليل
+        display_name: اسم العرض
+        email: عنوان البريد الالكتروني
+        expires_in: انتهاء الصلاحية بعد
+        fields: بيانات توصيف ملف المواصفات
+        header: نص الرأس
+        inbox_url: عنوان URL الى Relay inbox
+        irreversible: اسقاط بدلا من اخفاء
+        locale: لغة واجهة التعامل
+        locked: اقفال الحساب
+        max_uses: الحد الأقصى لعدد الاستخدامات
+        new_password: كلمة السرية الجديدة
+        note: بـ و
+        otp_attempt: كود عامل-اثنين
+        password: كلمة السرية
+        phrase: الكلمة المرشدة أو العبارة
+        setting_advanced_layout: اتاحة واجهة تعامل الانترنت المتقدمة
+        setting_aggregate_reblogs: بدء تشغيل المجموعة في جداول زمنية
+        setting_auto_play_gif: GIFs التي يتم تشغيلها آليا
+        setting_boost_modal: عرض مربع حوار التأكيد قبل التعزيز
+        setting_crop_images: Crop الصور في non-sموسعة toots الى 16x9
+        setting_default_language: لغة الاشارة
+        setting_default_privacy: ارسال السرية
+        setting_default_sensitive: تعليم وسط التخزين دائما بأنه حساس
+        setting_delete_modal: عرض مربع حوار التأكيد قبل حذف totoot
+        setting_display_media: عرض وسط التخزين
+        setting_display_media_default: المفترض
+        setting_display_media_hide_all: اخفاء كل
+        setting_display_media_show_all: عرض كل
+        setting_expand_spoilers: قم دائما بعرض عمليات التكبير التي تم تعليمها بتحذيرات المحتويات
+        setting_hide_network: اخفاء الشبكة الخاصة بك
+        setting_noindex: اختر-خارج فهرسة محرك البحث
+        setting_reduce_motion: تقليل الحركة في الرسوم المتحركة
+        setting_show_application: الغاء اغلاق التطبيق الذي تم استخدامه لارسال tots
+        setting_system_font_ui: استخدام طاقم الطباعة المفترض للنظام
+        setting_theme: موضوع الموقع
+        setting_trends: عرض اتجاهات اليوم
+        setting_unfollow_modal: عرض مربع حوار التأكيد قبل أن يتم الغاء أحد الأشخاص
+        setting_use_blurhash: عرض تدرج الألوان لوسط التخزين المخفي
+        setting_use_pending_items: نمط بطئ
+        severity: درجة الأهمية
+        sign_in_token_attempt: كود السرية
+        type: نوع الاستقبال
+        username: اسم المستخدم
+        username_or_email: اسم المستخدم أو البريد الالكتروني
+        whole_word: الكلمة بالكامل
+      email_domain_block:
+        with_dns_records: تضمين سجلات MX وخطط التنفيذ الخاصة بالنطاق
+      featured_tag:
+        name: علامة Hashtag
+      interactions:
+        must_be_follower: اعاقة الاشعارات من غير التابعين
+        must_be_following: تجميع الاخطارات من الأشخاص الذين لا تتبعهم
+        must_be_following_dm: منع الرسائل المباشرة من الأشخاص الذين لا تتبعهم
+      invite:
+        comment: تعقيب
+      invite_request:
+        text: لماذا تريد الانضمام ؟
+      notification_emails:
+        digest: ارسال بريد الكتروني للتحليل
+        favourite: شخص ما قام بتحرير الحالة الخاصة بك
+        follow: شخص ما تبعك
+        follow_request: طلب شخص ما أن يتبعك
+        mention: شخص ما ذكرك
+        pending_account: استعراض احتياجات الحساب الجديد
+        reblog: شخص عزز وضعك
+        report: تم احالة تقرير جديد
+        trending_tag: hashtag غير تم مراجعته هو trending
+      tag:
+        listable: السماح لعلامة hashtag هذه بالظهور في عمليات البحث وفي دليل ملف المواصفات
+        name: علامة Hashtag
+        trendable: السماح لعلامة hashtag هذه بالظهور تحت الاتجاهات
+        usable: السماح ل tos باستخدام hashtag هذا
+    'no': 'لا'
+    recommended: المفضل
+    required:
+      mark: "*"
+      text: مطلوب
+    title:
+      sessions:
+        webauthn: استخدام أحد مفاتيح السرية الخاصة بك لبدء الاتصال
+    'yes': 'نعم.'

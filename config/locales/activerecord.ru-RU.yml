@@ -1,0 +1,16 @@
+ru:
+  activerecord:
+    attributes:
+      poll:
+        expires_at: Срок
+        options: Варианты
+    errors:
+      models:
+        account:
+          attributes:
+            username:
+              invalid: только буквы, цифры и символы подчеркивания
+        status:
+          attributes:
+            reblog:
+              taken: Состояние уже существует

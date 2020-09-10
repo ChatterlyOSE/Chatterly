@@ -1,0 +1,150 @@
+cs:
+  activerecord:
+    attributes:
+      doorkeeper/application:
+        name: Název aplikace
+        redirect_uri: Identifikátor URI přesměrování
+        scopes: Obory
+        website: Webový server aplikace
+    errors:
+      models:
+        doorkeeper/application:
+          attributes:
+            redirect_uri:
+              fragment_present: nemůže obsahovat fragment.
+              invalid_uri: musí být platný identifikátor URI.
+              relative_uri: musí být absolutní identifikátor URI.
+              secured_uri: musí být identifikátor URI HTTPS/SSL.
+  doorkeeper:
+    applications:
+      buttons:
+        authorize: Autorizovat
+        cancel: Storno
+        destroy: Zničit
+        edit: Upravit
+        submit: Odeslat
+      confirmations:
+        destroy: Jsi si jistý?
+      edit:
+        title: Upravit aplikaci
+      form:
+        error: Ups! Zkontrolujte, zda formulář neobsahuje chyby
+      help:
+        native_redirect_uri: Použití %{native_redirect_uri} pro lokální testy
+        redirect_uri: Použít jeden řádek na identifikátor URI
+        scopes: Oddělte rozsahy mezerami. Ponechte prázdné, chcete-li použít výchozí rozsahy.
+      index:
+        application: Aplikace
+        callback_url: URL zpětného volání
+        delete: Odstranit
+        empty: Nemáte žádné aplikace.
+        name: Název
+        new: Nová aplikace
+        scopes: Obory
+        show: Zobrazit
+        title: Vaše aplikace
+      new:
+        title: Nová aplikace
+      show:
+        actions: Akce
+        application_id: Klíč klienta
+        callback_urls: Adresy URL zpětného
+        scopes: Obory
+        secret: Utajené
+        title: 'Aplikace: %{name}'
+    authorizations:
+      buttons:
+        authorize: Autorizovat
+        deny: Odepřít
+      error:
+        title: Došlo k chybě
+      new:
+        able_to: Bude to možné
+        prompt: Aplikace %{client_name} vyžaduje přístup k vašemu účtu
+        title: Je vyžadována autorizace
+      show:
+        title: Zkopírujte tento autorizační kód a vložte jej do aplikace.
+    authorized_applications:
+      buttons:
+        revoke: Zrušit přístup
+      confirmations:
+        revoke: Jsi si jistý?
+      index:
+        application: Aplikace
+        created_at: Autorizovaná
+        date_format: "%Y-%m-%d %H:%M:%S"
+        scopes: Obory
+        title: Vaše autorizované aplikace
+    errors:
+      messages:
+        access_denied: Vlastník prostředku nebo autorizační server odepřel požadavek.
+        credential_flow_not_configured: Tok pověření hesla vlastníka prostředku se nezdařil, protože byla zrušena konfigurace pověření Doorkeeper.configure.resource_owner_from_credentials.
+        invalid_client: Ověření klienta se nezdařilo kvůli neznámému klientovi, nezahrnutému ověření klienta nebo nepodporovanou metodu ověření.
+        invalid_grant: Poskytnutý autorizační grant je neplatný, vypršelý, zrušený, neodpovídá identifikátoru URI pro přesměrování, který byl použit v požadavku na autorizaci, nebo byl vydán jinému klientovi.
+        invalid_redirect_uri: Zahrnuté URI přesměrování je neplatné.
+        invalid_request: V požadavku chybí povinný parametr, obsahuje nepodporovanou hodnotu parametru nebo je jinak deformovaný.
+        invalid_resource_owner: Poskytnutá pověření vlastníka prostředku nejsou platná, nebo nelze nalézt vlastníka prostředku
+        invalid_scope: Požadovaný rozsah je neplatný, neznámý, nebo chybný.
+        invalid_token:
+          expired: Platnost přístupového tokenu vypršela
+          revoked: Přístupový prvek byl odvolán
+          unknown: Přístupový token je neplatný
+        resource_owner_authenticator_not_configured: Selhalo vyhledání vlastníka prostředku kvůli zrušení konfigurace objektu doorkeeper.configure.resource_owner_authenticator.
+        server_error: Autorizační server zjistil neočekávaný stav, který mu zabránil ve splnění požadavku.
+        temporarily_unavailable: Autorizační server není momentálně schopen obsloužit požadavek kvůli dočasnému přetížení nebo údržbě serveru.
+        unauthorized_client: Klient není autorizován k provedení tohoto požadavku pomocí této metody.
+        unsupported_grant_type: Typ udělení autorizace není podporován autorizačním serverem.
+        unsupported_response_type: Autorizační server nepodporuje tento typ odezvy.
+    flash:
+      applications:
+        create:
+          notice: Aplikace byla vytvořena.
+        destroy:
+          notice: Aplikace byla odstraněna.
+        update:
+          notice: Aplikace byla aktualizována.
+      authorized_applications:
+        destroy:
+          notice: Žádost byla zrušena.
+    layouts:
+      admin:
+        nav:
+          applications: Žádosti
+          oauth2_provider: Poskytovatel OAuth2
+      application:
+        title: Je vyžadována autorizace OAuth
+    scopes:
+      "admin:read": číst všechna data na serveru
+      "admin:read:accounts": čtení citlivých informací ze všech účtů
+      "admin:read:reports": čtení citlivých informací ze všech sestav a vykázaných účtů
+      "admin:write": upravit všechna data na serveru
+      "admin:write:accounts": provést akce moderování na účtech
+      "admin:write:reports": provádět akce moderování v sestavách
+      follow: úprava relací účtu
+      push: přijímat oznámení typu push
+      read: číst všechna data vašeho účtu
+      "read:accounts": viz informace o účtech
+      "read:blocks": viz vaše bloky
+      "read:bookmarks": viz záložky
+      "read:favourites": viz oblíbené položky
+      "read:filters": viz vaše filtry
+      "read:follows": 'viz následující:'
+      "read:lists": viz seznamy
+      "read:mutes": viz své mutace
+      "read:notifications": viz vaše oznámení
+      "read:reports": viz vaše sestavy
+      "read:search": hledat ve svém zastoupení
+      "read:statuses": viz všechny stavy
+      write: upravit všechna data vašeho účtu
+      "write:accounts": upravit svůj profil
+      "write:blocks": blokové účty a domény
+      "write:bookmarks": stavy záložek
+      "write:favourites": oblíbené stavy
+      "write:filters": vytvořit filtry
+      "write:follows": sledování osob
+      "write:lists": vytvořit seznamy
+      "write:media": odeslání souborů médií
+      "write:mutes": ztišit lidi a konverzace
+      "write:notifications": vymazat vaše oznámení
+      "write:reports": hlásit jiné osoby
+      "write:statuses": stavy publikování

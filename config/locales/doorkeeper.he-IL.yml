@@ -1,0 +1,150 @@
+he:
+  activerecord:
+    attributes:
+      doorkeeper/application:
+        name: שם יישום
+        redirect_uri: URL ניתוב מחדש
+        scopes: סקופים
+        website: אתר יישום
+    errors:
+      models:
+        doorkeeper/application:
+          attributes:
+            redirect_uri:
+              fragment_present: לא יכול להכיל מקטע.
+              invalid_uri: חייב להיות URI חוקי.
+              relative_uri: חייב להיות URI מוחלט.
+              secured_uri: חייב להיות URI HTTPS/SSL.
+  doorkeeper:
+    applications:
+      buttons:
+        authorize: עיצוב
+        cancel: ביטול
+        destroy: השמד
+        edit: עריכה
+        submit: הגשה
+      confirmations:
+        destroy: אתה בטוח?
+      edit:
+        title: עריכת יישום
+      form:
+        error: אופס! בדקו את הטופס לאיתור שגיאות אפשריות.
+      help:
+        native_redirect_uri: שימוש ב- %{native_redirect_uri} עבור בדיקות מקומיות
+        redirect_uri: שימוש בשורה אחת ל-URI
+        scopes: היקפים נפרדים עם רווחים. השאירו ריק כדי להשתמש בהיקפים המוגדרים כברירת מחדל.
+      index:
+        application: יישום
+        callback_url: URL של Callback
+        delete: מחיקה
+        empty: אין לכם יישומים.
+        name: שם
+        new: יישום חדש
+        scopes: סקופים
+        show: הצגה
+        title: היישומים שלכם
+      new:
+        title: יישום חדש
+      show:
+        actions: פעולות
+        application_id: מפתח לקוח
+        callback_urls: כתובות URL של Callback
+        scopes: סקופים
+        secret: סוד לקוח
+        title: 'יישום: %{name}'
+    authorizations:
+      buttons:
+        authorize: עיצוב
+        deny: מניעה
+      error:
+        title: אירעה שגיאה.
+      new:
+        able_to: זה יהיה מסוגל לעשות את זה.
+        prompt: יישום %{client_name} בקשות גישה לחשבון שלכם
+        title: נדרש אישור
+      show:
+        title: העתיקו קוד אישור זה והדביקו אותו ליישום.
+    authorized_applications:
+      buttons:
+        revoke: שלילה
+      confirmations:
+        revoke: אתה בטוח?
+      index:
+        application: יישום
+        created_at: מורשה
+        date_format: "%Y-%m-%d %H:%M:%S"
+        scopes: סקופים
+        title: היישומים המורשים שלכם
+    errors:
+      messages:
+        access_denied: הבעלים או שרת האישורים של המשאב דחו את הבקשה.
+        credential_flow_not_configured: תזרים ההסמכות של סיסמת בעלים של משאב נכשל עקב Doorkeeper.configure.resource_owner_from_האישורים שלא הוגדרו.
+        invalid_client: אימות הלקוח נכשל עקב לקוח לא ידוע, ללא אימות זהות של לקוח, או שיטת אימות שאינה נתמכת.
+        invalid_grant: מענק ההרשאה שסופק אינו חוקי, פג תוקפו, בוטל, אינו תואם ל-URI הניתוב שנעשה בו שימוש בבקשת ההרשאה או שהונפקה ללקוח אחר.
+        invalid_redirect_uri: ה-URI הניתוב כלל אינו חוקי.
+        invalid_request: הבקשה חסרה פרמטר דרוש, כולל ערך פרמטר שאינו נתמך, או שהוא אינו במבנה תקין.
+        invalid_resource_owner: ההסמכות של בעלי המשאבים שסופקו אינן חוקיות, או שהבעלים של המשאב לא נמצא
+        invalid_scope: ההיקף המבוקש אינו חוקי, לא ידוע או במבנה לא תקין.
+        invalid_token:
+          expired: תוקף אסימון הגישה פג.
+          revoked: אסימון הגישה נשלל
+          unknown: אסימון הגישה אינו חוקי.
+        resource_owner_authenticator_not_configured: חיפוש בעלים של משאב נכשל עקב Doorkeeper.configure.resource_owner_מאמת לא ידוע.
+        server_error: שרת ההרשאה נתקל במצב לא צפוי שמנע ממנו למלא את הבקשה.
+        temporarily_unavailable: שרת ההרשאה אינו יכול כעת לטפל בבקשה עקב טעינה זמנית או תחזוקה זמנית של השרת.
+        unauthorized_client: הלקוח אינו מורשה לבצע בקשה זו באמצעות שיטה זו.
+        unsupported_grant_type: סוג אישור ההרשאה אינו נתמך על ידי שרת ההרשאה.
+        unsupported_response_type: שרת ההרשאה אינו תומך בסוג תגובה זה.
+    flash:
+      applications:
+        create:
+          notice: היישום נוצר.
+        destroy:
+          notice: היישום נמחק.
+        update:
+          notice: היישום עודכן.
+      authorized_applications:
+        destroy:
+          notice: היישום בוטל.
+    layouts:
+      admin:
+        nav:
+          applications: אפליקציות
+          oauth2_provider: ספק OAuth2
+      application:
+        title: נדרש אישור OAuth
+    scopes:
+      "admin:read": קריאת כל הנתונים בשרת
+      "admin:read:accounts": לקרוא מידע רגיש של כל החשבונות
+      "admin:read:reports": לקרוא מידע רגיש של כל הדוחות והדוחות המדווחים
+      "admin:write": לשנות את כל הנתונים בשרת.
+      "admin:write:accounts": ביצוע פעולות הפיקוח על חשבונות
+      "admin:write:reports": ביצוע פעולות הפיקוח על דוחות
+      follow: שינוי יחסי גומלין של חשבון
+      push: קבלת דיווחי הדחיפה
+      read: לקרוא את כל נתוני חשבונך.
+      "read:accounts": ראו מידע אודות חשבונות
+      "read:blocks": ראו את הרחובות שלכם
+      "read:bookmarks": ראו את הסימניות שלכם
+      "read:favourites": ראו המועדפים שלכם
+      "read:filters": ראו את המסננים שלכם
+      "read:follows": ראו את להלן
+      "read:lists": הצגת הרשימות שלכם
+      "read:mutes": ראו את המוטות שלכם
+      "read:notifications": ראו הודעות דיווח
+      "read:reports": ראו את הדוחות
+      "read:search": חיפוש בשמכם
+      "read:statuses": לראות את כל הסטאטוסים
+      write: לשנות את כל נתוני החשבון שלכם
+      "write:accounts": שינוי הפרופיל שלכם
+      "write:blocks": חסימת חשבונות ומיתחמים
+      "write:bookmarks": סטאטוסים של סימניות
+      "write:favourites": סטאטוסים מועדפים
+      "write:filters": יצירת מסננים
+      "write:follows": מעקב אחר אנשים
+      "write:lists": יצירת רשימות
+      "write:media": טעינת קובצי מדיה
+      "write:mutes": להשתיק אנשים ושיחות
+      "write:notifications": נקו את ההודעות שלכם.
+      "write:reports": דיווח על אנשים אחרים
+      "write:statuses": סטאטוסים של פרסום

@@ -1,0 +1,194 @@
+vi:
+  simple_form:
+    hints:
+      account_alias:
+        acct: Định rõ tên người dùng @miền @miền của tài khoản mà bạn muốn chuyển tư ̀
+      account_migration:
+        acct: Định rõ tên người dùng @domain @domain của tài khoản mà bạn muốn chuyển sang
+      account_warning_preset:
+        text: Bạn có thể sử dụng cú pháp toot, chẳng hạn như các URL, hashtag và đề cập đến
+        title: Tùy chọn. Không thể nhìn thấy người nhận
+      admin_account_action:
+        include_statuses: Người dùng sẽ thấy những răng nào đã gây ra hành động kiểm duyệt hoặc cảnh báo
+        send_email_notification: Người dùng sẽ nhận được giải thích về những gì đã xảy ra với tài khoản của họ
+        text_html: Optional. You can use toot syntax. You can <a href="%{path}">add warning presets</a> to save time
+        type_html: Choose what to do with <strong>%{acct}</strong>
+        warning_preset_id: Tùy chọn. Bạn vẫn có thể thêm văn bản tùy chỉnh để kết thúc định sẵn
+      announcement:
+        all_day: Khi kiểm tra, chỉ ngày của phạm vi thời gian sẽ được hiển thị
+        ends_at: Tùy chọn. Thông báo sẽ được phát hành tự động vào thời điểm này
+        scheduled_at: Để trống để xuất bản thông báo ngay lập tức
+        starts_at: Tùy chọn. Trong trường hợp thông báo của bạn bị ràng buộc với khoảng thời gian cụ thể
+        text: Bạn có thể sử dụng cú pháp toot. Vui lòng lưu tâm vào không gian thông báo sẽ chiếm trên màn hình của người dùng
+      defaults:
+        autofollow: Những người đăng ký thông qua lời mời sẽ tự động theo bạn
+        avatar: PNG, GIF or JPG. At most %{size}. Will be downscaled to %{dimensions}px
+        bot: Tài khoản này chủ yếu thực hiện các hành động tự động và có thể không được
+        context: Một hoặc nhiều ngữ cảnh nơi bộ lọc sẽ được áp dụng
+        current_password: Đối với mục đích bảo mật, vui lòng nhập mật khẩu của tài khoản vãng lai
+        current_username: Để xác nhận, hãy nhập tên người dùng của tài khoản hiện tại
+        digest: Chỉ gửi sau một thời gian dài không hoạt động và chỉ khi bạn đã nhận được bất kỳ tin nhắn cá nhân nào khi bạn vắng mặt
+        discoverable: Thư mục cấu hình là một cách khác mà tài khoản của bạn có thể đạt được đối với khán giả rộng hơn
+        email: Bạn sẽ được gửi một e-mail xác nhận
+        fields: Bạn có thể có 4 mục được hiển thị như bảng trên hô ̀ sơ của bạn
+        header: PNG, GIF or JPG. At most %{size}. Will be downscaled to %{dimensions}px
+        inbox_url: Sao chép URL từ trang đầu của rơle bạn muốn sử dụng
+        irreversible: Răng lọc sẽ biến mất hoàn toàn, ngay cả khi bộ lọc sau đó được gỡ bỏ
+        locale: Ngôn ngữ của giao diện người dùng, e-mail và thông báo đẩy
+        locked: Yêu cầu bạn phê duyệt thủ công theo dõi
+        password: Dùng ít nhất 8 ký tự
+        phrase: Sẽ khớp với nhau bất kể vỏ bọc trong văn bản hay cảnh báo nội dung của một toot
+        scopes: API mà ứng dụng sẽ được phép truy cập. Nếu bạn chọn phạm vi cấp cao nhất, bạn không cần phải chọn cá nhân.
+        setting_aggregate_reblogs: Không nên hiển thị các chiến lợi phẩm mới cho các răng đã được kích thích gần đây (chỉ có ảnh hưởng đến khởi động mới nhận được)
+        setting_default_sensitive: Phương tiện nhạy cảm được ẩn theo mặc định và có thể được tiết lộ với một cú click
+        setting_display_media_default: Ẩn đánh dấu là nhạy cảm
+        setting_display_media_hide_all: Luôn luôn ẩn
+        setting_display_media_show_all: Luôn hiển thị truyền thông
+        setting_hide_network: Người mà bạn theo dõi và ai theo dõi bạn sẽ không được hiển thị trên hồ sơ của bạn
+        setting_noindex: Ảnh hưởng đến cấu hình công khai và trang trạng thái
+        setting_show_application: Ứng dụng bạn sử dụng để toot sẽ được hiển thị trong cái nhìn chi tiết về răng của bạn
+        setting_use_blurhash: Gradients dựa trên màu sắc của hình ảnh ẩn nhưng obfuscate mọi chi tiết
+        setting_use_pending_items: Ẩn cập nhật dòng thời gian đằng sau một cú nhấp thay vì tự động kéo theo kênh
+        username: Tên người dùng của bạn sẽ là duy nhất trên %{domain}
+        whole_word: Khi tư ̀ khóa hoặc cụm tư ̀ chỉ là chỉ sô ́, nó sẽ chỉ được áp dụng nếu nó phù hợp với toàn bộ tư ̀
+      domain_allow:
+        domain: Miền này sẽ có thể tải dư ̃ liệu tư ̀ máy chủ này và dư ̃ liệu đến tư ̀ nó sẽ được xử lý và lưu trư ̃
+      email_domain_block:
+        domain: Đây có thể là tên miền xuất hiện trong địa chỉ e-mail, bản ghi MX mà tên miền giải quyết, hoặc IP của máy chủ mà MX thu được. Những người dùng sẽ được kiểm tra tín hiệu của người dùng và các tín hiệu sẽ bị từ chối.
+        with_dns_records: Một nỗ lực để giải quyết các bản ghi DNS của miền đã cho trước sẽ được thực hiện và kết quả cũng sẽ bị chặn
+      featured_tag:
+        name: 'Bạn có thể muốn sử dụng một trong những thứ này:'
+      form_challenge:
+        current_password: Bạn đang vào khu vực an toàn
+      imports:
+        data: Tập tin CSV xuất ra từ máy chủ Mastodon khác
+      invite_request:
+        text: Điều này sẽ giúp chúng tôi xem lại đơn của bạn
+      sessions:
+        otp: 'Nhập mã 2 nhân hệ được tạo bởi ứng dụng điện thoại của bạn hoặc sử dụng một trong các mã khôi phục của bạn:'
+        webauthn: Nếu đó là USB chắc chắn sẽ chèn nó vào, và nếu cần, hãy vỗ vào.
+      tag:
+        name: Bạn chỉ có thể thay đổi vỏ của các chữ cái, ví dụ, để làm cho nó dễ đọc hơn
+      user:
+        chosen_languages: Khi kiểm tra, chỉ có răng trong các ngôn ngữ đã chọn sẽ được hiển thị trong dòng thời gian công cộng
+    labels:
+      account:
+        fields:
+          name: Nhãn
+          value: Nội dung
+      account_alias:
+        acct: Xử lý tài khoản cũ
+      account_migration:
+        acct: Xử lý tài khoản mới
+      account_warning_preset:
+        text: Văn bản định sẵn
+        title: Tiêu đề
+      admin_account_action:
+        include_statuses: Bao gồm báo cáo răng trong email
+        send_email_notification: Thông báo cho người dùng trên mỗi e-mail
+        text: Cảnh báo
+        type: Thao tác
+        types:
+          disable: Tắt đăng nhập
+          none: Không làm gì
+          silence: Im lặng
+          suspend: Tạm dừng và không thể đảo ngược dư ̃ liệu tài khoản
+        warning_preset_id: Dùng định sẵn cảnh báo
+      announcement:
+        all_day: Sự kiện tất cả ngày
+        ends_at: Kết thúc sự kiện
+        scheduled_at: Phát hành lịch
+        starts_at: Bắt đầu sự kiện
+        text: Thông báo
+      defaults:
+        autofollow: Mời theo dõi tài khoản của bạn
+        avatar: Avatar!
+        bot: Đây là tài khoản robot
+        chosen_languages: Lọc ngôn ngữ
+        confirm_new_password: Xác nhận mật khẩu mới
+        confirm_password: Xác nhận mật
+        context: Lọc bối cảnh
+        current_password: Mật khẩu hiện
+        data: Dữ liệu
+        discoverable: Liệt kê tài khoản này vào thư mục
+        display_name: Tên hiển thị
+        email: Ðịa chỉ e-mail
+        expires_in: Hết hạn sau
+        fields: Siêu dữ liệu
+        header: Tiêu đề
+        inbox_url: URL của hộp tiếp sức
+        irreversible: Thả xuống thay vì ẩn
+        locale: Language
+        locked: Khóa tài khoản
+        max_uses: Số sử dụng tối đa
+        new_password: Mật khẩu mới
+        note: Tiểu Sinh
+        otp_attempt: Mã hai nhân tố
+        password: Mật khẩu
+        phrase: Từ khóa hay cụm từ
+        setting_advanced_layout: Bật giao diện web nâng cao
+        setting_aggregate_reblogs: Bảng điểm trong dòng thời gian
+        setting_auto_play_gif: Tự động chơi GIF
+        setting_boost_modal: Hiện hộp thoại xác nhận trước khi khởi động
+        setting_crop_images: Hình ảnh cây trồng trong các răng không mở rộng đến 16x9
+        setting_default_language: Đăng ngôn ngữ
+        setting_default_privacy: Đăng ký riêng
+        setting_default_sensitive: Luôn đánh dấu phương tiện là nhạy cảm
+        setting_delete_modal: Hiện hộp thoại xác nhận trước khi xóa
+        setting_display_media: Màn hình
+        setting_display_media_default: Mặc định
+        setting_display_media_hide_all: Ẩn tất cả
+        setting_display_media_show_all: Hiện tất cả
+        setting_expand_spoilers: Luôn mở rộng răng được đánh dấu bằng cảnh báo nội dung
+        setting_hide_network: Ẩn mạng của bạn
+        setting_noindex: Không lập chỉ mục công cụ tìm kiếm
+        setting_reduce_motion: Giảm chuyển động trong hoạt hình
+        setting_show_application: Ứng dụng tiết lộ được dùng để gửi răng
+        setting_system_font_ui: Dùng phông chữ mặc định của hệ thống
+        setting_theme: Sắc thái trang
+        setting_trends: Hiển thị xu hướng hôm nay
+        setting_unfollow_modal: Hiển thị hộp thoại xác nhận trước khi không theo dõi
+        setting_use_blurhash: Hiển thị màu sắc sặc sỡ cho truyền thông ẩn
+        setting_use_pending_items: Chế độ chậm
+        severity: Mức độ
+        sign_in_token_attempt: Mã bảo mật
+        type: Kiểu nhập
+        username: Tên người dùng
+        username_or_email: Tên người dùng hoặc email
+        whole_word: Toàn bộ từ
+      email_domain_block:
+        with_dns_records: Bao gồm MX bản ghi và IPs miền
+      featured_tag:
+        name: Hashtag
+      interactions:
+        must_be_follower: Chặn thông báo tư ̀ không theo dõi
+        must_be_following: Chặn thông báo tư ̀ những người bạn không theo dõi
+        must_be_following_dm: Chặn thông điệp trực tiếp tư ̀ người bạn không theo dõi
+      invite:
+        comment: Ghi chú
+      invite_request:
+        text: Sao anh lại muốn tham gia?
+      notification_emails:
+        digest: Gửi e-mail tiêu hóa
+        favourite: Có người thích địa vị của anh.
+        follow: Có người theo dõi anh
+        follow_request: Có người muốn đi theo anh.
+        mention: Có ai đó đã nói
+        pending_account: Xem xét tài khoản mới
+        reblog: Có ai đó đã thăng chức
+        report: Báo cáo mới được gửi
+        trending_tag: Một hashtag chưa được đánh giá đang có xu hướng
+      tag:
+        listable: Cho phép hashtag này xuất hiện trong tìm kiếm và trên thư mục cấu hình
+        name: Hashtag
+        trendable: Cho phép hashtag này xuất hiện theo xu hướng
+        usable: Cho phép răng dùng hashtag này
+    'no': 'Không.'
+    recommended: Đề nghị
+    required:
+      mark: "♪"
+      text: yêu cầu
+    title:
+      sessions:
+        webauthn: Sử dụng một trong các khóa bảo mật để đăng ký
+    'yes': 'Vâng.'

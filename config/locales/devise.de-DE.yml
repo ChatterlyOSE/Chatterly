@@ -1,0 +1,114 @@
+de:
+  devise:
+    confirmations:
+      confirmed: Ihre E-Mail-Adresse wurde erfolgreich bestätigt.
+      send_instructions: Sie erhalten eine E-Mail mit Anweisungen, wie Sie Ihre E-Mail-Adresse in wenigen Minuten bestätigen können. Bitte überprüfen Sie Ihren Spam-Ordner, wenn Sie diese E-Mail nicht erhalten haben.
+      send_paranoid_instructions: Wenn Ihre E-Mail-Adresse in unserer Datenbank vorhanden ist, erhalten Sie eine E-Mail mit Anweisungen, wie Sie Ihre E-Mail-Adresse in wenigen Minuten bestätigen können. Bitte überprüfen Sie Ihren Spam-Ordner, wenn Sie diese E-Mail nicht erhalten haben.
+    failure:
+      already_authenticated: Sie sind bereits angemeldet.
+      inactive: Ihr Konto ist noch nicht aktiviert.
+      invalid: Ungültiges %{authentication_keys} oder Kennwort.
+      last_attempt: Sie haben einen weiteren Versuch, bevor Ihr Konto gesperrt ist.
+      locked: Ihr Konto ist gesperrt.
+      not_found_in_database: Ungültiges %{authentication_keys} oder Kennwort.
+      pending: Ihr Konto wird noch geprüft.
+      timeout: Ihre Sitzung ist abgelaufen. Bitte melden Sie sich erneut an, um fortzufahren.
+      unauthenticated: Sie müssen sich anmelden oder anmelden, bevor Sie fortfahren.
+      unconfirmed: Sie müssen Ihre E-Mail-Adresse bestätigen, bevor Sie fortfahren.
+    mailer:
+      confirmation_instructions:
+        action: E-Mail-Adresse überprüfen
+        action_with_app: Bestätigen und zurück zu %{app}
+        explanation: Sie haben ein Konto am %{host} mit dieser E-Mail-Adresse erstellt. Sie sind nur einen Klick entfernt, um sie zu aktivieren. Wenn Sie das nicht waren, ignorieren Sie bitte diese E-Mail.
+        explanation_when_pending: Sie haben für eine Einladung zu %{host} mit dieser E-Mail-Adresse angewendet. Nachdem Sie Ihre E-Mail-Adresse bestätigt haben, werden wir Ihre Bewerbung überprüfen. Sie können sich anmelden, um Ihre Daten zu ändern oder Ihr Konto zu löschen, aber Sie können nicht auf die meisten Funktionen zugreifen, bis Ihr Konto genehmigt ist. Wenn Ihre Anwendung zurückgewiesen wird, werden Ihre Daten entfernt, so dass keine weiteren Maßnahmen von Ihnen erforderlich sind. Wenn Sie das nicht waren, ignorieren Sie bitte diese E-Mail.
+        extra_html: Bitte überprüfen Sie auch <a href="%{terms_path}">die Regeln des Servers</a> und <a href="%{policy_path}">unsere Amtszeiten</a>.
+        subject: 'Chatterly: Bestätigungsanweisungen für %{instance}'
+        title: E-Mail-Adresse überprüfen
+      email_changed:
+        explanation: 'Die E-Mail-Adresse für Ihr Konto wird geändert in:'
+        extra: Wenn Sie Ihre E-Mail nicht geändert haben, ist es wahrscheinlich, dass jemand Zugriff auf Ihr Konto erlangt hat. Bitte ändern Sie Ihr Kennwort sofort oder wenden Sie sich an den Serveradministrator, wenn Sie aus Ihrem Konto gesperrt sind.
+        subject: 'Chatterly: E-Mail geändert'
+        title: Neue E-Mail-Adresse
+      password_change:
+        explanation: Das Kennwort für Ihr Konto wurde geändert.
+        extra: Wenn Sie Ihr Passwort nicht geändert haben, ist es wahrscheinlich, dass jemand Zugriff auf Ihr Konto erlangt hat. Bitte ändern Sie Ihr Kennwort sofort oder wenden Sie sich an den Serveradministrator, wenn Sie aus Ihrem Konto gesperrt sind.
+        subject: 'Chatterly: Kennwort geändert'
+        title: Kennwort geändert
+      reconfirmation_instructions:
+        explanation: Bestätigen Sie die neue Adresse, um Ihre E-Mail zu ändern.
+        extra: Wenn diese Änderung nicht von Ihnen eingeleitet wurde, ignorieren Sie bitte diese E-Mail. Die E-Mail-Adresse für das Chatterly-Konto wird sich erst ändern, wenn Sie auf den oben genannten Link zugreifen.
+        subject: 'Chatterly: E-Mail bestätigen für %{instance}'
+        title: E-Mail-Adresse überprüfen
+      reset_password_instructions:
+        action: Kennwort ändern
+        explanation: Sie haben ein neues Passwort für Ihr Konto angefordert.
+        extra: Wenn Sie dies nicht anfordern, ignorieren Sie bitte diese E-Mail. Ihr Passwort ändert sich erst, wenn Sie auf den oben genannten Link zugreifen und eine neue erstellen.
+        subject: 'Chatterly: Kennwortanweisungen zurücksetzen'
+        title: Zurücksetzen des Kennworts
+      two_factor_disabled:
+        explanation: Die Zwei-Faktor-Authentifizierung für Ihr Konto wurde inaktiviert. Die Anmeldung ist jetzt nur mit E-Mail-Adresse und Passwort möglich.
+        subject: 'Chatterly: Zwei-Faktor-Authentifizierung inaktiviert'
+        title: 2FA inaktiviert
+      two_factor_enabled:
+        explanation: Die Zwei-Faktor-Authentifizierung wurde für Ihr Konto aktiviert. Für die Anmeldung wird ein Token benötigt, das von der paarigen TOTP-App generiert wird.
+        subject: 'Chatterly: Zwei-Faktor-Authentifizierung aktiviert'
+        title: 2FA aktiviert
+      two_factor_recovery_codes_changed:
+        explanation: Die vorherigen Wiederherstellungscodes wurden ungültig gemacht und neue generiert.
+        subject: 'Chatterly: Zwei-Faktor-Wiederherstellungscodes erneut generiert'
+        title: 2FA-Wiederherstellungscodes geändert
+      unlock_instructions:
+        subject: 'Chatterly: Anweisungen entsperren'
+      webauthn_credential:
+        added:
+          explanation: Der folgende Sicherheitsschlüssel wurde Ihrem Konto hinzugefügt.
+          subject: 'Chatterly: Neuer Sicherheitsschlüssel'
+          title: Es wurde ein neuer Sicherheitsschlüssel hinzugefügt.
+        deleted:
+          explanation: Der folgende Sicherheitsschlüssel wurde aus Ihrem Konto gelöscht
+          subject: 'Chatterly: Sicherheitsschlüssel gelöscht'
+          title: Einer der Sicherheitsschlüssel wurde gelöscht
+      webauthn_disabled:
+        explanation: Die Authentifizierung mit Sicherheitsschlüsseln wurde für Ihr Konto inaktiviert. Die Anmeldung ist jetzt nur mit dem Token möglich, das von der paarigen TOTP-App generiert wird.
+        subject: 'Chatterly: Authentifizierung mit inaktivierten Sicherheitsschlüsseln'
+        title: Sicherheitsschlüssel inaktiviert
+      webauthn_enabled:
+        explanation: Die Sicherheitsschlüsselauthentifizierung wurde für Ihr Konto aktiviert. Ihr Sicherheitsschlüssel kann jetzt für die Anmeldung verwendet werden.
+        subject: 'Chatterly: Sicherheitsschlüsselauthentifizierung aktiviert'
+        title: Sicherheitsschlüssel aktiviert
+    omniauth_callbacks:
+      failure: Konnte sich nicht von %{kind} authentifizieren, weil "%{reason}".
+      success: Erfolgreich authentifiziert vom %{kind} -Account.
+    passwords:
+      no_token: Sie können auf diese Seite nicht zugreifen, ohne von einer Passwort-Reset-E-Mail zu kommen. Wenn Sie von einer Passwort-Reset-E-Mail kommen, stellen Sie bitte sicher, dass Sie die vollständige URL angegeben haben.
+      send_instructions: Wenn Ihre E-Mail-Adresse in unserer Datenbank vorhanden ist, erhalten Sie in wenigen Minuten einen Passwort-Wiederherstellungslink an Ihrer E-Mail-Adresse. Bitte überprüfen Sie Ihren Spam-Ordner, wenn Sie diese E-Mail nicht erhalten haben.
+      send_paranoid_instructions: Wenn Ihre E-Mail-Adresse in unserer Datenbank vorhanden ist, erhalten Sie in wenigen Minuten einen Passwort-Wiederherstellungslink an Ihrer E-Mail-Adresse. Bitte überprüfen Sie Ihren Spam-Ordner, wenn Sie diese E-Mail nicht erhalten haben.
+      updated: Ihr Kennwort wurde erfolgreich geändert. Sie sind jetzt angemeldet.
+      updated_not_active: Ihr Kennwort wurde erfolgreich geändert.
+    registrations:
+      destroyed: Bye! Ihr Konto wurde erfolgreich abgebrochen. Wir hoffen, Sie bald wieder zu sehen.
+      signed_up: Willkommen! Sie haben sich erfolgreich angemeldet.
+      signed_up_but_inactive: Sie haben sich erfolgreich angemeldet. Allerdings konnten wir Sie nicht unterschreiben, weil Ihr Konto noch nicht aktiviert ist.
+      signed_up_but_locked: Sie haben sich erfolgreich angemeldet. Allerdings konnten wir Sie nicht unterschreiben, weil Ihr Konto gesperrt ist.
+      signed_up_but_pending: Eine Nachricht mit einem Bestätigungslink wurde an Ihre E-Mail-Adresse gesendet. Nachdem Sie auf den Link geklickt haben, werden wir Ihre Bewerbung überprüfen. Sie werden benachrichtigt, wenn sie genehmigt sind.
+      signed_up_but_unconfirmed: Eine Nachricht mit einem Bestätigungslink wurde an Ihre E-Mail-Adresse gesendet. Bitte folgen Sie dem Link, um Ihr Konto zu aktivieren. Bitte überprüfen Sie Ihren Spam-Ordner, wenn Sie diese E-Mail nicht erhalten haben.
+      update_needs_confirmation: Sie haben Ihr Konto erfolgreich aktualisiert, aber wir müssen Ihre neue E-Mail-Adresse überprüfen. Bitte überprüfen Sie Ihre E-Mail und folgen dem Bestätigungslink, um Ihre neue E-Mail-Adresse zu bestätigen. Bitte überprüfen Sie Ihren Spam-Ordner, wenn Sie diese E-Mail nicht erhalten haben.
+      updated: Ihr Konto wurde erfolgreich aktualisiert.
+    sessions:
+      already_signed_out: Erfolgreich abgeschlossen.
+      signed_in: Wurde erfolgreich angemeldet.
+      signed_out: Erfolgreich abgeschlossen.
+    unlocks:
+      send_instructions: Sie erhalten eine E-Mail mit Anweisungen, wie Sie Ihr Konto in ein paar Minuten entsperren können. Bitte überprüfen Sie Ihren Spam-Ordner, wenn Sie diese E-Mail nicht erhalten haben.
+      send_paranoid_instructions: Wenn Ihr Konto vorhanden ist, erhalten Sie eine E-Mail mit Anweisungen, wie Sie diese in wenigen Minuten entsperren können. Bitte überprüfen Sie Ihren Spam-Ordner, wenn Sie diese E-Mail nicht erhalten haben.
+      unlocked: Ihr Konto wurde erfolgreich entsperrt. Bitte melden Sie sich an, um fortzufahren.
+  errors:
+    messages:
+      already_confirmed: wurde bereits bestätigt, bitte versuchen Sie unterschreiben
+      confirmation_period_expired: muss innerhalb von %{period}bestätigt werden, bitte eine neue anfordern
+      expired: ist abgelaufen, fordern Sie bitte eine neue
+      not_found: nicht gefunden
+      not_locked: war nicht gesperrt
+      not_saved:
+        one: '1 Fehler untersagte, dass dieser %{resource} gesichert wurde:'
+        other: "%{count} Fehler, die dieses Dokument %{resource} nicht speichern konnte:"

@@ -1,0 +1,116 @@
+cs:
+  devise:
+    confirmations:
+      confirmed: Vaše e-mailová adresa byla úspěšně potvrzena.
+      send_instructions: Obdržíte e-mail s pokyny pro potvrzení vaší e-mailové adresy během několika minut. Pokud jste tento e-mail neobdrželi, zkontrolujte složku s nevyžádanými zprávami.
+      send_paranoid_instructions: Pokud vaše e-mailová adresa existuje v naší databázi, obdržíte e-mail s pokyny pro potvrzení vaší e-mailové adresy během několika minut. Pokud jste tento e-mail neobdrželi, zkontrolujte složku s nevyžádanými zprávami.
+    failure:
+      already_authenticated: Již jste přihlášeni.
+      inactive: Váš účet ještě není aktivován.
+      invalid: Neplatná hodnota %{authentication_keys} nebo heslo.
+      last_attempt: Máte ještě jeden pokus před tím, než je váš účet uzamknut.
+      locked: Váš účet je zamčený.
+      not_found_in_database: Neplatná hodnota %{authentication_keys} nebo heslo.
+      pending: Váš účet je stále pod kontrolou.
+      timeout: Vaše relace vypršela. Chcete-li pokračovat, přihlaste se znovu.
+      unauthenticated: Než budete pokračovat, musíte se přihlásit nebo zaregistrovat.
+      unconfirmed: Než budete pokračovat, je třeba potvrdit svou e-mailovou adresu.
+    mailer:
+      confirmation_instructions:
+        action: Ověřit e-mailovou adresu
+        action_with_app: Potvrzení a návrat na %{app}
+        explanation: Vytvořili jste účet pro %{host} s touto e-mailovou adresou. Jste jedním klepnutím mimo její aktivaci. Pokud jste to nebyl vy, prosím ignorujte tento e-mail.
+        explanation_when_pending: S touto e-mailovou adresou jste požádali o pozvání na %{host} . Jakmile potvrdíte svou e-mailovou adresu, přezkoumáme vaši aplikaci. Můžete se přihlásit, chcete-li změnit podrobnosti nebo odstranit svůj účet, ale nebudete mít přístup k většině funkcí, dokud nebude váš účet schválen. Pokud je vaše aplikace zamítnuta, budou vaše data odebrána, takže od vás nebude potřeba žádná další akce. Pokud jste to nebyl vy, prosím ignorujte tento e-mail.
+        extra_html: Prosím, zkontrolujte také <a href="%{terms_path}">pravidla serveru</a> a <a href="%{policy_path}">našich podmínek pro službu</a>.
+        subject: 'Chatterly: Instrukce potvrzení pro %{instance}'
+        title: Ověřit e-mailovou adresu
+      email_changed:
+        explanation: 'E-mailová adresa pro váš účet se mění na:'
+        extra: Pokud jste svůj e-mail nezměnili, je pravděpodobné, že vám někdo získal přístup k vašemu účtu. Prosím, změňte své heslo okamžitě nebo se obraťte na administrátora serveru, pokud jste uzamčeni z účtu.
+        subject: 'Chatterly: Změna e-mailu'
+        title: Nová e-mailová adresa
+      password_change:
+        explanation: Heslo pro váš účet bylo změněno.
+        extra: Pokud jste své heslo nezměnili, je pravděpodobné, že vám někdo získal přístup k vašemu účtu. Prosím, změňte své heslo okamžitě nebo se obraťte na administrátora serveru, pokud jste uzamčeni z účtu.
+        subject: 'Chatterly: Heslo změněno'
+        title: Heslo změněno
+      reconfirmation_instructions:
+        explanation: Potvrďte novou adresu a změňte svůj e-mail.
+        extra: Pokud jste tuto změnu nezahájili, ignorujte prosím tento e-mail. E-mailová adresa pro modul Chatterly account se nezmění, dokud nevstoupíte do výše uvedeného odkazu.
+        subject: 'Chatterly: Potvrďte e-mail pro %{instance}'
+        title: Ověřit e-mailovou adresu
+      reset_password_instructions:
+        action: Změnit heslo
+        explanation: Požadovali jste nové heslo pro váš účet.
+        extra: Pokud jste o to nepožádal, ignorujte prosím tento e-mail. Vaše heslo se nezmění, dokud nevstoupíte do výše uvedeného odkazu a nevytvoříte nový.
+        subject: 'Chatterly: Resetování pokynů pro heslo'
+        title: Reset hesla
+      two_factor_disabled:
+        explanation: Dvoufaktorové ověření pro váš účet bylo vypnuto. Přihlášení je nyní možné pouze pomocí e-mailové adresy a hesla.
+        subject: 'Chatterly: Dvoufaktorové ověření je zakázáno'
+        title: 2FA vypnuto
+      two_factor_enabled:
+        explanation: Dvoufaktorové ověření bylo pro váš účet povoleno. Pro přihlášení bude požadován token generovaný párovanou aplikací TOTP.
+        subject: 'Chatterly: Dvoufaktorové ověření povoleno'
+        title: Povolena 2FA
+      two_factor_recovery_codes_changed:
+        explanation: Předchozí kódy zotavení byly zneplatněny a vygenerovány nové.
+        subject: 'Chatterly: Byly znovu vygenerovány dvoufaktorové kódy zotavení'
+        title: Došlo ke změně kódů zotavení 2FA
+      unlock_instructions:
+        subject: 'Chatterly: Odemknout instrukce'
+      webauthn_credential:
+        added:
+          explanation: Do vašeho účtu byl přidán následující klíč zabezpečení
+          subject: 'Chatterly: Nový bezpečnostní klíč'
+          title: Byl přidán nový klíč zabezpečení
+        deleted:
+          explanation: Následující bezpečnostní klíč byl odstraněn z vašeho účtu
+          subject: 'Chatterly: Klíč zabezpečení byl odstraněn'
+          title: Jeden z bezpečnostních klíčů byl odstraněn
+      webauthn_disabled:
+        explanation: Ověřování pomocí klíčů zabezpečení bylo pro váš účet zakázáno. Přihlášení je nyní možné pouze pomocí tokenu generovaného pomocí párové aplikace TOTP.
+        subject: 'Chatterly: Ověřování s vypnutým klíčem zabezpečení'
+        title: Klíče zabezpečení jsou zakázány
+      webauthn_enabled:
+        explanation: Pro váš účet bylo povoleno ověření bezpečnostních klíčů. Váš bezpečnostní klíč lze nyní použít pro přihlášení.
+        subject: 'Chatterly: Ověřování klíčů zabezpečení je povoleno'
+        title: Povolené klíče zabezpečení
+    omniauth_callbacks:
+      failure: Nelze provést ověření od %{kind} , protože "%{reason}".
+      success: Úspěšně ověřeno z účtu %{kind}.
+    passwords:
+      no_token: K této stránce nemáte přístup, aniž byste přišli z e-mailu s resetováním hesla. Pokud jste se vrátili z e-mailu s resetováním hesla, ujistěte se prosím, že jste použili úplnou adresu URL.
+      send_instructions: Pokud vaše e-mailová adresa existuje v naší databázi, obdržíte při několika minutách odkaz na obnovení hesla na vaší e-mailové adrese. Pokud jste tento e-mail neobdrželi, zkontrolujte složku s nevyžádanými zprávami.
+      send_paranoid_instructions: Pokud vaše e-mailová adresa existuje v naší databázi, obdržíte při několika minutách odkaz na obnovení hesla na vaší e-mailové adrese. Pokud jste tento e-mail neobdrželi, zkontrolujte složku s nevyžádanými zprávami.
+      updated: Vaše heslo bylo úspěšně změněno. Nyní jste přihlášeni.
+      updated_not_active: Vaše heslo bylo úspěšně změněno.
+    registrations:
+      destroyed: Ahoj! Váš účet byl úspěšně zrušen. Doufáme, že se brzy uvidíme.
+      signed_up: Vítejte! Podepsali jste se úspěšně.
+      signed_up_but_inactive: Podepsali jste se úspěšně. Nemohli jsme vás však podepsat, protože váš účet dosud není aktivován.
+      signed_up_but_locked: Podepsali jste se úspěšně. Nemohli jsme vás však podepsat, protože váš účet je zamčený.
+      signed_up_but_pending: Zpráva s odkazem na potvrzení byla odeslána na vaši e-mailovou adresu. Po klepnutí na odkaz si vaši aplikaci přezkoumáme. Pokud bude schválení typu schváleno, obdržíte oznámení.
+      signed_up_but_unconfirmed: Zpráva s odkazem na potvrzení byla odeslána na vaši e-mailovou adresu. Chcete-li aktivovat svůj účet, postupujte prosím podle odkazu. Pokud jste tento e-mail neobdrželi, zkontrolujte složku s nevyžádanými zprávami.
+      update_needs_confirmation: Úspěšně jste aktualizovali svůj účet, ale musíme si ověřit vaši novou e-mailovou adresu. Zkontrolujte prosím svůj e-mail a podle potvrzení odkazu potvrďte svou novou e-mailovou adresu. Pokud jste tento e-mail neobdrželi, zkontrolujte složku s nevyžádanými zprávami.
+      updated: Váš účet byl úspěšně aktualizován.
+    sessions:
+      already_signed_out: Podepsáno úspěšně.
+      signed_in: Přihlášení proběhlo úspěšně.
+      signed_out: Podepsáno úspěšně.
+    unlocks:
+      send_instructions: Obdržíte e-mail s pokyny pro odemčení vašeho účtu za několik minut. Pokud jste tento e-mail neobdrželi, zkontrolujte složku s nevyžádanými zprávami.
+      send_paranoid_instructions: Pokud váš účet existuje, obdržíte e-mail s pokyny, jak ji odemknout během několika minut. Pokud jste tento e-mail neobdrželi, zkontrolujte složku s nevyžádanými zprávami.
+      unlocked: Váš účet byl úspěšně odemčen. Chcete-li pokračovat, přihlaste se.
+  errors:
+    messages:
+      already_confirmed: byl již potvrzen, zkuste se přihlásit
+      confirmation_period_expired: musí být potvrzeno v rámci %{period}, prosím, požádejte o nový
+      expired: vypršela platnost, vyžádejte si novou
+      not_found: nenalezeno
+      not_locked: nebyl uzamknut
+      not_saved:
+        one: 'chyba: 1 chyba při ukládání: %{resource} z ukládání:'
+        few: "%{count} chyby zakázaly uložení této položky %{resource}:"
+        many: "%{count} chyby zakázaly uložení této položky %{resource}:"
+        other: "%{count} chyby zakázaly uložení této položky %{resource}:"

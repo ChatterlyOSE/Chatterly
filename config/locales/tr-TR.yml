@@ -1,0 +1,1370 @@
+tr:
+  about:
+    about_hashtag_html: 'Bunlar, <strong>#%{hashtag}</strong>ile etiketlenmiş halka açık tootlar. Eğer gevezenin herhangi bir yerinde bir hesabınız varsa onlarla etkileşimde bulunabilirsiniz.'
+    about_mastodon_html: 'Geleceğin sosyal ağı: Kurumsal gözetleme, etik tasarım ve merkeziyetçiliğe gerek yok! Chatterly ile verilerinize sahip olun!'
+    about_this: Hakkında
+    active_count_after: etkin
+    active_footnote: Aylık Etkin Kullanıcılar (MAU)
+    administered_by: 'Yöneten:'
+    api: API
+    apps: Mobil uygulamalar
+    apps_platforms: PC/Mac/iOS/Android için Chatterly uygulamasını karşıdan yükleyin
+    browse_directory: Bir profil dizinine göz atın ve ilgi alanlarına göre süzgeç uygulayın
+    browse_local_posts: Bu sunucudan genel gönderilerin canlı akışına göz at
+    browse_public_posts: Chatterly 'de genel gönderilerin canlı yayınına göz atın
+    contact: İlgili Kişi
+    contact_missing: Ayarlanmadı
+    contact_unavailable: Yok
+    discover_users: Kullanıcıları keşfet
+    documentation: Belgeler
+    federation_hint_html: '%{instance} numaralı hesapla, Chatterly ve ötesindeki insanları takip edebileceksiniz.'
+    get_apps: Bir mobil uygulamayı deneyin
+    hosted_on: ChatterlyOSE, %{domain} tarihinde ev sahipliği yaptı
+    instance_actor_flash: |
+      Bu hesap, herhangi bir kullanıcı için değil, sunucunun kendisini temsil etmek için kullanılan sanal bir aktördür.
+      Federasyon amaçları için kullanılır ve tüm yönetim ortamını engellemek istemiyorsanız engellenmemelidir; bu durumda bir etki alanı öbeği kullanmanız gerekir.
+    learn_more: Ek bilgi
+    privacy_policy: Gizlilik ilkesi
+    see_whats_happening: Neler olduğuna bak.
+    server_stats: 'Sunucu istatistikleri:'
+    source_code: Kaynak kod
+    status_count_after:
+      one: durum
+      other: durumlar
+    status_count_before: Yazan kişi
+    tagline: Arkadaşları takip edin ve yenilerini keşfedin
+    terms: Hizmet koşulları
+    unavailable_content: Denetlenen sunucular
+    unavailable_content_description:
+      domain: Sunucu
+      reason: Neden
+      rejecting_media: 'Bu sunuculardaki ortam dosyaları işlenmeyecek ya da saklanmaz ve özgün dosyaya el ile tıklatma gerektiren küçük resimler görüntülenmez.'
+      rejecting_media_title: Süzgeç uygulanan ortam
+      silenced: 'Bu sunuculardan gelen gönderiler, genel zaman çizelgelerine ve sohbetlere gizlenir ve aşağıdaki öğeleri izlemiyorsanız, kullanıcılar etkileşiminden hiçbir bildirim oluşturulmayacaktır:'
+      silenced_title: Susturulan sunucular
+      suspended: 'Bu sunuculardan herhangi bir veri işlenmeyecek, depolanacak ya da değiştirilmeyecek, bu sunuculardan kullanıcılarla iletişim ya da iletişim yapılması olanaksız hale getirilecek.'
+      suspended_title: Askıya alınmış sunucular
+    unavailable_content_html: Chatterly genellikle, farklı bir sunucudaki diğer herhangi bir sunucudan içerik görüntülemenize ve kullanıcılarla etkileşimde bulunmanıza olanak sağlar. Bunlar, bu sunucuda yapılmış olan kural dışılardır.
+    user_count_after:
+      one: kullanıcı
+      other: kullanıcılar
+    user_count_before: Ana Sayfa
+    what_is_mastodon: Chatterly nedir?
+  accounts:
+    choices_html: "%{name}' nin seçimleri:"
+    endorsements_hint: Takip edeceğiniz kişileri web arabiriminden onaylayabilirsiniz, ve burada ortaya çıkacaklar.
+    featured_tags_hint: Burada görüntülenecek özel etiketleri (hashtag) yapabilirsiniz.
+    follow: İzle
+    followers:
+      one: Takipçi
+      other: İzleyiciler
+    following: İzler
+    joined: '%{date} Birleşti'
+    last_active: son etkin
+    link_verified_on: '%{date} tarihinde bu bağlantının sahipliğini denetlendi'
+    media: Ortam
+    moved_html: "%{name} , %{new_profile_link} 'ye taşındı:"
+    network_hidden: Bu bilgi yok
+    never_active: Hiçbir Zaman
+    nothing_here: Burada hiçbir şey yok!
+    people_followed_by: '%{name} aşağıdaki kişiler takip eder:'
+    people_who_follow: '%{name} takip eden kişiler'
+    pin_errors:
+      following: Onaylamak istediğiniz kişiyi zaten takip ediyor olmalısınız.
+    posts:
+      one: Ayak
+      other: Toots
+    posts_tab_heading: Toots
+    posts_with_replies: Toots ve yanıtlar
+    reserved_username: Kullanıcı adı ayrılmış
+    roles:
+      admin: Roxxon Çalışan
+      bot: Bot
+      group: Grup
+      moderator: Chatterly Güvenlik Ekibi
+    unavailable: Tanıtım kullanılamıyor
+    unfollow: İzlemeyen
+  admin:
+    account_actions:
+      action: İşlem gerçekleştir
+      title: '%{acct} üzerinde denetleme işlemi gerçekleştir'
+    account_moderation_notes:
+      create: Notu bırak
+      created_msg: Denetleme notu başarıyla yaratıldı!
+      delete: Sil
+      destroyed_msg: Denetleme notu başarıyla yok edildi!
+    accounts:
+      add_email_domain_block: Öbek e-posta etki alanı
+      approve: Onayla
+      approve_all: Tümünü onayla
+      are_you_sure: Emin misin?
+      avatar: Avatar
+      by_domain: Etki Alanı
+      change_email:
+        changed_msg: Hesap e-postası başarıyla değiştirildi!
+        current_email: Geçerli e-posta
+        label: Epostayı değiştir
+        new_email: Yeni e-posta
+        submit: Epostayı değiştir
+        title: '%{username} için epostaları değiştir'
+      confirm: Doğrula
+      confirmed: Doğrulandı
+      confirming: Doğrulanıyor
+      deleted: Silindi
+      demote: İndir
+      disable: Geçersiz Kıl
+      disable_two_factor_authentication: 2B devre dışı bırak
+      disabled: Devre dışı
+      display_name: Görünen ad
+      domain: Etki Alanı
+      edit: Düzenle
+      email: Eposta
+      email_status: Eposta durumu
+      enable: Etkinleştir
+      enabled: Etkin
+      followers: İzleyiciler
+      follows: İzler
+      header: Üstbilgi
+      inbox_url: Gelen Kutusu URL
+      invited_by: Davet eden
+      ip: IP
+      joined: Birleştirilen
+      location:
+        all: Tümü
+        local: Yerel
+        remote: Uzak
+        title: Yer
+      login_status: Oturum açma durumu
+      media_attachments: Ortam ekleri
+      memorialize: Anıtkabir 'ye dön
+      moderation:
+        active: Etkin
+        all: Tümü
+        pending: Beklemede
+        silenced: Susturuldu
+        suspended: Askıya alındı
+        title: Denetleme
+      moderation_notes: Denetleme notları
+      most_recent_activity: En son etkinlik
+      most_recent_ip: En son IP
+      no_account_selected: Hiçbir hesap seçilmemiş olarak değiştirilmedi
+      no_limits_imposed: Sınır yok
+      not_subscribed: Abone olunmadı
+      pending: İnceleme bekliyor
+      perform_full_suspension: Askıya al
+      promote: Yükselt
+      protocol: İletişim Kuralı
+      public: Genel
+      push_subscription_expires: PuSH aboneliği süresi doluyor
+      redownload: Profili yenile
+      reject: Reddet
+      reject_all: Tümünü reddet
+      remove_avatar: Avatarı kaldır
+      remove_header: Üstbilgiyi kaldır
+      resend_confirmation:
+        already_confirmed: Bu kullanıcı zaten onaylandı
+        send: Onay e-postasını yeniden gönder
+        success: Onay e-postası başarıyla gönderildi!
+      reset: Sıfırla
+      reset_password: Parolayı sıfırla
+      resubscribe: Yeniden abone ol
+      role: İzinler
+      roles:
+        admin: Denetimci
+        moderator: Toplantı Başkanı
+        staff: Personel
+        user: Kullanıcı
+      search: Ara
+      search_same_email_domain: Aynı e-posta etki alanına sahip diğer kullanıcılar
+      search_same_ip: Aynı IP ' ye sahip diğer kullanıcılar
+      shared_inbox_url: Paylaşılan gelen kutusu URL adresi
+      show:
+        created_reports: Raporlar yapıldı
+        targeted_reports: Başkaları tarafından raporlanan
+      silence: Sessizlik
+      silenced: Susturuldu
+      statuses: Durumlar
+      subscribe: Abone ol
+      suspended: Askıya alındı
+      time_in_queue: '%{time} kuyruğunda bekleniyor'
+      title: Hesaplar
+      unconfirmed_email: Doğrulanmamış e-posta
+      undo_silenced: Silkmeyi
+      undo_suspension: Askıya almayı geri
+      unsubscribe: Aboneliği İptal et
+      username: Kullanıcı Adı
+      warn: Uyar
+      web: Web
+      whitelisted: Birleştirme için izin verilir
+    action_logs:
+      action_types:
+        assigned_to_self_report: Rapor Ata
+        change_email_user: Kullanıcı İçin E-postayı Değiştir
+        confirm_user: Kullanıcıyı Onayla
+        create_account_warning: Uyarı Oluştur
+        create_announcement: Duyuru Oluştur
+        create_custom_emoji: Özel Emoji Yarat
+        create_domain_allow: Etki Alanı Yaratma İzin Ver
+        create_domain_block: Etki Alanı Öbeği Yarat
+        create_email_domain_block: Eposta Etki Alanı Öbeği Yarat
+        demote_user: Kullanıcıyı İndirge
+        destroy_announcement: Duyuruyu Sil
+        destroy_custom_emoji: Özel Emoji Sil
+        destroy_domain_allow: Etki Alanını Sil
+        destroy_domain_block: Etki Alanı Öbeği Sil
+        destroy_email_domain_block: E-posta etki alanını sil
+        destroy_status: Durumu Sil
+        disable_2fa_user: 2B devre dışı bırak
+        disable_custom_emoji: Özel Emojiyi Devre Dışı Bırak
+        disable_user: Kullanıcıyı Geçersiz Kıl
+        enable_custom_emoji: Özel Emojiyi Etkinleştir
+        enable_user: Kullanıcıyı Etkinleştir
+        memorialize_account: Hesabı Memorial
+        promote_user: Kullanıcıyı Yükselt
+        remove_avatar_user: Avatar 'ı Kaldır
+        reopen_report: Raporu Yeniden Aç
+        reset_password_user: Parolayı Sıfırla
+        resolve_report: Raporu Çözümle
+        silence_account: Sessizlik Hesabı
+        suspend_account: Hesabı Askıya Al
+        unassigned_report: Rapor Atamasını Kaldır
+        unsilence_account: Hesap Sessizliğini Kaldır
+        unsuspend_account: Hesabı Askıya Almayı Kaldır
+        update_announcement: Duyuruyu Güncelle
+        update_custom_emoji: Özel Emoji Güncelle
+        update_status: Güncelleştirme Durumu
+      actions:
+        assigned_to_self_report: "%{name} atanmış rapor %{target} kendi kendilerine"
+        change_email_user: "%{name} kullanıcı %{target} kullanıcısının e-posta adresini değiştirdi"
+        confirm_user: "%{name} kullanıcı %{target} kullanıcısının e-posta adresini doğruladı"
+        create_account_warning: "%{name} , %{target} ' ye bir uyarı gönderdi"
+        create_announcement: "%{name} yeni duyuru oluşturuldu %{target}"
+        create_custom_emoji: "%{name} karşıya yüklenen yeni emoji %{target}"
+        create_domain_allow: "%{name} etki alanı %{target} ile birleştirilmesine izin verilir"
+        create_domain_block: "%{name} engellenmiş etki alanı %{target}"
+        create_email_domain_block: "%{name} bloklanmış e-posta etki alanı %{target}"
+        demote_user: "%{name} indirgenmiş kullanıcı %{target}"
+        destroy_announcement: "%{name} silinen duyuru %{target}"
+        destroy_custom_emoji: "%{name} yıkılan emoji %{target}"
+        destroy_domain_allow: "%{name} etki alanı %{target} ile birleştirilmesine izin verilmiyor"
+        destroy_domain_block: "%{name} engelsiz etki alanı %{target}"
+        destroy_email_domain_block: "%{name} engelsiz e-posta etki alanı %{target}"
+        destroy_status: "%{name} remove status by %{target}"
+        disable_2fa_user: "%{name} , %{target} kullanıcısı için iki faktör gereksinimini devre dışı bıraktı"
+        disable_custom_emoji: "%{name} engelli emoji %{target}"
+        disable_user: "%{name} kullanıcı %{target} kullanıcısı için oturum açma işlemi devre dışı bırakıldı"
+        enable_custom_emoji: "%{name} enabled emoji %{target}"
+        enable_user: "%{name} kullanıcı %{target} için oturum açma etkinleştirildi"
+        memorialize_account: "%{name} bir memorial sayfasına %{target}' nin hesabı çevirdi"
+        promote_user: "%{name} öne çıkarılmış kullanıcı %{target}"
+        remove_avatar_user: "%{name} remove %{target}' s avatar"
+        reopen_report: "%{name} yeniden açıldı raporu %{target}"
+        reset_password_user: "%{name} kullanıcı %{target} parolasının sıfırlandı"
+        resolve_report: "%{name} çözümlü rapor %{target}"
+        silence_account: "%{name} susturuldu %{target}' nin hesabı"
+        suspend_account: "%{name} askıya alındı %{target}' nin hesabı"
+        unassigned_report: "%{name} atanmamış rapor %{target}"
+        unsilence_account: "%{name} susturuldu %{target}' nin hesabı"
+        unsuspend_account: "%{name} askıya alınmamış %{target}' nin hesabı"
+        update_announcement: "%{name} güncellenen duyurusu %{target}"
+        update_custom_emoji: "%{name} güncellenen emoji %{target}"
+        update_status: "%{name} , %{target} tarafından durum güncellendi"
+      deleted_status: "(silinen durum)"
+      empty: Günlük bulunamadı.
+      filter_by_action: İşlem temelinde süzgeç uygula
+      filter_by_user: Kullanıcı temelinde süzgeç uygula
+      title: Denetleme günlüğü
+    announcements:
+      destroyed_msg: Duyuru başarıyla silindi!
+      edit:
+        title: Duyuruyı düzenle
+      empty: Duyuru bulunamadı.
+      live: Canlı
+      new:
+        create: Duyuru oluştur
+        title: Yeni duyuru
+      published_msg: Duyuru başarıyla yayınlandı!
+      scheduled_for: '%{time} İçin Zamanlandı'
+      scheduled_msg: Duyuru yayınlanmak üzere zamanlandı!
+      title: Duyurular
+      unpublished_msg: Duyuru başarıyla yayınlanmadı!
+      updated_msg: Duyuru başarıyla güncellendi!
+    custom_emojis:
+      assign_category: Kategori ata
+      by_domain: Etki Alanı
+      copied_msg: Emojinin yerel kopyası başarıyla yaratıldı
+      copy: Kopyala
+      copy_failed_msg: O emojinin yerel bir kopyası elde edilemedi
+      create_new_category: Yeni kategori yarat
+      created_msg: Emoji başarıyla yaratıldı!
+      delete: Sil
+      destroyed_msg: Emoji başarıyla yok edildi!
+      disable: Geçersiz Kıl
+      disabled: Devre dışı
+      disabled_msg: Emoji başarıyla geçersiz kılındı
+      emoji: Emoji
+      enable: Etkinleştir
+      enabled: Etkin
+      enabled_msg: Emoji başarıyla etkinleştirildi
+      image_hint: 50 KB ' ye kadar PNG
+      list: Liste
+      listed: Listeleniyor
+      new:
+        title: Yeni özel emoji ekle
+      not_permitted: Bu işlemi gerçekleştirme izniniz yok
+      overwrite: Üzerine yaz
+      shortcode: Kısa kod
+      shortcode_hint: En az 2 karakter, yalnızca alfasayısal karakterler ve altçizgi karakterleri
+      title: Özel emojis
+      uncategorized: Kategoriye Ayrılmamış
+      unlist: Listeden Kaldır
+      unlisted: Listelenmeyen
+      update_failed_msg: Bu emoji güncelleştirilemedi
+      updated_msg: Emoji başarıyla güncellendi!
+      upload: Karşıya Yükle
+    dashboard:
+      authorized_fetch_mode: Güvenli kip
+      backlog: birikmiş işler
+      config: Yapılandırma
+      feature_deletions: Hesap silme işlemleri
+      feature_invites: Bağlantıları davet et
+      feature_profile_directory: Profil dizini
+      feature_registrations: Kayıtlar
+      feature_relay: Birleştirme aktarıcı
+      feature_spam_check: İstenmeyen e-posta önleme
+      feature_timeline_preview: Zaman çizelgesi önizleme
+      features: Özellikler
+      hidden_service: Gizli hizmetlerle birleşim
+      open_reports: açık raporlar
+      pending_tags: İnceleme için bekleyen etiketler
+      pending_users: gözden geçirilmek üzere bekleyen kullanıcılar
+      recent_users: En son kullanıcılar
+      search: Tam metin araması
+      single_user_mode: Tek kullanıcı kipi
+      software: Yazılım
+      space: Alan kullanımı
+      title: Gösterge Panosu
+      total_users: toplam kullanıcı sayısı
+      trends: Eğilimler
+      week_interactions: bu hafta etkileşimler
+      week_users_active: bu hafta etkin
+      week_users_new: bu hafta kullanıcılar
+      whitelist_mode: Sınırlı birleştirme kipi
+    domain_allows:
+      add_new: Etki alanı birleşmesine izin ver
+      created_msg: Etki alanı, birleşim için başarıyla izin verdi
+      destroyed_msg: Etki alanına federasyondan izin verilmiyor
+      undo: Etki alanı ile birleştirmeye izin verme
+    domain_blocks:
+      add_new: Yeni etki alanı öbeği ekle
+      created_msg: Etki alanı öbeği işleniyor
+      destroyed_msg: Etki alanı öbeği geri alındı
+      domain: Etki Alanı
+      edit: Etki alanı bloğunu düzenle
+      existing_domain_block_html: '%{name}için daha katı sınırlar koymuyorsunuz, <a href="%{unblock_url}">''ye önce</a> engeline gerek duyarsınız.'
+      new:
+        create: Blok oluştur
+        hint: Etki alanı bloğu, veritabanında hesap girişlerinin oluşturulmasını engelleyecek, ancak geriye dönük olarak ve otomatik olarak bu hesaplarda belirli denetim yöntemlerini uygulamak zorunda kalmayacaktır.
+        severity:
+          desc_html: "<strong>Silence</strong> hesabı, izlememiş olan herkes için görünmez hale getirecektir. <strong></strong> suspend işlemi tüm hesabın içerik, ortam ve profil verilerini kaldıracaktır. Yalnızca ortam dosyalarını reddetmek istiyorsanız <strong>None</strong> seçeneğini kullanın."
+          noop: Yok
+          silence: Sessizlik
+          suspend: Askıya al
+        title: Yeni etki alanı bloğu
+      private_comment: Özel açıklama
+      private_comment_hint: Başkanlar tarafından dahili kullanım için bu etki alanı sınırlaması hakkında yorum yapın.
+      public_comment: Genel açıklama
+      public_comment_hint: Etki alanı sınırlamalarının listesi etkinleştirilmişse, genel kullanıma ilişkin bu etki alanı sınırlaması hakkında yorum yapın.
+      reject_media: Ortam dosyalarını reddet
+      reject_media_hint: Yerel olarak depolanan ortam dosyalarını kaldırır ve gelecekte herhangi birini karşıdan yüklemeyi reddeder. Askıya almak için alakasız.
+      reject_reports: Raporları reddet
+      reject_reports_hint: Bu etki alanından gelen tüm raporları yoksayın. Askıya almak için alakasız.
+      rejecting_media: ortam dosyalarını reddetme
+      rejecting_reports: raporları reddetme
+      severity:
+        silence: susturuldu
+        suspend: askıya alındı
+      show:
+        affected_accounts:
+          one: Veritabanındaki bir hesap etkilendi
+          other: "%{count} veritabanındaki hesaplar etkilendi"
+        retroactive:
+          silence: Bu etki alanından var olan etkilenen hesapların sessizliğini kaldır
+          suspend: Bu etki alanından var olan etkilenen hesapların askıya alınması
+        title: '%{domain} için etki alanı engelini geri al'
+        undo: Geri Al
+      undo: Etki alanını geri al
+      view: Etki alanı bloğunu görüntüle
+    email_domain_blocks:
+      add_new: Yeni ekle
+      created_msg: Eposta etki alanı başarıyla engellendi
+      delete: Sil
+      destroyed_msg: Engellenen e-posta etki alanı başarıyla kaldırıldı
+      domain: Etki Alanı
+      empty: Şu anda engellenen e-posta etki alanı yok.
+      from_html: '%{domain}'
+      new:
+        create: Etki alanı ekle
+        title: Yeni e-posta etki alanını engelle
+      title: Engellenen e-posta etki alanları
+    instances:
+      by_domain: Etki Alanı
+      delivery_available: Teslim kullanılabilir
+      known_accounts:
+        one: "%{count} bilinen hesap"
+        other: "%{count} bilinen hesaplar"
+      moderation:
+        all: Tümü
+        limited: Sınırlı
+        title: Denetleme
+      private_comment: Özel açıklama
+      public_comment: Genel açıklama
+      title: Birleşim
+      total_blocked_by_us: Bizim için engellendi
+      total_followed_by_them: Onları takip et.
+      total_followed_by_us: Bizi takip eden
+      total_reported: Bunlarla ilgili raporlar
+      total_storage: Ortam ekleri
+    invites:
+      deactivate_all: Tümünün etkinliğini kaldır
+      filter:
+        all: Tümü
+        available: Kullanılabilir
+        expired: Süresi doldu
+        title: Süzgeç Uygula
+      title: Davet
+    pending_accounts:
+      title: Bekleyen hesaplar (%{count})
+    relationships:
+      title: "%{acct}' nin ilişkileri"
+    relays:
+      add_new: Yeni aktarma ekle
+      delete: Sil
+      description_html: <strong>federasyon rölesi</strong> , abone olan sunucular arasında büyük hacimlerden oluşan büyük hacimleri değiş tokuş eden bir aracı sunucudur ve bu sunucu bu sunucularda abone olur. <strong>Küçük ve orta düzey sunucuların, farklı</strong>farklı sunuculardaki içeriği keşfetmesine yardımcı olabilir. Bu, yerel kullanıcıların uzak sunuculardaki diğer kişileri el ile takip etmelerini gerektirir.
+      disable: Geçersiz Kıl
+      disabled: Devre dışı
+      enable: Etkinleştir
+      enable_hint: Geçerli kılındıktan sonra sunucunuz, bu aktarımdan tüm genel tüm toolara abone olur ve bu sunucunun genel toolarını göndermeye başlayacaktır.
+      enabled: Etkin
+      inbox_url: Aktarma URL Adresi
+      pending: Aktarma onayının bekleniyor
+      save_and_enable: Sakla ve etkinleştir
+      setup: Aktarma bağlantısı kur
+      signatures_not_enabled: Güvenli kip ya da sınırlı birleştirme kipi etkinleştirildiğinde röleler doğru çalışmayacak
+      status: Durum
+      title: Röleler
+    report_notes:
+      created_msg: Rapor notu başarıyla oluşturuldu!
+      destroyed_msg: Rapor notu başarıyla silindi!
+    reports:
+      account:
+        notes:
+          one: "%{count} not"
+          other: "%{count} not"
+        reports:
+          one: "%{count} rapor"
+          other: "%{count} raporlar"
+      action_taken_by: 'İşlem şu tarafından alındı:'
+      are_you_sure: Emin misin?
+      assign_to_self: Bana ata
+      assigned: Atanan toplantı başkanı
+      by_target_domain: Raporlanan hesabın etki alanı
+      comment:
+        none: Yok
+      created_at: Raporlanan
+      mark_as_resolved: Çözümlendi olarak işaretle
+      mark_as_unresolved: Çözümlenmemiş olarak işaretle
+      notes:
+        create: Not ekle
+        create_and_resolve: Notla Çözümle
+        create_and_unresolve: Notla yeniden aç
+        delete: Sil
+        placeholder: Hangi işlemlerin alındığını ya da diğer ilgili güncelleştirmelerin neler olduğunu tanımlayın ...
+      reopen: Raporu yeniden aç
+      report: 'Rapor No.%{id}'
+      reported_account: Bildirilen hesap
+      reported_by: Bildiren
+      resolved: Çözümlendi
+      resolved_msg: Rapor başarıyla çözüldü!
+      status: Durum
+      title: Raporlar
+      unassign: Atamayı Kaldır
+      unresolved: Çözülmedi
+      updated_at: Güncelleştirilmiş
+    settings:
+      activity_api_enabled:
+        desc_html: Yerel olarak gönderilen durumların sayısı, etkin kullanıcılar ve haftalık saklama kaplarında yeni kayıtlar
+        title: Kullanıcı etkinlikleriyle ilgili toplu istatistikleri yayınla
+      bootstrap_timeline_accounts:
+        desc_html: Birden çok kullanıcı adını virgülle ayırın. Yalnızca yerel ve kilidi açık hesaplar işe yarayacaktır. Boş olduğunda varsayılan değer tüm yerel yöneticiler olur.
+        title: Yeni kullanıcılar için varsayılan izler
+      contact_information:
+        email: İş e-postası
+        username: Kişi kullanıcı adı
+      custom_css:
+        desc_html: Her sayfada CSS yüklenen görünüşü değiştir
+        title: Özel CSS
+      default_noindex:
+        desc_html: Bu ayarı değiştirmeyen tüm kullanıcıları etkiler
+        title: Varsayılan değer olarak kullanıcıların arama motoru dizinlemesini devre dışı
+      domain_blocks:
+        all: Herkese.
+        disabled: Hiç kimse
+        title: Etki alanı bloklarını göster
+        users: Oturum açan yerel kullanıcılar için
+      domain_blocks_rationale:
+        title: Gerekçenin gösterilmesi
+      enable_bootstrap_timeline_accounts:
+        title: Yeni kullanıcılar için varsayılan değeri etkinleştir
+      hero:
+        desc_html: Frontpage (ön sayfa) sayfasında görüntülenir. En az 600x100px önerilir. Ayarlanmadığında, sunucu küçük resminine geri döner
+        title: Kahraman resmi
+      mascot:
+        desc_html: Birden çok sayfada görüntülenir. En az 293 × 205px önerilir. Ayarlanmadığında, varsayılan maskota geri döner
+        title: Maskot resmi
+      peers_api_enabled:
+        desc_html: Bu sunucuya ilişkin etki alanı adları bu şekilde farklı bir şekilde karşılaştı.
+        title: Keşfedilen sunucuların listesini yayınla
+      preview_sensitive_media:
+        desc_html: Ortam duyarlı olarak işaretlense bile, diğer web sitelerinde bağlantı önizlemeleri bir küçük resim görüntüler
+        title: Duyarlı ortamı OpenGraph önizlemelerinde göster
+      profile_directory:
+        desc_html: Kullanıcıların keşfedilebilmesine izin ver
+        title: Tanıtım dizinini etkinleştir
+      registrations:
+        closed_message:
+          desc_html: Kayıtlar kapatıldığında frontpage 'de görüntülenir. HTML etiketlerini kullanabilirsiniz
+          title: Kapatılan kayıt iletisi
+        deletion:
+          desc_html: Herkesin hesabını silmesine izin ver
+          title: Hesap silmeyi aç
+        min_invite_role:
+          disabled: Hiç kimse
+          title: Davetleri izin ver
+      registrations_mode:
+        modes:
+          approved: Oturum açmak için onay gerekiyor
+          none: Kimse imzalayamaz.
+          open: Herkes imzalayabilir.
+        title: Kayıt kipi
+      show_known_fediverse_at_about_page:
+        desc_html: Geçersiz kılındığında, giriş sayfasından bağlanan genel zaman çizelgesini yalnızca yerel içeriği göstermek için sınırlar.
+        title: Kimliği doğrulanmamış genel zaman çizelgesi sayfasına birleşik içerik ekle sayfası
+      show_staff_badge:
+        desc_html: Kullanıcı sayfasında bir personel rozeti göster
+        title: Personel rozeti göster
+      site_description:
+        desc_html: API ' de giriş paragrafı. Chatterly 'i özel yapan şeyi ve diğer şeyleri önemli kılan şeyleri açıklasın. HTML etiketlerini özellikle <code>&lt;a&gt;</code> ve <code>&lt;em&gt;</code> numaralı telefonlarda kullanabilirsiniz.
+        title: Sunucu tanımlaması
+      site_description_extended:
+        desc_html: Sunucunuzu birbirinden ayıran kurallar, kurallar, yönergeler ve diğer şeyler kodlarınız için iyi bir yer. HTML etiketlerini kullanabilirsiniz
+        title: Özel ek bilgi
+      site_short_description:
+        desc_html: Kenar çubuğunda ve meta etiketlerinde görüntülenir. Chatterly 'nin ne olduğunu ve bizi tek bir paragrafta özel yapan nedir açıklasın.
+        title: Kısa sunucu tanımlaması
+      site_terms:
+        desc_html: Kendi gizlilik ilkenizi, hizmet terimlerini ya da diğer legaleleri yazabilirsiniz. HTML etiketlerini kullanabilirsiniz
+        title: Özel hizmet koşulları
+      site_title: Sunucu adı
+      spam_check_enabled:
+        desc_html: Chatterly, yinelenen istenmeyen iletiler gönderen hesapları otomatik olarak raporlayabilir. Yanlış pozitifler olabilir.
+        title: İstenmeyen e-postaya karşı otomasyon
+      thumbnail:
+        desc_html: OpenGraph ve API aracılığıyla ön görünümler için kullanılır. 1200x630px önerilir
+        title: Sunucu küçük resmi
+      timeline_preview:
+        desc_html: Giriş sayfasında genel zaman çizelgesi bağlantısını görüntüle ve kimlik doğrulaması olmadan genel zaman çizelgesi için API erişimine izin ver
+        title: Genel zaman çizelgesi için kimliği doğrulanmamış erişime izin ver
+      title: Site ayarları
+      trendable_by_default:
+        desc_html: Daha önce izin verilmeyen HASH etiketlerini etkiler
+        title: Önceden gözden geçirilmeden gruplama eğilimine izin ver
+      trends:
+        desc_html: Şu anda trend olan daha önce incelenmiş olan karma etiketleri genel olarak görüntüle
+        title: Eğilim etiketleri etiketleri
+    site_uploads:
+      delete: Karşıya yüklenen dosyayı sil
+      destroyed_msg: Site karşıya yüklemesi başarıyla silindi!
+    statuses:
+      back_to_account: Hesap sayfasına dön
+      batch:
+        delete: Sil
+        nsfw_off: Duyarlı değil olarak işaretle
+        nsfw_on: Duyarlı olarak işaretle
+      deleted: Silindi
+      failed_to_execute: Yürütülemedi
+      media:
+        title: Ortam
+      no_media: Ortam yok
+      no_status_selected: Hiçbir durum, seçilmemiş olarak değiştirilmedi
+      title: Hesap durumları
+      with_media: Ortam ile
+    tags:
+      accounts_today: Bugün benzersiz kullanım alanları
+      accounts_week: Bu hafta benzersiz kullanımlar
+      breakdown: Kaynağa göre bugünkü kullanım dökümü
+      context: Bağlam
+      directory: Dizinde
+      in_directory: "%{count} dizininde"
+      last_active: Son etkin
+      most_popular: En sık kullanılan
+      most_recent: En son
+      name: Etiket
+      review: İnceleme durumu
+      reviewed: Gözden Geçirme
+      title: Etiketler
+      trending_right_now: Şu anda eğilim
+      unique_uses_today: "%{count} postalama bugün"
+      unreviewed: Gözden geçirilmedi
+      updated_msg: Etiket ayarları başarıyla güncellendi
+    title: Yönetim
+    warning_presets:
+      add_new: Yeni ekle
+      delete: Sil
+      edit_preset: Önceden ayarlanmış uyarının düzenlenmesi
+      title: Uyarı önkümelerini yönet
+  admin_mailer:
+    new_pending_account:
+      body: Yeni hesabın ayrıntıları aşağıda yer alıyor. Bu uygulamayı onaylayabilir ya da reddedebilirsiniz.
+      subject: '%{instance} (%{username}) üzerinde inceleme için yeni hesap yukarı'
+    new_report:
+      body: "%{reporter} , %{target} bildirdi"
+      body_remote: '%{domain} ''den biri %{target} bildirdi'
+      subject: '%{instance} için yeni rapor (#%{id})'
+    new_trending_tag:
+      body: '#%{name} etiketi bugün trend oluyor, ancak daha önce gözden geçirilmiş değil. Siz izin vermediğiniz sürece genel olarak görüntülenmez ya da formu bir daha asla duymayacağınız şekilde kaydetmezseniz.'
+      subject: '%{instance} tarihinde incelenmek üzere yeni etiket (#%{name})'
+  aliases:
+    add_new: Diğer ad yarat
+    created_msg: Yeni bir diğer ad başarıyla yaratıldı. Artık eski hesaptan taşıma işlemini başlatabilirsiniz.
+    deleted_msg: Diğer ad başarıyla kaldırıldı. O hesaptan bu hesaba taşınmak artık mümkün olmayacak.
+    empty: Başka adınız yok.
+    hint_html: Başka bir hesaptan bu birine geçmek istiyorsanız, burada eski hesaptan bu hesaba taşınma işlemine devam edebilmeniz için gerekli olan bir diğer ad oluşturabilirsiniz. Bu işlem kendi başına <strong>zararsız ve</strong>geri döndürülemez. <strong>Eski hesaptan (</strong>) hesap geçişi başlatılmış.
+    remove: Diğer adın bağlantısını kaldır
+  appearance:
+    advanced_web_interface: Gelişmiş Web arabirimi
+    advanced_web_interface_hint: 'Ekran genişliğinin tamamını kullanmak istiyorsanız, gelişmiş web arabirimi birçok farklı sütunu aynı anda istediğiniz kadar bilgi görmenizi sağlar: Ana sayfa, bildirimler, birleşik zaman çizelgesi, herhangi bir sayıda liste ve etiket.'
+    animations_and_accessibility: Canlandırmalar ve erişilebilirlik
+    confirmation_dialogs: Onay iletişim kutuları
+    discovery: Keşif
+    localization:
+      body: Chatterly gönüllüler tarafından tercüme edilir.
+      guide_link: https://crowdin.com/project/chatterlyose
+      guide_link_text: Herkes katkıda bulunabilir.
+    sensitive_content: Duyarlı içerik
+    toot_layout: Ayak düzeni
+  application_mailer:
+    notification_preferences: E-posta tercihlerini değiştirme
+    salutation: "%{name},"
+    settings: 'E-posta tercihlerini değiştir: %{link}'
+    view: 'Görünüm:'
+    view_profile: Profili görüntüle
+    view_status: Durumu görüntüle
+  applications:
+    created: Uygulama başarıyla yaratıldı
+    destroyed: Uygulama başarıyla silindi
+    invalid_url: Sağlanan URL geçersiz
+    regenerate_token: Erişim simgesini yeniden oluştur
+    token_regenerated: Erişim belirteci başarıyla yeniden oluşturuldu
+    warning: Bu veriye çok dikkat edin. Asla kimseyle paylaşmam!
+    your_token: Erişim belirteçiniz
+  auth:
+    apply_for_account: Davet isteme
+    change_password: Parola
+    checkbox_agreement_html: Chatterly 'nin <a href="%{terms_path}" target="_blank">hizmet koşullarını kabul ediyorum.</a>
+    checkbox_agreement_without_rules_html: <a href="%{terms_path}" target="_blank">hizmet koşullarını kabul ediyorum</a>
+    delete_account: Hesabı sil
+    delete_account_html: Hesabınızı silmek isterseniz, <a href="%{path}"></a>buraya devam edebilirsiniz. Onaylanmak isteyeceksiniz.
+    description:
+      prefix_invited_by_user: "@%{name} sizi Chatterly 'e katılmaya davet ediyor!"
+      prefix_sign_up: Bugün Chatterly 'de imzayı at!
+      suffix: Bir hesapla, Chatterly ve daha fazlası ile kişileri takip edebileceksiniz, güncelleştirmeleri gönderebilecek ve iletileri gönderebilecek.
+    didnt_get_confirmation: '-Onay talimatı almadın mı?'
+    dont_have_your_security_key: Güvenlik anahtarınız yok mu?
+    forgot_password: Parolanızı mı unuttunuz?
+    invalid_reset_password_token: Parola sıfırlama belirteci geçersiz ya da süresi dolmuş. Lütfen yeni bir tane isteyin.
+    link_to_otp: Telefonundan ya da kurtarma kodundan iki katsayılı bir kod girin
+    link_to_webauth: Güvenlik anahtarı aygıtınızı kullanın
+    login: Oturum aç
+    logout: Oturumu Kapat
+    migrate_account: Farklı bir hesaba taşı
+    migrate_account_html: Bu hesabı farklı bir hesaba yeniden yönlendirmek istiyorsanız, <a href="%{path}">işlemi için</a> konfigürasyonunun tanımlanabileceğini belirleyin.
+    or_log_in_with: Ya da oturum açma
+    providers:
+      cas: CAS
+      saml: SAML
+    register: Oturum açın
+    registration_closed: "%{instance} yeni üyeler kabul etmiyor"
+    resend_confirmation: Yeniden gönderme doğrulama yönergeleri
+    reset_password: Parolayı sıfırla
+    security: Güvenlik
+    set_new_password: Yeni parolayı ayarla
+    setup:
+      email_below_hint_html: Aşağıdaki e-posta adresi yanlışsa, bu adresi burada değiştirebilir ve yeni bir onay e-postası alabilirsiniz.
+      email_settings_hint_html: Doğrulama e-postası %{email}'ye gönderildi. Bu e-posta adresi doğru değilse, bunu hesap ayarlarında değiştirebilirsiniz.
+      title: Kurulum
+    status:
+      account_status: Hesap durumu
+      confirming: E-posta onayının tamamlanması bekleniyor.
+      functional: Hesabınız tam olarak çalışıyor.
+      pending: Başvurunuz, personelimiz tarafından incelenmek üzere bekliyor. Bu işlem biraz zaman alabilir. Uygulamanızın onaylandığı bir e-posta alacaksınız.
+      redirecting_to: Hesabınız şu anda %{acct} 'ye yeniden yönlendiriliyor olduğundan, hesabınız devre dışı.
+    trouble_logging_in: Oturum açma sorunu mu?
+    use_security_key: Güvenlik anahtarını kullan
+  authorize_follow:
+    already_following: Bu hesabı zaten izliyorsunuz
+    already_requested: Bu hesaba zaten bir izleme isteği gönderdiniz
+    error: Ne yazık ki, uzak hesap aranırken bir hata oluştu.
+    follow: İzle
+    follow_request: 'Aşağıdaki isteklere ilişkin bir izleme isteği gönderdiniz:'
+    following: 'Başarılı! Şu anda aşağıdakileri izliyorsunuz:'
+    post_follow:
+      close: Ya da bu pencereyi kapatabilirsiniz.
+      return: Kullanıcının profilini göster
+      web: Web 'e git
+    title: İzleme %{acct}
+  challenge:
+    confirm: Devam
+    hint_html: "<strong>İpucu:</strong> Bir sonraki saat için parolanızı tekrar size sormayacağız."
+    invalid_password: Parola geçersiz
+    prompt: Devam etmek için parolayı onayla
+  crypto:
+    errors:
+      invalid_key: geçerli bir Ed25519 ya da Curve25519 anahtarı değil
+      invalid_signature: geçerli bir Ed25519 imzası değil
+  date:
+    formats:
+      default: "%b %d, %Y"
+      with_month_name: "%B %d, %Y"
+  datetime:
+    distance_in_words:
+      about_x_hours: "%{count}h"
+      about_x_months: "%{count}mo"
+      about_x_years: "%{count}y"
+      almost_x_years: "%{count}y"
+      half_a_minute: Sadece şimdi.
+      less_than_x_minutes: "%{count}m"
+      less_than_x_seconds: Sadece şimdi.
+      over_x_years: "%{count}y"
+      x_days: "%{count}d"
+      x_minutes: "%{count}m"
+      x_months: "%{count}mo"
+      x_seconds: "%{count}s"
+  deletes:
+    challenge_not_passed: Girdiğiniz bilgiler doğru değil
+    confirm_password: Kimliğinizin doğrulanması için geçerli parolanızı girin
+    confirm_username: Yordamı onaylamak için kullanıcı adınızı girin
+    proceed: Hesabı sil
+    success_msg: Hesabınız başarıyla silindi
+    warning:
+      before: 'Devam etmeden önce, lütfen bu notları dikkatli bir şekilde okuyun:'
+      caches: Diğer sunucular tarafından önbelleğe alınan içerik kalıcı olabilir
+      data_removal: Gönderileriniz ve diğer verileriniz kalıcı olarak kaldırılacak
+      email_change_html: <a href="%{path}">e-postanızı silmeden</a> e-posta adresinizi değiştirebilirsiniz
+      email_contact_html: Eğer hala gelmezse, yardım için <a href="mailto:%{email}">%{email}</a> e mail gönderebilirsiniz.
+      email_reconfirmation_html: Onay e-postasını almadıysanız, <a href="%{path}">isteği yeniden</a> arası bir istekte bulunur.
+      irreversible: Hesabınızı geri yükleyemeyeceksiniz ya da yeniden etkinleştiremezsiniz
+      more_details_html: Daha fazla ayrıntı için, <a href="%{terms_path}">gizlilik ilkesi</a> ile ilgili bilgi için bkz.
+      username_available: Kullanıcı adınız yeniden kullanılabilir olacak
+      username_unavailable: Kullanıcı adınız kullanılamaz durumda kalacak
+  directories:
+    directory: Profil dizini
+    explanation: Kullanıcıları kendi çıkarlarına göre keşfedin
+    explore_mastodon: Explore %{title}
+  domain_validator:
+    invalid_domain: geçerli bir etki alanı adı değil
+  errors:
+    '400': Gönderdiğiniz istek geçersiz ya da yanlış biçimlendirilmiş.
+    '403': Bu sayfayı görüntülemek için izniniz yok.
+    '404': Sanırım yanlış bir dönüş aldın, burada hiçbir şey yok.
+    '406': Bu sayfa istenen biçimde kullanılamaz.
+    '410': Houston 'da bir sorunumuz var, sayfa gitmiş.
+    '422':
+      content: Güvenlik doğrulaması başarısız oldu. Kurabiyeleri mi engelliyorsunuz?
+      title: Güvenlik doğrulaması başarısız oldu
+    '429': Çok fazla istek var
+    '500':
+      content: Üzgünüz, ama sonunda bir şeyler ters gitti. Bu hata hakkında bilgilendirildik ve sorunu çözmek için çalışıyoruz.
+      title: Bu sayfa doğru değil
+    '503': Üzgünüz, yüksek sunucu yükü yaşıyor gibi görünüyoruz. Bunu en kısa zamanda çözmek için çalışıyoruz.
+    noscript_html: Chatterly 'i kullanmak için lütfen JavaScript 'i etkinleştirin. Alternatif olarak, platformunuz için Chatterly Mobile için <a href="%{apps_path}">yerel uygulamalarından</a> numarasından birini deneyin.
+  existing_username_validator:
+    not_found: bu kullanıcı adına sahip bir yerel kullanıcı bulunamadı
+    not_found_multiple: '%{usernames} bulunamadı'
+  exports:
+    archive_takeout:
+      date: Tarih
+      download: Arşivinizi karşıdan yükleyin
+      hint_html: <strong>tootlarınız için bir arşiv talep edebilir ve</strong>ortamınızı karşıya yüklemiş olabilirsiniz. Dışa aktarılan veriler ActivityPub biçiminde olacak ve uyumlu herhangi bir yazılım tarafından okunabilir. Her 7 günde bir arşiv talep edebilirsiniz.
+      in_progress: Arşiviniz derleniyor ...
+      request: Arşivinizi isteyin
+      size: Boyut
+    blocks: Engelle
+    csv: CSV
+    domain_blocks: Etki Alanı Ö
+    lists: Listeler
+    mutes: Dilsiz
+    storage: Ortam depolama
+  featured_tags:
+    add_new: Yeni ekle
+    errors:
+      limit: En fazla etiket sayısı üst sınırını öne sürdün
+    hint_html: "<strong>Öne çıkan etiketler nedir?</strong> Genel tanıtımınızda belirgin bir şekilde görüntülenir ve kişilerin özellikle bu etiketler altında genel gönderilerinize göz atmalarına izin verebilirsiniz. Yaratıcı eserleri ya da uzun vadeli projeleri takip etmek için çok iyi bir araç."
+  filters:
+    contexts:
+      account: Tanıtımlar
+      home: Ana sayfa çizelgesi
+      notifications: Bildirimler
+      public: Genel zaman çizelgeleri
+      thread: Konuşmalar
+    edit:
+      title: Süzgeci düzenle
+    errors:
+      invalid_context: Geçersiz ya da geçersiz bağlam sağlandı
+      invalid_irreversible: Geri dönülemez süzgeç uygulama yalnızca ana sayfa ya da bildirim bağlamıyla çalışır
+    index:
+      delete: Sil
+      empty: Süzgeçiniz yok.
+      title: Süzgeçler
+    new:
+      title: Yeni süzgeç ekle
+  footer:
+    developers: Geliştiriciler
+    more: Daha fazla…
+    resources: Kaynaklar
+    trending_now: Şimdi eğilim
+  generic:
+    all: Tümü
+    changes_saved_msg: Değişiklikler başarıyla kaydedildi!
+    copy: Kopyala
+    delete: Sil
+    no_batch_actions_available: Bu sayfada kullanılabilir toplu iş işlemi yok
+    order_by: Sıralama temeli
+    save_changes: Değişiklikleri kaydet
+    validation_errors:
+      one: Henüz bir şey yok! Lütfen aşağıdaki hatayı inceleyin
+      other: Henüz bir şey yok! Lütfen aşağıdaki %{count} hatasını gözden geçirin
+  html_validator:
+    invalid_markup: 'geçersiz HTML biçimleme dili içeriyor: %{error}'
+  identity_proofs:
+    active: Etkin
+    authorize: Evet, yetki
+    authorize_connection_prompt: Bu şifreleme bağlantısı yetkilendirilsin mi?
+    errors:
+      failed: Şifreleme bağlantısı başarısız oldu. Lütfen %{provider} 'den yeniden deneyin.
+      keybase:
+        invalid_token: Anahtar tabanı simgeleri imzaların işareti olur ve 66 onaltılı karakter olmalıdır
+        verification_failed: Anahtar tabanı, bu simgeyi anahtar temel kullanıcısı %{kb_username}'nin imzası olarak tanımıyor. Lütfen anahtar tabanından yeniden deneyin.
+      wrong_user: '%{current}olarak oturum açmışken %{proving} için bir kanıt oluşturulamaz. %{proving} olarak oturum açın ve yeniden deneyin.'
+    explanation_html: Burada şifrelemeyle diğer tanıtıcılarınızı Keybase gibi diğer platformlardan da bağlanabilirsiniz. Bu, diğer kişilerin size bu platformlarda şifrelenmiş iletiler göndermesine ve gönderdiğiniz içeriğin size güvenmesine olanak sağlar.
+    i_am_html: '%{service} ''de %{username}.'
+    identity: Kimlik
+    inactive: Etkin Değil
+    publicize_checkbox: 'Ve şunu da:'
+    publicize_toot: 'It is proven! I am %{username} on %{service}: %{url}'
+    remove: Hesaptan kanıt kaldır
+    removed: Güvenlik hesaptan başarıyla kaldırıldı
+    status: Doğrulama durumu
+    view_proof: Kanıt görüntüle
+  imports:
+    modes:
+      merge: Birleştir
+      merge_long: Var olan kayıtları alıkoy ve yenilerini ekle
+      overwrite: Üzerine yaz
+      overwrite_long: Geçerli kayıtları yenileriyle değiştir
+    preface: İzlediğiniz ya da engellediğiniz kişilerin listesi gibi başka bir sunucudan dışa aktardığınız verileri içe aktarabilirsiniz.
+    success: Verileriniz başarıyla karşıya yüklendi ve şu anda zamanında işlenecek
+    types:
+      blocking: Engelleme listesi
+      domain_blocking: Etki alanı engelleme listesi
+      following: Aşağıdaki liste
+      muting: Liste oluşturma listesi
+    upload: Karşıya Yükle
+  in_memoriam_html: Memorial 'da.
+  invites:
+    delete: Etkinliğini Kaldır
+    expired: Süresi doldu
+    expires_in:
+      '1800': 30 dakika
+      '21600': 6 saat
+      '3600': 1 saat
+      '43200': 12 saat
+      '604800': 1 hafta
+      '86400': 1 gün
+    expires_in_prompt: Hiçbir Zaman
+    generate: Davet bağlantısı oluştur
+    invited_by: 'Şu kişi tarafından davet edildiniz:'
+    max_uses:
+      one: 1 kullanım
+      other: "%{count} kullanım alanları"
+    max_uses_prompt: Sınır yok
+    prompt: Bu sunucuya erişim izni vermek için diğer kullanıcılarla bağlantı oluştur ve paylaş
+    table:
+      expires_at: Süre Sonu
+      uses: Kullanım alanları
+    title: Kişileri davet etme
+  lists:
+    errors:
+      limit: Liste miktarı üst sınırına ulasdınız
+  media_attachments:
+    validations:
+      images_and_video: Görüntü zaten içeren bir duruma video eklenemiyor
+      not_ready: İşlemeyi bitirmemiş dosyalar iliştirilemez. Bir dakika sonra tekrar deneyin!
+      too_many: 4 'ten fazla dosya iliştirilemez
+  migrations:
+    acct: Taşınma tarihi
+    cancel: Yeniden yönlendirmek iptal
+    cancel_explanation: Yeniden yönlendirmenin iptal edilmesi, geçerli hesabınızı yeniden etkinleştirecek, ancak o hesaba taşınan takipçileri geri getirmeyecek.
+    cancelled_msg: Yeniden yönlendirme başarıyla iptal edildi.
+    errors:
+      already_moved: şu anda taşıdığınız aynı hesaptır
+      missing_also_known_as: bu hesabın bir diğer adı değil
+      move_to_self: geçerli hesap olamaz
+      not_found: bulunamadı
+      on_cooldown: Soğukkanlıcasınız.
+    followers_count: Harekete geçen zaman takipçileri
+    incoming_migrations: Farklı bir hesaptan taşıma
+    incoming_migrations_html: Başka bir hesaptan bu hesaba geçmek için, ilk olarak <a href="%{path}">bir hesap diğer adı</a> olarak yaratılmanız gerekir.
+    moved_msg: hesabınız artık %{acct} ' ye yeniden yönlendiriliyor ve takipçileriniz buraya taşınmaya devam ediyor.
+    not_redirecting: Hesabınız şu anda başka bir hesaba yeniden yönlendirmiyor.
+    on_cooldown: Hesabınızı geçenlerde yeni düzeye geçirdiniz. Bu işlev, %{count} gün içinde yeniden kullanılabilir hale gelecek.
+    past_migrations: Geçmiş geçişler
+    proceed_with_move: Takipçileri taşı
+    redirected_msg: Hesabınız şu anda %{acct} olarak yeniden yönlendiriliyor.
+    redirecting_to: Hesabınız %{acct} 'ye yeniden yönlendiriliyor.
+    set_redirect: Yeniden yönlendirme ayarla
+    warning:
+      backreference_required: Bu yeni hesabın öncelikle bu yeni hesabın geri gönderme yapmak için yapılandırılması gerekir.
+      before: 'Devam etmeden önce, lütfen bu notları dikkatli bir şekilde okuyun:'
+      cooldown: taşındıktan sonra tekrar hareket edemediğiniz bir soğutucun dönemi var.
+      disabled_account: Geçerli hesabınız sonrasında tam olarak kullanılabilir olmayacak. Ancak, yeniden etkinleştirmenin yanı sıra veri dışa aktarmaya da erişiminiz olacak.
+      followers: Bu eylem, tüm izleyenleri geçerli hesaptan yeni hesaba taşır
+      only_redirect_html: Diğer bir seçenek olarak, <a href="%{path}">yalnızca</a> profilinize bir yeniden yönlendirme yerleştirebilirsiniz.
+      other_data: Başka hiçbir veri otomatik olarak taşınmaz
+      redirect: Geçerli hesabınızın profili bir yeniden yönlendirme bildirimiyle güncelleştirilecek ve aramalardan dışlanacak
+  moderation:
+    title: Denetleme
+  move_handler:
+    carry_blocks_over_text: Bu kullanıcı, engellenmiş olduğunuz %{acct}' den taşındı.
+    carry_mutes_over_text: Bu kullanıcı, kapatıldığı %{acct}' den taşındı.
+    copy_account_note_text: 'Bu kullanıcı %{acct}''den taşınmış, bunlar hakkında önceki notlarınız burada:'
+  notification_mailer:
+    digest:
+      action: Tüm bildirimleri görüntüle
+      body: '%{since} tarihinde son ziyaretinizden bu yana kaçırdığınız mesajların kısa bir özeti burada'
+      mention: "%{name} sizden söz etti:"
+      new_followers_summary:
+        one: Ayrıca, uzakta olmak için yeni bir takipçi edindiniz! Yaşasın!
+        other: Ayrıca, uzaklarda %{count} yeni takipçi edindiniz! İnanılmaz!
+      subject:
+        one: "Son ziyaretinizden bu yana 1 yeni bildirim \U0001F418 'i ziyaret edin"
+        other: "%{count} son ziyaretinizden bu yana yeni bildirimler \U0001F418"
+      title: Senin yokluğunda ...
+    favourite:
+      body: 'Durumunuz %{name} tarafından favoriliydi:'
+      subject: "%{name} , durumunuzu tercih etti"
+      title: Yeni favori
+    follow:
+      body: "%{name} şu anda sizi takip ediyor!"
+      subject: "%{name} şu anda sizi takip ediyor"
+      title: Yeni takipçi
+    follow_request:
+      action: İzleme isteklerini yönet
+      body: "%{name} sizi takip etmek istedi"
+      subject: 'Bekleyen takipçi: %{name}'
+      title: Yeni izleme isteği
+    mention:
+      action: Yanıt
+      body: '%{name} aralkından söz edildiniz:'
+      subject: '%{name} ''den söz ettiniz.'
+      title: Yeni söz etme
+    reblog:
+      body: 'Durumunuz %{name} tarafından artırıldı:'
+      subject: "%{name} durumunuzu boyandı"
+      title: Yeni önem düzeyi
+  notifications:
+    email_events: E-posta bildirimleri olayları
+    email_events_hint: 'Bildirim almak istediğiniz olayları seçin:'
+    other_settings: Diğer bildirim ayarları
+  number:
+    human:
+      decimal_units:
+        format: "%n%u"
+        units:
+          billion: E
+          million: M
+          quadrillion: S
+          thousand: K
+          trillion: S
+          unit: ''
+  otp_authentication:
+    code_hint: Doğrulamak için kimlik doğrulayıcı uygulamanızın ürettiği kodu girin
+    description_html: If you enable <strong>two-factor authentication</strong> using an authenticator app, logging in will require you to be in possession of your phone, which will generate tokens for you to enter.
+    enable: Etkinleştir
+    instructions_html: "<strong>Bu QR kodunu Google Authenticator 'a ya da</strong>telefonunuzdaki bir SImiliar TOTP uygulamasını tarayın. Şu andan itibaren uygulama, oturum açarken girmeniz gereken simgeleri oluşturacaktır."
+    manual_instructions: 'QR kodunu tarayamıyorsanız ve el ile girmeniz gerekiyorsa, düz metin sırrı şöyledir:'
+    setup: Ayarlama
+    wrong_code: Girilen kod geçersizdi! Sunucu saati ve aygıt saati doğru mu?
+  pagination:
+    newer: Daha Yeni
+    next: Sonraki
+    older: Daha eski
+    prev: Önck
+    truncate: "&hellip;"
+  polls:
+    errors:
+      already_voted: Bu yoklamayı zaten oyladınız
+      duplicate_options: yinelenen öğeleri içeriyor
+      duration_too_long: geleceğe çok uzak
+      duration_too_short: çok yakında
+      expired: Anket zaten sona erdi
+      invalid_choice: Seçilen oy seçeneği yok
+      over_character_limit: her biri %{max} karakterden uzun olamaz
+      too_few_options: birden fazla öğeye sahip olmalıdır
+      too_many_options: '%{max} öğeden fazla öğe içeremez'
+  preferences:
+    other: Diğer
+    posting_defaults: Varsayılan değer gönderme
+    public_timelines: Genel zaman çizelgeleri
+  reactions:
+    errors:
+      limit_reached: Farklı tepkimeye ulaşıldı
+      unrecognized_emoji: tanınan bir emoji değil
+  relationships:
+    activity: Hesap etkinliği
+    dormant: Atıl
+    followers: İzleyiciler
+    following: İzler
+    invited: Davet Edildi
+    last_active: Son etkin
+    most_recent: En son
+    moved: Taşındı
+    mutual: Karşılıklı
+    primary: Birincil
+    relationship: İlişki
+    remove_selected_domains: Seçilen etki alanlarından tüm izleyenleri kaldır
+    remove_selected_followers: Seçilen izleyenleri kaldır
+    remove_selected_follows: Seçilen kullanıcıları izlemeyi kaldır
+    status: Hesap durumu
+  remote_follow:
+    acct: Hareket etmek istediğiniz kullanıcı adı@etki alanınızı girin
+    missing_resource: Hesabınız için gereken yeniden yönlendirme URL adresi bulunamadı
+    no_account_html: Hesabınız yok mu? <a href='%{sign_up_path}' target='_blank'>buraya kaydolabilirsiniz.</a>
+    proceed: İzlemeye devam et
+    prompt: 'İzlemeniz gereken:'
+    reason_html: "<strong>Bu adım neden gerekli?</strong> <code>%{instance}</code> kayıtlı olduğunuz sunucu olmayabilir, bu nedenle önce sizi giriş sunucunuza yönlendirmemiz gerekir."
+  remote_interaction:
+    favourite:
+      proceed: En sevmeye devam et
+      prompt: 'Bu ayağı çok seveceksin.'
+    reblog:
+      proceed: Önem düzeyi artırılacak
+      prompt: 'Bu ayağı yükseltmek istiyorsunuz:'
+    reply:
+      proceed: Yanıtlamaya devam et
+      prompt: 'Bu yere yanıt vermek istiyor musunuz:'
+  scheduled_statuses:
+    over_daily_limit: O gün için zamanlanan %{limit} zamanlanmış tootun sınırını aştınız.
+    over_total_limit: Zamanlanan %{limit} sınır sınırını aştınız.
+    too_soon: Zamanlanan tarih gelecekteki bir tarih olmalıdır
+  sessions:
+    activity: Son etkinlik
+    browser: Tarayıcı
+    browsers:
+      alipay: Alpay
+      blackberry: Blackberry
+      chrome: Krom
+      edge: Microsoft Edge
+      electron: Elektron
+      firefox: Firefox
+      generic: Bilinmeyen tarayıcı
+      ie: Internet Explorer
+      micro_messenger: MicroMessenger
+      nokia: Nokia S40 Ovi Tarayıcısı
+      opera: Opera
+      otter: Ayarlayıcı
+      phantom_js: PhantomJS
+      qq: QQ Tarayıcısı
+      safari: Safari
+      uc_browser: UCTarayıcı
+      weibo: Weibo
+    current_session: Yürürlükteki oturum
+    description: "%{browser} on %{platform}"
+    explanation: Bunlar, şu anda Chatterly hesabınızda oturum açmış olan Web tarayıcılarıdır.
+    ip: IP
+    platforms:
+      adobe_air: Adobe Air
+      android: Android
+      blackberry: Blackberry
+      chrome_os: ChromeOS
+      firefox_os: Firefox OS
+      ios: iOS
+      linux: Linux
+      mac: macOS
+      other: bilinmeyen platform
+      windows: Pencereler
+      windows_mobile: Windows Mobile
+      windows_phone: Windows Telefonu
+    revoke: İptal Et
+    revoke_success: Oturum başarıyla iptal edildi
+    title: Nerede oturum açmışım?
+  settings:
+    account: Hesap
+    account_settings: Hesap ayarları
+    aliases: Hesap diğer adları
+    appearance: Görünüş
+    authorized_apps: Yetkili uygulamalar
+    back: Chatterly 'ye geri dön.
+    delete: Hesap silme
+    development: Geliştirme
+    edit_profile: Profili düzenle
+    export: Veri dışa aktarma
+    featured_tags: Öne çıkan etiketler
+    identity_proofs: Kimlik bilgileri
+    import: İçe Aktar
+    import_and_export: İçe ve dışa aktarma
+    migrate: Hesap geçişi
+    notifications: Bildirimler
+    preferences: Tercihler
+    profile: Profil
+    relationships: İzleyenler ve izleyen
+    two_factor_authentication: İki Katman Kimlik Doğrulaması
+    webauthn_authentication: Güvenlik anahtarları
+  spam_check:
+    spam_detected: Bu otomatik bir rapordur. İstenmeyen e-posta saptandı.
+  statuses:
+    attached:
+      audio:
+        one: "%{count} ses"
+        other: "%{count} ses"
+      description: 'Ekli: %{attached}'
+      image:
+        one: "%{count} görüntü"
+        other: "%{count} resim"
+      video:
+        one: "%{count} video"
+        other: "%{count} video"
+    boosted_from_html: '%{acct_link} ''den yükseltilmiş'
+    content_warning: 'İçerik uyarısı: %{warning}'
+    disallowed_hashtags:
+      one: 'izin verilmeyen bir etiket içeriyordu: %{tags}'
+      other: 'içerilen izin verilmeyen hashtag: %{tags}'
+    errors:
+      in_reply_not_found: Yanıtlamayı denediğiniz durum yok gibi görünüyor.
+    language_detection: Dili otomatik olarak sapta
+    open_in_web: Web 'de aç
+    over_character_limit: '%{max} karakter sınırı aşıldı'
+    pin_errors:
+      limit: En fazla toot sayısını zaten sabitlediniz
+      ownership: Başka birinin ayağı sabitlenemez.
+      private: Genel olmayan kapı sabitlenemez
+      reblog: Bir önem düzeyi sabitlenemiyor
+    poll:
+      total_people:
+        one: "%{count} kişi"
+        other: "%{count} kişi"
+      total_votes:
+        one: "%{count} oy"
+        other: "%{count} oy"
+      vote: Oy ver
+    show_more: Daha fazla göster
+    show_thread: İş parçacığı göster
+    sign_in_to_participate: Sohbete katılmak için oturum açın
+    title: '%{name}: "%{quote}"'
+    visibilities:
+      private: Yalnızca İzleyiciler-yalnızca
+      private_long: Yalnızca takipçilerini göster
+      public: Genel
+      public_long: Herkes görebilir.
+      unlisted: Listelenmeyen
+      unlisted_long: Herkes görebilir, ancak genel zaman çizelgelerinde listelenmez
+  stream_entries:
+    pinned: Sabitlenmiş ayak
+    reblogged: Artırılan
+    sensitive_content: Duyarlı içerik
+  tags:
+    does_not_match_previous_name: önceki adla eşleşmez
+  terms:
+    body_html: |
+      <h2>Privacy Policy</h2>
+      <h3 id="collect">What information do we collect?</h3>
+
+      <ul>
+        <li><em>Basic account information</em>: If you register on this server, you may be asked to enter a username, an e-mail address and a password. You may also enter additional profile information such as a display name and biography, and upload a profile picture and header image. The username, display name, biography, profile picture and header image are always listed publicly.</li>
+        <li><em>Posts, following and other public information</em>: The list of people you follow is listed publicly, the same is true for your followers. When you submit a message, the date and time is stored as well as the application you submitted the message from. Messages may contain media attachments, such as pictures and videos. Public and unlisted posts are available publicly. When you feature a post on your profile, that is also publicly available information. Your posts are delivered to your followers, in some cases it means they are delivered to different servers and copies are stored there. When you delete posts, this is likewise delivered to your followers. The action of reblogging or favouriting another post is always public.</li>
+        <li><em>Direct and followers-only posts</em>: All posts are stored and processed on the server. Followers-only posts are delivered to your followers and users who are mentioned in them, and direct posts are delivered only to users mentioned in them. In some cases it means they are delivered to different servers and copies are stored there. We make a good faith effort to limit the access to those posts only to authorized persons, but other servers may fail to do so. Therefore it's important to review servers your followers belong to. You may toggle an option to approve and reject new followers manually in the settings. <em>Please keep in mind that the operators of the server and any receiving server may view such messages</em>, and that recipients may screenshot, copy or otherwise re-share them. <em>Do not share any dangerous information over Chatterly.</em></li>
+        <li><em>IPs and other metadata</em>: When you log in, we record the IP address you log in from, as well as the name of your browser application. All the logged in sessions are available for your review and revocation in the settings. The latest IP address used is stored for up to 12 months. We also may retain server logs which include the IP address of every request to our server.</li>
+      </ul>
+
+      <hr class="spacer" />
+
+      <h3 id="use">What do we use your information for?</h3>
+
+      <p>Any of the information we collect from you may be used in the following ways:</p>
+
+      <ul>
+        <li>To provide the core functionality of Chatterly. You can only interact with other people's content and post your own content when you are logged in. For example, you may follow other people to view their combined posts in your own personalized home timeline.</li>
+        <li>To aid moderation of the community, for example comparing your IP address with other known ones to determine ban evasion or other violations.</li>
+        <li>The email address you provide may be used to send you information, notifications about other people interacting with your content or sending you messages, and to respond to inquiries, and/or other requests or questions.</li>
+      </ul>
+
+      <hr class="spacer" />
+
+      <h3 id="protect">How do we protect your information?</h3>
+
+      <p>We implement a variety of security measures to maintain the safety of your personal information when you enter, submit, or access your personal information. Among other things, your browser session, as well as the traffic between your applications and the API, are secured with SSL, and your password is hashed using a strong one-way algorithm. You may enable two-factor authentication to further secure access to your account.</p>
+
+      <hr class="spacer" />
+
+      <h3 id="data-retention">What is our data retention policy?</h3>
+
+      <p>We will make a good faith effort to:</p>
+
+      <ul>
+        <li>Retain server logs containing the IP address of all requests to this server, in so far as such logs are kept, no more than 90 days.</li>
+        <li>Retain the IP addresses associated with registered users no more than 12 months.</li>
+      </ul>
+
+      <p>You can request and download an archive of your content, including your posts, media attachments, profile picture, and header image.</p>
+
+      <p>You may irreversibly delete your account at any time.</p>
+
+      <hr class="spacer"/>
+
+      <h3 id="cookies">Do we use cookies?</h3>
+
+      <p>Yes. Cookies are small files that a site or its service provider transfers to your computer's hard drive through your Web browser (if you allow). These cookies enable the site to recognize your browser and, if you have a registered account, associate it with your registered account.</p>
+
+      <p>We use cookies to understand and save your preferences for future visits.</p>
+
+      <hr class="spacer" />
+
+      <h3 id="disclose">Do we disclose any information to outside parties?</h3>
+
+      <p>We do not sell, trade, or otherwise transfer to outside parties your personally identifiable information. This does not include trusted third parties who assist us in operating our site, conducting our business, or servicing you, so long as those parties agree to keep this information confidential. We may also release your information when we believe release is appropriate to comply with the law, enforce our site policies, or protect ours or others rights, property, or safety.</p>
+
+      <p>Your public content may be downloaded by other servers in the network. Your public and followers-only posts are delivered to the servers where your followers reside, and direct messages are delivered to the servers of the recipients, in so far as those followers or recipients reside on a different server than this.</p>
+
+      <p>When you authorize an application to use your account, depending on the scope of permissions you approve, it may access your public profile information, your following list, your followers, your lists, all your posts, and your favourites. Applications can never access your e-mail address or password.</p>
+
+      <hr class="spacer" />
+
+      <h3 id="children">Site usage by children</h3>
+
+      <p>If this server is in the EU or the EEA: Our site, products and services are all directed to people who are at least 16 years old. If you are under the age of 16, per the requirements of the GDPR (<a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">General Data Protection Regulation</a>) do not use this site.</p>
+
+      <p>If this server is in the USA: Our site, products and services are all directed to people who are at least 13 years old. If you are under the age of 13, per the requirements of COPPA (<a href="https://en.wikipedia.org/wiki/Children%27s_Online_Privacy_Protection_Act">Children's Online Privacy Protection Act</a>) do not use this site.</p>
+
+      <p>Law requirements can be different if this server is in another jurisdiction.</p>
+
+      <hr class="spacer" />
+
+      <h3 id="changes">Changes to our Privacy Policy</h3>
+
+      <p>If we decide to change our privacy policy, we will post those changes on this page.</p>
+
+      <p>This document is CC-BY-SA. It was last updated March 7, 2018.</p>
+
+      <p>Originally adapted from the <a href="https://github.com/discourse/discourse">Discourse privacy policy</a>.</p>
+    title: "%{instance} Hizmet ve Gizlilik İlkesine İlişkin Koşullar"
+  themes:
+    contrast: Chatterly (Yüksek karşıtlık)
+    default: Işıkları Kapat (Koyu)
+    mastodon-light: Sunny Outside (Aydınlık)
+  time:
+    formats:
+      default: "%b %d, %Y, %H:%M"
+      month: "%b %Y"
+  two_factor_authentication:
+    add: Ekle
+    disable: 2B devre dışı bırak
+    disabled_success: İki etkenli kimlik doğrulaması başarıyla geçersiz kılındı
+    edit: Düzenle
+    enabled: İki etkenli kimlik doğrulaması etkinleştirildi
+    enabled_success: İki etkenli kimlik doğrulaması başarıyla etkinleştirildi
+    generate_recovery_codes: Kurtarma kodları oluştur
+    lost_recovery_codes: Kurtarma kodları, telefonunuzu kaybedersen hesabınıza yeniden erişmenizi sağlar. Eğer kurtarma kodlarınızı kaybetmişseniz, onları burada yeniden canlayabilirsiniz. Eski kurtarma kodlarınız geçersiz kılınacak.
+    methods: İki etkenli yöntemler
+    otp: Kimlik doğrulayıcı uygulaması
+    recovery_codes: Yedek kurtarma kodları
+    recovery_codes_regenerated: Kurtarma kodları başarıyla yeniden oluşturuldu
+    recovery_instructions_html: Telefonunuza erişmeyi kaybedersen, hesabınıza yeniden erişmek için aşağıdaki kurtarma kodlarından birini kullanabilirsiniz. <strong>Kurtarma kodları güvenli</strong>güvenli bir şekilde tutun. Örneğin, bunları yazdırabilir ve diğer önemli belgelerle saklayabilirsiniz.
+    webauthn: Güvenlik anahtarları
+  user_mailer:
+    backup_ready:
+      explanation: Chatterly hesabında tam destek istemişsin. Şimdi indirmeye hazır!
+      subject: Arşiviniz karşıdan yükleme için hazır
+      title: Dışarı alma arşivini
+    sign_in_token:
+      details: 'Girişin ayrıntıları aşağıda yer alıyor:'
+      explanation: 'Hesabınıza tanınmayan bir IP adresinden oturum açma girişimi saptadık. Bu durumda, lütfen aşağıdaki güvenlik kodunu aşağıdaki sınama sorusu sayfasında imzalayın:'
+      further_actions: 'Bu siz olmadıysa, lütfen parolanızı değiştirin ve hesabınızda iki faktörlüden kimlik doğrulamayı etkinleştirin. Bunu burada yapabilirsiniz:'
+      subject: Lütfen oturum açma girişimini onayla
+      title: Oturum açma girişiminde bulunuldu
+    warning:
+      explanation:
+        disable: Hesabınız dondurulsa da, hesap verileriniz bozulmadan kalır, ancak kilidi açılıncaya kadar hiçbir işlem gerçekleştiremezsiniz.
+        silence: Hesabınız sınırlı olmakla birlikte, yalnızca sizi takip eden kişiler bu sunucuda sizin tootlarınızı görecektir ve çeşitli genel listelerden dışlanabilirsiniz. Ancak, diğer kişiler sizi el ile takip edebilir.
+        suspend: Hesabınız askıya alındı ve tüm toots ve karşıya yüklenen ortam dosyalarınız bu sunucudan geri döndürülemez şekilde kaldırıldı ve takipçilerinizin olduğu sunucular.
+      get_in_touch: '%{instance} numaralı personle iletişime geçebilmek için bu e-postaya yanıt verebilirdiniz.'
+      review_server_policies: Sunucu ilkelerini gözden geçir
+      statuses: 'Özellikle:'
+      subject:
+        disable: '%{acct} hesabınızın donduruldu'
+        none: '%{acct} uyarısı'
+        silence: '%{acct} hesabınızın sınırlı olduğu'
+        suspend: '%{acct} hesabınızın askıya alındığı'
+      title:
+        disable: Hesap donduruldu
+        none: Uyarı
+        silence: Hesap sınırlı
+        suspend: Hesap askıya alındı
+    welcome:
+      edit_profile_action: Kuruluş profili
+      edit_profile_step: Bir avatarı, üstbilgiyi, görünen adınızı ve daha fazlasını karşıya yükleyerek profilinizi özelleştirebilirsiniz. Sizi takip etmeye izin verilmeden önce yeni takipçileri gözden geçirmek için hesabınızı kilitleyebilirsiniz.
+      explanation: 'Başlamanız için bazı ipuçları:'
+      final_action: Postalamayı başlat
+      final_step: 'Postalamayı başlat! İzleyenler olmasa bile, genel mesajlarınız başkaları tarafından görülebilir; örneğin, yerel zaman çizelgesinde ve karma etiketlerinde. Kendinizi #introductions etiketiyle tanıştırmak isteyebilirsiniz.'
+      full_handle: Tam kolun.
+      full_handle_hint: Bu, arkadaşlarınıza mesaj vermeleri ya da sizi başka bir sunucudan izleyebilmeleri için söyleyebilecekleriniz.
+      review_preferences_action: Tercihleri değiştir
+      review_preferences_step: Almak istediğiniz e-postalar ya da gönderilerinizin varsayılan olarak hangi gizlilik düzeyini beğeneceğini belirlemek için tercihlerinizi belirlediğinizden emin olun. Eğer hareket hastalığım yoksa, GIF otopsiyi etkinleştirmeyi tercih edebilirdiniz.
+      subject: Chatterly 'ye hoş geldiniz.
+      tip_federated_timeline: Birleşik zaman çizelgesi, Chatterly ağının bir yangın hortumuna sahip bir görünümdür. Ama bu sadece komşularınızın abone olduğu insanları kapsamaktadır, bu yüzden tamamlanmamaktadır.
+      tip_following: Varsayılan olarak sunucunuzun yöneticisini/yöneticiliklerinden birini takip edin. Daha ilginç kişiler bulmak için yerel ve birleşik zaman çizelgelerini denetleyin.
+      tip_local_timeline: Yerel zaman çizelgesi, %{instance}numaralı kişilerin yangın hortumuna sahip bir görünüş. Bunlar yakın komşularınız!
+      tip_mobile_webapp: Mobil tarayıcınız size Chatterly 'i hasretinize eklemenizi öneriyorsa, anında iletme bildirimleri alabilirsiniz. Pek çok açıdan yerli bir uygulama gibi davranıyor!
+      tips: İpuçları
+      title: Güverteye hoş geldiniz, %{name}!
+  users:
+    blocked_email_provider: Bu e-posta sağlayıcıya izin verilmiyor
+    follow_limit_reached: '%{limit} kişiden fazlasını izleyemezsiniz'
+    generic_access_help_html: Hesabınıza erişirken sorun mu var? Yardım almak için %{email} ile iletişime geçebilirsiniz
+    invalid_email: E-posta adresi geçersiz
+    invalid_email_mx: E-posta adresi yok gibi görünüyor
+    invalid_otp_token: Geçersiz iki katsayılı kod
+    invalid_sign_in_token: Geçersiz güvenlik kodu
+    otp_lost_help_html: Her ikisine de erişim kaybetseniz, %{email} ile iletişime geçebilirsiniz.
+    seamless_external_login: Bir dış hizmet aracılığıyla oturum açdınız, bu nedenle parola ve e-posta ayarları kullanılabilir değil.
+    signed_in_as: 'Şu şekilde imzalanmış:'
+    suspicious_sign_in_confirmation: Daha önce bu aygıttan oturum açmamış gibi görünüyorsunuz ve bir süre daha oturum açmadınız, bu nedenle e-posta adresinize sizin olduğunu onaylamak için bir güvenlik kodu yolluyoruz.
+  verification:
+    explanation_html: '</strong>profil meta verilerinizdeki linklerin sahibi olarak kendinizi <strong>olarak doğrulayabilirsiniz. Bunun için, bağlantılı web sitesinin Chatterly profilinize bir bağlantı içermesi gerekir. <strong>arasındaki bağlantının</strong> , <code>rel="me "</code> özniteliğe sahip olması gerekir. Bağlantının metin içeriği önemli değil. Burada bir örnek vardır:'
+    verification: Doğrulama
+  webauthn_credentials:
+    add: Yeni güvenlik anahtarı ekle
+    create:
+      error: Güvenlik anahtarınız eklenirken bir sorun oluştu. Lütfen yeniden deneyin.
+      success: Güvenlik anahtarınız başarıyla eklendi.
+    delete: Sil
+    delete_confirmation: Bu güvenlik anahtarını silmek istediğinizden emin misiniz?
+    description_html: <strong>güvenlik anahtarı kimlik doğrulamasını</strong>etkinleştirdiyseniz, oturum açma işlemi güvenlik anahtarlarınızdan birini kullanmanızı gerektirir.
+    destroy:
+      error: Güvenlik anahtarı silinirken bir sorun oluştu. Lütfen yeniden deneyin.
+      success: Güvenlik anahtarınız başarıyla silindi.
+    invalid_credential: Geçersiz güvenlik anahtarı
+    nickname_hint: Yeni güvenlik anahtarınızın takma adını girin
+    not_enabled: WebAuthn 'ı henüz etkinleştirmediniz
+    not_supported: Bu tarayıcı güvenlik anahtarlarını desteklemiyor
+    otp_required: Güvenlik anahtarlarını kullanmak için lütfen önce iki etkenli kimlik doğrulamayı etkinleştirin.
+    registered_on: '%{date} tarihinde kaydedildi'

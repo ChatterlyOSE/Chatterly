@@ -1,0 +1,16 @@
+tr:
+  activerecord:
+    attributes:
+      poll:
+        expires_at: Son Tarih
+        options: Seçenekler
+    errors:
+      models:
+        account:
+          attributes:
+            username:
+              invalid: yalnızca harfler, sayılar ve alt çizgiler
+        status:
+          attributes:
+            reblog:
+              taken: durum zaten var

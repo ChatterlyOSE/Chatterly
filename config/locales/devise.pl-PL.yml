@@ -1,0 +1,116 @@
+pl:
+  devise:
+    confirmations:
+      confirmed: Twój adres e-mail został pomyślnie potwierdzony.
+      send_instructions: Otrzymasz e-mail z instrukcją, jak potwierdzić swój adres e-mail w ciągu kilku minut. Sprawdź swój folder spam, jeśli nie otrzymałeś tego maila.
+      send_paranoid_instructions: Jeśli Twój adres e-mail istnieje w naszej bazie danych, otrzymasz e-mail z instrukcją, jak potwierdzić swój adres e-mail w ciągu kilku minut. Sprawdź swój folder spam, jeśli nie otrzymałeś tego maila.
+    failure:
+      already_authenticated: Użytkownik jest już zalogowany.
+      inactive: Konto użytkownika jeszcze nie zostało aktywowane.
+      invalid: Niepoprawne hasło %{authentication_keys} lub hasło.
+      last_attempt: Masz jeszcze jedną próbę, zanim konto zostanie zablokowane.
+      locked: Konto jest zablokowane.
+      not_found_in_database: Niepoprawne hasło %{authentication_keys} lub hasło.
+      pending: Twoje konto jest nadal w przeglądzie.
+      timeout: Sesja utraciła ważność. Zaloguj się ponownie, aby kontynuować.
+      unauthenticated: Przed kontynuowaniem należy zalogować się lub zapisać się.
+      unconfirmed: Przed kontynuowaniem musisz potwierdzić swój adres e-mail.
+    mailer:
+      confirmation_instructions:
+        action: Weryfikuj adres e-mail
+        action_with_app: Potwierdź i wróć do %{app}
+        explanation: Utworzono konto w dniu %{host} z tym adresem e-mail. Użytkownik jest jednym kliknięciem, aby go aktywować. Jeśli to nie był ty, zignoruj tę wiadomość.
+        explanation_when_pending: Złożyłeś wniosek o zaproszenie do %{host} z tym adresem e-mail. Po potwierdzeniu swojego adresu e-mail dokonamy przeglądu aplikacji. Możesz się zalogować, aby zmienić swoje szczegóły lub usunąć konto, ale nie możesz uzyskać dostępu do większości funkcji, dopóki konto nie zostanie zatwierdzone. Jeśli aplikacja zostanie odrzucona, dane zostaną usunięte, dlatego żadne dalsze działanie nie będzie wymagane. Jeśli to nie był ty, zignoruj tę wiadomość.
+        extra_html: Prosimy o sprawdzenie również <a href="%{terms_path}">zasad serwera</a> oraz <a href="%{policy_path}">nasze warunki świadczenia usług</a>.
+        subject: 'Chatka: Instrukcja potwierdzania dla %{instance}'
+        title: Weryfikuj adres e-mail
+      email_changed:
+        explanation: 'Adres e-mail dla Twojego konta jest zmieniany na:'
+        extra: Jeśli nie zmieniłeś wiadomości e-mail, to prawdopodobnie ktoś zyskał dostęp do Twojego konta. Zmień hasło natychmiast lub skontaktuj się z administratorem serwera, jeśli jesteś zablokowany na swoim koncie.
+        subject: 'Zupełnie zupełnie: wiadomość e-mail została zmieniona'
+        title: Nowy adres e-mail
+      password_change:
+        explanation: Hasło dla Twojego konta zostało zmienione.
+        extra: Jeśli nie zmieniłeś swojego hasła, to prawdopodobnie ktoś zyskał dostęp do Twojego konta. Zmień hasło natychmiast lub skontaktuj się z administratorem serwera, jeśli jesteś zablokowany na swoim koncie.
+        subject: 'Rozmowa została całkowicie zmieniona: Hasło'
+        title: Hasło zostało zmienione
+      reconfirmation_instructions:
+        explanation: Potwierdź nowy adres, aby zmienić adres e-mail.
+        extra: Jeśli ta zmiana nie została zainicjowana przez Ciebie, zignoruj tę wiadomość e-mail. Adres e-mail dla konta całkowicie nie zmieni się, dopóki nie uzyskasz dostępu do tego łącza.
+        subject: 'Gorzko: Potwierdź e-mail na %{instance}'
+        title: Weryfikuj adres e-mail
+      reset_password_instructions:
+        action: Zmień hasło
+        explanation: Zażądano nowego hasła dla konta.
+        extra: Jeśli nie zażądałeś tego, zignoruj tę wiadomość e-mail. Twoje hasło nie zmieni się, dopóki nie uzyskasz dostępu do powyższego łącza i nie utworzysz nowego.
+        subject: 'Gorzko: Zresetuj instrukcje dotyczące hasła'
+        title: Resetowanie hasła
+      two_factor_disabled:
+        explanation: Uwierzytelnianie dwuskładnikowe dla konta zostało wyłączone. Logowanie jest teraz możliwe przy użyciu tylko adresu e-mail i hasła.
+        subject: 'Całkowicie: dwuelementowe uwierzytelnianie wyłączone'
+        title: Wyłączono 2FA
+      two_factor_enabled:
+        explanation: Uwierzytelnianie dwuskładnikowe zostało włączone dla konta użytkownika. Token wygenerowany przez sparowane aplikacje TOTP będzie wymagany do zalogowania się.
+        subject: 'Całkowicie: Dwuelementowe uwierzytelnianie włączone'
+        title: Włączono 2FA
+      two_factor_recovery_codes_changed:
+        explanation: Poprzednie kody odtwarzania zostały unieważnione i wygenerowane nowe.
+        subject: 'Zupełnie: Dwuskładnikowe kody odtwarzania są generowane ponownie'
+        title: Zmieniono kody powrotu 2FA
+      unlock_instructions:
+        subject: 'Gorzko: Odblokuj instrukcje'
+      webauthn_credential:
+        added:
+          explanation: Następujący klucz zabezpieczeń został dodany do konta użytkownika
+          subject: 'Zupełnie: Nowy klucz zabezpieczeń'
+          title: Dodano nowy klucz zabezpieczeń
+        deleted:
+          explanation: Następujący klucz zabezpieczeń został usunięty z konta użytkownika
+          subject: 'Gorzko: klucz zabezpieczeń został usunięty'
+          title: Jeden z tych kluczy zabezpieczeń został usunięty
+      webauthn_disabled:
+        explanation: Uwierzytelnianie za pomocą kluczy zabezpieczeń zostało wyłączone dla konta użytkownika. Logowanie jest teraz możliwe przy użyciu tylko znacznika wygenerowanego przez sparowane aplikacje TOTP.
+        subject: 'Gorzko: Uwierzytelnianie z wyłączoną kluczami ochrony'
+        title: Wyłączono klucze zabezpieczeń
+      webauthn_enabled:
+        explanation: Uwierzytelnianie za pomocą klucza zabezpieczeń zostało włączone dla konta użytkownika. Klucz zabezpieczeń może być teraz używany do logowania.
+        subject: 'Całkowicie: włączone uwierzytelnianie kluczy zabezpieczeń'
+        title: Włączone klucze zabezpieczeń
+    omniauth_callbacks:
+      failure: Nie można uwierzytelnić użytkownika od wersji %{kind} , ponieważ "%{reason}".
+      success: Pomyślnie uwierzytelniono przy użyciu konta %{kind}.
+    passwords:
+      no_token: Nie można uzyskać dostępu do tej strony bez wyzerowania wiadomości e-mail z resetem hasła. Jeśli użytkownik pochodzi z adresu e-mail resetowania hasła, upewnij się, że został użyty pełny adres URL.
+      send_instructions: Jeśli Twój adres e-mail istnieje w naszej bazie danych, w ciągu kilku minut otrzymasz link do odzyskiwania hasła na Twój adres e-mail. Sprawdź swój folder spam, jeśli nie otrzymałeś tego maila.
+      send_paranoid_instructions: Jeśli Twój adres e-mail istnieje w naszej bazie danych, w ciągu kilku minut otrzymasz link do odzyskiwania hasła na Twój adres e-mail. Sprawdź swój folder spam, jeśli nie otrzymałeś tego maila.
+      updated: Hasło zostało pomyślnie zmienione. Użytkownik jest teraz zalogowany.
+      updated_not_active: Hasło zostało pomyślnie zmienione.
+    registrations:
+      destroyed: Bye! Twoje konto zostało pomyślnie anulowane. Mamy nadzieję, że zobaczymy się wkrótce.
+      signed_up: Witamy! Użytkownik został pomyślnie podpisany.
+      signed_up_but_inactive: Użytkownik został pomyślnie podpisany. Nie mogliśmy jednak wpisać się do Ciebie, ponieważ Twoje konto nie jest jeszcze aktywowane.
+      signed_up_but_locked: Użytkownik został pomyślnie podpisany. Nie mogliśmy jednak wpisać się do Ciebie, ponieważ Twoje konto jest zablokowane.
+      signed_up_but_pending: Wiadomość z odnośnym potwierdzeniem została wysłana na Twój adres e-mail. Po kliknięciu odsyłacza dokonamy przeglądu aplikacji. Użytkownik zostanie powiadomiony, jeśli zostanie zatwierdzony.
+      signed_up_but_unconfirmed: Wiadomość z odnośnym potwierdzeniem została wysłana na Twój adres e-mail. Aby aktywować konto, postępuj zgodnie z odsyłaczem. Sprawdź swój folder spam, jeśli nie otrzymałeś tego maila.
+      update_needs_confirmation: Konto zostało pomyślnie zaktualizowane, ale musimy zweryfikować swój nowy adres e-mail. Sprawdź swój e-mail i postępuj zgodnie z linkiem potwierdzenia, aby potwierdzić swój nowy adres e-mail. Sprawdź swój folder spam, jeśli nie otrzymałeś tego maila.
+      updated: Konto zostało pomyślnie zaktualizowane.
+    sessions:
+      already_signed_out: Pomyślnie wypisano.
+      signed_in: Podpisano pomyślnie.
+      signed_out: Pomyślnie wypisano.
+    unlocks:
+      send_instructions: Otrzymasz e-mail z instrukcją, jak odblokować konto w ciągu kilku minut. Sprawdź swój folder spam, jeśli nie otrzymałeś tego maila.
+      send_paranoid_instructions: Jeśli Twoje konto istnieje, otrzymasz e-mail z instrukcjami, jak odblokować go w ciągu kilku minut. Sprawdź swój folder spam, jeśli nie otrzymałeś tego maila.
+      unlocked: Konto zostało pomyślnie odblokowane. Zaloguj się, aby kontynuować.
+  errors:
+    messages:
+      already_confirmed: został już potwierdzony, proszę spróbować się wpisywać
+      confirmation_period_expired: należy potwierdzić w ciągu %{period}, prosimy o zgłoszenie nowego
+      expired: utraciła ważność, prosimy o zgłoszenie nowego
+      not_found: nie znaleziono
+      not_locked: nie została zablokowana
+      not_saved:
+        one: '1 błąd zabroniony tego %{resource} od zapisania:'
+        few: "%{count} błędy zakazali tego %{resource} od uratowania:"
+        many: "%{count} błędy zakazali tego %{resource} od uratowania:"
+        other: "%{count} błędy zakazali tego %{resource} od uratowania:"

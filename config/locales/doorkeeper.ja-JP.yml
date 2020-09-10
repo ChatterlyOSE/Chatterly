@@ -1,0 +1,150 @@
+ja:
+  activerecord:
+    attributes:
+      doorkeeper/application:
+        name: アプリケーション名
+        redirect_uri: リダイレクト URI
+        scopes: スコープス
+        website: アプリケーション Web サイト
+    errors:
+      models:
+        doorkeeper/application:
+          attributes:
+            redirect_uri:
+              fragment_present: フラグメントを含めることができませ
+              invalid_uri: は有効な URI でなければなりません。
+              relative_uri: 絶対 URI である必要があります。
+              secured_uri: HTTPS/SSL URI でなければなりません。
+  doorkeeper:
+    applications:
+      buttons:
+        authorize: 許可
+        cancel: キャンセル
+        destroy: デストロイ
+        edit: 編集
+        submit: 送信
+      confirmations:
+        destroy: '- 確かか ?'
+      edit:
+        title: アプリケーションの編集
+      form:
+        error: おっと ! 考えられるエラーについては、フォームを
+      help:
+        native_redirect_uri: ローカル・テストには %{native_redirect_uri} を使用します
+        redirect_uri: URI ごとに 1 行を使用
+        scopes: スコープはスペースで区切ります。 デフォルトの有効範囲を使用する場合は、ブランクのまま
+      index:
+        application: アプリケーション
+        callback_url: コールバック URL
+        delete: 削除
+        empty: アプリケーションがありません。
+        name: 名称
+        new: 新規アプリケーション
+        scopes: スコープス
+        show: ショー
+        title: アプリケーション
+      new:
+        title: 新規アプリケーション
+      show:
+        actions: アクション
+        application_id: クライアント鍵
+        callback_urls: コールバック URL
+        scopes: スコープス
+        secret: クライアント秘密鍵
+        title: 'アプリケーション: %{name}'
+    authorizations:
+      buttons:
+        authorize: 許可
+        deny: デニー
+      error:
+        title: エラーが発生しました
+      new:
+        able_to: これは、
+        prompt: アプリケーション %{client_name} ユーザーのアカウントへのアクセス要求
+        title: 必要な許可
+      show:
+        title: この許可コードをコピーし、それをアプリケーションに貼り付けます。
+    authorized_applications:
+      buttons:
+        revoke: 取り消し
+      confirmations:
+        revoke: '- 確かか ?'
+      index:
+        application: アプリケーション
+        created_at: 認定
+        date_format: "%Y-%m-%d %H:%M:%S"
+        scopes: スコープス
+        title: 許可されたアプリケーション
+    errors:
+      messages:
+        access_denied: リソース所有者または許可サーバーが要求を拒否しました。
+        credential_flow_not_configured: Doorkeeper.configure.resource_owner_from_信任状が構成解除されているため、リソース所有者パスワード資格情報フローが失敗しました。
+        invalid_client: クライアント認証が、不明なクライアント、クライアント認証が含まれていない、またはサポートされない認証方式により失敗しました
+        invalid_grant: 指定された許可付与は、無効、有効期限が切れて、取り消された、許可要求で使用されているリダイレクト URI と一致しない、または別のクライアントに発行されたものです。
+        invalid_redirect_uri: 組み込まれたリダイレクト URI は無効です。
+        invalid_request: 要求に必須パラメーターが欠落しているか、サポートされていないパラメーター値が含まれているか、それ以外の形式の場合は
+        invalid_resource_owner: 指定されたリソース所有者の資格情報が無効であるか、またはリソース所有者が見つかりません
+        invalid_scope: 要求された有効範囲が無効、不明、または誤った形式です。
+        invalid_token:
+          expired: アクセス・トークンが期限切れ
+          revoked: アクセス・トークンが取り消された
+          unknown: アクセス・トークンが無効です
+        resource_owner_authenticator_not_configured: Doorkeeper.configure.resource_owner_authenticator が構成解除されているため、リソース所有者の検索が失敗しました。
+        server_error: 許可サーバーが予期しない状態を検出し、要求を満たすことができませんでした。
+        temporarily_unavailable: サーバーの一時的な過負荷または保守が原因で、許可サーバーは現在要求を処理できません。
+        unauthorized_client: クライアントは、このメソッドを使用してこの要求を実行する権限がありません。
+        unsupported_grant_type: 許可付与タイプが許可サーバーによってサポートされていません。
+        unsupported_response_type: 許可サーバーは、この応答タイプをサポートしていません。
+    flash:
+      applications:
+        create:
+          notice: 作成されたアプリケーション
+        destroy:
+          notice: 削除されたアプリケーション
+        update:
+          notice: アプリケーションの更新。
+      authorized_applications:
+        destroy:
+          notice: アプリケーションの取り消し。
+    layouts:
+      admin:
+        nav:
+          applications: 応用
+          oauth2_provider: OAuth2 プロバイダー
+      application:
+        title: OAuth 許可が必要
+    scopes:
+      "admin:read": サーバー上のすべてのデータの読み取り
+      "admin:read:accounts": すべてのアカウントの機密情報の読み取り
+      "admin:read:reports": すべてのレポートおよび報告されたアカウントの機密情報の読み取り
+      "admin:write": サーバー上のすべてのデータの変更
+      "admin:write:accounts": アカウントに対する管理アクションの実行
+      "admin:write:reports": レポートに対する管理アクションの実行
+      follow: アカウント関係の変更
+      push: プッシュ通知を受け取る
+      read: すべてのアカウントのデータを読み込む
+      "read:accounts": アカウント情報を参照
+      "read:blocks": ブロックを参照
+      "read:bookmarks": ブックマークを表示
+      "read:favourites": あなたのお気に入りを参照
+      "read:filters": フィルターを参照
+      "read:follows": あなたの次に
+      "read:lists": リストを参照
+      "read:mutes": あなたのミュートを見る
+      "read:notifications": 通知を参照
+      "read:reports": 報告書を参照
+      "read:search": お客様に代わって検索
+      "read:statuses": 状況をすべて表示
+      write: すべてのアカウントのデータを変更する
+      "write:accounts": プロファイルの変更
+      "write:blocks": ブロック・アカウントおよびドメイン
+      "write:bookmarks": ブックマーク・ステータス
+      "write:favourites": お気に入りの状況
+      "write:filters": フィルターの作成
+      "write:follows": 人々に従う
+      "write:lists": リストの作成
+      "write:media": メディアファイルのアップロード
+      "write:mutes": 人と会話をミュートする
+      "write:notifications": 通知をクリアする
+      "write:reports": 他人を報告する
+      "write:statuses": 公開ステータス

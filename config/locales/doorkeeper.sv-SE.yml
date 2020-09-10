@@ -1,0 +1,150 @@
+sv:
+  activerecord:
+    attributes:
+      doorkeeper/application:
+        name: Programnamn
+        redirect_uri: Omdirigera URI
+        scopes: Skopar
+        website: Programwebbplats
+    errors:
+      models:
+        doorkeeper/application:
+          attributes:
+            redirect_uri:
+              fragment_present: får inte innehålla ett fragment.
+              invalid_uri: måste vara en giltig URI.
+              relative_uri: måste vara en absolut URI.
+              secured_uri: måste vara en HTTPS/SSL-URI.
+  doorkeeper:
+    applications:
+      buttons:
+        authorize: Auktorisera
+        cancel: Avbryt
+        destroy: Förstör
+        edit: Redigera
+        submit: Skicka in
+      confirmations:
+        destroy: Är du säker på det?
+      edit:
+        title: Ändra program
+      form:
+        error: Hoppsan! Kontrollera formuläret för eventuella fel
+      help:
+        native_redirect_uri: Använd %{native_redirect_uri} för lokala test
+        redirect_uri: Använd en rad per URI
+        scopes: Separera omfattningar med blanktecken. Lämna tomt för att använda standardomfattningar.
+      index:
+        application: Tillämpning
+        callback_url: Återanrops-URL
+        delete: Radera
+        empty: Du har inga applikationer.
+        name: NamnName
+        new: Ny tillämpning
+        scopes: Skopar
+        show: Visa
+        title: Dina program
+      new:
+        title: Ny tillämpning
+      show:
+        actions: Åtgärder
+        application_id: Klientnyckel
+        callback_urls: Återanrops-URL-adresser
+        scopes: Skopar
+        secret: Klientsekretess
+        title: 'Program: %{name}'
+    authorizations:
+      buttons:
+        authorize: Auktorisera
+        deny: Neka
+      error:
+        title: Ett fel har uppstått
+      new:
+        able_to: Den kommer att kunna
+        prompt: Tillämpning %{client_name} begär åtkomst till ditt konto
+        title: Behörighet krävs
+      show:
+        title: Kopiera den här behörighetskoden och klistra in den i applikationen.
+    authorized_applications:
+      buttons:
+        revoke: Återkalla
+      confirmations:
+        revoke: Är du säker på det?
+      index:
+        application: Tillämpning
+        created_at: Auktoriserad
+        date_format: "%Y-%m-%d %H:%M:%S"
+        scopes: Skopar
+        title: Dina godkända program
+    errors:
+      messages:
+        access_denied: Resursägaren eller behörighetsservern nekade begäran.
+        credential_flow_not_configured: Det gick inte att skapa lösenordsflödet för resursägare p.g.a. Doorkeeper.configure.resource_owner_from_kreditiv som inte har konfigurerats.
+        invalid_client: Klientautentiseringen misslyckades på grund av okänd klient, ingen klientautentisering inkluderad, eller otillåten autentiseringsmetod.
+        invalid_grant: Det angivna behörighetsbidraget är ogiltigt, har upphört att gälla, återkallat, stämmer inte med den omdirigerings-URI som används i behörighetsordern, eller har utfärdats till en annan klient.
+        invalid_redirect_uri: Den omdirigerade URI-adressen är inte giltig.
+        invalid_request: Begäran saknar en obligatorisk parameter, innehåller ett parametervärde som inte kan användas, eller är på annat sätt fel format.
+        invalid_resource_owner: De angivna resursens ägarkreditiv är inte giltiga, eller så kan resursägaren inte hittas
+        invalid_scope: Den begärda omfattningen är ogiltig, okänd eller felformaterad.
+        invalid_token:
+          expired: Åtkomsttoken har upphört
+          revoked: Åtkomsttoken har återkallats
+          unknown: Åtkomsttoken är ogiltig
+        resource_owner_authenticator_not_configured: Det gick inte att hitta resursägaren på grund av Doorkeeper.configure.resource_owner_authenticator som inte är ikonfig.
+        server_error: Behörighetsservern påträffade ett oväntat tillstånd som förhindrade att den uppfyllde begäran.
+        temporarily_unavailable: Behörighetsservern kan för närvarande inte hantera begäran på grund av en temporär överbelastning eller underhåll av servern.
+        unauthorized_client: Klienten har inte behörighet att utföra den här begäran med den här metoden.
+        unsupported_grant_type: Behörighetsbidragstypen hanteras inte av behörighetsservern.
+        unsupported_response_type: Behörighetsservern hanterar inte den här svarstypen.
+    flash:
+      applications:
+        create:
+          notice: Programmet skapades.
+        destroy:
+          notice: Programmet togs bort.
+        update:
+          notice: Programmet uppdaterades.
+      authorized_applications:
+        destroy:
+          notice: Ansökan återkallades.
+    layouts:
+      admin:
+        nav:
+          applications: Tillämpningar
+          oauth2_provider: OAuth2-leverantör
+      application:
+        title: OAuth-behörighet krävs
+    scopes:
+      "admin:read": läsa alla data på servern
+      "admin:read:accounts": lägeskänslig information om alla konton
+      "admin:read:reports": lägeskänslig information om alla rapporter och redovisade konton
+      "admin:write": ändra alla data på servern
+      "admin:write:accounts": utföra modereringsåtgärder på konton
+      "admin:write:reports": utföra modereringsåtgärder på rapporter
+      follow: ändra kontorelationer
+      push: ta emot dina push-meddelanden
+      read: ha läst alla dina kontots data
+      "read:accounts": se kontoinformation
+      "read:blocks": se dina block
+      "read:bookmarks": se bokmärkena
+      "read:favourites": se dina favoriter
+      "read:filters": se dina filter
+      "read:follows": se följande
+      "read:lists": se dina listor
+      "read:mutes": se dina mutor.
+      "read:notifications": se aviseringar
+      "read:reports": se dina rapporter
+      "read:search": söka på dina vägnar
+      "read:statuses": se alla statusar
+      write: ändra all din kontots data
+      "write:accounts": ändra din profil
+      "write:blocks": blockera konton och domäner
+      "write:bookmarks": bokmärksstatusar
+      "write:favourites": favoritstatusar
+      "write:filters": skapa filter
+      "write:follows": följa personer
+      "write:lists": skapa listor
+      "write:media": överföra mediefiler
+      "write:mutes": stumma personer och konversationer
+      "write:notifications": rensa dina underrättelser
+      "write:reports": rapportera andra personer
+      "write:statuses": publicera statusar

@@ -1,0 +1,194 @@
+he:
+  simple_form:
+    hints:
+      account_alias:
+        acct: ציינו את שם המשתמש של החשבון שברצונכם להעביר מ -
+      account_migration:
+        acct: ציינו את שם המשתמש של החשבון שברצונכם להעביר אליו.
+      account_warning_preset:
+        text: תוכלו להשתמש בתחביר toot, כגון כתובות URL, hashתגים ומציין
+        title: אופציונלי. לא גלוי לנמען
+      admin_account_action:
+        include_statuses: המשתמש יראה אילו טוטס גרמו לפעולת הפיקוח או לאזהרה
+        send_email_notification: המשתמש יקבל הסבר על מה שקרה עם חשבונם
+        text_html: אופציונלי. אתה יכול להשתמש בתחביר טוט. ניתן <a href="%{path}">הוספת אזהרה מראש</a> כדי לחסוך זמן
+        type_html: בחרו מה לעשות עם <strong>%{acct}</strong>
+        warning_preset_id: אופציונלי. עדיין ניתן להוסיף תמליל מותאם לסוף מראש.
+      announcement:
+        all_day: כאשר מסומן, רק התאריכים של טווח הזמן יוצגו.
+        ends_at: אופציונלי. הכרזה תפורסם אוטומטית בשלב זה.
+        scheduled_at: השאירו ריק כדי לפרסם את ההודעה מיד.
+        starts_at: אופציונלי. במידה והודעתכם מחוייבת לטווח זמן ספציפי.
+        text: אתה יכול להשתמש בתחביר טוט. אנא שימו לב למרחב ההודעה תופיע על מסך המשתמש
+      defaults:
+        autofollow: אנשים שחותמים על ההזמנה ילכו אחריך באופן אוטומטי.
+        avatar: PNG, GIF או JPG. לכל היותר %{size}. יהיה מצומצם ל- %{dimensions}px
+        bot: חשבון זה מבצע בעיקר פעולות אוטומציה ולא ניתן לעקוב אחריו.
+        context: הקשרים אחד או יותר שבהם יש להחיל את המסנן.
+        current_password: לצורכי אבטחה אנא ציינו את הסיסמה של החשבון הנוכחי
+        current_username: כדי לאשר, ציינו את שם המשתמש של החשבון הנוכחי.
+        digest: נשלח רק לאחר תקופה ארוכה של חוסר פעילות ורק אם קיבלתם הודעות אישיות בהעדרות
+        discoverable: מדריך הפרופילים הוא דרך נוספת שבה החשבון שלכם יכול להגיע לקהל רחב יותר
+        email: אתם תשלחו הודעת דוא " ל אישור
+        fields: תוכלו לכלול עד 4 פריטים המוצגים כטבלה בפרופיל שלכם.
+        header: PNG, GIF או JPG. לכל היותר %{size}. יהיה מצומצם ל- %{dimensions}px
+        inbox_url: העתקת ה-URL מהעמוד הראשי של הממסר שבו ברצונכם להשתמש
+        irreversible: טוטס מסוננים יעלם באופן בלתי הפיך, גם אם המסנן מסולק מאוחר יותר
+        locale: השפה של ממשק המשתמש, הודעות דוא " ל ודיווחים
+        locked: דורש מכם לאשר באופן ידני עוקבים
+        password: שימוש ב-8 תווים לפחות
+        phrase: יהיה מותאם ללא קשר לתרמיל של תמליל או אזהרת תוכן של toot
+        scopes: איזה APIs יאפשר לגשת ליישום. אם אתם בוחרים היקף ברמה העליונה, אין צורך לבחור יחידים.
+        setting_aggregate_reblogs: לא להציג אתחול חדש עבור טוטס שהוזקו לאחרונה (משפיע רק על התומכים המתקבלים לאחרונה)
+        setting_default_sensitive: מדיה רגישה מוחבאת כברירת מחדל וניתן לחשוף אותה באמצעות לחיצה
+        setting_display_media_default: הסתרת מדיה מסומנת כרגישה
+        setting_display_media_hide_all: תמיד להסתיר מדיה
+        setting_display_media_show_all: הצגת תמיד המדיה
+        setting_hide_network: עם מי אתם עוקבים ומי עוקב אחריכם לא יוצגו בפרופיל שלכם.
+        setting_noindex: משפיע על הפרופיל הציבורי ובדפי המצב שלכם.
+        setting_show_application: היישום שבו אתם משתמשים יוצג בתצוגה המפורטת של הטוטס שלכם
+        setting_use_blurhash: הדרגות מתבססות על צבעי התמונות הנסתרות, אך הן מגלות כל פרט.
+        setting_use_pending_items: הסתרת עדכונים של ציר זמן מאחורי לחיצה במקום לסרוק את ערוץ התוכן אוטומטית.
+        username: שם המשתמש שלכם יהיה ייחודי על %{domain}
+        whole_word: כאשר מילת המפתח או הביטוי היא אלפאנומרית בלבד, היא תוחל רק אם היא תואמת את כל המילה
+      domain_allow:
+        domain: תחום זה יוכל להביא נתונים משרת זה והנתונים הנכנסים ממנו יעובדו ויאחסנו
+      email_domain_block:
+        domain: מצב זה יכול להיות שם התחום שמופיע בכתובת הדואל, רשומת ה-MX שפותרת עבור השרת, או IP של השרת שאליו מפוענחת רשומת MX. אלה ייבדקו על ההרשמה של המשתמש וההרשמה תידחה.
+        with_dns_records: ניסיון לפתור את רשומות DNS של התחום הנתון יועשה והתוצאות גם ייחסמו.
+      featured_tag:
+        name: 'ייתכן שתרצה להשתמש באחד מאלה:'
+      form_challenge:
+        current_password: אתם נכנסים לאזור מאובטח.
+      imports:
+        data: קובץ CSV יוצא משרת Mastodon אחר
+      invite_request:
+        text: פעולה זו תעזור לנו לעיין ביישום שלכם.
+      sessions:
+        otp: 'ציינו את קוד הדו-גורם שהופק על-ידי יישום הטלפון שלכם או השתמשו באחד מקודי ההתאוששות שלכם:'
+        webauthn: אם זה מפתח USB להיות בטוח להכניס אותו, ואם יש צורך, הקש אותו.
+      tag:
+        name: ניתן לשנות רק את המעטפת של האותיות, לדוגמה, כדי להפוך אותה ליותר קריא.
+      user:
+        chosen_languages: כאשר מסומן, רק טוטס בשפות נבחרות יוצגו בצירי זמן ציבוריים
+    labels:
+      account:
+        fields:
+          name: תווית
+          value: תוכן
+      account_alias:
+        acct: טיפול בחשבון הישן
+      account_migration:
+        acct: טיפול בחשבונו החדש
+      account_warning_preset:
+        text: תמליל מוגדר מראש
+        title: כותרת
+      admin_account_action:
+        include_statuses: הכללת toots דיווח בדואל
+        send_email_notification: דיווח למשתמש לכל דואל
+        text: אזהרה מותאמת
+        type: פעולה
+        types:
+          disable: השבתת התחברות
+          none: לא לעשות דבר
+          silence: דממה
+          suspend: השעיה וביטול היפוך של נתוני חשבון
+        warning_preset_id: שימוש בערכת אזהרה מראש
+      announcement:
+        all_day: אירוע ליום שלם
+        ends_at: סוף האירוע
+        scheduled_at: פרסום לוח זמנים
+        starts_at: תחילת האירוע
+        text: הכרזה
+      defaults:
+        autofollow: הזמנה למעקב אחר חשבונכם
+        avatar: אווטר
+        bot: זהו חשבון בוט.
+        chosen_languages: סינון שפות
+        confirm_new_password: אישור סיסמה חדשה
+        confirm_password: אישור סיסמה
+        context: הקשרי מסנן
+        current_password: סיסמה נוכחית
+        data: נתונים
+        discoverable: פרטו חשבון זה במדריך
+        display_name: שם להצגה
+        email: כתובת דוא " ל
+        expires_in: התוקף פג לאחר
+        fields: מטה-נתונים של פרופיל
+        header: כותרת עליונה
+        inbox_url: URL של תיבת הדואר הנכנס
+        irreversible: שחרור במקום להסתיר
+        locale: שפת ממשק
+        locked: חשבון נעילה
+        max_uses: מספר מרבי של שימושים
+        new_password: סיסמה חדשה
+        note: ביו
+        otp_attempt: קוד 2-גורם
+        password: סיסמה
+        phrase: מילת מפתח או ביטוי
+        setting_advanced_layout: הפעלת ממשק אינטרנט מתקדם
+        setting_aggregate_reblogs: קבוצת התומכים בצירי זמן
+        setting_auto_play_gif: הרצה אוטומטית של GIFS
+        setting_boost_modal: הצגת הדו-שיח 'אישור' לפני אתחול
+        setting_crop_images: תמונות Crop ב-toots שאינם מורחבים ל-16x9
+        setting_default_language: שפת Posting
+        setting_default_privacy: שמירת פרטיות
+        setting_default_sensitive: תמיד לסמן מדיה כרגישות
+        setting_delete_modal: הצגת הדו-שיח 'אישור' לפני מחיקת טוט
+        setting_display_media: תצוגת מדיה
+        setting_display_media_default: ברירת מחדל
+        setting_display_media_hide_all: הסתרת הכל
+        setting_display_media_show_all: הצגת הכל
+        setting_expand_spoilers: תמיד להרחיב טוטס המסומנים עם אזהרות תוכן
+        setting_hide_network: הסתרת הרשת שלכם
+        setting_noindex: Opt-מתוך מפתוח מנוע חיפוש
+        setting_reduce_motion: הפחתת תנועה באנימציות
+        setting_show_application: יישום סגירה המשמש לשליחת toots
+        setting_system_font_ui: שימוש בגופן ברירת המחדל של המערכת
+        setting_theme: נושא אתר
+        setting_trends: הצגת המגמות של היום
+        setting_unfollow_modal: הצגת תיבת דו-שיח לאישור לפני ביטול מעקב של מישהו
+        setting_use_blurhash: הצגת הדרגות צבעוניות עבור מדיה מוסתרת
+        setting_use_pending_items: מצב איטי
+        severity: חומרה
+        sign_in_token_attempt: קוד אבטחה
+        type: סוג יבוא
+        username: שם משתמש
+        username_or_email: שם משתמש או דואל
+        whole_word: מילה שלמה
+      email_domain_block:
+        with_dns_records: הכללת רשומות MX ו-IPs של התחום
+      featured_tag:
+        name: האשטאג
+      interactions:
+        must_be_follower: חסימת הודעות שאינם עוקבים
+        must_be_following: חסימת הודעות מאנשים שלא עוקבים אחריהם.
+        must_be_following_dm: לחסום הודעות ישירות מאנשים שאתם לא עוקבים אחריהם.
+      invite:
+        comment: הערה
+      invite_request:
+        text: למה אתם רוצים להצטרף?
+      notification_emails:
+        digest: שליחת הודעות דוא " ל
+        favourite: מישהו חיובי על הסטטוס שלך.
+        follow: מישהו עקב אחריך.
+        follow_request: מישהו ביקש לעקוב אחריך.
+        mention: מישהו הזכיר לך את זה.
+        pending_account: יש לסקור חשבון חדש
+        reblog: מישהו שיפר את הסטטוס שלך.
+        report: דוח חדש הוגש
+        trending_tag: Hashtag לא נסקר הוא מגמה
+      tag:
+        listable: לאפשר לתג hashtag זה להופיע בחיפושים ובמדריך הפרופילים
+        name: האשטאג
+        trendable: לאפשר hashtag זה להופיע תחת מגמות
+        usable: לאפשר לטוטס להשתמש בתג hashtag זה
+    'no': 'לא'
+    recommended: מומלץ
+    required:
+      mark: "*"
+      text: נדרש
+    title:
+      sessions:
+        webauthn: השתמש באחד ממפתחות האבטחה שלך כדי לחתום.
+    'yes': 'כן'

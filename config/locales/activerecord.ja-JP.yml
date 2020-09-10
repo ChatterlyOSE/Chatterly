@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    attributes:
+      poll:
+        expires_at: デッドライン
+        options: 選択項目
+    errors:
+      models:
+        account:
+          attributes:
+            username:
+              invalid: 文字、数字、および下線のみ
+        status:
+          attributes:
+            reblog:
+              taken: 状況は既に存在します

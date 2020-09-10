@@ -1,0 +1,1352 @@
+zh-TW:
+  about:
+    about_hashtag_html: '這些是標示為 <strong>#%{hashtag}</strong>的公用 touts 。 如果在喋喋不休的任何地方都有帳號，您可以與他們互動。'
+    about_mastodon_html: '未來的社會網絡：沒有企業監控、倫理設計、權力下放！ 您的資料與 Chatwatwat！'
+    about_this: 關於
+    active_count_after: 積極
+    active_footnote: 每月作用中使用者（ MAU）
+    administered_by: '管理者：'
+    api: 阿皮
+    apps: 行動式應用程式
+    apps_platforms: 下載 PC/Mac/iOS/Android 的最近應用程式
+    browse_directory: 瀏覽設定檔目錄並依興趣過濾
+    browse_local_posts: 瀏覽此伺服器的公用文章串流
+    browse_public_posts: 瀏覽「最近」上的公用文章串流串流
+    contact: 聯絡
+    contact_missing: 未設定
+    contact_unavailable: N/A
+    discover_users: 探索使用者
+    documentation: 文件
+    federation_hint_html: 在 %{instance} 的賬戶上，你將能跟隨在沙比和更遠的人。
+    get_apps: 試用行動式應用程式
+    hosted_on: ChatterlyOSE 於 %{domain} 進行管理
+    instance_actor_flash: |
+      此帳戶是用來代表伺服器本身，而非任何個別使用者的虛擬角色。
+      它是用於聯合用途，不應封鎖，除非您要封鎖整個實例，在此情況下，您應該使用網域區塊。
+    learn_more: 進一步瞭解
+    privacy_policy: 隱私權政策
+    see_whats_happening: 看看發生了什麼
+    server_stats: '伺服器統計資料：'
+    source_code: 原始碼
+    status_count_after:
+      other: 狀態
+    status_count_before: 已編寫
+    tagline: 跟著朋友去發現新的
+    terms: 服務條款
+    unavailable_content: 控管的伺服器
+    unavailable_content_description:
+      domain: 伺服器
+      reason: 原因
+      rejecting_media: '這些伺服器中的媒體檔案將不會被處理或儲存，且不會顯示縮圖，需要手動按一下原始檔案：'
+      rejecting_media_title: 已過濾的媒體
+      silenced: '這些伺服器的文章將會隱藏在公用時間表和交談中，且不會從其使用者互動產生通知，除非您在追踪它們：'
+      silenced_title: 隔離的伺服器
+      suspended: '這些伺服器中沒有任何資料會被處理、儲存或交換，因此無法與這些伺服器中的使用者進行任何互動或通訊：'
+      suspended_title: 暫停的伺服器
+    unavailable_content_html: 一般會讓您從其他伺服器中檢視內容，以及與其他伺服器中的使用者互動。 這些是已在此特定伺服器上進行的異常狀況。
+    user_count_after:
+      other: 使用者
+    user_count_before: 首頁至
+    what_is_mastodon: 什麼是 " 聊天" ？
+  accounts:
+    choices_html: "%{name}'s 選項："
+    endorsements_hint: 您可以從 Web 介面中認可您遵循的人員，他們將在這裡顯示。
+    featured_tags_hint: 您可以在這裡顯示將顯示的特定主題標籤。
+    follow: 跟隨
+    followers:
+      other: 追踪者
+    following: 以下
+    joined: 已加入 %{date}
+    last_active: 前次作用中
+    link_verified_on: 已在 %{date} 檢查此鏈結的所有權
+    media: 媒體
+    moved_html: "%{name} 已移動至 %{new_profile_link}："
+    network_hidden: 此資訊無法使用
+    never_active: 從來沒有
+    nothing_here: 這裡什麼都沒有
+    people_followed_by: '%{name} 後面的人員'
+    people_who_follow: 追踪 %{name} 的人員
+    pin_errors:
+      following: 您必須已追踪您要背書的人員
+    posts:
+      other: Toots
+    posts_tab_heading: Toots
+    posts_with_replies: ots 和回覆
+    reserved_username: 已保留使用者名稱
+    roles:
+      admin: Roxon 員工
+      bot: 博特
+      group: 組
+      moderator: 最近安全團隊
+    unavailable: 無法使用設定
+    unfollow: 取消追踪
+  admin:
+    account_actions:
+      action: 執行動作
+      title: 在 %{acct} 執行控管動作
+    account_moderation_notes:
+      create: 保留附註
+      created_msg: 已順利建立控管附註！
+      delete: 刪除
+      destroyed_msg: 控管說明已順利毀損！
+    accounts:
+      add_email_domain_block: 區塊電子郵件網域
+      approve: 核准
+      approve_all: 全部核准
+      are_you_sure: 你確定嗎？
+      avatar: 阿瓦塔爾
+      by_domain: 領域
+      change_email:
+        changed_msg: 已順利變更帳戶電子郵件！
+        current_email: 現行電子郵件
+        label: 變更電子郵件
+        new_email: 新電子郵件
+        submit: 變更電子郵件
+        title: 將電子郵件變更為 %{username}
+      confirm: 確認
+      confirmed: 已確認
+      confirming: 確認中
+      deleted: 已刪除
+      demote: 德莫特
+      disable: 停用
+      disable_two_factor_authentication: 停用 2FA
+      disabled: 已停用
+      display_name: 顯示名稱
+      domain: 領域
+      edit: 編輯
+      email: 電子郵件
+      email_status: 電子郵件狀態
+      enable: 啟用
+      enabled: 已啟用
+      followers: 追踪者
+      follows: 福洛斯
+      header: 頁首
+      inbox_url: 收件匣 URL
+      invited_by: 邀請者
+      ip: 葉
+      joined: 已結合
+      location:
+        all: 全部
+        local: 本地
+        remote: 遠端
+        title: 地點
+      login_status: 登入狀態
+      media_attachments: 媒體附件
+      memorialize: 變成 memoriam
+      moderation:
+        active: 作用中
+        all: 全部
+        pending: 擱置中
+        silenced: 已隔離
+        suspended: 已暫停
+        title: 溫和
+      moderation_notes: 控管注意事項
+      most_recent_activity: 最新活動
+      most_recent_ip: 最新 IP
+      no_account_selected: 未變更任何科目，因為未選取任何科目
+      no_limits_imposed: 未施加限制
+      not_subscribed: 未訂閱
+      pending: 待審
+      perform_full_suspension: 暫停
+      promote: 升級
+      protocol: Protocol
+      public: 公共
+      push_subscription_expires: PSH 訂閱到期
+      redownload: 重新整理設定檔
+      reject: 拒絕
+      reject_all: 全部拒絕
+      remove_avatar: 移除化身
+      remove_header: 移除標頭
+      resend_confirmation:
+        already_confirmed: 此使用者已確認
+        send: 重新傳送確認電子郵件
+        success: 已順利傳送確認電子郵件！
+      reset: 重設
+      reset_password: 重設密碼
+      resubscribe: Resubscribe
+      role: 許可權
+      roles:
+        admin: 署長
+        moderator: 主持人
+        staff: 職員
+        user: 使用者
+      search: 搜尋
+      search_same_email_domain: 其他具有相同電子郵件網域的使用者
+      search_same_ip: 具有相同 IP 的其他使用者
+      shared_inbox_url: 共用收件匣 URL
+      show:
+        created_reports: 製造報告
+        targeted_reports: 由其他人報告
+      silence: 安靜
+      silenced: 已隔離
+      statuses: 狀態
+      subscribe: 訂閱
+      suspended: 已暫停
+      time_in_queue: Waiting in queue %{time}
+      title: 賬戶
+      unconfirmed_email: 未確認的電子郵件
+      undo_silenced: 復原靜音
+      undo_suspension: 復原暫停
+      unsubscribe: 取消訂閱
+      username: Username
+      warn: 沃恩
+      web: Web
+      whitelisted: 容許的聯合
+    action_logs:
+      action_types:
+        assigned_to_self_report: 指派報告
+        change_email_user: 變更使用者的電子郵件
+        confirm_user: 確認使用者
+        create_account_warning: 建立警告
+        create_announcement: 建立公告
+        create_custom_emoji: 建立自訂 Emoji
+        create_domain_allow: 建立網域容許
+        create_domain_block: 建立網域區塊
+        create_email_domain_block: 建立電子郵件網域區塊
+        demote_user: 降級使用者
+        destroy_announcement: 刪除公告
+        destroy_custom_emoji: 刪除自訂 Emoji
+        destroy_domain_allow: 刪除網域容許
+        destroy_domain_block: 刪除網域區塊
+        destroy_email_domain_block: 刪除電子郵件網域區塊
+        destroy_status: 刪除狀態
+        disable_2fa_user: 停用 2FA
+        disable_custom_emoji: 停用自訂 Emoji
+        disable_user: 停用使用者
+        enable_custom_emoji: 啟用自訂 Emoji
+        enable_user: 啟用使用者
+        memorialize_account: 將帳戶 Memorize
+        promote_user: 升級使用者
+        remove_avatar_user: 移除 Avatar
+        reopen_report: 重新開啟報告
+        reset_password_user: 重設密碼
+        resolve_report: 解析報告
+        silence_account: 沉默帳戶
+        suspend_account: 暫停帳戶
+        unassigned_report: 取消指派報告
+        unsilence_account: 取消靜音帳戶
+        unsuspend_account: 取消暫停帳戶
+        update_announcement: 更新公告
+        update_custom_emoji: 更新自訂 Emoji
+        update_status: 更新狀態
+      actions:
+        assigned_to_self_report: "%{name} 向自己指派報告 %{target}"
+        change_email_user: "%{name} 變更了使用者 %{target} 的電子郵件位址"
+        confirm_user: "%{name} 確認使用者 %{target} 的電子郵件地址"
+        create_account_warning: "%{name} 向 %{target} 發出警告"
+        create_announcement: "%{name} 建立新的公告 %{target}"
+        create_custom_emoji: "%{name} 上傳新表情符號 %{target}"
+        create_domain_allow: "%{name} 容許聯合網域 %{target}"
+        create_domain_block: "%{name} 封鎖網域 %{target}"
+        create_email_domain_block: "%{name} 封鎖電子郵件網域 %{target}"
+        demote_user: "%{name} 降級使用者 %{target}"
+        destroy_announcement: "%{name} 刪除公告 %{target}"
+        destroy_custom_emoji: "%{name} 銷毀 emoji %{target}"
+        destroy_domain_allow: "%{name} 禁止的聯盟與網域 %{target}"
+        destroy_domain_block: "%{name} 未封鎖網域 %{target}"
+        destroy_email_domain_block: "%{name} 未封鎖的電子郵件網域 %{target}"
+        destroy_status: "%{name} 移除狀態為 %{target}"
+        disable_2fa_user: "%{name} 已停用使用者 %{target} 的兩個因素需求"
+        disable_custom_emoji: "%{name} 殘疾 emoji %{target}"
+        disable_user: "%{name} 已停用使用者登入 %{target}"
+        enable_custom_emoji: "%{name} enabled emoji %{target}"
+        enable_user: "%{name} 已啟用使用者 %{target} 的登入"
+        memorialize_account: "%{name} 將 %{target}的帳戶轉換為備忘錄頁面"
+        promote_user: "%{name} 提升使用者 %{target}"
+        remove_avatar_user: "%{name} 移除了 %{target}的虛擬人像"
+        reopen_report: "%{name} 重新開啟報告 %{target}"
+        reset_password_user: "%{name} 使用者 %{target} 的重設密碼"
+        resolve_report: "%{name} 解析報告 %{target}"
+        silence_account: "%{name} 淤塞 %{target}'s 帳戶"
+        suspend_account: "%{name} 暫停 %{target}的帳戶"
+        unassigned_report: "%{name} 未指派報告 %{target}"
+        unsilence_account: "%{name} 無淤塞的 %{target}的帳戶"
+        unsuspend_account: "%{name} 未暫停的 %{target}'s 帳戶"
+        update_announcement: "%{name} 更新公告 %{target}"
+        update_custom_emoji: "%{name} 更新的 emoji %{target}"
+        update_status: "%{name} 更新狀態： %{target}"
+      deleted_status: "（已刪除狀態）"
+      empty: 找不到日誌。
+      filter_by_action: 依動作過濾
+      filter_by_user: 依使用者過濾
+      title: 審核日誌
+    announcements:
+      destroyed_msg: 已順利刪除公告！
+      edit:
+        title: 編輯公告
+      empty: 找不到公告。
+      live: 實況
+      new:
+        create: 建立公告
+        title: 新建公告
+      published_msg: 已順利發佈公告！
+      scheduled_for: Scheduled for %{time}
+      scheduled_msg: 已排定發佈的公告！
+      title: 公告
+      unpublished_msg: 已順利取消發佈公告！
+      updated_msg: 已順利更新公告！
+    custom_emojis:
+      assign_category: 指派種類
+      by_domain: 領域
+      copied_msg: 已順利建立本 emoji 的本端副本
+      copy: 收到
+      copy_failed_msg: 找不到那個表情的本地副本
+      create_new_category: 建立新種類
+      created_msg: Emoji 成功創造了！
+      delete: 刪除
+      destroyed_msg: Emoji 成功銷毀了！
+      disable: 停用
+      disabled: 已停用
+      disabled_msg: 已順利停用該表情符號
+      emoji: 埃莫吉
+      enable: 啟用
+      enabled: 已啟用
+      enabled_msg: 已順利啟用該表情符號
+      image_hint: PNG 最多 50KB
+      list: 清單
+      listed: Listed
+      new:
+        title: 新增自訂表情符號
+      not_permitted: 不允許您執行此動作
+      overwrite: 改寫
+      shortcode: Shortcode
+      shortcode_hint: 至少 2 個字元，僅英數字元及底線
+      title: Custom emojis
+      uncategorized: 未分類
+      unlist: 取消清單
+      unlisted: 未列出
+      update_failed_msg: 無法更新 emoji
+      updated_msg: Emoji 成功更新了！
+      upload: 上傳
+    dashboard:
+      authorized_fetch_mode: 安全模式
+      backlog: backed jobs
+      config: 配置
+      feature_deletions: 帳戶刪除
+      feature_invites: 邀請鏈結
+      feature_profile_directory: 設定檔目錄
+      feature_registrations: 登錄
+      feature_relay: 聯合中繼
+      feature_spam_check: 反垃圾郵件
+      feature_timeline_preview: 時間表預覽
+      features: 特性
+      hidden_service: 與隱藏服務的聯合
+      open_reports: 開啟報告
+      pending_tags: 等待檢閱的雜湊標籤
+      pending_users: 等待檢閱的使用者
+      recent_users: 最近的使用者
+      search: 全文檢索
+      single_user_mode: 單一使用者模式
+      software: 軟體
+      space: 空間使用情形
+      title: 儀表板
+      total_users: 個使用者總數
+      trends: 趨勢
+      week_interactions: 這個星期的互動
+      week_users_active: 本周活動
+      week_users_new: 本周的使用者
+      whitelist_mode: 限制聯合模式
+    domain_allows:
+      add_new: 容許具有網域的聯合
+      created_msg: 已順利容許聯合網域
+      destroyed_msg: 已禁止聯合網域
+      undo: 使用網域不允許聯合
+    domain_blocks:
+      add_new: 新增網域區塊
+      created_msg: 現在正在處理網域區塊
+      destroyed_msg: 網域區塊已復原
+      domain: 領域
+      edit: 編輯網域區塊
+      existing_domain_block_html: 您已在 %{name}設定了更嚴格的限制，您需要 <a href="%{unblock_url}">先解除它</a> 的限制。
+      new:
+        create: 建立區塊
+        hint: 網域區塊不會防止在資料庫中建立帳戶項目，但會追溯並自動在那些科目上套用特定的控管方法。
+        severity:
+          desc_html: "<strong>沉默</strong> 將會將帳戶的貼文隱藏在任何不追踪他們的人。 <strong>暫停</strong> 將會移除所有帳戶的內容、媒體及設定檔資料。 如果您只想拒絕媒體檔案，請使用 <strong>無</strong>。"
+          noop: 沒有
+          silence: 安靜
+          suspend: 暫停
+        title: 新的網域區塊
+      private_comment: 專用註解
+      private_comment_hint: 主持人關於此網域限制的註解，以供控管者使用。
+      public_comment: 公用註解
+      public_comment_hint: 如果已啟用廣告網域限制清單，則為一般公用的這個網域限制發表意見。
+      reject_media: 拒絕媒體檔案
+      reject_media_hint: 移除本端儲存的媒體檔案，並拒絕下載任何未來的媒體檔案。 與懸念無關
+      reject_reports: 拒絕報告
+      reject_reports_hint: 忽略來自這個網域的所有報告。 與懸念無關
+      rejecting_media: 拒絕媒體檔案
+      rejecting_reports: 拒絕報告
+      severity:
+        silence: 沉默
+        suspend: 懸
+      show:
+        affected_accounts:
+          other: "%{count} 受影響資料庫中的帳戶"
+        retroactive:
+          silence: 解除此網域中現有受影響帳戶的靜音
+          suspend: 從這個網域取消暫停現有受影響的帳戶
+        title: 復原網域區塊 %{domain}
+        undo: 解開
+      undo: 復原網域區塊
+      view: 檢視網域區塊
+    email_domain_blocks:
+      add_new: 新增新的
+      created_msg: 已順利封鎖電子郵件網域
+      delete: 刪除
+      destroyed_msg: 已順利解除封鎖電子郵件網域
+      domain: 領域
+      empty: 目前未封鎖任何電子郵件網域。
+      from_html: 從 %{domain}
+      new:
+        create: 新增網域
+        title: 封鎖新的電子郵件網域
+      title: 已封鎖的電子郵件網域
+    instances:
+      by_domain: 領域
+      delivery_available: 可用的遞送
+      known_accounts:
+        other: "%{count} 已知帳戶"
+      moderation:
+        all: 全部
+        limited: 有限
+        title: 溫和
+      private_comment: 專用註解
+      public_comment: 公用註解
+      title: 聯邦
+      total_blocked_by_us: 被我們封鎖
+      total_followed_by_them: 跟著他們
+      total_followed_by_us: 跟著我們
+      total_reported: 關於它們的報告
+      total_storage: 媒體附件
+    invites:
+      deactivate_all: 全部停用
+      filter:
+        all: 全部
+        available: 可用
+        expired: 過期
+        title: 過濾
+      title: 邀請
+    pending_accounts:
+      title: 擱置帳戶（%{count}）
+    relationships:
+      title: "%{acct}'s 關係"
+    relays:
+      add_new: 新增中繼
+      delete: 刪除
+      description_html: <strong>聯合中繼</strong> 是一種中介伺服器，在訂閱及發佈的伺服器之間交換大量的公用 toots 。 <strong>它可以幫助中小型伺服器發現來自不同種類的</strong>的內容，否則會需要本端使用者在遠端伺服器上手動追踪其他人員。
+      disable: 停用
+      disabled: 已停用
+      enable: 啟用
+      enable_hint: 一旦啟用，您的伺服器將會訂閱此轉遞的所有公用程式，並開始將此伺服器的公用程式傳送給它。
+      enabled: 已啟用
+      inbox_url: 中繼 URL
+      pending: 等待中繼核准
+      save_and_enable: 儲存並啟用
+      setup: 設定中繼連線
+      signatures_not_enabled: 在啟用安全模式或限制聯合模式時，中繼將無法正確運作
+      status: 狀態
+      title: 中繼
+    report_notes:
+      created_msg: 已順利建立報告附註！
+      destroyed_msg: 已順利刪除報告附註！
+    reports:
+      account:
+        notes:
+          other: "%{count} 注意事項"
+        reports:
+          other: "%{count} 報告"
+      action_taken_by: 採取的動作
+      are_you_sure: 你確定嗎？
+      assign_to_self: 指派給我
+      assigned: 指派的主持人
+      by_target_domain: 報告帳戶的網域
+      comment:
+        none: 沒有
+      created_at: 報告
+      mark_as_resolved: 標示為已解決
+      mark_as_unresolved: 標示為未解析
+      notes:
+        create: 新增附註
+        create_and_resolve: 用附註解析
+        create_and_unresolve: 使用附註重新開啟
+        delete: 刪除
+        placeholder: 說明已採取哪些動作，或任何其他相關更新...
+      reopen: 重新開啟報告
+      report: 'Report #%{id}'
+      reported_account: 報告的帳戶
+      reported_by: 報告者
+      resolved: 已解析
+      resolved_msg: 已順利解析報告！
+      status: 狀態
+      title: 報告
+      unassign: 取消指派
+      unresolved: 未解析
+      updated_at: 已更新
+    settings:
+      activity_api_enabled:
+        desc_html: 在每周儲存區中，本端公佈的狀態計數、作用中使用者及新登錄
+        title: 發佈使用者活動的相關聚集統計資料
+      bootstrap_timeline_accounts:
+        desc_html: 以逗點區隔多個使用者名稱。 只有本端和解除鎖定的帳戶才會運作。 當空的是所有本端管理者時預設。
+        title: 適用於新使用者的預設值
+      contact_information:
+        email: 商業電子郵件
+        username: 聯絡人使用者名稱
+      custom_css:
+        desc_html: 修改每個頁面載入的 CSS 外觀
+        title: 自訂 CSS
+      default_noindex:
+        desc_html: 會影響所有未自行變更此設定的使用者
+        title: 依預設，將使用者移出搜尋引擎檢索
+      domain_blocks:
+        all: 給大家
+        disabled: 沒有人
+        title: 顯示網域區塊
+        users: To logged-in local users
+      domain_blocks_rationale:
+        title: 說明理由
+      enable_bootstrap_timeline_accounts:
+        title: 為新使用者啟用預設值
+      hero:
+        desc_html: 在前端顯示。 建議至少 600x100px 。 未設定時，會回到伺服器縮圖
+        title: 英雄形象
+      mascot:
+        desc_html: 在多個頁面上顯示。 建議至少 293×205px 。 未設定時，回復為預設的吉祥物
+        title: 吉祥物影像
+      peers_api_enabled:
+        desc_html: 在非多樣化中，此伺服器遇到的網域名稱
+        title: 發佈探索到的伺服器清單
+      preview_sensitive_media:
+        desc_html: 在其他網站上的鏈結預覽會顯示縮圖，即使媒體標示為機密也一樣
+        title: 在 OpenGraph 預覽中顯示機密媒體
+      profile_directory:
+        desc_html: 容許使用者可探索
+        title: 啟用設定檔目錄
+      registrations:
+        closed_message:
+          desc_html: 當登錄關閉時顯示在首頁上。 您可以使用 HTML 標籤
+          title: 已關閉登錄訊息
+        deletion:
+          desc_html: 容許任何人刪除其帳戶
+          title: 開啟帳戶刪除
+        min_invite_role:
+          disabled: 沒人
+          title: 容許邀請
+      registrations_mode:
+        modes:
+          approved: 註冊所需的核准
+          none: 沒有人可以報名
+          open: 誰都可以報名
+        title: 登錄模式
+      show_known_fediverse_at_about_page:
+        desc_html: 停用時，限制從登入頁面鏈結的公用時間表，以僅顯示本端內容
+        title: 在未經鑑別的公用時間表頁面中包含聯合內容
+      show_staff_badge:
+        desc_html: 在使用者頁面上顯示工作人員徽章
+        title: 顯示工作人員徽章
+      site_description:
+        desc_html: API 的簡介段落。 描述什麼讓他變得特別特別還有其他重要的事 您可以使用 HTML 標籤，特別是 <code>&lt;a&gt;</code> 及 <code>&lt;em&gt;</code>。
+        title: 伺服器說明
+      site_description_extended:
+        desc_html: 為您的行為準則、規則、準則及其他將您的伺服器分開設定的事項，有一個好的地方。 您可以使用 HTML 標籤
+        title: 自訂延伸資訊
+      site_short_description:
+        desc_html: 顯示在資訊看板和 meta 標籤中。 描述了什麼是什麼，是什麼讓我們在一個段落裡特別特別。
+        title: 簡短伺服器說明
+      site_terms:
+        desc_html: 您可以撰寫自己的隱私權政策、服務條款或其他法律用語。 您可以使用 HTML 標籤
+        title: 自訂服務條款
+      site_title: 伺服器名稱
+      spam_check_enabled:
+        desc_html: '「最近」可以自動報告傳送重複自發訊息的帳戶。 可能有誤判。'
+        title: 反垃圾郵件自動化
+      thumbnail:
+        desc_html: 用於透過 OpenGraph 及 API 進行預覽。建議 1200x630px
+        title: 伺服器縮圖
+      timeline_preview:
+        desc_html: 在登入頁面上顯示公用時間表的鏈結，並容許 API 存取公用時間表，而不需要鑑別
+        title: 容許未鑑別的公用時間表存取權
+      title: 網站設定
+      trendable_by_default:
+        desc_html: 影響先前未禁止的雜湊標籤
+        title: 容許雜湊標籤在沒有事先檢閱的情況下進行趨勢
+      trends:
+        desc_html: 公開顯示先前檢閱的雜湊標籤，目前為趨勢
+        title: 趨勢雜湊標籤
+    site_uploads:
+      delete: 刪除上傳的檔案
+      destroyed_msg: 已順利刪除網站上傳！
+    statuses:
+      back_to_account: 回到帳戶頁面
+      batch:
+        delete: 刪除
+        nsfw_off: 標示為不區分
+        nsfw_on: 標示為機密
+      deleted: 已刪除
+      failed_to_execute: 無法執行
+      media:
+        title: 媒體
+      no_media: 無媒體
+      no_status_selected: 未變更狀態，因為未選取任何狀態
+      title: 帳戶狀態
+      with_media: 具有媒體
+    tags:
+      accounts_today: 今天的唯一用途
+      accounts_week: 這個星期的唯一用途
+      breakdown: 依來源分類今天的使用情形
+      context: 背景
+      directory: 在目錄中
+      in_directory: "%{count} in 目錄"
+      last_active: 前次作用中
+      most_popular: 最受歡迎
+      most_recent: 最新
+      name: 雜湊標籤
+      review: 檢閱狀態
+      reviewed: 已檢閱
+      title: 雜湊標籤
+      trending_right_now: 現在 Trending
+      unique_uses_today: "今天上午 %{count}"
+      unreviewed: 未檢閱
+      updated_msg: 已順利更新雜湊標籤設定
+    title: 管理
+    warning_presets:
+      add_new: 新增新的
+      delete: 刪除
+      edit_preset: 編輯警告預設值
+      title: 管理警告預先設定
+  admin_mailer:
+    new_pending_account:
+      body: 新帳戶的詳細資料如下。 您可以核准或拒絕此應用程式。
+      subject: New account up for review on %{instance} (%{username})
+    new_report:
+      body: "%{reporter} 已報告 %{target}"
+      body_remote: Someone from %{domain} has reported %{target}
+      subject: '新報告： %{instance} （#%{id}）'
+    new_trending_tag:
+      body: 'hashtag #%{name} 今天趨勢趨勢，但先前尚未檢閱。 除非您容許它，否則不會公開顯示它，或僅儲存表單，因為它永遠不會再聽到它。'
+      subject: '在 %{instance} （#%{name} ）上進行檢閱的新雜湊標籤'
+  aliases:
+    add_new: 建立別名
+    created_msg: 已順利建立新的別名。 您現在可以從舊帳戶起始移動。
+    deleted_msg: 已順利移除別名。 從這個賬戶移至這一賬戶就不可能再發生。
+    empty: 你沒有別名
+    hint_html: 如果您要從另一個帳戶移至這個帳戶，您可以在這裡建立別名，在您可以繼續從舊帳戶移至這個別名之前，您必須先進行此別名。 這個動作本身就是 <strong>無害的和可逆的</strong>。 <strong>帳戶移轉是從舊帳號</strong> 起始。
+    remove: 解除鏈結別名
+  appearance:
+    advanced_web_interface: 進階 Web 介面
+    advanced_web_interface_hint: '如果您想要使用整個螢幕寬度，進階 Web 介面可讓您配置許多不同的直欄，以在您想要的相同時間查看資訊：首頁、通知、聯合時間表、任意數目的清單及雜湊標籤。'
+    animations_and_accessibility: 動畫和協助工具
+    confirmation_dialogs: 確認對話框
+    discovery: 探索
+    localization:
+      body: 由志願者翻譯。
+      guide_link: https://crowdin.com/project/chatterlyose
+      guide_link_text: 每個人都可以貢獻。
+    sensitive_content: 機密內容
+    toot_layout: Toot 佈置
+  application_mailer:
+    notification_preferences: 變更電子郵件喜好設定
+    salutation: "%{name}，"
+    settings: '變更電子郵件喜好設定： %{link}'
+    view: '檢視：'
+    view_profile: 檢視設定檔
+    view_status: 檢視狀態
+  applications:
+    created: 已順利建立應用程式
+    destroyed: 已順利刪除應用程式
+    invalid_url: 提供的 URL 無效
+    regenerate_token: 重新產生存取記號
+    token_regenerated: 已順利重新產生存取記號
+    warning: 請小心使用此資料。 永遠不要跟任何人分享
+    your_token: 您的存取記號
+  auth:
+    apply_for_account: 要求邀請
+    change_password: 密碼
+    checkbox_agreement_html: 我同意查特利的 <a href="%{terms_path}" target="_blank">服務條件</a>
+    checkbox_agreement_without_rules_html: 我同意 <a href="%{terms_path}" target="_blank">的服務條款</a>
+    delete_account: 刪除帳戶
+    delete_account_html: 如果您要刪除您的帳戶，您可以在這裡</a>繼續執行 <a href="%{path}">。 您將被要求確認。
+    description:
+      prefix_invited_by_user: "@%{name} 請您一起來聊天吧！"
+      prefix_sign_up: 今天就在那里註冊吧
+      suffix: 透過帳號，您將能夠追踪人員、貼文更新，並與「聊天」的使用者交換訊息！
+    didnt_get_confirmation: 未收到確認指示？
+    dont_have_your_security_key: 沒有安全金鑰嗎？
+    forgot_password: 忘記密碼了嗎？
+    invalid_reset_password_token: 密碼重設記號無效或過期。 請要求新的。
+    link_to_otp: 請從您的電話或回復碼輸入雙因素碼
+    link_to_webauth: 使用您的安全金鑰裝置
+    login: 登入
+    logout: Logout
+    migrate_account: 移至不同的帳戶
+    migrate_account_html: If you wish to redirect this account to a different one, you can <a href="%{path}">configure it here</a>.
+    or_log_in_with: 或使用登入
+    providers:
+      cas: 卡斯
+      saml: 薩姆爾
+    register: 註冊
+    registration_closed: "%{instance} 不接受新成員"
+    resend_confirmation: 重新傳送確認指示
+    reset_password: 重設密碼
+    security: 安全
+    set_new_password: 設定新密碼
+    setup:
+      email_below_hint_html: 如果下面的電子郵件地址不正確，您可以在這裡變更它，並接收新的確認電子郵件。
+      email_settings_hint_html: 確認電郵已發送至 %{email}。 如果該電子郵件位址不正確，您可以在帳號設定中變更它。
+      title: 設定
+    status:
+      account_status: 帳戶狀態
+      confirming: 等待電子郵件確認完成。
+      functional: 您的帳戶已完全運作。
+      pending: 您的應用程式正在等待我們的人員檢閱。 這可能需要一些時間。 如果您的應用程式已核准，您將會收到電子郵件。
+      redirecting_to: 您的帳戶非作用中，因為它目前正在重新導向至 %{acct}。
+    trouble_logging_in: 麻煩登入？
+    use_security_key: 使用安全金鑰
+  authorize_follow:
+    already_following: 您已追踪此帳戶
+    already_requested: 您已將追踪要求傳送至該帳戶
+    error: 不幸的是，在查閱遠端帳戶時發生錯誤
+    follow: 跟隨
+    follow_request: '您已傳送下列要求給：'
+    following: '成功了！ 您現在正在追踪：'
+    post_follow:
+      close: 或者，您可以關閉此視窗。
+      return: 顯示使用者的人員資訊
+      web: 跳至 Web
+    title: 追踪 %{acct}
+  challenge:
+    confirm: 繼續
+    hint_html: "<strong>提示：</strong> 我們將不會在接下來的一小時內再次要求您輸入密碼。"
+    invalid_password: 無效密碼
+    prompt: 確認密碼以繼續
+  crypto:
+    errors:
+      invalid_key: 不是有效的 Ed25519 或 Curve25519 鍵
+      invalid_signature: 不是有效的 Ed25519 簽章
+  date:
+    formats:
+      default: "%b %d， %Y"
+      with_month_name: "%B %d， %Y"
+  datetime:
+    distance_in_words:
+      about_x_hours: "%{count}h"
+      about_x_months: "%{count}月"
+      about_x_years: "%{count}y"
+      almost_x_years: "%{count}y"
+      half_a_minute: 剛才
+      less_than_x_minutes: "%{count}m"
+      less_than_x_seconds: 剛才
+      over_x_years: "%{count}y"
+      x_days: "%{count}d"
+      x_minutes: "%{count}m"
+      x_months: "%{count}月"
+      x_seconds: "%{count}s"
+  deletes:
+    challenge_not_passed: 您輸入的資訊不正確
+    confirm_password: 輸入您的現行密碼以驗證您的身分
+    confirm_username: 輸入您的使用者名稱以確認程序
+    proceed: 刪除帳戶
+    success_msg: 您的帳戶已順利刪除
+    warning:
+      before: '在繼續進行之前，請仔細閱讀這些附註：'
+      caches: 可能持續保存其他伺服器所快取的內容
+      data_removal: 您的文章和其他資料將永久移除
+      email_change_html: 您可以 <a href="%{path}">更改您的電郵地址</a> 而不刪除您的帳戶
+      email_contact_html: If it still doesn't arrive, you can e-mail <a href="mailto:%{email}">%{email}</a> for help
+      email_reconfirmation_html: 若您未收到確認電郵，您可致電 <a href="%{path}">請再次要求</a>
+      irreversible: 您將無法還原或重新啟動您的帳戶
+      more_details_html: 如需更多詳細資料，請參閱 <a href="%{terms_path}">隱私權政策</a>。
+      username_available: 您的使用者名稱將再次變成可用
+      username_unavailable: 您的使用者名稱將無法使用
+  directories:
+    directory: 設定檔目錄
+    explanation: 根據使用者的興趣來探索使用者
+    explore_mastodon: 探索 %{title}
+  domain_validator:
+    invalid_domain: 不是有效的網域名稱
+  errors:
+    '400': 您提交的要求無效或形態異常。
+    '403': 您沒有檢視此頁面的權限。
+    '404': 我想你走錯地方了這裡什麼都沒有
+    '406': 此頁面無法使用所要求的格式。
+    '410': 休士頓，我們有問題了，頁面不見了
+    '422':
+      content: 安全驗證失敗。 你在阻擋曲奇嗎？
+      title: 安全驗證失敗
+    '429': 要求太多
+    '500':
+      content: 我們很抱歉但我們的結局出了點問題 我們已收到此錯誤的通知，並正在努力解決此錯誤。
+      title: 此頁面不正確
+    '503': 很抱歉，我們的伺服器負載似乎很高。 我們正努力盡快解決這個問題
+    noscript_html: To use the Chatterly, please enable JavaScript. Alternatively, try one of the <a href="%{apps_path}">native apps</a> for Chatterly Mobile for your platform.
+  existing_username_validator:
+    not_found: 找不到具有該使用者名稱的本端使用者
+    not_found_multiple: 找不到 %{usernames}
+  exports:
+    archive_takeout:
+      date: 日期
+      download: 下載保存檔
+      hint_html: 您可以要求 <strong>的保存檔，並上傳媒體</strong>。 匯出的資料將採用 ActivityPub 格式，可由任何相容軟體讀取。 您可以每 7 天要求保存一次。
+      in_progress: 正在編譯您的保存檔 ...
+      request: 要求保存
+      size: 大小
+    blocks: 你擋住了
+    csv: CSV
+    domain_blocks: 網域區塊
+    lists: 清單
+    mutes: 你啞巴
+    storage: 媒體儲存
+  featured_tags:
+    add_new: 新增新的
+    errors:
+      limit: 您已使用 hashtags 的數量上限
+    hint_html: "<strong>什麼是特色主題標籤？</strong> 它們會在您的公用設定檔上醒目顯示，並可讓人特別在那些雜湊標籤下瀏覽您的公開文章。 它們是追踪創意作品或長期項目的偉大工具。"
+  filters:
+    contexts:
+      account: 人員資訊
+      home: 首頁時間表
+      notifications: 通知
+      public: 公用時間表
+      thread: 交談
+    edit:
+      title: 編輯過濾器
+    errors:
+      invalid_context: 提供的環境定義沒有或無效
+      invalid_irreversible: 無法還原的過濾僅適用於起始目錄或通知環境定義
+    index:
+      delete: 刪除
+      empty: 您沒有過濾器。
+      title: 過濾器
+    new:
+      title: 新增過濾器
+  footer:
+    developers: 開發人員
+    more: 更多…
+    resources: 資源
+    trending_now: 趨勢現在
+  generic:
+    all: 全部
+    changes_saved_msg: 已順利儲存變更！
+    copy: 收到
+    delete: 刪除
+    no_batch_actions_available: 此頁面上沒有可用的批次動作
+    order_by: 訂購方式
+    save_changes: 儲存變更
+    validation_errors:
+      other: 有些事還不太對 請在下方檢閱 %{count} 錯誤
+  html_validator:
+    invalid_markup: '包含無效的 HTML 標記： %{error}'
+  identity_proofs:
+    active: 作用中
+    authorize: 是，授權
+    authorize_connection_prompt: 授權此加密連線嗎？
+    errors:
+      failed: 加密連線失敗。 請從 %{provider} 重試。
+      keybase:
+        invalid_token: 金鑰庫記號是簽章的雜湊，且必須為 66 個十六進位字元
+        verification_failed: Keybase 不認為此記號是 Keybase 使用者 %{kb_username}的簽章。 請從 Keybase 重試。
+      wrong_user: 在登錄為 %{current}時，無法建立 %{proving} 的證明。 請以 %{proving} 登入，然後再試一次。
+    explanation_html: 在這裡，您可以從其他平台（例如， Keybase）來加密連接您的其他身分。 這可讓其他人在這些平台上傳送加密訊息，並讓他們信任您傳送的內容來自您。
+    i_am_html: 我是 %{service} 的 %{username}。
+    identity: 身份
+    inactive: 非作用中
+    publicize_checkbox: '還有這個'
+    publicize_toot: 'It is proven! I am %{username} on %{service}: %{url}'
+    remove: 從帳戶中移除證明
+    removed: 已順利從帳戶移除證明
+    status: 驗證狀態
+    view_proof: 檢視證明
+  imports:
+    modes:
+      merge: 合併
+      merge_long: 保留現有記錄並新增記錄
+      overwrite: 改寫
+      overwrite_long: 將現行記錄取代為新的記錄
+    preface: 您可以匯入從其他伺服器匯出的資料，例如，您正在追踪或封鎖的人員清單。
+    success: 您的資料已順利上傳，現在將在適當時間進行處理
+    types:
+      blocking: 封鎖清單
+      domain_blocking: 網域封鎖清單
+      following: 下列清單
+      muting: 靜音清單
+    upload: 上傳
+  in_memoriam_html: 在 Memoriam 。
+  invites:
+    delete: 取消啟動
+    expired: 過期
+    expires_in:
+      '1800': 30 分鐘
+      '21600': 6 小時
+      '3600': 1 小時
+      '43200': 12 小時
+      '604800': 1 周
+      '86400': 1 天
+    expires_in_prompt: 從來沒有
+    generate: 產生邀請鏈結
+    invited_by: '以下是您所邀請的：'
+    max_uses:
+      other: "%{count} 使用"
+    max_uses_prompt: 沒有限制
+    prompt: 產生並共用與其他人的鏈結，以授與存取此伺服器的存取權
+    table:
+      expires_at: 到期
+      uses: 使用
+    title: 邀請人員
+  lists:
+    errors:
+      limit: 您已達到清單的數量上限
+  media_attachments:
+    validations:
+      images_and_video: 無法將視訊連接至已包含影像的狀態
+      not_ready: 無法附加未完成處理的檔案。 請稍等一下
+      too_many: 無法附加 4 個以上的檔案
+  migrations:
+    acct: 已移至
+    cancel: 取消重新導向
+    cancel_explanation: 取消重新導向將會重新啟動您的現行帳戶，但不會將已移至該帳戶的追踪者帶回來。
+    cancelled_msg: 已順利取消重新導向。
+    errors:
+      already_moved: 是您已移至的相同帳戶
+      missing_also_known_as: 不是此帳戶的別名
+      move_to_self: 不能是現行帳戶
+      not_found: 找不到
+      on_cooldown: 你冷靜
+    followers_count: 移動時的追隨者
+    incoming_migrations: 從不同帳戶移動
+    incoming_migrations_html: 若要從另一個帳戶移至此帳戶，請先需要 <a href="%{path}">建立帳戶別名</a>。
+    moved_msg: 您的帳戶現在重新導向至 %{acct} ，而您的追隨者已被移去。
+    not_redirecting: 您的帳戶目前未重新導向至任何其他帳戶。
+    on_cooldown: 您最近已移轉帳戶。 此功能將在 %{count} 天內再次變成可用。
+    past_migrations: 過去移轉
+    proceed_with_move: 移動追隨者
+    redirected_msg: 您的帳戶現在正在重新導向至 %{acct}。
+    redirecting_to: 您的帳戶重新導向至 %{acct}
+    set_redirect: 設定重新導向
+    warning:
+      backreference_required: 新帳戶必須先配置成再參照這個帳戶
+      before: '在繼續進行之前，請仔細閱讀這些附註：'
+      cooldown: 移動之後是一個冷靜期，在此期間您將無法再次移動
+      disabled_account: 之後，您的現行帳戶將無法完全使用。 不過，您將可以存取資料匯出，以及重新啟動。
+      followers: 此動作會將所有追踪者從現行帳戶移至新帳戶
+      only_redirect_html: 或者，您也可以在您的設定檔</a> 上放置重新導向的 <a href="%{path}">。
+      other_data: 將不會自動移動其他資料
+      redirect: 您的現行帳戶的設定檔將會以重新導向通知更新，並從搜尋中排除
+  moderation:
+    title: 溫和
+  move_handler:
+    carry_blocks_over_text: 這個使用者從 %{acct}移動，您已封鎖該使用者。
+    carry_mutes_over_text: 此使用者從 %{acct}移動，您已靜音。
+    copy_account_note_text: '此使用者已從 %{acct}移動，以下是您先前關於它們的附註：'
+  notification_mailer:
+    digest:
+      action: 檢視所有通知
+      body: 以下是您自 %{since} 最後一次造訪後所錯過的訊息摘要。
+      mention: "%{name} 中提及您："
+      new_followers_summary:
+        other: 另外，你在離開的時候也獲得了 %{count} 新粉絲！ 太棒了
+      subject:
+        other: "%{count} 自您上次造訪以來的新通知 \U0001F418"
+      title: 在你不在的情況下
+    favourite:
+      body: '您的狀態是由 %{name} 所表示的：'
+      subject: "%{name} 很喜歡您的狀態"
+      title: 新喜好
+    follow:
+      body: "%{name} 現在跟著你！"
+      subject: "%{name} 現在正在追踪您"
+      title: 新跟隨器
+    follow_request:
+      action: 管理追踪要求
+      body: "%{name} 已要求跟隨您"
+      subject: '擱置追隨者： %{name}'
+      title: 新建追踪要求
+    mention:
+      action: 答覆：
+      body: '%{name} 在中提到您：'
+      subject: '%{name} 提到你'
+      title: 新建提及
+    reblog:
+      body: '您的狀態已提高 %{name}：'
+      subject: "%{name} 提升您的狀態"
+      title: 新建提升
+  notifications:
+    email_events: 電子郵件通知的事件
+    email_events_hint: '選取您要接收通知的事件：'
+    other_settings: 其他通知設定
+  number:
+    human:
+      decimal_units:
+        format: "%n%u"
+        units:
+          billion: B
+          million: M
+          quadrillion: Q
+          thousand: K
+          trillion: T
+          unit: ''
+  otp_authentication:
+    code_hint: 輸入由鑑別程式應用程式產生的程式碼來確認
+    description_html: 如果您使用鑑別程式應用程式來啟用 <strong>兩個因素鑑別</strong> ，登入會要求您擁有您的電話，這會產生記號供您輸入。
+    enable: 啟用
+    instructions_html: "<strong>在您的電話</strong>上，將此 QR 碼掃描至 Google 鑑別器或類似的 TOTP 應用程式。 從現在開始，該應用程式將產生記號，您將在登入時輸入這些記號。"
+    manual_instructions: '如果您無法掃描 QR 碼，並需要手動輸入它，這裡是純文字秘密：'
+    setup: 設定
+    wrong_code: 輸入的程式碼無效！ 伺服器時間及裝置時間是否正確？
+  pagination:
+    newer: 尼韋爾
+    next: 下一個
+    older: 較舊
+    prev: 前
+    truncate: "&hellip;"
+  polls:
+    errors:
+      already_voted: 您已在此輪詢中投票
+      duplicate_options: 包含重複項目
+      duration_too_long: 對未來來說太遠了
+      duration_too_short: 太快了
+      expired: 輪詢已結束
+      invalid_choice: 選擇的投票選項不存在
+      over_character_limit: 的長度不能超過 %{max} 個字元
+      too_few_options: 必須有多個項目
+      too_many_options: 不能包含超過 %{max} 個項目
+  preferences:
+    other: 其他
+    posting_defaults: 張貼預設值
+    public_timelines: 公用時間表
+  reactions:
+    errors:
+      limit_reached: 達到的不同反應的限制
+      unrecognized_emoji: 並不是公認的表情符號
+  relationships:
+    activity: 帳戶活動
+    dormant: 多爾芒
+    followers: 追踪者
+    following: 以下
+    invited: 已邀請
+    last_active: 前次作用中
+    most_recent: 最新
+    moved: 莫韋德
+    mutual: 互助
+    primary: 初級
+    relationship: 關係
+    remove_selected_domains: 從選取的網域中移除所有追隨者
+    remove_selected_followers: 移除選取的追隨者
+    remove_selected_follows: 取消追踪選取的使用者
+    status: 帳戶狀態
+  remote_follow:
+    acct: 輸入您的 username@domain ，以從
+    missing_resource: 找不到您帳戶的必要重新導向 URL
+    no_account_html: 沒有帳戶？</a> 您可以在這裡註冊 <a href='%{sign_up_path}' target='_blank'>
+    proceed: 繼續追踪
+    prompt: '您將會遵循：'
+    reason_html: "<strong>為何需要此步驟？</strong> <code>%{instance}</code> 可能不是您所登錄的伺服器，因此我們需要先將您重新導向至您的起始伺服器。"
+  remote_interaction:
+    favourite:
+      proceed: 繼續喜好
+      prompt: '你最喜歡這個'
+    reblog:
+      proceed: 繼續提升
+      prompt: '您想要提升此圖說：'
+    reply:
+      proceed: 繼續回覆
+      prompt: '您想要回覆這個 toot：'
+  scheduled_statuses:
+    over_daily_limit: 您已超出當日的 %{limit} 個已排定的限制
+    over_total_limit: 您已超出了 %{limit} 排程的限制
+    too_soon: 排定日期必須是未來日期
+  sessions:
+    activity: 前次活動
+    browser: 瀏覽器
+    browsers:
+      alipay: 阿利佩
+      blackberry: 布萊克伯裡
+      chrome: Chrome
+      edge: Microsoft Edge
+      electron: 電子
+      firefox: Firefox
+      generic: 不明的瀏覽器
+      ie: Internet Explorer
+      micro_messenger: MicroMessenger
+      nokia: Nokia S40 Ovi Browser
+      opera: 歌劇
+      otter: 奧特
+      phantom_js: PhanomJS
+      qq: QQ 瀏覽器
+      safari: Safari
+      uc_browser: UCS 瀏覽器
+      weibo: 微博
+    current_session: 現行階段作業
+    description: "%{browser} on %{platform}"
+    explanation: 這些是目前登入您的 Chated 帳戶的 Web 瀏覽器。
+    ip: 葉
+    platforms:
+      adobe_air: Adobe Air
+      android: Android
+      blackberry: 布萊克伯裡
+      chrome_os: ChromeOS
+      firefox_os: Firefox OS
+      ios: iOS
+      linux: Linux
+      mac: macOS
+      other: 不明平台
+      windows: Windows
+      windows_mobile: Windows Mobile
+      windows_phone: Windows Phone
+    revoke: 勒沃克
+    revoke_success: 順利撤銷階段作業
+    title: 我在哪裡登入？
+  settings:
+    account: 科目
+    account_settings: 帳戶設定
+    aliases: 帳戶別名
+    appearance: 外觀
+    authorized_apps: 授權的應用程式
+    back: 回到過去
+    delete: 帳戶刪除
+    development: 發展
+    edit_profile: 編輯設定檔
+    export: 資料匯出
+    featured_tags: 特色雜湊標籤
+    identity_proofs: 身份證明
+    import: 匯入
+    import_and_export: 匯入及匯出
+    migrate: 帳戶移轉
+    notifications: 通知
+    preferences: Preferences
+    profile: 設定檔
+    relationships: 福羅和追隨者
+    two_factor_authentication: 雙因素鑑別
+    webauthn_authentication: 安全金鑰
+  spam_check:
+    spam_detected: 這是自動報告 偵測到垃圾郵件。
+  statuses:
+    attached:
+      audio:
+        other: "%{count} 音訊"
+      description: 'Attached ： %{attached}'
+      image:
+        other: "%{count} 影像"
+      video:
+        other: "%{count} 視訊"
+    boosted_from_html: 從 %{acct_link} 預訂
+    content_warning: '內容警告： %{warning}'
+    disallowed_hashtags:
+      other: '包含不容許的雜湊標籤： %{tags}'
+    errors:
+      in_reply_not_found: 您嘗試回覆的狀態似乎不存在。
+    language_detection: 自動偵測語言
+    open_in_web: 在 Web 中開啟
+    over_character_limit: 已超出 %{max} 的字元限制
+    pin_errors:
+      limit: 您已釘選最大 toots 數目
+      ownership: 無法固定其他人的 toot
+      private: 無法固定非公用 toot
+      reblog: 無法固定提升
+    poll:
+      total_people:
+        other: "%{count} 人"
+      total_votes:
+        other: "%{count} 票"
+      vote: 投票
+    show_more: 顯示更多
+    show_thread: 顯示執行緒
+    sign_in_to_participate: 登入以參與交談
+    title: '%{name}： "%{quote}"'
+    visibilities:
+      private: Followers-only
+      private_long: 只顯示給追隨者
+      public: 公共
+      public_long: 大家都看得出來
+      unlisted: 未列出
+      unlisted_long: 每個人都可以看到，但未在公開時間表上列出
+  stream_entries:
+    pinned: 固定 toot
+    reblogged: 增強
+    sensitive_content: 機密內容
+  tags:
+    does_not_match_previous_name: 不符合前一個名稱
+  terms:
+    body_html: |
+      <h2>Privacy Policy</h2>
+      <h3 id="collect">What information do we collect?</h3>
+
+      <ul>
+        <li><em>Basic account information</em>: If you register on this server, you may be asked to enter a username, an e-mail address and a password. You may also enter additional profile information such as a display name and biography, and upload a profile picture and header image. The username, display name, biography, profile picture and header image are always listed publicly.</li>
+        <li><em>Posts, following and other public information</em>: The list of people you follow is listed publicly, the same is true for your followers. When you submit a message, the date and time is stored as well as the application you submitted the message from. Messages may contain media attachments, such as pictures and videos. Public and unlisted posts are available publicly. When you feature a post on your profile, that is also publicly available information. Your posts are delivered to your followers, in some cases it means they are delivered to different servers and copies are stored there. When you delete posts, this is likewise delivered to your followers. The action of reblogging or favouriting another post is always public.</li>
+        <li><em>Direct and followers-only posts</em>: All posts are stored and processed on the server. Followers-only posts are delivered to your followers and users who are mentioned in them, and direct posts are delivered only to users mentioned in them. In some cases it means they are delivered to different servers and copies are stored there. We make a good faith effort to limit the access to those posts only to authorized persons, but other servers may fail to do so. Therefore it's important to review servers your followers belong to. You may toggle an option to approve and reject new followers manually in the settings. <em>Please keep in mind that the operators of the server and any receiving server may view such messages</em>, and that recipients may screenshot, copy or otherwise re-share them. <em>Do not share any dangerous information over Chatterly.</em></li>
+        <li><em>IPs and other metadata</em>: When you log in, we record the IP address you log in from, as well as the name of your browser application. All the logged in sessions are available for your review and revocation in the settings. The latest IP address used is stored for up to 12 months. We also may retain server logs which include the IP address of every request to our server.</li>
+      </ul>
+
+      <hr class="spacer" />
+
+      <h3 id="use">What do we use your information for?</h3>
+
+      <p>Any of the information we collect from you may be used in the following ways:</p>
+
+      <ul>
+        <li>To provide the core functionality of Chatterly. You can only interact with other people's content and post your own content when you are logged in. For example, you may follow other people to view their combined posts in your own personalized home timeline.</li>
+        <li>To aid moderation of the community, for example comparing your IP address with other known ones to determine ban evasion or other violations.</li>
+        <li>The email address you provide may be used to send you information, notifications about other people interacting with your content or sending you messages, and to respond to inquiries, and/or other requests or questions.</li>
+      </ul>
+
+      <hr class="spacer" />
+
+      <h3 id="protect">How do we protect your information?</h3>
+
+      <p>We implement a variety of security measures to maintain the safety of your personal information when you enter, submit, or access your personal information. Among other things, your browser session, as well as the traffic between your applications and the API, are secured with SSL, and your password is hashed using a strong one-way algorithm. You may enable two-factor authentication to further secure access to your account.</p>
+
+      <hr class="spacer" />
+
+      <h3 id="data-retention">What is our data retention policy?</h3>
+
+      <p>We will make a good faith effort to:</p>
+
+      <ul>
+        <li>Retain server logs containing the IP address of all requests to this server, in so far as such logs are kept, no more than 90 days.</li>
+        <li>Retain the IP addresses associated with registered users no more than 12 months.</li>
+      </ul>
+
+      <p>You can request and download an archive of your content, including your posts, media attachments, profile picture, and header image.</p>
+
+      <p>You may irreversibly delete your account at any time.</p>
+
+      <hr class="spacer"/>
+
+      <h3 id="cookies">Do we use cookies?</h3>
+
+      <p>Yes. Cookies are small files that a site or its service provider transfers to your computer's hard drive through your Web browser (if you allow). These cookies enable the site to recognize your browser and, if you have a registered account, associate it with your registered account.</p>
+
+      <p>We use cookies to understand and save your preferences for future visits.</p>
+
+      <hr class="spacer" />
+
+      <h3 id="disclose">Do we disclose any information to outside parties?</h3>
+
+      <p>We do not sell, trade, or otherwise transfer to outside parties your personally identifiable information. This does not include trusted third parties who assist us in operating our site, conducting our business, or servicing you, so long as those parties agree to keep this information confidential. We may also release your information when we believe release is appropriate to comply with the law, enforce our site policies, or protect ours or others rights, property, or safety.</p>
+
+      <p>Your public content may be downloaded by other servers in the network. Your public and followers-only posts are delivered to the servers where your followers reside, and direct messages are delivered to the servers of the recipients, in so far as those followers or recipients reside on a different server than this.</p>
+
+      <p>When you authorize an application to use your account, depending on the scope of permissions you approve, it may access your public profile information, your following list, your followers, your lists, all your posts, and your favourites. Applications can never access your e-mail address or password.</p>
+
+      <hr class="spacer" />
+
+      <h3 id="children">Site usage by children</h3>
+
+      <p>If this server is in the EU or the EEA: Our site, products and services are all directed to people who are at least 16 years old. If you are under the age of 16, per the requirements of the GDPR (<a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">General Data Protection Regulation</a>) do not use this site.</p>
+
+      <p>If this server is in the USA: Our site, products and services are all directed to people who are at least 13 years old. If you are under the age of 13, per the requirements of COPPA (<a href="https://en.wikipedia.org/wiki/Children%27s_Online_Privacy_Protection_Act">Children's Online Privacy Protection Act</a>) do not use this site.</p>
+
+      <p>Law requirements can be different if this server is in another jurisdiction.</p>
+
+      <hr class="spacer" />
+
+      <h3 id="changes">Changes to our Privacy Policy</h3>
+
+      <p>If we decide to change our privacy policy, we will post those changes on this page.</p>
+
+      <p>This document is CC-BY-SA. It was last updated March 7, 2018.</p>
+
+      <p>Originally adapted from the <a href="https://github.com/discourse/discourse">Discourse privacy policy</a>.</p>
+    title: "%{instance} 服務條款及隱私權政策"
+  themes:
+    contrast: 最近（高對比）
+    default: 燈熄滅（黑暗）
+    mastodon-light: 外面的 Sunny （光）
+  time:
+    formats:
+      default: "%b %d， %Y， %H:%M"
+      month: "%b %Y"
+  two_factor_authentication:
+    add: 新增
+    disable: 停用 2FA
+    disabled_success: 已順利停用雙因素鑑別
+    edit: 編輯
+    enabled: 已啟用雙因素鑑別
+    enabled_success: 已順利啟用雙因素鑑別
+    generate_recovery_codes: 產生回復碼
+    lost_recovery_codes: 回復碼可讓您在遺失電話時重新取得帳戶的存取權。 如果您遺失了回復代碼，您可以在這裡重新產生它們。 您的舊回復碼將失效。
+    methods: 二因素法
+    otp: 鑑別程式應用程式
+    recovery_codes: 備份回復碼
+    recovery_codes_regenerated: 順利重新產生回復代碼
+    recovery_instructions_html: 如果您永遠無法存取您的電話，您可以使用下面其中一個回復碼來重新取得您的帳戶的存取權。 <strong>請保留回復代碼安全</strong>。 例如，您可以列印它們，並將它們儲存在其他重要文件中。
+    webauthn: 安全金鑰
+  user_mailer:
+    backup_ready:
+      explanation: 你要求全面備份你的賬戶 現在已經準備好下載了！
+      subject: 您的保存檔已備妥可供下載
+      title: 保存外賣
+    sign_in_token:
+      details: '以下是嘗試的詳細資料：'
+      explanation: '我們偵測到嘗試從無法辨識的 IP 位址登入您的帳戶。 如果這是您的話，請在挑戰頁面中輸入以下的安全碼：'
+      further_actions: '如果這不是您，請變更您的密碼，並在您的帳戶上啟用雙因素鑑別。 您可以在這裡執行下列動作：'
+      subject: 請確認已嘗試登入
+      title: 登入嘗試
+    warning:
+      explanation:
+        disable: 雖然您的帳戶已凍結，但您的帳戶資料會保持完整，但在解除鎖定之前，您無法執行任何動作。
+        silence: 雖然您的帳戶受到限制，但只有已跟隨您的人員會在此伺服器上看到您的待辦項目，而且您可能被排除在各種公開清單之外。 不過，其他人可能仍在手動追踪您。
+        suspend: 您的帳戶已暫停，您的所有 otots 及上傳的媒體檔案已不可逆轉地從這部伺服器移除，且伺服器在您有追隨者的伺服器上已被移除。
+      get_in_touch: 您可以回覆此電子郵件，以與 %{instance} 的工作人員聯絡。
+      review_server_policies: 檢閱伺服器原則
+      statuses: '具體來說，適用於：'
+      subject:
+        disable: 您的帳號 %{acct} 已被凍結
+        none: 警告 %{acct}
+        silence: 您的帳號 %{acct} 受到限制
+        suspend: 您的帳號 %{acct} 已暫停
+      title:
+        disable: 帳戶已凍結
+        none: 警告
+        silence: 帳戶限制
+        suspend: 帳戶已暫停
+    welcome:
+      edit_profile_action: 設定設定檔
+      edit_profile_step: 您可以透過上傳 Avatar、標頭、變更顯示名稱及其他方式來自訂您的設定檔。 如果你想在他們被允許跟踪你之前先檢視新的追隨者，你就可以鎖定你的帳戶。
+      explanation: 以下是一些讓您開始使用的提示
+      final_action: 開始張貼
+      final_step: '開始張貼！ 即使沒有追隨者，您的公用訊息也可能被其他人看到，例如，在本端時間表和雜湊標籤上。 您可能想要在 #introductions hashtag 中介紹自己。'
+      full_handle: 您的完整控點
+      full_handle_hint: 這就是你要告訴朋友的，這樣他們就可以從另一部伺服器上留言或追踪你。
+      review_preferences_action: 變更喜好設定
+      review_preferences_step: 請確定設定喜好設定，例如您想要接收的電子郵件，或您的貼文預設為的隱私權層次。 如果你沒有運動病，你可以選擇讓 GIF 自動駕駛。
+      subject: 歡迎來到這
+      tip_federated_timeline: 聯合時間表是「已查」網路的消防水管視圖。 但它只包括您的鄰接項所訂閱的人員，因此它不完整。
+      tip_following: 依預設，您遵循伺服器的管理。 如果要尋找更有趣的人員，請檢查本端和聯合時間表。
+      tip_local_timeline: 本端時間表是 %{instance}人員的消防裝置視圖。 這些是你的鄰居
+      tip_mobile_webapp: 如果您的行動式瀏覽器讓您將 Chatreen 新增至 homescreen，則可以接收推送通知。 它就像個原生應用程式，在許多方面！
+      tips: 蒂普斯
+      title: 歡迎登機， %{name}！
+  users:
+    blocked_email_provider: 不容許此電子郵件提供者
+    follow_limit_reached: 您不能追踪超過 %{limit} 人
+    generic_access_help_html: 存取帳戶有問題嗎？ 您可以聯絡 %{email} 尋求協助
+    invalid_email: 電子郵件位址無效
+    invalid_email_mx: 電子郵件位址似乎不存在
+    invalid_otp_token: 雙因素碼無效
+    invalid_sign_in_token: 安全碼無效
+    otp_lost_help_html: 如果您同時遺失了兩者的存取權，您可能會取得 %{email} 的聯絡
+    seamless_external_login: 您已透過外部服務登入，因此密碼及電子郵件設定無法使用。
+    signed_in_as: '以下列方式登入：'
+    suspicious_sign_in_confirmation: 您之前似乎未從此裝置登入，而且您尚未登入一段時間，所以我們會將安全碼傳送至您的電子郵件位址，以確認是您的。
+  verification:
+    explanation_html: '您可以使用 <strong>驗證您的設定檔 meta 資料中的鏈結擁有者，</strong>。 為此，鏈結的網站必須包含回復至您的「前幾個」設定檔的鏈結。 鏈結回 <strong>必須為</strong> 有 <code>rel="me"</code> 屬性。 鏈結的文字內容不重要。 以下是範例：'
+    verification: 核查
+  webauthn_credentials:
+    add: 新增安全金鑰
+    create:
+      error: 新增安全金鑰時發生問題。 請重試。
+      success: 已順利新增您的安全金鑰。
+    delete: 刪除
+    delete_confirmation: 您確定要刪除此安全金鑰嗎？
+    description_html: 如果您啟用 <strong>安全金鑰鑑別</strong>，登入會要求您使用其中一個安全金鑰。
+    destroy:
+      error: 刪除您的安全金鑰時發生問題。 請重試。
+      success: 已順利刪除您的安全金鑰。
+    invalid_credential: 安全金鑰無效
+    nickname_hint: 輸入新安全金鑰的暱稱
+    not_enabled: 您尚未啟用 WebAuthn
+    not_supported: 此瀏覽器不支援安全金鑰
+    otp_required: 若要使用安全金鑰，請先啟用兩個因素鑑別。
+    registered_on: 在 %{date} 上登錄

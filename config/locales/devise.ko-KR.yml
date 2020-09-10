@@ -1,0 +1,113 @@
+ko:
+  devise:
+    confirmations:
+      confirmed: 이메일 주소가 성공적으로 확인되었습니다.
+      send_instructions: 몇 분 안에 이메일 주소를 확인하는 방법에 대한 지시사항이 포함된 이메일을 수신합니다. 이 이메일을 받지 않은 경우 스팸 폴더를 확인하십시오.
+      send_paranoid_instructions: 이메일 주소가 데이터베이스에 있는 경우 몇 분 안에 이메일 주소를 확인하는 방법에 대한 지시사항이 포함된 이메일을 수신합니다. 이 이메일을 받지 않은 경우 스팸 폴더를 확인하십시오.
+    failure:
+      already_authenticated: 당신은 이미 로그인 상태입니다.
+      inactive: 계정이 아직 활성화되지 않았습니다.
+      invalid: 올바르지 않은 %{authentication_keys} 또는 비밀번호입니다.
+      last_attempt: 계정을 잠그기 전에 한 번 더 시도할 수 있습니다.
+      locked: 계정이 잠겨 있습니다.
+      not_found_in_database: 올바르지 않은 %{authentication_keys} 또는 비밀번호입니다.
+      pending: 귀하의 계좌는 여전히 검토 중입니다.
+      timeout: 세션이 만료되었습니다. 계속하려면 다시 로그인하십시오.
+      unauthenticated: 계속하기 전에 로그인하거나 가입해야 합니다.
+      unconfirmed: 계속하기 전에 이메일 주소를 확인해야 합니다.
+    mailer:
+      confirmation_instructions:
+        action: 전자 메일 주소 확인
+        action_with_app: 확인하여 %{app}로 돌아가기
+        explanation: 이 이메일 주소를 사용하여 %{host} 에 계정을 작성했습니다. 사용자는 이를 활성화하지 않고 한 번 클릭합니다. 그렇지 않은 경우에는 이 이메일을 무시하십시오.
+        explanation_when_pending: 이 이메일 주소와 함께 %{host} 에 초대를 신청했습니다. 이메일 주소를 확인하고 나면 애플리케이션을 검토할 것이다. 세부사항을 변경하거나 계정을 삭제하기 위해 로그인할 수 있지만 계정이 승인될 때까지 대부분의 기능에 액세스할 수 없습니다. 애플리케이션이 거부되면 데이터가 제거되므로 사용자는 추가 조치가 필요하지 않습니다. 그렇지 않은 경우에는 이 이메일을 무시하십시오.
+        extra_html: 또한 서버</a> 및 <a href="%{policy_path}">서비스의 규정 (서비스</a>) 의 <a href="%{terms_path}">규칙을 확인하십시오.
+        subject: 'Chatterly: %{instance}용 확인 지침'
+        title: 전자 메일 주소 확인
+      email_changed:
+        explanation: '계정의 이메일 주소는 다음과 같이 변경됩니다.'
+        extra: 이메일을 변경하지 않은 경우 사용자 계정에 대한 액세스 권한이 있을 수 있습니다. 비밀번호를 즉시 변경하거나 계정이 잠겨 있는 경우 서버 관리자에게 문의하십시오.
+        subject: 'Chatly: 이메일 변경'
+        title: 새 이메일 주소
+      password_change:
+        explanation: 사용자 계정의 비밀번호가 변경되었습니다.
+        extra: 비밀번호를 변경하지 않은 경우 사용자 계정에 대한 액세스 권한이 있을 수 있습니다. 비밀번호를 즉시 변경하거나 계정이 잠겨 있는 경우 서버 관리자에게 문의하십시오.
+        subject: 'Chatterly: 암호가 변경됨'
+        title: 암호를 변경했
+      reconfirmation_instructions:
+        explanation: 새 주소를 확인하여 이메일을 변경하십시오.
+        extra: 이 변경사항이 사용자에 의해 시작되지 않은 경우, 이 이메일을 무시하십시오. 위 링크에 액세스할 때까지 변경 계정의 이메일 주소는 변경되지 않습니다.
+        subject: 'Chatterly: %{instance}용 이메일 확인'
+        title: 전자 메일 주소 확인
+      reset_password_instructions:
+        action: 비밀번호 변경하기
+        explanation: 사용자 계정에 대한 새 비밀번호를 요청했습니다.
+        extra: 이를 요청하지 않은 경우, 이 이메일을 무시하십시오. 위의 링크에 액세스하여 새 비밀번호를 작성하기 전에는 비밀번호가 변경되지 않습니다.
+        subject: 'Chatterly: 비밀번호 명령 재설정'
+        title: 암호 재설정
+      two_factor_disabled:
+        explanation: 계정에 대한 이중 요인 인증을 사용할 수 없습니다. 이제 이메일 주소 및 비밀번호만 사용하여 로그인할 수 있습니다.
+        subject: 'Chatterly: 이중 요인 인증이 사용되지 않음'
+        title: 2FA사용 안함
+      two_factor_enabled:
+        explanation: 사용자 계정에 대해 이중 요인 인증을 사용할 수 있습니다. 짝을 이루는 TOTP 애플리케이션에 의해 생성된 토큰은 로그인을 위해 필요할 것이다.
+        subject: 'Chatterly: 이중 요인 인증 사용'
+        title: 2FA사용 가능
+      two_factor_recovery_codes_changed:
+        explanation: 이전 복구 코드가 무효화되었고 새 복구 코드가 생성되었습니다.
+        subject: '채터리: 2요인 복구 코드가 다시 생성됨'
+        title: 2FA복구 코드 변경
+      unlock_instructions:
+        subject: 'Chatterly: 명령어 해제하기'
+      webauthn_credential:
+        added:
+          explanation: 다음 보안 키가 사용자 계정에 추가되었습니다.
+          subject: 'Chatterly: 새로운 보안 키'
+          title: 새로운 보안 키가 추가되었습니다.
+        deleted:
+          explanation: 계정에서 다음 보안 키가 삭제되었습니다.
+          subject: 'Chatterly: 보안 키가 삭제됨'
+          title: 보안 키 중 하나가 삭제되었습니다.
+      webauthn_disabled:
+        explanation: 계정에 대한 보안 키를 사용하는 인증을 사용할 수 없습니다. 이제 페어드 TOTP 애플리케이션에 의해 생성된 토큰만을 사용하여 로그인이 가능하다.
+        subject: 'Chatterly: 보안 키를 사용한 인증 사용 안함'
+        title: 보안 키 사용 안함
+      webauthn_enabled:
+        explanation: 사용자의 계정에 대한 보안 키 인증이 사용 가능합니다. 이제 보안 키를 로그인에 사용할 수 있습니다.
+        subject: 'Chatterly: 보안 키 인증 사용'
+        title: 보안 키 사용 가능
+    omniauth_callbacks:
+      failure: Could not authenticate you from %{kind} because "%{reason}".
+      success: '%{kind} 계정에서 성공적으로 인증되었습니다.'
+    passwords:
+      no_token: 비밀번호 재설정 이메일을 수신하지 않고 이 페이지에 액세스할 수 없습니다. 비밀번호 재설정 이메일을 사용하는 경우, 제공된 전체 URL을 사용했는지 확인하십시오.
+      send_instructions: 이메일 주소가 데이터베이스에 있는 경우, 몇 분 안에 이메일 주소에서 비밀번호 복구 링크를 수신합니다. 이 이메일을 받지 않은 경우 스팸 폴더를 확인하십시오.
+      send_paranoid_instructions: 이메일 주소가 데이터베이스에 있는 경우, 몇 분 안에 이메일 주소에서 비밀번호 복구 링크를 수신합니다. 이 이메일을 받지 않은 경우 스팸 폴더를 확인하십시오.
+      updated: 암호가 성공적으로 변경되었습니다. 이제 계약서에 서명하셨군요.
+      updated_not_active: 암호가 성공적으로 변경되었습니다.
+    registrations:
+      destroyed: 안녕! 귀하의 계정이 성공적으로 취소되었습니다. 우리는 곧 당신을 다시 만날 수 있기를 바랍니다.
+      signed_up: 환영합니다! 당신은 성공적으로 가입했습니다.
+      signed_up_but_inactive: 당신은 성공적으로 가입했습니다. 그러나 계정이 아직 활성화되지 않았기 때문에 로그인할 수 없습니다.
+      signed_up_but_locked: 당신은 성공적으로 가입했습니다. 그러나 계정이 잠겨 있어서 로그인할 수 없습니다.
+      signed_up_but_pending: 확인 링크가 있는 메시지가 사용자의 이메일 주소로 발송되었습니다. 링크를 클릭하면 애플리케이션을 검토할 것이다. 승인되면 알림을 받게 됩니다.
+      signed_up_but_unconfirmed: 확인 링크가 있는 메시지가 사용자의 이메일 주소로 발송되었습니다. 계정을 활성화하려면 링크로 이동하십시오. 이 이메일을 받지 않은 경우 스팸 폴더를 확인하십시오.
+      update_needs_confirmation: 계정을 성공적으로 업데이트했지만 새 이메일 주소를 확인해야 합니다. 이메일을 확인하고 확인 링크를 따라 새 이메일 주소를 확인하십시오. 이 이메일을 받지 않은 경우 스팸 폴더를 확인하십시오.
+      updated: 계정이 성공적으로 업데이트되었습니다.
+    sessions:
+      already_signed_out: 서명을 성공적으로 완료했습니다.
+      signed_in: 서명을 성공적으로 수행했습니다.
+      signed_out: 서명을 성공적으로 완료했습니다.
+    unlocks:
+      send_instructions: 몇 분 안에 계정을 잠금 해제하는 방법에 대한 지시사항이 있는 이메일을 수신합니다. 이 이메일을 받지 않은 경우 스팸 폴더를 확인하십시오.
+      send_paranoid_instructions: 계정이 존재하는 경우 몇 분 안에 이를 잠금 해제하는 방법에 대한 지시사항이 있는 이메일을 수신합니다. 이 이메일을 받지 않은 경우 스팸 폴더를 확인하십시오.
+      unlocked: 사용자의 계정이 성공적으로 잠금 해제되었습니다. 계속 진행하려면 로그인하십시오.
+  errors:
+    messages:
+      already_confirmed: 이미 확인되었습니다. 로그인을 시도하십시오.
+      confirmation_period_expired: '%{period}내에서 확인되어야 합니다. 새 것을 요청하십시오.'
+      expired: 만료되었습니다. 새 항목을 요청하십시오.
+      not_found: 찾지 못하는
+      not_locked: 가 잠겨 있지 않음
+      not_saved:
+        other: "%{count} 오류로 인해 이 %{resource} 이 저장되지 않음:"

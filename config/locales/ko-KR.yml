@@ -1,0 +1,1352 @@
+ko:
+  about:
+    about_hashtag_html: '이것들은 <strong>#%{hashtag}</strong>로 태깅된 토우들이다. 그들과 대화를 할 수 있는 것은 잡담 속에 있는 계정이 있다면 그들과 교류할 수 있다.'
+    about_mastodon_html: '미래의 사회적 네트워크는 기업 감시, 윤리적인 설계, 그리고 분산 금지입니다! chatterly로 데이터를 소유하세요!'
+    about_this: 정보
+    active_count_after: 활동적인
+    active_footnote: 월별 활성 사용자 (MAU)
+    administered_by: '관리자:'
+    api: API
+    apps: 모바일 앱
+    apps_platforms: PC/Mac/iOS/Android용 Chatterly앱 다운로드
+    browse_directory: 프로파일 디렉토리 및 관심을 기준으로 필터링
+    browse_local_posts: 이 서버에서 공용 게시물의 라이브 스트림 찾아보기
+    browse_public_posts: 채터리에 있는 공공 장소의 라이브 스트림 찾아보기
+    contact: 연락처
+    contact_missing: 설정 불가
+    contact_unavailable: 해당사항 없음
+    discover_users: 감지 사용자
+    documentation: 문서
+    federation_hint_html: '%{instance} 계정으로 Chatterly와 그 이상의 사람들을 따라할 수 있을 것입니다.'
+    get_apps: 모바일 앱 사용하기
+    hosted_on: '%{domain}에서 호스트되는 ChatterlyOSE'
+    instance_actor_flash: |
+      이 계정은 개별 사용자가 아니라 서버 자체를 나타내는 데 사용되는 가상 액터입니다.
+      는 연합 목적으로 사용되며 전체 인스턴스를 차단하려는 경우가 아니면 차단되지 않아야 합니다. 이 경우 도메인 블록을 사용해야 합니다.
+    learn_more: 자세한 정보
+    privacy_policy: 개인정보 보호 정책
+    see_whats_happening: 무슨 일이 일어나는지 보자
+    server_stats: '서버 통계:'
+    source_code: 소스 코드
+    status_count_after:
+      other: 상태
+    status_count_before: 작성된 사용자
+    tagline: 친구를 따라오고 새로운 친구 발견
+    terms: 서비스 이용 약관
+    unavailable_content: 현대화된 서버
+    unavailable_content_description:
+      domain: 서버
+      reason: 이유
+      rejecting_media: '이러한 서버의 미디어 파일은 처리되거나 저장되지 않으며, 원래 파일을 수동으로 클릭해야 하는 썸네일이 표시되지 않습니다.'
+      rejecting_media_title: 필터링된 미디어
+      silenced: '이러한 서버의 게시물은 공용 타임라인 및 대화로 숨겨지며 다음을 수행하지 않는 한 사용자 상호작용에서 알림이 생성되지 않습니다.'
+      silenced_title: 분리된 서버
+      suspended: '이러한 서버의 데이터는 처리, 저장 또는 교환되지 않으며 이러한 서버의 사용자와의 상호작용 또는 통신은 불가능합니다.'
+      suspended_title: 일시중단된 서버
+    unavailable_content_html: 일반적으로, 일반적으로 사용자는 다양한 서버에서 컨텐츠를 보고 사용자와 상호 작용할 수 있습니다. 이러한 예외는 이 특정 서버에서 발생한 예외입니다.
+    user_count_after:
+      other: 사용자
+    user_count_before: 홈으로
+    what_is_mastodon: Chatterly는 무엇입니까?
+  accounts:
+    choices_html: "%{name}' 의 선택:"
+    endorsements_hint: 여러분은 웹 인터페이스에서 여러분이 따르는 사람들을 지지할 수 있고, 그들은 여기에서 보여줄 것입니다.
+    featured_tags_hint: 여기에 표시될 특정 해시태그를 기능할 수 있습니다.
+    follow: 확인하기
+    followers:
+      other: 후속 조치
+    following: 다음
+    joined: 결합 %{date}
+    last_active: 마지막 활성화
+    link_verified_on: 이 링크의 소유권은 %{date}에서 확인되었습니다.
+    media: 미디어
+    moved_html: "%{name} 는 %{new_profile_link}로 이동하였다:"
+    network_hidden: 이 정보는 사용할 수 없습니다.
+    never_active: 절대로
+    nothing_here: 여기엔 아무것도 없다!
+    people_followed_by: '%{name} 가 따르는 사람'
+    people_who_follow: '%{name}를 따르는 사람'
+    pin_errors:
+      following: 추천하려는 사람을 이미 관심 대상으로 등록해야 합니다.
+    posts:
+      other: 토츠
+    posts_tab_heading: 토츠
+    posts_with_replies: 투츠 및 답글
+    reserved_username: 사용자 이름이 예약되어 있음
+    roles:
+      admin: 록손 직원
+      bot: 봇
+      group: 그룹
+      moderator: 차터리안전팀
+    unavailable: 사용 불가능한 프로파일
+    unfollow: 다음과 같은
+  admin:
+    account_actions:
+      action: 수행 수행
+      title: '%{acct}에서 운영 수행'
+    account_moderation_notes:
+      create: 메모 보내기
+      created_msg: 적당한 노트가 성공적으로 만들어졌습니다!
+      delete: 삭제
+      destroyed_msg: 중용 기록이 성공적으로 파괴되었습니다!
+    accounts:
+      add_email_domain_block: 전자 메일 차단 도메인
+      approve: 승인
+      approve_all: 모두 승인
+      are_you_sure: 정말이에요?
+      avatar: 아바타
+      by_domain: 도메인
+      change_email:
+        changed_msg: 계정 이메일이 변경되었습니다.
+        current_email: 현재 이메일
+        label: 이메일 변경
+        new_email: 새로운 이메일
+        submit: 이메일 변경
+        title: '%{username}전자 우편 변경'
+      confirm: 확인
+      confirmed: 확인
+      confirming: 확인
+      deleted: 삭제됨
+      demote: 데모트
+      disable: 사용 안 함
+      disable_two_factor_authentication: 2FA사용 안 함
+      disabled: 사용 안함
+      display_name: 표시 이름
+      domain: 도메인
+      edit: 편집
+      email: 전자 메일
+      email_status: 이메일 상태
+      enable: 사용
+      enabled: 사용함
+      followers: 후속 조치
+      follows: 후속 조치
+      header: 헤더
+      inbox_url: 받은 문서 URL
+      invited_by: 초대
+      ip: 작은
+      joined: 결합됨
+      location:
+        all: 모두
+        local: 로컬
+        remote: 원격
+        title: 위치
+      login_status: 로그인 상태
+      media_attachments: 미디어 첨부
+      memorialize: 기념으로 전환하기
+      moderation:
+        active: 활성
+        all: 모두
+        pending: 보류 중
+        silenced: 침묵
+        suspended: 일시중단
+        title: 현대화
+      moderation_notes: 모음용 노트
+      most_recent_activity: 가장 최근의 활동
+      most_recent_ip: 최신 IP
+      no_account_selected: 선택된 계정이 없으므로 계정이 변경되지 않음
+      no_limits_imposed: 지정된 한계 없음
+      not_subscribed: 등록 불가
+      pending: 보류 중 검토
+      perform_full_suspension: 일시중단
+      promote: 증진
+      protocol: 프로토콜
+      public: 공개
+      push_subscription_expires: PuSH 구독 만료
+      redownload: 프로파일 새로 고치기
+      reject: 거부
+      reject_all: 거부하다
+      remove_avatar: 아바타 제거
+      remove_header: 헤더 제거
+      resend_confirmation:
+        already_confirmed: 이 사용자는 이미 확인되었습니다.
+        send: 확인 이메일 다시 보내기
+        success: 확인 이메일 전송이 완료되었습니다.
+      reset: 재설정
+      reset_password: 비밀번호 재설정
+      resubscribe: 다시
+      role: 권한
+      roles:
+        admin: 관리자
+        moderator: 조정자
+        staff: 직원
+        user: 사용자
+      search: 검색
+      search_same_email_domain: 전자 우편 도메인이 동일한 다른 사용자
+      search_same_ip: 동일한 IP를 가진 다른 사용자들
+      shared_inbox_url: 공유 받은 편지함 URL
+      show:
+        created_reports: 작성된 보고서
+        targeted_reports: 다른 사용자에 의해 보고됨
+      silence: 침묵
+      silenced: 침묵
+      statuses: 상태
+      subscribe: 등록
+      suspended: 일시중단
+      time_in_queue: 큐 %{time}대기 중
+      title: 계정
+      unconfirmed_email: 확인되지 않은 이메일
+      undo_silenced: 침묵 실행
+      undo_suspension: 실행 취소
+      unsubscribe: 등록 해제
+      username: 사용자 이름
+      warn: 경고
+      web: 웹
+      whitelisted: 연합에 대해 허용
+    action_logs:
+      action_types:
+        assigned_to_self_report: 보고서 지정
+        change_email_user: 사용자에 대한 이메일 변경
+        confirm_user: 사용자 확인
+        create_account_warning: 경고 작성
+        create_announcement: 발표 작성
+        create_custom_emoji: 사용자 정의 Emoji 작성하기
+        create_domain_allow: 도메인 허용 작성
+        create_domain_block: 도메인 블록 작성
+        create_email_domain_block: 전자 메일 도메인 블록 작성
+        demote_user: 사용자 정의
+        destroy_announcement: 공지사항 삭제
+        destroy_custom_emoji: 사용자 정의 Emo지를 삭제한다.
+        destroy_domain_allow: 도메인 허용 삭제
+        destroy_domain_block: 도메인 블록 삭제
+        destroy_email_domain_block: 전자 우편 도메인 블록 삭제
+        destroy_status: 상태 삭제
+        disable_2fa_user: 2FA사용 안 함
+        disable_custom_emoji: 사용자 정의 Emoji 사용하기
+        disable_user: 사용자 사용 안함
+        enable_custom_emoji: 사용자 정의 Emoji 사용하기
+        enable_user: 사용자 사용 가능
+        memorialize_account: 계정을 막는 계정
+        promote_user: 홍보 사용자
+        remove_avatar_user: 아바타 제거
+        reopen_report: 보고서 다시 공개
+        reset_password_user: 비밀번호 재설정
+        resolve_report: 해결 보고서
+        silence_account: 침묵 계정
+        suspend_account: 일시중단 계정
+        unassigned_report: 보고서 지정 해제하기
+        unsilence_account: 무음 계정
+        unsuspend_account: 일시 중단 계정
+        update_announcement: 발표 업데이트
+        update_custom_emoji: 사용자 정의 Emoji 업데이트
+        update_status: 상태 업데이트
+      actions:
+        assigned_to_self_report: "%{name} 지정된 보고서 ( %{target} ) 자체"
+        change_email_user: "%{name} 는 사용자 %{target}의 이메일 주소를 변경했다."
+        confirm_user: "%{name} 는 사용자 %{target}의 이메일 주소를 확인하였다."
+        create_account_warning: "%{name} 는 경고를 %{target}로 보냈다"
+        create_announcement: "%{name} 는 새로운 공지사항 %{target}"
+        create_custom_emoji: "%{name} 는 새로운 이모티콘 %{target}"
+        create_domain_allow: "%{name} 는 도메인 %{target}로 연합할 수 있습니다."
+        create_domain_block: "%{name} 차단된 도메인 %{target}"
+        create_email_domain_block: "%{name} 차단된 전자 우편 도메인 %{target}"
+        demote_user: "%{name} 강등된 사용자 %{target}"
+        destroy_announcement: "%{name} 삭제 공지사항 %{target}"
+        destroy_custom_emoji: "%{name} 파괴된 이모지 %{target}"
+        destroy_domain_allow: "%{name} 는 도메인 %{target}로 연합할 수 없습니다."
+        destroy_domain_block: "%{name} 차단되지 않은 도메인 %{target}"
+        destroy_email_domain_block: "%{name} unblocked e-mail domain %{target}"
+        destroy_status: "%{name} 는 %{target}로 상태를 제거함"
+        disable_2fa_user: "%{name} 는 사용자 %{target}의 두 요소 요구사항을 사용할 수 없습니다."
+        disable_custom_emoji: "%{name} 장애인 이모지 (emoji %{target})"
+        disable_user: "%{name} 는 사용자 %{target}에 대해 로그인할 수 없습니다."
+        enable_custom_emoji: "%{name} enabled emoji %{target}"
+        enable_user: "%{name} enabled login for user %{target}"
+        memorialize_account: "%{name} 는 %{target}의 계정을 memoriam 페이지로 전환시켰다."
+        promote_user: "%{name} 승격된 사용자 %{target}"
+        remove_avatar_user: "%{name} 는 %{target}의 아바타를 제거한다."
+        reopen_report: "%{name} 다시 뚫리는 보고서 %{target}"
+        reset_password_user: "%{name} 사용자의 암호 재설정-사용자 %{target}"
+        resolve_report: "%{name} 해결된 보고서 %{target}"
+        silence_account: "%{name} 은은 %{target}의 계정"
+        suspend_account: "%{name} suspended %{target}'s account"
+        unassigned_report: "%{name} 비할당 보고서 %{target}"
+        unsilence_account: "%{name} 비침묵 %{target}의 계정"
+        unsuspend_account: "%{name} 미중단 %{target}' 계정"
+        update_announcement: "%{name} 업데이트된 공지사항 %{target}"
+        update_custom_emoji: "%{name} updated emoji %{target}"
+        update_status: "%{name} ( %{target}) 에 의해 업데이트된 상태"
+      deleted_status: "(삭제된 상태)"
+      empty: 로그를 찾을 수 없습니다.
+      filter_by_action: 조치별 필터
+      filter_by_user: 사용자별 필터
+      title: 감사 로그
+    announcements:
+      destroyed_msg: 발표가 성공적으로 삭제되었습니다!
+      edit:
+        title: 발표 편집
+      empty: 공지사항이 없습니다.
+      live: 라이브
+      new:
+        create: 발표 작성
+        title: 새로운 발표
+      published_msg: 발표가 성공적으로 발표되었습니다!
+      scheduled_for: '%{time}로 예정'
+      scheduled_msg: 발표 예정인 발표!
+      title: 발표
+      unpublished_msg: 발표가 성공적으로 발표되지 않았습니다.
+      updated_msg: 발표가 성공적으로 업데이트되었습니다!
+    custom_emojis:
+      assign_category: 카테고리 지정
+      by_domain: 도메인
+      copied_msg: 이모지의 로컬 사본을 작성했습니다.
+      copy: 복사
+      copy_failed_msg: 해당 이모티콘의 로컬 사본을 작성할 수 없음
+      create_new_category: 새 범주 작성하기
+      created_msg: Emoji가 성공적으로 만들어졌다!
+      delete: 삭제
+      destroyed_msg: Emoji는 성공적으로 파괴되었다.
+      disable: 사용 안 함
+      disabled: 사용 안함
+      disabled_msg: 이모티콘을 성공적으로 사용하지 않음
+      emoji: 에모지
+      enable: 사용
+      enabled: 사용함
+      enabled_msg: 이모티콘이 성공적으로 사용되었습니다.
+      image_hint: PNG 최대 50KB
+      list: 목록
+      listed: 나열된
+      new:
+        title: 새 사용자 정의 이모지 추가
+      not_permitted: 이 조치를 수행할 수 있는 권한이 없습니다.
+      overwrite: 겹쳐쓰기
+      shortcode: 단축 코드
+      shortcode_hint: 최소 2자, 영숫자 및 밑줄만 사용할 수 있습니다.
+      title: 사용자 정의 이모티머스
+      uncategorized: 미분류
+      unlist: 목록 해제
+      unlisted: 비상장
+      update_failed_msg: 해당 이모지를 업데이트할 수 없음
+      updated_msg: Emoji가 성공적으로 업데이트되었다.
+      upload: 업로드
+    dashboard:
+      authorized_fetch_mode: 보안 모드
+      backlog: 백로그된 작업
+      config: 구성
+      feature_deletions: 계정 삭제
+      feature_invites: 링크 초대하기
+      feature_profile_directory: 프로파일 디렉토리
+      feature_registrations: 등록
+      feature_relay: 연합 릴레이
+      feature_spam_check: 안티스팸
+      feature_timeline_preview: 타임라인 미리보기
+      features: 기능
+      hidden_service: 숨겨진 서비스를 가지고 있는 연합
+      open_reports: 열린 보고서
+      pending_tags: 검토를 기다리는 해시태그
+      pending_users: 검토를 위해 대기 중인 사용자
+      recent_users: 최근 사용자
+      search: 전체 텍스트 검색
+      single_user_mode: 단일 사용자 모드
+      software: 소프트웨어
+      space: 공간 사용량
+      title: 대시보드
+      total_users: 총 사용자 수
+      trends: 경향
+      week_interactions: 이번 주의 상호 작용
+      week_users_active: 이번 주에 활동하다
+      week_users_new: 이번 주에 사용자들
+      whitelist_mode: 제한된 연합 모드
+    domain_allows:
+      add_new: 도메인과의 연합 허용
+      created_msg: 도메인이 연합에 성공적으로 허용되었습니다.
+      destroyed_msg: 연합에서 도메인이 허용되지 않음
+      undo: 도메인과의 연합 허용 안함
+    domain_blocks:
+      add_new: 새 도메인 블록 추가하기
+      created_msg: 이제 도메인 블록이 처리 중입니다.
+      destroyed_msg: 도메인 블록이 실행 취소되었습니다.
+      domain: 도메인
+      edit: 도메인 블록 편집하기
+      existing_domain_block_html: You have already imposed stricter limits on %{name}, you need to <a href="%{unblock_url}">unblock it</a> first.
+      new:
+        create: 블록 작성
+        hint: 도메인 블록은 데이터베이스에서 계정 항목의 작성을 방해하지 않지만, 해당 계정의 특정 운영 방법을 소급적으로 적용하고 자동으로 적용합니다.
+        severity:
+          desc_html: "<strong>Silence</strong> 는 계정의 게시물을 관심 대상으로 등록하지 않은 사람에게는 보이지 않게 만들 것이다. <strong>일시중단</strong> 는 모든 계정의 컨텐츠, 매체 및 프로파일 데이터를 제거합니다. 미디어 파일을 거부하기만 하면 <strong>없음</strong> 를 사용하십시오."
+          noop: 없음
+          silence: 침묵
+          suspend: 일시중단
+        title: 새로운 도메인 블록
+      private_comment: 개인용 주석
+      private_comment_hint: 중재자에 의한 내부 사용에 대한 이 도메인 제한사항에 대한 주석입니다.
+      public_comment: 공용 주석
+      public_comment_hint: 도메인 제한사항 목록을 광고하는 경우 일반 대중의 이 도메인 제한사항에 대한 주석을 사용할 수 있습니다.
+      reject_media: 미디어 파일 거부하기
+      reject_media_hint: 로컬로 저장된 매체 파일을 제거하고 나중에 다운로드를 거부합니다. 현탁제와 관련하여
+      reject_reports: 리포트 거부하기
+      reject_reports_hint: 이 도메인에서 제공되는 모든 보고서를 무시합니다. 현탁제와 관련하여
+      rejecting_media: 미디어 파일 거부하기
+      rejecting_reports: 보고서 거부하기
+      severity:
+        silence: 침묵하는
+        suspend: 일시중단상태
+      show:
+        affected_accounts:
+          other: "%{count} 데이터베이스가 영향을 받았습니다."
+        retroactive:
+          silence: 이 도메인에서 기존의 영향 받은 계정 제거
+          suspend: 이 도메인에서 기존의 영향 받은 계정 일시중단 해제
+        title: '%{domain}용 실행 취소 도메인'
+        undo: 실행 취소
+      undo: 도메인 블록 실행 취소
+      view: 도메인 블록 보기
+    email_domain_blocks:
+      add_new: 새로 추가
+      created_msg: 전자 메일 도메인 차단
+      delete: 삭제
+      destroyed_msg: 전자 우편 도메인 차단 해제
+      domain: 도메인
+      empty: 현재 차단된 전자 우편 도메인이 없습니다.
+      from_html: from %{domain}
+      new:
+        create: 도메인 추가
+        title: 새 이메일 도메인 차단
+      title: 차단된 전자 메일 도메인
+    instances:
+      by_domain: 도메인
+      delivery_available: 제공이 사용 가능한 경우
+      known_accounts:
+        other: "%{count} 공지된 계정"
+      moderation:
+        all: 모두
+        limited: 제한된
+        title: 현대화
+      private_comment: 개인용 주석
+      public_comment: 공용 주석
+      title: 연합
+      total_blocked_by_us: 사용자에 의해 차단됨
+      total_followed_by_them: 그들의 뒤를 따르다.
+      total_followed_by_us: 우리는 뒤를 쫓아오다
+      total_reported: 그에 대한 보고서
+      total_storage: 미디어 첨부
+    invites:
+      deactivate_all: 모두 비활성화
+      filter:
+        all: 모두
+        available: 사용 가능
+        expired: Expired
+        title: 필터
+      title: 초청
+    pending_accounts:
+      title: 보류 중 계정 (%{count})
+    relationships:
+      title: "%{acct}의 관계"
+    relays:
+      add_new: 새 릴레이 추가하기
+      delete: 삭제
+      description_html: <strong>연합 릴레이 (</strong> ) 는 그에 가입하여 공개하는 서버들 간에 대량의 공용 토우들을 교환하는 중간 서버이다. <strong>는 소형 서버 및 중간 서버가 다양한</strong>의 컨텐츠를 발견하는 데 도움을 줄 수 있으며, 그렇지 않으면 원격 서버의 다른 사용자를 다음과 같이 수동으로 로컬 사용자가 필요로 합니다.
+      disable: 사용 안 함
+      disabled: 사용 안함
+      enable: 사용
+      enable_hint: 일단 사용 가능하게 되면, 서버는 이 중계기에서 모든 공용 토호에 등록하고 이 서버의 공용 토우를 전송하기 시작합니다.
+      enabled: 사용함
+      inbox_url: 릴레이 URL
+      pending: 중계기 승인 대기 중
+      save_and_enable: 저장 및 활성화
+      setup: 릴레이 연결 설정하기
+      signatures_not_enabled: 보안 모드 또는 제한된 연합 모드를 사용하는 동안 중계기가 올바르게 작동하지 않습니다.
+      status: 상태
+      title: 릴레이
+    report_notes:
+      created_msg: 보고서 메모를 작성했습니다!
+      destroyed_msg: 보고서 노트가 삭제되었습니다!
+    reports:
+      account:
+        notes:
+          other: "%{count} 노트"
+        reports:
+          other: "%{count} 보고서"
+      action_taken_by: 다음에서 수행하는 조치
+      are_you_sure: 정말이에요?
+      assign_to_self: 나에게 지정하기
+      assigned: 지정된 진행자
+      by_target_domain: 보고된 계정의 도메인
+      comment:
+        none: 없음
+      created_at: 보고된
+      mark_as_resolved: 해결됨
+      mark_as_unresolved: 미해결 상태로 표시
+      notes:
+        create: 메모 추가
+        create_and_resolve: 노트로 해결하기
+        create_and_unresolve: 노트 다시 시작하기
+        delete: 삭제
+        placeholder: 수행된 조치 또는 기타 관련 업데이트에 대해 설명합니다.
+      reopen: Reopen 보고서
+      report: '보고 번호%{id}'
+      reported_account: 보고된 계정
+      reported_by: 다음으로 보고됨
+      resolved: 해결됨
+      resolved_msg: 보고가 성공적으로 해결됐습니다
+      status: 상태
+      title: 보고서
+      unassign: 지정 해제
+      unresolved: 미해결된
+      updated_at: 업데이트되기
+    settings:
+      activity_api_enabled:
+        desc_html: 매주 버킷의 로컬에 게시된 상태, 활성 사용자 및 새 등록 수
+        title: 사용자 활동에 대한 집계 통계 게시
+      bootstrap_timeline_accounts:
+        desc_html: 여러 사용자 이름을 쉼표로 구분하십시오. 로컬 및 잠금 해제된 계정만 작동합니다. 비어 있는 경우 기본값은 모든 로컬 관리자입니다.
+        title: 새 사용자에 대해 다음과 같은 기본값
+      contact_information:
+        email: 비즈니스 이메일
+        username: 연락처 사용자 이름
+      custom_css:
+        desc_html: 모든 페이지에서 CSS가 로드된 모양 수정하기
+        title: 사용자 정의 CSS
+      default_noindex:
+        desc_html: 이 설정 자체를 변경하지 않은 모든 사용자에 적용
+        title: 기본적으로 검색 엔진 인덱싱에서 사용자를 제외
+      domain_blocks:
+        all: 모두에게
+        disabled: 아무도 없는
+        title: 도메인 블록 표시
+        users: 로그인하기 위해 로컬 사용자에게
+      domain_blocks_rationale:
+        title: 표시하기
+      enable_bootstrap_timeline_accounts:
+        title: 새 사용자에 대해 다음과 같이 기본값 사용
+      hero:
+        desc_html: 전면에 장애가 있다. 최소한 600x100px가 추천된다. 설정되지 않은 경우 서버 작은 그림으로 다시 돌아가기
+        title: 영웅 이미지
+      mascot:
+        desc_html: 여러 페이지에 표시되어 있습니다. 적어도 293 × 205px가 추천된다. 설정되지 않은 경우 기본 마스코트로 복귀합니다.
+        title: 마스코트 이미지
+      peers_api_enabled:
+        desc_html: 이 서버의 도메인 이름이 가장 다양하게 발생했습니다.
+        title: 발견된 서버의 게시 목록
+      preview_sensitive_media:
+        desc_html: 다른 웹 사이트의 링크 미리보기는 미디어가 중요한 것으로 표시된 경우에도 썸네일을 표시합니다.
+        title: Open그래프 미리보기에서 민감한 매체 표시
+      profile_directory:
+        desc_html: 사용자를 발견할 수 있도록 허용
+        title: 프로파일 디렉토리 사용하기
+      registrations:
+        closed_message:
+          desc_html: 등록이 마감되면 프론트 페이지에서 표시됩니다. HTML 태그를 사용할 수 있다.
+          title: 마감된 등록 메시지
+        deletion:
+          desc_html: 모든 사용자가 계정을 삭제할 수 있도록 허용
+          title: 계정 삭제 열기
+        min_invite_role:
+          disabled: 아무도 없다
+          title: 에 의한 초대 허용
+      registrations_mode:
+        modes:
+          approved: 등록에 필요한 승인
+          none: 누구도 가입할 수 없다
+          open: 누구나 가입할 수 있는
+        title: 영역 모드
+      show_known_fediverse_at_about_page:
+        desc_html: 사용 불가능한 경우, 랜딩 페이지에서 링크된 공용 타임라인을 제한하여 로컬 컨텐츠만 표시합니다.
+        title: 인증되지 않은 공용 타임라인 페이지에 연합 컨텐츠 포함
+      show_staff_badge:
+        desc_html: 사용자 페이지에 직원 배지를 표시합니다.
+        title: 스태프 배지 표시
+      site_description:
+        desc_html: Introductory paragraph on the API. Describe what makes Chatterly special and anything else important. You can use HTML tags, in particular <code>&lt;a&gt;</code> and <code>&lt;em&gt;</code>.
+        title: 서버 설명
+      site_description_extended:
+        desc_html: 수행 코드, 규칙, 지침 및 서버를 별도로 설정하는 기타 사항에 적합합니다. HTML 태그를 사용할 수 있다.
+        title: 사용자 정의 확장 정보
+      site_short_description:
+        desc_html: 사이드바 및 메타 태그에 표시되지 않습니다. 채터리가 무엇이고 어떤 단락에서 우리를 특별하게 만드는가에 대해서 설명해 보라.
+        title: 간단한 서버 설명
+      site_terms:
+        desc_html: 귀하는 자신만의 개인정보 정책, 서비스 이용 약관 또는 기타 합법적인 것들을 작성할 수 있습니다. HTML 태그를 사용할 수 있다.
+        title: 사용자 정의 이용 약관
+      site_title: 서버 이름
+      spam_check_enabled:
+        desc_html: 요청하면 반복되지 않은 메시지를 전송하는 계정을 자동으로 보고할 수 있습니다. 거짓 긍정 (false positive) 이 있을 수 있다.
+        title: 스팸 차단 자동화
+      thumbnail:
+        desc_html: Open그래프및 API를 통한 미리보기를 위해 사용됩니다. 1200x630px 권장
+        title: 서버 작은 그림
+      timeline_preview:
+        desc_html: 랜딩 페이지의 공용 타임라인에 대한 링크를 표시하고 인증 없이 공용 타임라인에 대한 API 액세스 허용
+        title: 공개 타임라인에 대해 인증되지 않은 액세스 허용
+      title: 사이트 설정
+      trendable_by_default:
+        desc_html: 이전에 허용되지 않은 해시태그에 적용
+        title: 사전 검토 없이 해시 태그를 추세로 변경할 수 있습니다.
+      trends:
+        desc_html: 현재 경향이 있는 해시 태그를 이전에 검토했습니다.
+        title: 해시태그의 경향
+    site_uploads:
+      delete: 업로드된 파일 삭제
+      destroyed_msg: 사이트 업로드가 삭제되었습니다!
+    statuses:
+      back_to_account: 계정으로 돌아가기 페이지
+      batch:
+        delete: 삭제
+        nsfw_off: 중요하지 않은 것으로 표시
+        nsfw_on: 중요한 것으로 표시
+      deleted: 삭제됨
+      failed_to_execute: 실행 실패
+      media:
+        title: 미디어
+      no_media: 미디어 없음
+      no_status_selected: 아무 것도 선택되지 않았으므로 상태가 변경되지 않음
+      title: 계정 상태
+      with_media: 미디어로
+    tags:
+      accounts_today: 현대 고유의 사용 방법
+      accounts_week: 이번 주 고유 사용
+      breakdown: 오늘의 소스 사용 내역
+      context: 콘텍스트
+      directory: In 디렉토리
+      in_directory: "디렉토리 내의 %{count}"
+      last_active: 마지막 활성
+      most_popular: 가장 인기있는
+      most_recent: 가장 최근의
+      name: 해시태그
+      review: 검토 상태
+      reviewed: 검토
+      title: 해시태그
+      trending_right_now: 지금 트렌딩
+      unique_uses_today: "%{count} 오늘 게시"
+      unreviewed: 검토 안 함
+      updated_msg: 해시 태그 설정이 성공적으로 업데이트됨
+    title: 투여
+    warning_presets:
+      add_new: 새로 추가
+      delete: 삭제
+      edit_preset: 사전 설정 편집
+      title: 경고 사전설정 관리
+  admin_mailer:
+    new_pending_account:
+      body: 새 계정의 세부사항이 아래에 있습니다. 이 애플리케이션을 승인하거나 거부할 수 있습니다.
+      subject: 검토를 위해 %{instance} (%{username}) 에 대한 새 계정
+    new_report:
+      body: "%{reporter} 는 %{target}를 보고하였다."
+      body_remote: '%{domain} 의 누군가가 %{target}를 보고했다'
+      subject: '%{instance} (#%{id}) 에 대한 새 보고서'
+    new_trending_tag:
+      body: '해시태그 #%{name} 는 현재 추세이지만 이전에는 검토되지 않았습니다. 사용자가 이를 허용하지 않는 한 공개적으로 표시되지 않거나 양식을 다시 저장하지 않을 경우에만 해당 양식을 저장하지 않습니다.'
+      subject: '%{instance} (#%{name}) 에서 검토할 새 해시태그'
+  aliases:
+    add_new: 별명 작성
+    created_msg: 새 별명을 작성했습니다. 이제 이전 계정에서 이동을 시작할 수 있습니다.
+    deleted_msg: 별명을 제거했습니다. 해당 계정에서 이 계정으로 이동하는 것은 더 이상 불가능합니다.
+    empty: 당신은 별명이 없습니다.
+    hint_html: 다른 계정에서 이 계정으로 이동하려면 여기서 별명을 작성할 수 있습니다. 별명은 이전 계정에서 이 계정으로 이동하는 추종자를 진행하기 전에 필요합니다. 이 동작 자체는 <strong>무해 및 가역성</strong>이다. <strong>계정 마이그레이션이 이전 계정</strong>로부터 시작됩니다.
+    remove: 링크 해제하기
+  appearance:
+    advanced_web_interface: 고급 웹 인터페이스
+    advanced_web_interface_hint: '전체 화면 너비를 사용하려는 경우 고급 웹 인터페이스를 사용하면 많은 다른 열을 구성하여 원하는 시간에 많은 정보를 볼 수 있습니다 (홈, 알림, 연합 타임라인, 임의의 수의 목록 및 해시태그).'
+    animations_and_accessibility: 애니메이션 및 액세스 가능성
+    confirmation_dialogs: 확인 대화 상자
+    discovery: 디스커버리
+    localization:
+      body: 자원자들은 채터리를 번역한다.
+      guide_link: https://crowdin.com/project/chatterlyose
+      guide_link_text: 모두가 기여할 수 있다.
+    sensitive_content: 민감한 내용
+    toot_layout: 발가락 배치
+  application_mailer:
+    notification_preferences: 이메일 환경 설정 변경하기
+    salutation: "%{name},"
+    settings: '이메일 환경 설정 변경: %{link}'
+    view: '보기:'
+    view_profile: 프로파일 보기
+    view_status: 상태 보기
+  applications:
+    created: 성공적으로 작성된 애플리케이션
+    destroyed: 애플리케이션 삭제에 성공했습니다
+    invalid_url: 제공된 URL이 올바르지 않습니다.
+    regenerate_token: 액세스 토큰 재생성
+    token_regenerated: 성공적으로 재생된 액세스 토큰
+    warning: 이 자료는 주의해야 한다. 누구와도 공유하지 마세요!
+    your_token: 액세스 토큰
+  auth:
+    apply_for_account: 초대 요청하기
+    change_password: 암호
+    checkbox_agreement_html: Chatterly의 <a href="%{terms_path}" target="_blank">서비스에 동의합니다.</a>
+    checkbox_agreement_without_rules_html: <a href="%{terms_path}" target="_blank">서비스 조건 (</a>) 에 동의합니다.
+    delete_account: 계정 삭제
+    delete_account_html: 계정을 삭제하려는 경우, <a href="%{path}">는 여기서</a>로 진행됩니다. 당신은 확인 요청을 받게 될 것입니다.
+    description:
+      prefix_invited_by_user: "%{name} 를 초대하여 여러분을 차터플라이로 초대합니다!"
+      prefix_sign_up: 오늘은 Chatterly에 등록하세요!
+      suffix: 계정이 있으면, 사람들을 따라갈 수 있고, 업데이트를 게시하고, Chatterly와 같은 사용자들과 함께 메시지를 교환할 수 있을 것이다.
+    didnt_get_confirmation: 확인 지시를 받지 않았나요?
+    dont_have_your_security_key: 당신의 보안 키를 가지고 있지 않나요?
+    forgot_password: 암호를 잊어먹었나요?
+    invalid_reset_password_token: 비밀번호 재설정 토큰이 올바르지 않거나 만료되었습니다. 새 것을 신청해 주십시오.
+    link_to_otp: 전화 또는 복구 코드에서 2요인 코드를 입력하십시오.
+    link_to_webauth: 보안 키 장치 사용
+    login: 로그인
+    logout: 로그아웃
+    migrate_account: 다른 계정으로 이동
+    migrate_account_html: 이 계정을 다른 것으로 재지정하려는 경우, <a href="%{path}">가 여기서</a>로 구성됩니다.
+    or_log_in_with: 또는 에 로그인하거나
+    providers:
+      cas: CAS
+      saml: 사미도
+    register: 등록
+    registration_closed: "%{instance} 는 새 멤버를 허용하지 않습니다."
+    resend_confirmation: 최종 확인 명령어
+    reset_password: 비밀번호 재설정
+    security: 보안
+    set_new_password: 새 암호 설정하기
+    setup:
+      email_below_hint_html: 아래 이메일 주소가 올바르지 않으면 여기를 변경하고 새 확인 이메일을 받을 수 있습니다.
+      email_settings_hint_html: 확인 이메일을 %{email}로 보냈다. 해당 전자 우편 주소가 올바르지 않으면 계정 설정에서 변경할 수 있습니다.
+      title: 설치
+    status:
+      account_status: 계정 상태
+      confirming: 이메일 확인이 완료될 때까지 대기 중입니다.
+      functional: 사용자의 계정이 완전히 작동 가능합니다.
+      pending: 귀하의 신청서는 저희 직원의 검토를 보류하고 있습니다. 이 작업에는 시간이 걸릴 수 있습니다. 애플리케이션이 승인된 경우 이메일을 받게 됩니다.
+      redirecting_to: 귀하의 계좌는 현재 %{acct}로 재지정하고 있으므로 비활성 상태입니다.
+    trouble_logging_in: '-로그인할 수 있을까요?'
+    use_security_key: 보안 키 사용
+  authorize_follow:
+    already_following: 이 계정을 이미 관심 대상으로 등록했습니다.
+    already_requested: 해당 계정에 이미 다음 요청을 보냈습니다.
+    error: 불행하게도 원격 계정을 검색하는 중에 오류가 발생했습니다.
+    follow: 확인하기
+    follow_request: '다음에 대한 후속 요청을 보냈습니다.'
+    following: '성공! 다음과 같은 작업을 수행한다.'
+    post_follow:
+      close: 또는 이 창을 닫을 수도 있습니다.
+      return: 사용자의 프로파일 표시
+      web: 웹으로 이동
+    title: '%{acct}'
+  challenge:
+    confirm: 계속
+    hint_html: "<strong>팁: <strong>팁:</strong> . 다음 시간에는 비밀번호를 다시 요청하지 않겠습니다."
+    invalid_password: 잘못된 비밀번호
+    prompt: 계속하려면 암호 확인
+  crypto:
+    errors:
+      invalid_key: 는 유효한 Ed25519 또는 Curve25519키가 아님
+      invalid_signature: 가 유효한 Ed25519 서명이 아님
+  date:
+    formats:
+      default: "%b %d, %Y"
+      with_month_name: "%B %d, %Y"
+  datetime:
+    distance_in_words:
+      about_x_hours: "%{count}h"
+      about_x_months: "%{count}mo"
+      about_x_years: "%{count}y"
+      almost_x_years: "%{count}y"
+      half_a_minute: 지금만
+      less_than_x_minutes: "%{count}m"
+      less_than_x_seconds: 지금만
+      over_x_years: "%{count}y"
+      x_days: "%{count}d"
+      x_minutes: "%{count}m"
+      x_months: "%{count}mo"
+      x_seconds: "%{count}s"
+  deletes:
+    challenge_not_passed: 입력한 정보가 올바르지 않습니다.
+    confirm_password: 현재 암호를 입력하여 신원을 확인하십시오.
+    confirm_username: 프로시저를 확인할 사용자 이름을 입력하십시오.
+    proceed: 계정 삭제
+    success_msg: 계정이 삭제되었습니다.
+    warning:
+      before: '계속하기 전에 다음 사항을 주의 깊게 읽으십시오.'
+      caches: 다른 서버에 의해 캐시된 컨텐츠는 지속될 수 있습니다.
+      data_removal: 게시 및 기타 데이터가 영구 제거됩니다.
+      email_change_html: You can <a href="%{path}">change your e-mail address</a> without deleting your account
+      email_contact_html: If it still doesn't arrive, you can e-mail <a href="mailto:%{email}">%{email}</a> for help
+      email_reconfirmation_html: 확인 이메일을 받지 않는 경우, <a href="%{path}">요청을 다시 요청할 수 있습니다</a>
+      irreversible: 사용자 계정을 복원하거나 다시 활성화할 수 없습니다.
+      more_details_html: 자세한 내용은 <a href="%{terms_path}">프라이버시 정책</a>를 참조하십시오.
+      username_available: 사용자 이름이 다시 사용 가능하게 됩니다.
+      username_unavailable: 사용자 이름이 사용 불가능으로 남아 있음
+  directories:
+    directory: 프로파일 디렉토리
+    explanation: 사용자의 관심사에 기반한 사용자 찾기
+    explore_mastodon: 탐색 %{title}
+  domain_validator:
+    invalid_domain: 올바른 도메인 이름이 아님
+  errors:
+    '400': 제출한 요청이 올바르지 않거나 잘못 작성되었습니다.
+    '403': 이 페이지를 볼 수 있는 권한이 없습니다.
+    '404': 나는 당신이 잘못된 방향으로 가고 있다고 생각합니다. 여기에는 아무것도 없습니다.
+    '406': 이 페이지는 요청된 형식으로 사용할 수 없습니다.
+    '410': 휴스톤 문제가 있습니다. 페이지가 사라졌습니다.
+    '422':
+      content: 보안 검증에 실패했습니다. 당신은 쿠키를 차단하고 있습니까?
+      title: 보안 검증에 실패함
+    '429': 너무 많은 요청
+    '500':
+      content: 죄송하지만 끝에 뭔가 잘못되었습니다. 이 오류에 대한 알림을 받았으며 이를 해결하기 위해 작업 중입니다.
+      title: 이 페이지가 올바르지 않습니다.
+    '503': 죄송합니다. 높은 서버 로드를 경험하고 있는 것 같습니다. 우리는 가능한 한 빨리 이 문제를 해결하기 위해 노력하고 있습니다.
+    noscript_html: Chatterly를 사용하려면 자바스크립트를 활성화해야 한다. 또는, 플랫폼의 Chatterly Mobile을 위해 <a href="%{apps_path}">원시 애플리케이션 (</a> ) 중 하나를 시도해 보자.
+  existing_username_validator:
+    not_found: 해당 사용자 이름이 있는 로컬 사용자를 찾을 수 없음
+    not_found_multiple: '%{usernames}를 찾을 수 없습니다'
+  exports:
+    archive_takeout:
+      date: 날짜
+      download: 아카이브 다운로드
+      hint_html: <strong>루트 및 업로드된 미디어 (</strong>) 의 아카이브를 요청할 수 있습니다. 내보낸 데이터는 활성화된 소프트웨어가 읽을 수 있는 액티비티프 형식 (ActivityPub) 형식이다. 7일마다 아카이브를 요청할 수 있습니다.
+      in_progress: 아카이브를 컴파일하는 중 ...
+      request: 아카이브 요청하기
+      size: 크기
+    blocks: 사용자 블록
+    csv: CSV
+    domain_blocks: 도메인 블록
+    lists: 목록
+    mutes: 벙어리
+    storage: 매체 스토리지
+  featured_tags:
+    add_new: 새로 추가
+    errors:
+      limit: 해시 태그의 최대량을 이미 표시했습니다.
+    hint_html: "<strong>는 해시태그를 특징으로 하는 것은 무엇인가?</strong> 는 공용 프로파일에 두드러지게 표시되며 사용자가 해당 해시태그 아래에서 특별히 공용 게시물을 찾아볼 수 있도록 허용합니다. 그들은 창의적인 작품이나 장기적인 프로젝트를 추적하기 위한 훌륭한 도구입니다."
+  filters:
+    contexts:
+      account: 프로파일
+      home: 홈 타임라인
+      notifications: 알림
+      public: 공개 일정
+      thread: 대화
+    edit:
+      title: 필터 편집
+    errors:
+      invalid_context: 없거나 올바르지 않은 컨텍스트가 제공됨
+      invalid_irreversible: 비가역적 필터링은 홈 또는 알림 컨텍스트에서만 작동합니다.
+    index:
+      delete: 삭제
+      empty: 필터가 없습니다.
+      title: 필터
+    new:
+      title: 새 필터 추가하기
+  footer:
+    developers: 개발자
+    more: 더 많은…
+    resources: 자원
+    trending_now: 트렌딩
+  generic:
+    all: 모두
+    changes_saved_msg: 변경사항이 저장되었습니다!
+    copy: 복사
+    delete: 삭제
+    no_batch_actions_available: 이 페이지에서 사용할 수 있는 일괄처리 조치 없음
+    order_by: 주문
+    save_changes: 변경사항 저장
+    validation_errors:
+      other: 무언가가 아직 완전히 옳지 않다! 아래에서 %{count} 오류를 검토하십시오.
+  html_validator:
+    invalid_markup: '에는 유효하지 않은 HTML 마크업이 들어 있다: %{error}'
+  identity_proofs:
+    active: 활성
+    authorize: 예, 권한 부여
+    authorize_connection_prompt: 이 암호 연결 권한을 부여하시겠습니까?
+    errors:
+      failed: 암호화 연결에 실패했습니다. %{provider}에서 다시 시도하십시오.
+      keybase:
+        invalid_token: 키 기본 토큰은 서명의 해시이며 66개의 16진 문자여야 합니다.
+        verification_failed: 키베이스는 이 토큰을 키베이스 사용자 ( %{kb_username}) 의 서명으로서 인식하지 않는다. 키 베이스에서 다시 시도하십시오.
+      wrong_user: '%{current}로 로그인한 동안 %{proving} 의 증거를 작성할 수 없습니다. %{proving} 로 로그인하고 다시 시도하십시오.'
+    explanation_html: 여기에서는 키 베이스와 같은 다른 플랫폼에서 다른 아이덴티티들을 암호로 연결할 수 있다. 이렇게 하면 다른 사용자가 해당 플랫폼에서 암호화된 메시지를 전송할 수 있으며 사용자가 보내는 컨텐츠를 신뢰할 수 있습니다.
+    i_am_html: '%{service}에 있는 %{username} 입니다.'
+    identity: 아이덴티티
+    inactive: 비활성화
+    publicize_checkbox: '그리고 이를 위해서'
+    publicize_toot: '그것은 증명되었습니다! %{service}온 %{username} : %{url}'
+    remove: 계정에서 증거 제거하기
+    removed: 계정에서 증거 제거를 완료했습니다.
+    status: 검증 상태
+    view_proof: 증거 보기
+  imports:
+    modes:
+      merge: 병합
+      merge_long: 기존 레코드 보존 및 새 레코드 추가
+      overwrite: 겹쳐쓰기
+      overwrite_long: 현재 레코드를 새 레코드로 바꾸기
+    preface: 사용자가 관심 대상으로 등록한 사용자 목록과 같은 다른 서버에서 내보낸 데이터를 가져올 수 있습니다.
+    success: 데이터가 성공적으로 업로드되었으며 이제 예정 시간으로 데이터가 처리됩니다.
+    types:
+      blocking: 차단 목록
+      domain_blocking: 도메인 차단 목록
+      following: 다음 목록
+      muting: 뮤팅 리스트
+    upload: 업로드
+  in_memoriam_html: 멤리암에서요.
+  invites:
+    delete: 비활성화
+    expired: Expired
+    expires_in:
+      '1800': 30 분
+      '21600': 6 시간
+      '3600': 1 시간
+      '43200': 12 시간
+      '604800': 1 주
+      '86400': 1 일
+    expires_in_prompt: 절대로
+    generate: 초대 링크 생성
+    invited_by: '당신의 초대는 다음과 같습니다.'
+    max_uses:
+      other: "%{count} 사용"
+    max_uses_prompt: 제한 없음
+    prompt: 이 서버에 대한 액세스를 부여하기 위해 다른 사용자와 링크를 생성하고 공유합니다.
+    table:
+      expires_at: Expires
+      uses: 용도
+    title: 사람들을 초대하다
+  lists:
+    errors:
+      limit: 최대 목록 수에 도달했습니다.
+  media_attachments:
+    validations:
+      images_and_video: 이미 이미지가 포함되어 있는 상태에 비디오를 첨부할 수 없습니다.
+      not_ready: 처리를 완료하지 않은 파일을 첨부할 수 없습니다. 다시 한번 해 봐요!
+      too_many: 4개 이상의 파일을 첨부할 수 없음
+  migrations:
+    acct: '-에 이동하기'
+    cancel: 경로 재지정 취소
+    cancel_explanation: 경로 재지정을 취소하면 현재 계정이 다시 활성화되지만 해당 계정으로 이동된 추종자는 가져오지 않습니다.
+    cancelled_msg: 경로 재지정을 취소했습니다.
+    errors:
+      already_moved: 사용자가 이미 이동한 계정과 동일한 계정을
+      missing_also_known_as: 이 계정의 별명이 아닙니다.
+      move_to_self: 현재 계정이 될 수 없음
+      not_found: 찾을 수 없음
+      on_cooldown: 당신은 침착하게 생각하고 있다
+    followers_count: 이동 시의 후속 조치
+    incoming_migrations: 다른 계정에서 이동하기
+    incoming_migrations_html: 다른 계정에서 이 계정으로 이동하려면 먼저 <a href="%{path}">계정 별명이</a>인 계정 별명을 작성해야 합니다.
+    moved_msg: 이제 계정이 %{acct} 로 방향을 재지정하고 추종자들이 이동하고 있습니다.
+    not_redirecting: 사용자의 계정이 현재 다른 계정으로 다시 지정되지 않습니다.
+    on_cooldown: 최근에 귀하의 계정을 마이그레이션했습니다. 이 기능은 %{count} 일 내에 다시 사용 가능하게 됩니다.
+    past_migrations: 과거 마이그레이션
+    proceed_with_move: 팔로워
+    redirected_msg: 이제 계정이 %{acct}로 재지정됩니다.
+    redirecting_to: 귀하의 계좌는 %{acct}로 재지정됩니다.
+    set_redirect: 경로 재지정
+    warning:
+      backreference_required: 새 계정이 먼저 이 계정을 다시 참조하도록 구성해야 합니다.
+      before: '계속하기 전에 다음 사항을 주의 깊게 읽으십시오.'
+      cooldown: 이동한 후에는 다시 이동할 수 없는 냉각기 기간이 있습니다.
+      disabled_account: 현재 계정을 완전히 사용할 수 없습니다. 그러나 데이터 내보내기에 대한 액세스뿐만 아니라 다시 활성화할 수 있습니다.
+      followers: 이 조치는 현재 계정의 모든 추종자를 새 계정으로 이동합니다.
+      only_redirect_html: 또는, <a href="%{path}">는 프로파일</a>의 경로 재지정만을 구성할 수 있습니다.
+      other_data: 다른 데이터는 자동으로 이동되지 않음
+      redirect: 현재 계정의 프로파일이 경로 재지정 통지로 업데이트되며 검색에서 제외됩니다.
+  moderation:
+    title: 현대화
+  move_handler:
+    carry_blocks_over_text: 이 사용자는 차단한 %{acct}에서 이동했습니다.
+    carry_mutes_over_text: 이 사용자는 음소거한 %{acct}에서 이동했습니다.
+    copy_account_note_text: '이 사용자는 %{acct}에서 이동했습니다. 이 사용자에 대한 이전 메모는 다음과 같습니다.'
+  notification_mailer:
+    digest:
+      action: 모든 알림 보기
+      body: 다음은 %{since}방문 마지막 방문 이후 누락된 메시지에 대한 간단한 요약입니다.
+      mention: "%{name} 에서 언급한 내용은 다음과 같습니다."
+      new_followers_summary:
+        other: 또한, 여러분은 %{count} 명의 새로운 추종자들을 가지고 달아났습니다! 놀라워요!
+      subject:
+        other: "%{count} new notifications since your last visit \U0001F418"
+      title: 네가 없다면 ...
+    favourite:
+      body: '귀하의 상태는 %{name}가 가장 좋았습니다.'
+      subject: "%{name} 상태가 좋아"
+      title: 새로운 선호
+    follow:
+      body: "%{name} 가 다음과 같습니다!"
+      subject: "%{name} 는 이제 다음과 같습니다."
+      title: 새로운 추종자
+    follow_request:
+      action: 후속 요청 관리
+      body: "%{name} 는 다음과 같은 작업을 수행하도록 요청했습니다."
+      subject: '팔로워: %{name}'
+      title: 새로운 후속 요청
+    mention:
+      action: 응답
+      body: '%{name} 는 다음과 같이 언급되었습니다.'
+      subject: 당신은 %{name}년에 언급되었다
+      title: 새로운 언급
+    reblog:
+      body: '귀사의 상태는 %{name}로 부스트되었습니다.'
+      subject: "%{name} 는 귀하의 상태를 향상시켰습니다."
+      title: 새로운 부스트
+  notifications:
+    email_events: 이메일 알림 이벤트
+    email_events_hint: '다음에 대한 알림을 수신할 이벤트를 선택하십시오.'
+    other_settings: 기타 알림 설정
+  number:
+    human:
+      decimal_units:
+        format: "%n%u"
+        units:
+          billion: B
+          million: 남
+          quadrillion: Q
+          thousand: K
+          trillion: T
+          unit: ''
+  otp_authentication:
+    code_hint: 인증자 애플리케이션이 생성한 코드를 입력하여 확인
+    description_html: 인증자 애플리케이션을 사용하여 <strong>2-팩터 인증</strong> 를 사용 가능하게 하는 경우 로그인하려면 사용자가 입력해야 할 토큰을 생성하는 사용자의 전화를 소유해야 합니다.
+    enable: 사용
+    instructions_html: "<strong>는 사용자 전화</strong>에서 QR 코드를 구글 인증기 또는 비슷한 TOTP앱으로 스캔합니다. 이제부터는 로그인할 때 입력해야 하는 토큰을 생성합니다."
+    manual_instructions: 'QR 코드를 스캔할 수 없고 수동으로 입력해야 하는 경우에는 일반 텍스트 비밀 정보가 있다.'
+    setup: 설정
+    wrong_code: 입력한 코드가 올바르지 않습니다! 서버 시간 및 장치 시간이 정확합니까?
+  pagination:
+    newer: 새로운
+    next: 다음
+    older: 올더
+    prev: 전대
+    truncate: "&hellip;"
+  polls:
+    errors:
+      already_voted: 당신은 이미 이 여론조사에 투표했습니다.
+      duplicate_options: 중복 항목 포함
+      duration_too_long: 너무 먼 미래에 있다
+      duration_too_short: 너무 빠르다
+      expired: 이 투표는 이미 끝났다
+      invalid_choice: 선택한 투표 옵션이 존재하지 않습니다.
+      over_character_limit: 각각 %{max} 문자보다 길 수 없음
+      too_few_options: 둘 이상의 항목이 있어야 함
+      too_many_options: '%{max} 개 이상의 항목을 포함할 수 없습니다.'
+  preferences:
+    other: 기타
+    posting_defaults: 기본값 게시
+    public_timelines: 공개 일정
+  reactions:
+    errors:
+      limit_reached: 다른 반응의 한계에 도달했습니다.
+      unrecognized_emoji: 인식된 이모티콘이 아니다
+  relationships:
+    activity: 계정 활동
+    dormant: 유휴
+    followers: 후속 조치
+    following: 다음
+    invited: 초대받은
+    last_active: 마지막 활성
+    most_recent: 가장 최근의
+    moved: 이동
+    mutual: 상호간의
+    primary: 기본
+    relationship: 관계
+    remove_selected_domains: 선택된 도메인에서 모든 팔로워 제거
+    remove_selected_followers: 선택한 추종자 제거
+    remove_selected_follows: 선택한 사용자 선택 취소하기
+    status: 계정 상태
+  remote_follow:
+    acct: 조치를 수행하려는 사용자 이름 @ 도메인을 입력하십시오.
+    missing_resource: 사용자 계정의 필수 경로 재지정 URL을 찾을 수 없습니다.
+    no_account_html: Don't have an account? You can <a href='%{sign_up_path}' target='_blank'>sign up here</a>
+    proceed: 계속하기
+    prompt: '여러분은 다음과 같이 할 것이다.'
+    reason_html: "<strong>Why is this step necessary?</strong> <code>%{instance}</code> might not be the server where you are registered, so we need to redirect you to your home server first."
+  remote_interaction:
+    favourite:
+      proceed: 가장 좋아하는 사람이 되도록 하다.
+      prompt: '너는 이를 좋아하고 싶다.'
+    reblog:
+      proceed: 계속해서 증가시키기
+      prompt: '이 단추를 추가하려면 다음을 수행하십시오.'
+    reply:
+      proceed: 계속해서 응답하기
+      prompt: '이 작업에 응답하려면 다음을 수행하십시오.'
+  scheduled_statuses:
+    over_daily_limit: 해당 날짜에 스케줄된 %{limit} 의 한계를 초과했습니다.
+    over_total_limit: 일정하게 예약된 %{limit} 의 한계를 초과했습니다.
+    too_soon: 스케줄된 날짜는 미래의 날짜이어야 합니다.
+  sessions:
+    activity: 마지막 활동
+    browser: 브라우저
+    browsers:
+      alipay: 앨리페이
+      blackberry: 블랙베리
+      chrome: 크롬
+      edge: 마이크로소프트 에지
+      electron: 전자
+      firefox: 파이어폭스
+      generic: 모르는 브라우저
+      ie: 인터넷 익스플로러
+      micro_messenger: 마이크로메신저
+      nokia: 노키아 S40 Ovi 브라우저
+      opera: Opera
+      otter: 오터
+      phantom_js: PhantomJS
+      qq: QQ 브라우저
+      safari: 사파리
+      uc_browser: UC브라우저
+      weibo: 웨이보
+    current_session: 현재 세션
+    description: "%{platform}상에서 %{browser}"
+    explanation: 이는 현재 사용자의 Chatterly 계정에 로그인한 웹 브라우저입니다.
+    ip: 작은
+    platforms:
+      adobe_air: 어도비 에어
+      android: 안드로이드
+      blackberry: 블랙베리
+      chrome_os: 크롬 OS
+      firefox_os: 파이어폭스 OS
+      ios: iOS
+      linux: 리눅스
+      mac: 짧은 원숭이
+      other: 미지의 플랫폼
+      windows: 윈도우
+      windows_mobile: 윈도우 모바일
+      windows_phone: 윈도우 폰
+    revoke: Revoke
+    revoke_success: 성공적으로 취소된 세션
+    title: 제가 어디에 로그인하고 있나요?
+  settings:
+    account: 어카운트
+    account_settings: 계정 설정
+    aliases: 계정 별명
+    appearance: 외모
+    authorized_apps: 승인된 앱
+    back: 채팅리로 돌아가
+    delete: 계정 삭제
+    development: 개발
+    edit_profile: 프로파일 편집
+    export: 데이터 내보내기
+    featured_tags: 해시태그 (hashtag)
+    identity_proofs: 증거를 확인하다
+    import: 가져오기
+    import_and_export: 가져오기 및 내보내기
+    migrate: 계정 마이그레이션
+    notifications: 알림
+    preferences: 환경 설정
+    profile: 프로파일
+    relationships: 추종자들과 추종자들
+    two_factor_authentication: 2요인 인증
+    webauthn_authentication: 보안 키
+  spam_check:
+    spam_detected: 이것은 자동화된 보고서입니다. 스팸이 탐지되었습니다.
+  statuses:
+    attached:
+      audio:
+        other: "%{count} 오디오"
+      description: '연결: %{attached}'
+      image:
+        other: "%{count} 이미지"
+      video:
+        other: "%{count} 비디오"
+    boosted_from_html: '%{acct_link}에서 부스트'
+    content_warning: '컨텐츠 경고: %{warning}'
+    disallowed_hashtags:
+      other: '허용되지 않은 hash태그: %{tags}'
+    errors:
+      in_reply_not_found: 응답하려는 상태가 존재하지 않는 것 같습니다.
+    language_detection: 자동으로 언어 발견
+    open_in_web: 웹에서 열기
+    over_character_limit: '%{max} 의 문자 한계를 초과함'
+    pin_errors:
+      limit: 최대 입력 수를 이미 고정했습니다.
+      ownership: 다른 사람의 발톱을 고정할 수 없습니다.
+      private: 비공용 토트를 고정할 수 없습니다.
+      reblog: 부스트를 고정할 수 없음
+    poll:
+      total_people:
+        other: "%{count} 사람"
+      total_votes:
+        other: "%{count} 표"
+      vote: 투표
+    show_more: 자세히 보기
+    show_thread: 스레드 표시
+    sign_in_to_participate: 대화에 참여하기
+    title: '%{name}: "%{quote}"'
+    visibilities:
+      private: 후속 조치 -
+      private_long: 추종자들에게만 쇼
+      public: 공개
+      public_long: 누구나 볼 수 있다
+      unlisted: 비상장
+      unlisted_long: 모든 사용자가 볼 수 있지만 공개 일정에 나열되지 않음
+  stream_entries:
+    pinned: 핀으로 된 발톱
+    reblogged: 고양된
+    sensitive_content: 민감한 내용
+  tags:
+    does_not_match_previous_name: 이전 이름과 일치하지 않음
+  terms:
+    body_html: |
+      <h2>Privacy Policy</h2>
+      <h3 id="collect">What information do we collect?</h3>
+
+      <ul>
+        <li><em>Basic account information</em>: If you register on this server, you may be asked to enter a username, an e-mail address and a password. You may also enter additional profile information such as a display name and biography, and upload a profile picture and header image. The username, display name, biography, profile picture and header image are always listed publicly.</li>
+        <li><em>Posts, following and other public information</em>: The list of people you follow is listed publicly, the same is true for your followers. When you submit a message, the date and time is stored as well as the application you submitted the message from. Messages may contain media attachments, such as pictures and videos. Public and unlisted posts are available publicly. When you feature a post on your profile, that is also publicly available information. Your posts are delivered to your followers, in some cases it means they are delivered to different servers and copies are stored there. When you delete posts, this is likewise delivered to your followers. The action of reblogging or favouriting another post is always public.</li>
+        <li><em>Direct and followers-only posts</em>: All posts are stored and processed on the server. Followers-only posts are delivered to your followers and users who are mentioned in them, and direct posts are delivered only to users mentioned in them. In some cases it means they are delivered to different servers and copies are stored there. We make a good faith effort to limit the access to those posts only to authorized persons, but other servers may fail to do so. Therefore it's important to review servers your followers belong to. You may toggle an option to approve and reject new followers manually in the settings. <em>Please keep in mind that the operators of the server and any receiving server may view such messages</em>, and that recipients may screenshot, copy or otherwise re-share them. <em>Do not share any dangerous information over Chatterly.</em></li>
+        <li><em>IPs and other metadata</em>: When you log in, we record the IP address you log in from, as well as the name of your browser application. All the logged in sessions are available for your review and revocation in the settings. The latest IP address used is stored for up to 12 months. We also may retain server logs which include the IP address of every request to our server.</li>
+      </ul>
+
+      <hr class="spacer" />
+
+      <h3 id="use">What do we use your information for?</h3>
+
+      <p>Any of the information we collect from you may be used in the following ways:</p>
+
+      <ul>
+        <li>To provide the core functionality of Chatterly. You can only interact with other people's content and post your own content when you are logged in. For example, you may follow other people to view their combined posts in your own personalized home timeline.</li>
+        <li>To aid moderation of the community, for example comparing your IP address with other known ones to determine ban evasion or other violations.</li>
+        <li>The email address you provide may be used to send you information, notifications about other people interacting with your content or sending you messages, and to respond to inquiries, and/or other requests or questions.</li>
+      </ul>
+
+      <hr class="spacer" />
+
+      <h3 id="protect">How do we protect your information?</h3>
+
+      <p>We implement a variety of security measures to maintain the safety of your personal information when you enter, submit, or access your personal information. Among other things, your browser session, as well as the traffic between your applications and the API, are secured with SSL, and your password is hashed using a strong one-way algorithm. You may enable two-factor authentication to further secure access to your account.</p>
+
+      <hr class="spacer" />
+
+      <h3 id="data-retention">What is our data retention policy?</h3>
+
+      <p>We will make a good faith effort to:</p>
+
+      <ul>
+        <li>Retain server logs containing the IP address of all requests to this server, in so far as such logs are kept, no more than 90 days.</li>
+        <li>Retain the IP addresses associated with registered users no more than 12 months.</li>
+      </ul>
+
+      <p>You can request and download an archive of your content, including your posts, media attachments, profile picture, and header image.</p>
+
+      <p>You may irreversibly delete your account at any time.</p>
+
+      <hr class="spacer"/>
+
+      <h3 id="cookies">Do we use cookies?</h3>
+
+      <p>Yes. Cookies are small files that a site or its service provider transfers to your computer's hard drive through your Web browser (if you allow). These cookies enable the site to recognize your browser and, if you have a registered account, associate it with your registered account.</p>
+
+      <p>We use cookies to understand and save your preferences for future visits.</p>
+
+      <hr class="spacer" />
+
+      <h3 id="disclose">Do we disclose any information to outside parties?</h3>
+
+      <p>We do not sell, trade, or otherwise transfer to outside parties your personally identifiable information. This does not include trusted third parties who assist us in operating our site, conducting our business, or servicing you, so long as those parties agree to keep this information confidential. We may also release your information when we believe release is appropriate to comply with the law, enforce our site policies, or protect ours or others rights, property, or safety.</p>
+
+      <p>Your public content may be downloaded by other servers in the network. Your public and followers-only posts are delivered to the servers where your followers reside, and direct messages are delivered to the servers of the recipients, in so far as those followers or recipients reside on a different server than this.</p>
+
+      <p>When you authorize an application to use your account, depending on the scope of permissions you approve, it may access your public profile information, your following list, your followers, your lists, all your posts, and your favourites. Applications can never access your e-mail address or password.</p>
+
+      <hr class="spacer" />
+
+      <h3 id="children">Site usage by children</h3>
+
+      <p>If this server is in the EU or the EEA: Our site, products and services are all directed to people who are at least 16 years old. If you are under the age of 16, per the requirements of the GDPR (<a href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation">General Data Protection Regulation</a>) do not use this site.</p>
+
+      <p>If this server is in the USA: Our site, products and services are all directed to people who are at least 13 years old. If you are under the age of 13, per the requirements of COPPA (<a href="https://en.wikipedia.org/wiki/Children%27s_Online_Privacy_Protection_Act">Children's Online Privacy Protection Act</a>) do not use this site.</p>
+
+      <p>Law requirements can be different if this server is in another jurisdiction.</p>
+
+      <hr class="spacer" />
+
+      <h3 id="changes">Changes to our Privacy Policy</h3>
+
+      <p>If we decide to change our privacy policy, we will post those changes on this page.</p>
+
+      <p>This document is CC-BY-SA. It was last updated March 7, 2018.</p>
+
+      <p>Originally adapted from the <a href="https://github.com/discourse/discourse">Discourse privacy policy</a>.</p>
+    title: "%{instance} 서비스 및 프라이버시 정책"
+  themes:
+    contrast: 차터리 (고대비)
+    default: 조명 아웃 (Dark)
+    mastodon-light: 선니 외부 (빛)
+  time:
+    formats:
+      default: "%b %d, %Y, %H:%M"
+      month: "%b %Y"
+  two_factor_authentication:
+    add: 추가
+    disable: 2FA사용 안 함
+    disabled_success: 2요인 인증을 사용할 수 없습니다.
+    edit: 편집
+    enabled: 2요인 인증 사용 가능
+    enabled_success: 2요소 인증이 성공적으로 사용 가능함
+    generate_recovery_codes: 복구 코드 생성하기
+    lost_recovery_codes: 복구 코드를 사용하여 전화를 분실한 경우 계정에 다시 액세스할 수 있습니다. 복구 코드를 유실한 경우 여기에서 이를 다시 생성할 수 있습니다. 이전 복구 코드가 무효화됩니다.
+    methods: 2인자 방법
+    otp: 인증자 애플리케이션
+    recovery_codes: 백업 복구 코드
+    recovery_codes_regenerated: 복구 코드가 성공적으로 재생됨
+    recovery_instructions_html: 전화에 액세스할 수 없는 경우 아래의 복구 코드 중 하나를 사용하여 계정에 대한 액세스를 다시 찾을 수 있습니다. <strong>는 회복 코드</strong>를 보관합니다. 예를 들어, 이들을 인쇄하여 다른 중요한 문서와 함께 저장할 수 있습니다.
+    webauthn: 보안 키
+  user_mailer:
+    backup_ready:
+      explanation: 차터플라이 계정의 전체 백업을 요청했습니다. 이제 다운로드할 준비가 되었다.
+      subject: 사용자의 아카이브를 다운로드할 준비가 되었습니다.
+      title: 아카이브 처리
+    sign_in_token:
+      details: '시도에 대한 자세한 내용은 다음과 같습니다.'
+      explanation: '인식되지 않은 IP 주소에서 계정에 로그인하려는 시도를 발견했습니다. 여기에 해당하는 경우, 인증 확인 페이지의 보안 코드 아래에 보안 코드를 입력하십시오.'
+      further_actions: '그렇지 않은 경우 비밀번호를 변경하고 계정에서 2요인 인증을 사용하도록 설정하십시오. 여기서는 다음을 수행할 수 있습니다.'
+      subject: 시도한 로그인을 확인하십시오.
+      title: 로그인 시도
+    warning:
+      explanation:
+        disable: 계정이 고정되어 있는 동안 사용자의 계정 데이터는 손상되지 않은 상태로 유지되지만 잠금이 해제될 때까지 어떤 조치도 수행할 수 없습니다.
+        silence: 귀하의 계정은 한정되어 있지만, 이미 관심을 갖고 있는 사람들만이 이 서버에서 여러분의 토츠를 보게 될 것이며, 다양한 공공 목록에서 제외될 수도 있습니다. 그러나 다른 사용자도 수동으로 사용자를 관심 대상으로 등록할 수 있습니다.
+        suspend: 계정이 일시중단되었으며 업로드된 모든 미디어 파일 및 업로드된 미디어 파일이 이 서버에서 비가역적으로 제거되었으며 팔로어가 있는 서버가 비가역적으로 제거되었습니다.
+      get_in_touch: '%{instance}직원들과 연락하기 위해 이 이메일에 회신할 수 있습니다.'
+      review_server_policies: 서버 정책 검토
+      statuses: '특히,'
+      subject:
+        disable: 사용자의 계정 %{acct} 가 동결되었습니다.
+        none: '%{acct}에 대한 경고'
+        silence: 사용자의 계정 %{acct} 는 제한되어 있습니다.
+        suspend: 사용자의 계정 %{acct} 가 일시중단되었습니다.
+      title:
+        disable: 계정 동결
+        none: 경고
+        silence: 계정 제한
+        suspend: 계정 일시중단
+    welcome:
+      edit_profile_action: 설정 프로파일
+      edit_profile_step: 아바타, 헤더를 업로드하고 표시 이름을 변경하여 프로파일을 사용자 정의할 수 있습니다. 새 팔로워를 검토하기 전에 검토하려면 계정을 잠글 수 있습니다.
+      explanation: 시작하기 위한 몇 가지 팁은 다음과 같다.
+      final_action: 게시 시작
+      final_step: '게시를 시작하십시오! 팔로어가 없어도 공용 메시지는 다른 사용자가 볼 수 있습니다 (예를 들어, 로컬 타임라인 및 해시태그에 있음). 당신은 자신을 #introductions 해시태그 '' (hashtag) 로 소개하고 싶을 것이다.'
+      full_handle: 풀 핸들
+      full_handle_hint: 이것이 친구들에게 말하고자 하는 것입니다. 그렇지 않으면 다른 서버에서 메시지를 보내거나 따를 수 있습니다.
+      review_preferences_action: 환경 설정 변경
+      review_preferences_step: 받고 싶은 이메일과 같은 환경 설정을 설정해야 합니다. 그렇지 않으면 사용자가 게시하는 개인정보 보호 레벨이 기본값으로 설정되어 있는지 확인하십시오. 멀미가 없으면 GIF 자동 재생을 활성화하도록 선택할 수 있습니다.
+      subject: Chatterly에 오신 것을 환영합니다
+      tip_federated_timeline: 연합 타임라인은 치터리오스 네트워크의 원반적인 광경입니다. 그러나 이것은 당신의 이웃 사람들이 가입하는 사람들만을 포함하기 때문에, 그것은 완성되지 않는다.
+      tip_following: 기본적으로 서버 관리 (들) 를 관심 대상으로 등록합니다. 더 흥미있는 사용자를 찾으려면 로컬 및 연합 타임라인을 확인하십시오.
+      tip_local_timeline: 지역 일정은 %{instance}주에 있는 사람들의 재수이다. 이들은 당신의 인접한 이웃입니다!
+      tip_mobile_webapp: 모바일 브라우저에서 사용자의 홈 스크린에 차터리스를 추가하도록 제공하는 경우 푸시 알림을 받을 수 있습니다. 그것은 많은 방법으로 네이티브 앱과 같은 역할을 합니다!
+      tips: 팁
+      title: 탑승, %{name}!
+  users:
+    blocked_email_provider: 이 전자 우편 제공자는 허용되지 않습니다.
+    follow_limit_reached: '%{limit} 사람을 따라갈 수 없습니다.'
+    generic_access_help_html: 계정에 액세스할 수 있습니까? 지원을 위해 %{email} 를 터치할 수 있습니다.
+    invalid_email: 전자 우편 주소가 올바르지 않습니다.
+    invalid_email_mx: 전자 우편 주소가 존재하지 않는 것 같습니다.
+    invalid_otp_token: 유효하지 않은 2-요인 코드
+    invalid_sign_in_token: 올바르지 않은 보안 코드
+    otp_lost_help_html: 둘 다에 대한 액세스를 잃은 경우, %{email}를 사용하여 연락할 수 있습니다.
+    seamless_external_login: 외부 서비스를 통해 로그인되어 있으므로 비밀번호와 이메일 설정을 사용할 수 없습니다.
+    signed_in_as: '다음과 같이 서명한다.'
+    suspicious_sign_in_confirmation: 귀하는 이전에 이 장치에 로그인하지 않은 것으로 보입니다. 그리고 한동안 로그인하지 않았기 때문에, 여러분의 이메일 주소로 보안 코드를 보내 여러분의 이메일 주소를 확인할 수 있습니다.
+  verification:
+    explanation_html: 'You can <strong>verify yourself as the owner of the links in your profile metadata</strong>. For that, the linked website must contain a link back to your Chatterly profile. The link back <strong>must</strong> have a <code>rel="me"</code> attribute. The text content of the link does not matter. Here is an example:'
+    verification: 검증
+  webauthn_credentials:
+    add: 새 보안 키 추가
+    create:
+      error: 보안 키를 추가하는 중에 문제점이 발생했습니다. 다시 시도하십시오.
+      success: 보안 키가 정상적으로 추가되었습니다.
+    delete: 삭제
+    delete_confirmation: 이 보안 키를 삭제하시겠습니까?
+    description_html: If you enable <strong>security key authentication</strong>, logging in will require you to use one of your security keys.
+    destroy:
+      error: 보안 키를 삭제하는 중에 문제점이 발생했습니다. 다시 시도하십시오.
+      success: 보안 키가 정상적으로 삭제되었습니다.
+    invalid_credential: 올바르지 않은 보안 키
+    nickname_hint: 새 보안 키의 별명을 입력하십시오.
+    not_enabled: 아직 웹 작성을 사용할 수 없습니다.
+    not_supported: 이 브라우저는 보안 키를 지원하지 않습니다.
+    otp_required: 보안 키를 사용하려면 두 개의 요인 인증을 먼저 사용으로 설정하십시오.
+    registered_on: '%{date}에 등록'

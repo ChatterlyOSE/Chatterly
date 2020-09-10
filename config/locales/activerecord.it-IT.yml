@@ -1,0 +1,16 @@
+it:
+  activerecord:
+    attributes:
+      poll:
+        expires_at: Scadenza
+        options: Scelte
+    errors:
+      models:
+        account:
+          attributes:
+            username:
+              invalid: solo lettere, numeri e sottolineature
+        status:
+          attributes:
+            reblog:
+              taken: di stato già esistente

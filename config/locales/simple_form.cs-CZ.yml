@@ -1,0 +1,194 @@
+cs:
+  simple_form:
+    hints:
+      account_alias:
+        acct: Uveďte username@domain účtu, ze kterého se chcete přesunout
+      account_migration:
+        acct: Zadejte jméno uživatele účtu, na který se chcete přesunout.
+      account_warning_preset:
+        text: Můžete použít syntaxi Toot, jako např. adresy URL, značky hashtag a zmínky.
+        title: Volitelný. Neviditelné pro příjemce
+      admin_account_action:
+        include_statuses: Uživatel uvidí, které toots byly příčinou akce moderování nebo varování.
+        send_email_notification: Uživatel obdrží vysvětlení toho, co se stalo s jejich účtem.
+        text_html: Volitelný. Syntaxe toot můžete použít. Můžete přidat varování před příponou <a href="%{path}">pro ukládání času</a>.
+        type_html: Vyberte, co se má provést s <strong>%{acct}</strong>
+        warning_preset_id: Volitelný. Stále můžete přidat vlastní text do konce přednastavení
+      announcement:
+        all_day: Je-li toto políčko zaškrtnuto, zobrazí se pouze data časového úseku.
+        ends_at: Volitelný. Oznámení bude automaticky nepublikováno v této době
+        scheduled_at: Ponechte prázdné, chcete-li okamžitě vydat oznámení
+        starts_at: Volitelný. V případě, že je oznámení svázáno se specifickým časovým rozsahem
+        text: Syntaxe toot můžete použít. Please be mindful of the space the announcement will take up on the user's screen
+      defaults:
+        autofollow: Lidé, kteří se zaregistrujete prostřednictvím pozvánky, budou automaticky následovat.
+        avatar: PNG, GIF nebo JPG. Ve většině %{size}. Bude zmenšena na hodnotu %{dimensions}px.
+        bot: Tento účet provádí hlavně automatizované akce a nemusí být monitorován
+        context: Jeden nebo více kontextů, ve kterých se má filtr použít
+        current_password: Pro účely zabezpečení zadejte prosím heslo aktuálního účtu
+        current_username: Chcete-li to potvrdit, zadejte prosím jméno uživatele aktuálního účtu
+        digest: Pouze odeslání po dlouhém období nečinnosti a pouze v případě, že jste obdrželi jakékoli osobní zprávy v nepřítomnosti
+        discoverable: Adresář profilu je jiný způsob, kterým váš účet může oslovit širší cílovou skupinu
+        email: Bude vám zaslán potvrzující e-mail.
+        fields: Na svém profilu můžete mít až 4 položky zobrazené jako tabulka.
+        header: PNG, GIF nebo JPG. Ve většině %{size}. Bude zmenšena na hodnotu %{dimensions}px.
+        inbox_url: Zkopírujte adresu URL z úvodní stránky předávacího serveru, kterou chcete použít
+        irreversible: Filtrované toots zmizí nevratně, i když je filtr později odstraněn
+        locale: Jazyk uživatelského rozhraní, e-maily a oznámení typu push
+        locked: Vyžaduje ruční schválení následovníků
+        password: Použít alespoň 8 znaků
+        phrase: Shoduje se bez ohledu na velikost písmen v textu nebo varování obsahu toot
+        scopes: Výběr rozhraní API, ke kterému bude aplikace přistupovat. Vyberete-li rozsah nejvyšší úrovně, nemusíte vybírat jednotlivé položky.
+        setting_aggregate_reblogs: Nezobrazovat nové náklady na toots, které byly v nedávné době posíleny (týká se pouze nově přijatých vzrůštů)
+        setting_default_sensitive: Citlivé médium je při výchozím nastavení skryto a může být odhaleno klepnutím
+        setting_display_media_default: Skrýt média označená jako citlivá
+        setting_display_media_hide_all: Vždy skrýt média
+        setting_display_media_show_all: Vždy zobrazit média
+        setting_hide_network: Kdo vás sleduje a kdo vás sleduje, nebude zobrazen ve vašem profilu.
+        setting_noindex: Ovlivní váš veřejný profil a stavové stránky
+        setting_show_application: Aplikace, kterou používáte k tot, se zobrazí v podrobném zobrazení vašich tootů.
+        setting_use_blurhash: Přechody jsou založeny na barvách skrytých vizuálů, ale zamlžuje jakékoliv podrobnosti
+        setting_use_pending_items: Skrýt aktualizace časové osy za klepnutí místo automatického procházení kanálu
+        username: Vaše jméno uživatele bude jedinečné v %{domain}
+        whole_word: Je-li klíčové slovo nebo fráze pouze alfanumerické, použije se pouze v případě, že odpovídá celému slovu.
+      domain_allow:
+        domain: Tato doména bude schopna načíst data z tohoto serveru a příchozí data z ní budou zpracována a uložena
+      email_domain_block:
+        domain: Může se jednat o název domény, který se zobrazí v e-mailové adrese, záznam MX, na který se doména interpretuje, nebo adresu IP serveru, na který se záznam MX interpretuje. Tyto položky budou zkontrolovány při přihlášení uživatele a přihlášení bude odmítnuto.
+        with_dns_records: Bude proveden pokus o interpretaci záznamů DNS dané domény a budou také blokovány výsledky.
+      featured_tag:
+        name: 'Možná budete chtít použít jednu z následujících možností:'
+      form_challenge:
+        current_password: Vstupujete do zabezpečené oblasti
+      imports:
+        data: CSV file exported from another Mastodon server
+      invite_request:
+        text: Pomůže nám to zkontrolovat vaši aplikaci
+      sessions:
+        otp: 'Zadejte dvoufaktorové kód generovaný vaší telefonickou aplikací, nebo použijte jeden z vašich kódů nápravy:'
+        webauthn: Pokud je to klíč USB, ujistěte se, že ho vložíte a, je-li to nutné, ťukněte na ni.
+      tag:
+        name: Můžete změnit pouze velikost písmen písmen, například, aby to bylo více čitelné
+      user:
+        chosen_languages: Je-li toto políčko zaškrtnuto, budou ve veřejných časových osách zobrazeny pouze soubory toots ve vybraných jazycích
+    labels:
+      account:
+        fields:
+          name: Nálepka
+          value: Obsah
+      account_alias:
+        acct: Manipulátor starého účtu
+      account_migration:
+        acct: Úchyt nového účtu
+      account_warning_preset:
+        text: Přednastavit text
+        title: Název
+      admin_account_action:
+        include_statuses: Zahrnout ohlášené soubory v e-mailu
+        send_email_notification: Oznámit uživateli na jeden e-mail
+        text: Vlastní varování
+        type: Akce
+        types:
+          disable: Zakázat přihlášení
+          none: Neprovádět nic
+          silence: Ticho
+          suspend: Pozastavit a nevratně odstranit data účtu
+        warning_preset_id: Použít předem nastavené varování
+      announcement:
+        all_day: All-denní událost
+        ends_at: Konec události
+        scheduled_at: Naplánovat publikování
+        starts_at: Začátek události
+        text: Oznámení
+      defaults:
+        autofollow: Pozvat na váš účet
+        avatar: Avatar
+        bot: Tohle je účet bot.
+        chosen_languages: Filtrovat jazyky
+        confirm_new_password: Potvrďte nové heslo
+        confirm_password: Potvrdit heslo
+        context: Kontexty filtru
+        current_password: Aktuální heslo
+        data: data
+        discoverable: Vypsat tento účet v adresáři
+        display_name: Zobrazovaný název
+        email: Adresa elektronické pošty
+        expires_in: Ukončit platnost po
+        fields: Metadata profilu
+        header: Hlavička
+        inbox_url: Adresa URL doručené pošty s přenosem
+        irreversible: Umístit namísto skrytí
+        locale: Jazyk rozhraní
+        locked: Uzamknout účet
+        max_uses: Maximální počet použití
+        new_password: Nové heslo
+        note: Bioenergie
+        otp_attempt: Dvoufaktorová kód
+        password: Heslo
+        phrase: Klíčové slovo nebo fráze
+        setting_advanced_layout: Povolit rozšířené webové rozhraní
+        setting_aggregate_reblogs: Zvyšuje se skupina ve lhůtách
+        setting_auto_play_gif: Automaticky přehrávat animované GIFy
+        setting_boost_modal: Zobrazit dialogové okno potvrzení před posílením
+        setting_crop_images: Oříznout obrázky v neexpandovaných toots do 16x9
+        setting_default_language: Uveřejňování
+        setting_default_privacy: Zveřejňování soukromí
+        setting_default_sensitive: Vždy označit média jako citlivá
+        setting_delete_modal: Zobrazit dialogové okno s potvrzením před odstraněním toot
+        setting_display_media: Zobrazení média
+        setting_display_media_default: Výchozí
+        setting_display_media_hide_all: Skrýt vše
+        setting_display_media_show_all: Zobrazit vše
+        setting_expand_spoilers: Vždy rozbalit soubory toots označené s varováními obsahu
+        setting_hide_network: Skrýt vaši síť
+        setting_noindex: Vol-z indexace vyhledávacího stroje
+        setting_reduce_motion: Redukovat pohyb v animacích
+        setting_show_application: Zařazování aplikace k odeslání toots
+        setting_system_font_ui: Použít výchozí písmo systému
+        setting_theme: Motiv webu
+        setting_trends: Zobrazit dnešní trendy
+        setting_unfollow_modal: Zobrazit dialogové okno potvrzení před zrušením následující osoby
+        setting_use_blurhash: Zobrazit barevné přechody pro skrytá média
+        setting_use_pending_items: Pomalý režim
+        severity: Závažnost
+        sign_in_token_attempt: Bezpečnostní kód
+        type: Typ importu
+        username: Uživatelské jméno
+        username_or_email: Jméno uživatele nebo e-mail
+        whole_word: Celé slovo
+      email_domain_block:
+        with_dns_records: Zahrnout záznamy MX a IP domény
+      featured_tag:
+        name: Hashtag
+      interactions:
+        must_be_follower: Blokování upozornění od nesledujících uživatelů
+        must_be_following: Blokovat oznámení od lidí, které nesledujete
+        must_be_following_dm: Blokovat přímé zprávy od lidí, které nesledujete
+      invite:
+        comment: Komentář
+      invite_request:
+        text: Proč se chcete připojit?
+      notification_emails:
+        digest: Odeslat e-maily typu digest
+        favourite: Někdo oblíben váš status
+        follow: Někdo tě sledoval.
+        follow_request: Někdo vás požádal o následování
+        mention: Někdo vás zmínil.
+        pending_account: Nový účet vyžaduje přezkoumání
+        reblog: Někdo posílil váš stav
+        report: Je zadána nová sestava
+        trending_tag: Nepřezkoumaný hashtag je trend
+      tag:
+        listable: Povolit, aby se tato značka hashtag objevila při hledání a v adresáři profilu
+        name: Hashtag
+        trendable: Povolit tuto značku hashtag zobrazovat v rámci trendů
+        usable: Povolit použití této značky hashtag toots
+    'no': 'Ne.'
+    recommended: Doporučeno
+    required:
+      mark: "*"
+      text: vyžadováno
+    title:
+      sessions:
+        webauthn: K přihlášení použijte jeden z vašich klíčů zabezpečení
+    'yes': 'Ano.'

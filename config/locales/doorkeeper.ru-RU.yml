@@ -1,0 +1,150 @@
+ru:
+  activerecord:
+    attributes:
+      doorkeeper/application:
+        name: Имя приложения
+        redirect_uri: URI перенаправления
+        scopes: Области
+        website: Веб-сайт
+    errors:
+      models:
+        doorkeeper/application:
+          attributes:
+            redirect_uri:
+              fragment_present: не может содержать фрагмент.
+              invalid_uri: должен быть допустимым URI.
+              relative_uri: должен быть абсолютным URI.
+              secured_uri: должен быть URI HTTPS/SSL.
+  doorkeeper:
+    applications:
+      buttons:
+        authorize: Авторизация
+        cancel: Отмена
+        destroy: Уничтожить
+        edit: Изменить
+        submit: Передать
+      confirmations:
+        destroy: Вы уверены?
+      edit:
+        title: Изменить приложение
+      form:
+        error: Упс! Проверьте свою форму на наличие возможных ошибок
+      help:
+        native_redirect_uri: Используйте %{native_redirect_uri} для локальных тестов
+        redirect_uri: Использовать одну строку для каждого URI
+        scopes: Отдельные области с пробелами. Оставьте пустым, чтобы использовать области по умолчанию.
+      index:
+        application: Приложение
+        callback_url: URL обратного вызова
+        delete: Удалить
+        empty: У вас нет приложений.
+        name: Имя
+        new: Новое приложение
+        scopes: Области
+        show: Показать
+        title: Ваши приложения
+      new:
+        title: Новое приложение
+      show:
+        actions: Действия
+        application_id: Ключ клиента
+        callback_urls: URL обратного вызова
+        scopes: Области
+        secret: Пароль клиента
+        title: 'Приложение: %{name}'
+    authorizations:
+      buttons:
+        authorize: Авторизация
+        deny: Запретить
+      error:
+        title: Произошла ошибка
+      new:
+        able_to: Он сможет
+        prompt: Приложение %{client_name} запрашивает доступ к вашей учетной записи
+        title: Требуется авторизация
+      show:
+        title: Скопируйте этот код авторизации и вставьте его в приложение.
+    authorized_applications:
+      buttons:
+        revoke: Аннулировать
+      confirmations:
+        revoke: Вы уверены?
+      index:
+        application: Приложение
+        created_at: Авторизованные
+        date_format: "%Y-%m-%d %H:%M:%S"
+        scopes: Области
+        title: Ваши авторизованные приложения
+    errors:
+      messages:
+        access_denied: Владелец ресурса или сервер авторизации отклонил запрос.
+        credential_flow_not_configured: Поток идентификационных данных владельца ресурса не выполнен из-за деконфигурирования Doorkeere.configure.resource_owner_from_credentials.
+        invalid_client: Аутентификация клиента завершилась неудачно из-за неизвестного клиента, без аутентификации клиента или неподдерживаемого метода аутентификации.
+        invalid_grant: Предостаданное предоставление прав доступа является недопустимым, просрочено, аннулировано, не совпадает с URI перенаправления, использовавшийся в требовании авторизации, или выдан другому клиенту.
+        invalid_redirect_uri: Включен недопустимый URI перенаправления.
+        invalid_request: В требовании отсутствует обязательный параметр, он содержит неподдерживаемое значение параметра или неправильно сформатирован.
+        invalid_resource_owner: Предоставленные идентификационные данные владельца ресурса недопустимы, либо не удается найти владельца ресурса
+        invalid_scope: Запрошенная область недопустима, неизвестна или неправильно сформирована.
+        invalid_token:
+          expired: Срок действия маркера доступа истек
+          revoked: Маркер доступа аннулирован
+          unknown: Недопустимый маркер доступа
+        resource_owner_authenticator_not_configured: Не удалось найти владельца ресурса из-за того, что значение Doorkeere.configure.resource_owner_authenticator не было выполнено.
+        server_error: Сервер авторизации обнаружил неожиданное условие, которое не позволило ему выполнить требование.
+        temporarily_unavailable: Сервер авторизации в настоящий момент не может обработать запрос из-за временной перегрузки или обслуживания сервера.
+        unauthorized_client: У клиента нет прав на выполнение этого требования с помощью этого метода.
+        unsupported_grant_type: Тип предоставления прав доступа не поддерживается сервером авторизации.
+        unsupported_response_type: Сервер авторизации не поддерживает этот тип ответа.
+    flash:
+      applications:
+        create:
+          notice: Приложение создано.
+        destroy:
+          notice: Приложение удалено.
+        update:
+          notice: Приложение обновлено.
+      authorized_applications:
+        destroy:
+          notice: Приложение аннулировано.
+    layouts:
+      admin:
+        nav:
+          applications: Приложения
+          oauth2_provider: Провайдер OAuth2
+      application:
+        title: Требуется разрешение OAuth
+    scopes:
+      "admin:read": прочитать все данные на сервере
+      "admin:read:accounts": читать конфиденциальную информацию обо всех учетных записях
+      "admin:read:reports": Читать конфиденциальную информацию по всем отчетам и отчетным счетам
+      "admin:write": изменить все данные на сервере
+      "admin:write:accounts": выполнять действия модерирования по счетам
+      "admin:write:reports": выполнять действия по модерации в отчетах
+      follow: изменить взаимосвязи учетной записи
+      push: получать push-уведомления
+      read: прочитать все данные вашей учетной записи
+      "read:accounts": см. сведения об
+      "read:blocks": см. блоки
+      "read:bookmarks": см. ваши закладки
+      "read:favourites": см. ваши избранные
+      "read:filters": см. фильтры
+      "read:follows": см. далее
+      "read:lists": видите ваши списки
+      "read:mutes": см. ваши муты
+      "read:notifications": Смотрите ваши уведомления
+      "read:reports": см. ваши отчеты
+      "read:search": поиск от вашего имени
+      "read:statuses": Смотрите все состояния
+      write: изменить все данные учетной записи
+      "write:accounts": изменить профайл
+      "write:blocks": блочные счета и домены
+      "write:bookmarks": состояния закладки
+      "write:favourites": избранные состояния
+      "write:filters": создать фильтры
+      "write:follows": следовать за людьми
+      "write:lists": создание списков
+      "write:media": загрузка файлов мультимедиа
+      "write:mutes": Mute peope
+      "write:notifications": очистить уведомления
+      "write:reports": сообщить другим людям
+      "write:statuses": состояния публикации

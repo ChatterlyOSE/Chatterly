@@ -1,0 +1,194 @@
+ja:
+  simple_form:
+    hints:
+      account_alias:
+        acct: 移動元のアカウントの username@domain を指定します。
+      account_migration:
+        acct: 移動先のアカウントの username@domain を指定します。
+      account_warning_preset:
+        text: URL、ハッシュタグ、およびメンションなどの toot 構文を使用できます。
+        title: オプション。 受信者に表示されない
+      admin_account_action:
+        include_statuses: ユーザーは、管理アクションまたは警告の原因となった toots を確認します。
+        send_email_notification: ユーザーは、自分のアカウントで発生したことについての説明を受け取ります。
+        text_html: オプション。 toot 構文を使用できます。 <a href="%{path}">に警告プリセット</a> を追加して、時間を節約することができます。
+        type_html: <strong>%{acct}</strong> との処理を選択してください
+        warning_preset_id: オプション。 カスタム・テキストを事前設定の末尾に追加することができます。
+      announcement:
+        all_day: チェック・マークを付けると、時刻範囲の日付のみが表示されます。
+        ends_at: オプション。 この時点で、アナウンスは自動的に非公開になります
+        scheduled_at: すぐにアナウンスを発行する場合は
+        starts_at: オプション。 アナウンスが特定の時刻範囲にバインドされている場合
+        text: toot 構文を使用できます。 発表がユーザーの画面に表示されるスペースに注意してください
+      defaults:
+        autofollow: 招待によってサインアップするユーザーは自動的に参加します。
+        avatar: PNG、 GIF 、または JPG。 最大では %{size}。 %{dimensions}px に縮小されます
+        bot: このアカウントは主に自動化アクションを実行するため、モニターされない
+        context: フィルターが適用される 1 つまたは複数のコンテキスト
+        current_password: セキュリティー上の目的で、現在のアカウントのパスワードを入力してください
+        current_username: 確認のために、現在のアカウントのユーザー名を入力してください
+        digest: 非アクティブ状態の長い期間のみ送信され、不在中に個人メッセージを受信した場合のみ送信されます。
+        discoverable: プロファイル・ディレクトリーは、ユーザーのアカウントがより広いオーディエンスに到達できる別の方法です。
+        email: 確認の E メールが送信されます。
+        fields: プロファイルには、テーブルとして表示される項目を最大 4 つまで表示できます。
+        header: PNG、 GIF 、または JPG。 最大では %{size}。 %{dimensions}px に縮小されます
+        inbox_url: 使用するリレーのフロントページから URL をコピーします。
+        irreversible: フィルタが後で削除されても、フィルタ処理されたトゥートは、不敬な消えることがあります
+        locale: ユーザー・インターフェース、 E メール、およびプッシュ通知の言語
+        locked: フォロワーの手動承認が必要
+        password: 8 文字以上を使用
+        phrase: トートのテキストまたはコンテンツの警告にかかわらず、一致するものはありません
+        scopes: アプリケーションがアクセスを許可される API 。 最上位の有効範囲を選択した場合は、個別のスコープを選択する必要はありません。
+        setting_aggregate_reblogs: 最近増加した toots の新規予約を表示しない ( 新しく受信したブートにのみ影響を与える )
+        setting_default_sensitive: 機密媒体はデフォルトでは非表示になっており、クリックで明らかにすることができます。
+        setting_display_media_default: 機密としてマークされたメディア
+        setting_display_media_hide_all: 常にメディアを隠す
+        setting_display_media_show_all: 常にメディアを表示
+        setting_hide_network: フォローしているユーザーおよびあなたのフォロー担当者は、プロフィールに表示されません
+        setting_noindex: パブリック・プロファイルおよび状況ページに影響します。
+        setting_show_application: toot に使用するアプリケーションは、ユーザーの toots の詳細ビューに表示されます。
+        setting_use_blurhash: グラジエントは、非表示のビジュアルの色に基づいていますが、すべての詳細を難読化します。
+        setting_use_pending_items: フィードを自動的にスクロールする代わりに、クリックしたタイムライン更新を非表示にする
+        username: ユーザー名は %{domain} で固有になります。
+        whole_word: キーワードまたは句が英数字のみの場合、そのキーワードまたは句は、ワード全体と一致する場合にのみ適用されます。
+      domain_allow:
+        domain: このドメインは、このサーバーからのデータの取り出し、およびそのデータからの着信データの処理と保管が可能になります。
+      email_domain_block:
+        domain: これは、 E メール・アドレスに表示されるドメイン・ネーム、ドメインが解決される MX レコード、または MX レコードが解決されるサーバーの IP にすることができます。 これらはユーザーのサインアップ時に検査され、サインアップは拒否されます。
+        with_dns_records: 指定されたドメインの DNS レコードを解決する試みが行われ、結果もブロックされます。
+      featured_tag:
+        name: '以下のいずれかを使用することができます。'
+      form_challenge:
+        current_password: セキュア・エリアを入力しています
+      imports:
+        data: 別の Mastodon サーバーからエクスポートされた CSV ファイル
+      invite_request:
+        text: これは、アプリケーションのレビューに役立ちます
+      sessions:
+        otp: '電話アプリによって生成された 2 要素コードを入力するか、以下のいずれかの回復コードを使用します。'
+        webauthn: USB キーの場合は、それを挿入して、必要に応じてタップします。
+      tag:
+        name: 文字の大 / 小文字の変更のみを行うことができます。例えば、文字をより読みやすくするためです。
+      user:
+        chosen_languages: チェック・マークを付けると、パブリック・タイムラインに表示されるのは、選択した言語のトートのみ
+    labels:
+      account:
+        fields:
+          name: ラベル
+          value: 内容
+      account_alias:
+        acct: 古いアカウントのハンドル
+      account_migration:
+        acct: 新規アカウントのハンドル
+      account_warning_preset:
+        text: 事前設定テキスト
+        title: 書名
+      admin_account_action:
+        include_statuses: 報告された toots を E メールに含める
+        send_email_notification: E メールごとにユーザーに通知
+        text: カスタム警告
+        type: アクション
+        types:
+          disable: ログインの無効
+          none: 何もしない
+          silence: サイレンス
+          suspend: アカウント・データのサスペンドおよび取り消しのための取り消し
+        warning_preset_id: 警告の事前設定を使用
+      announcement:
+        all_day: オールデイ・イベント
+        ends_at: イベントの終了
+        scheduled_at: パブリケーションのスケジュール
+        starts_at: イベントの開始
+        text: 発表
+      defaults:
+        autofollow: アカウントをフォローするための招待
+        avatar: アバター
+        bot: これはボット・アカウントです
+        chosen_languages: フィルター言語
+        confirm_new_password: 新規パスワードの確認
+        confirm_password: パスワードの確認
+        context: フィルター・コンテキスト
+        current_password: 現在のパスワード
+        data: データ
+        discoverable: このアカウントをディレクトリーにリストします
+        display_name: 表示名
+        email: メールアドレス
+        expires_in: 後で期限切れ
+        fields: プロファイル・メタデータ
+        header: ヘッダー
+        inbox_url: リレー受信箱の URL
+        irreversible: 非表示の代わりにドロップ
+        locale: インターフェース言語
+        locked: アカウントのロック
+        max_uses: 最大使用回数
+        new_password: 新規パスワード
+        note: ビオ
+        otp_attempt: 2 要素コード
+        password: パスワード
+        phrase: キーワードまたは句
+        setting_advanced_layout: 拡張 Web インターフェースの有効化
+        setting_aggregate_reblogs: タイムラインでのグループ・ブースト
+        setting_auto_play_gif: 自動再生アニメーション GIF
+        setting_boost_modal: ランキング調整前に確認ダイアログを
+        setting_crop_images: 拡張されていない toots から 16x9 への画像の切り取り
+        setting_default_language: ポスティング語
+        setting_default_privacy: プライバシーの侵害
+        setting_default_sensitive: 常にメディアを機密としてマーク
+        setting_delete_modal: toot を削除する前に確認ダイアログを表示
+        setting_display_media: 媒体の表示
+        setting_display_media_default: デフォルト
+        setting_display_media_hide_all: すべて非表示
+        setting_display_media_show_all: すべて表示
+        setting_expand_spoilers: コンテンツ警告のマークが付けられた toots を常に展開
+        setting_hide_network: ネットワークの非表示
+        setting_noindex: 検索エンジンの索引付けのオプトアウト
+        setting_reduce_motion: アニメーションの動作を減らす
+        setting_show_application: toots の送信に使用されたアプリケーションを閉じます
+        setting_system_font_ui: システムのデフォルト・フォントを使用
+        setting_theme: サイト・テーマ
+        setting_trends: 今日の傾向を表示
+        setting_unfollow_modal: 次のユーザーの前に確認ダイアログを表示
+        setting_use_blurhash: 非表示メディア用のカラフルなグラデーションを表示
+        setting_use_pending_items: 低位モード
+        severity: 重大度
+        sign_in_token_attempt: セキュリティー・コード
+        type: インポート・タイプ
+        username: ユーザー名
+        username_or_email: ユーザー名または E メール
+        whole_word: 単語全体
+      email_domain_block:
+        with_dns_records: ドメインの MX レコードおよび IP を含める
+      featured_tag:
+        name: ハッシュタグ
+      interactions:
+        must_be_follower: 非フォロワーからの通知をブロック
+        must_be_following: フォローしていないユーザーからの通知をブロックする
+        must_be_following_dm: フォローしていないユーザーからの直接メッセージをブロックする
+      invite:
+        comment: 解説
+      invite_request:
+        text: なぜ参加したいですか ?
+      notification_emails:
+        digest: ダイジェスト E メールの送信
+        favourite: 誰かがあなたの状況を
+        follow: 誰かがその後
+        follow_request: フォローを要求されたユーザー
+        mention: 誰かが言った
+        pending_account: 新規アカウントのレビューが必要
+        reblog: 誰かがあなたの地位
+        report: 新規レポートが送信される
+        trending_tag: 未検討のハッシュタグがトレンドになっています
+      tag:
+        listable: このハッシュタグが検索およびプロファイルディレクトリに表示されるようにします。
+        name: ハッシュタグ
+        trendable: このハッシュタグをトレンドの下に表示できるようにする
+        usable: このハッシュタグの使用をトゥーツで許可する
+    'no': '違う。'
+    recommended: 推奨
+    required:
+      mark: "※"
+      text: 必須
+    title:
+      sessions:
+        webauthn: セキュリティー・キーの 1 つを使用してサインインします
+    'yes': 'そうだ'

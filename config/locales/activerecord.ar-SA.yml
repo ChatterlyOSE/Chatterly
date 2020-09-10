@@ -1,0 +1,16 @@
+ar:
+  activerecord:
+    attributes:
+      poll:
+        expires_at: آخر أجل
+        options: الاختيارات
+    errors:
+      models:
+        account:
+          attributes:
+            username:
+              invalid: حروف فقط ، أرقام وعلامات التسطير
+        status:
+          attributes:
+            reblog:
+              taken: الحالة موجودة بالفعل

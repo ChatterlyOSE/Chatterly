@@ -1,0 +1,150 @@
+fi:
+  activerecord:
+    attributes:
+      doorkeeper/application:
+        name: Sovelluksen nimi
+        redirect_uri: Ohjatkaa URI-osoite
+        scopes: Sopeat
+        website: Sovelluksen sivusto
+    errors:
+      models:
+        doorkeeper/application:
+          attributes:
+            redirect_uri:
+              fragment_present: Ei voi sisältää fragmenttia.
+              invalid_uri: On oltava kelvollinen URI-osoite.
+              relative_uri: On oltava tarkka URI-osoite.
+              secured_uri: On oltava HTTPS/SSL-URI-osoite.
+  doorkeeper:
+    applications:
+      buttons:
+        authorize: Salli
+        cancel: Peruuta
+        destroy: Tuhota
+        edit: Muokkaa
+        submit: Lähetä
+      confirmations:
+        destroy: Oletko varma?
+      edit:
+        title: Muokkaa hakemusta
+      form:
+        error: Hups! Tarkista lomake mahdollisista virheistä
+      help:
+        native_redirect_uri: Käytä %{native_redirect_uri} paikallisissa testeissä
+        redirect_uri: Käytä yhtä riviä URI-osoitetta kohden
+        scopes: Erilliset alueet, joilla on tilaa. Älä käytä oletusarvoalueita.
+      index:
+        application: Hakemus
+        callback_url: Vastakutsun URL
+        delete: Poista
+        empty: Sinulla ei ole hakemuksia.
+        name: Nimi
+        new: Uusi hakemus
+        scopes: Sopeat
+        show: Näytä
+        title: Hakemuksesi
+      new:
+        title: Uusi hakemus
+      show:
+        actions: Toimet
+        application_id: Asiakkaan avain
+        callback_urls: Callbackin URL-osoitteet
+        scopes: Sopeat
+        secret: Asiakkaan salaisuus
+        title: 'Hakemus: %{name}'
+    authorizations:
+      buttons:
+        authorize: Salli
+        deny: Deny
+      error:
+        title: On ilmennyt virhe
+      new:
+        able_to: Se pystyy
+        prompt: Sovellus %{client_name} pyyntö tutustua tiliisi
+        title: Tarvittava valtuutus
+      show:
+        title: Kopioi tämä valtuutuskoodi ja liitä se sovellukseen.
+    authorized_applications:
+      buttons:
+        revoke: Revoke
+      confirmations:
+        revoke: Oletko varma?
+      index:
+        application: Hakemus
+        created_at: Sallittu
+        date_format: "%Y-%m-%d %H:%M:%S"
+        scopes: Sopeat
+        title: Valtuutetut hakemuksesi
+    errors:
+      messages:
+        access_denied: Resurssin omistaja tai valtuutuspalvelin on hylännyt pyynnön.
+        credential_flow_not_configured: Resurssin omistajan Salasanan valtuustietojen virta ei onnistunut, koska Doorkeeper.configure.resource_omistaja_omistaja_valtuustiedot ovat määrittämättömiä.
+        invalid_client: Työaseman todennus on epäonnistunut tuntemattoman asiakkaan takia, eikä asiakkaan todennusta ole lisätty tai todennuksen menetelmää ei ole tuettu.
+        invalid_grant: Annettu valtuutusavustus on virheellinen, vanhentunut, kumottu, ei vastaa valtuutuspyynnössä käytettyä uudelleensuuntausURI-osoitetta tai se on annettu toiselle asiakkaalle.
+        invalid_redirect_uri: Uudelleensuuntausuri ei kelpaa.
+        invalid_request: Pyynnöstä puuttuu pakollinen parametri, joka sisältää tuetun parametrin arvon tai on muuten epämuodostunut.
+        invalid_resource_owner: Resurssin omistajan valtuustiedot eivät kelpaa, tai resurssien omistajaa ei löydy
+        invalid_scope: Pyydetty alue on virheellinen, tuntematon tai epämuodostunut.
+        invalid_token:
+          expired: Käyttösanake on vanhentunut
+          revoked: Käyttösanake peruutettiin
+          unknown: Käyttösanake on virheellinen
+        resource_owner_authenticator_not_configured: Resurssin omistaja on epäonnistunut, koska Doorkeeper.configure.resource_omistaja_omistaja_todentaja on epäkunnossa.
+        server_error: Valtuutuspalvelin on havainnut odottamattoman ehdon, joka esti sen täyttävän pyynnön.
+        temporarily_unavailable: Valtuutuspalvelin ei pysty käsittelemään pyyntöä palvelimen tilapäisen ylikuormituksen tai huollon vuoksi.
+        unauthorized_client: Pääkäyttäjä ei voi toteuttaa tätä pyyntöä tämän menetelmän avulla.
+        unsupported_grant_type: Valtuutuspalvelin ei tue käyttöoikeusapuohjelman lajia.
+        unsupported_response_type: Valtuutuspalvelin ei tue tätä vastauslajia.
+    flash:
+      applications:
+        create:
+          notice: Sovellus luotu.
+        destroy:
+          notice: Sovellus poistetaan.
+        update:
+          notice: Hakemuksen päivitys.
+      authorized_applications:
+        destroy:
+          notice: Hakemus on peruutettu.
+    layouts:
+      admin:
+        nav:
+          applications: Sovellukset
+          oauth2_provider: OAuth2-toimittaja
+      application:
+        title: OAuth-valtuutus on pakollinen
+    scopes:
+      "admin:read": Lue kaikki palvelimen tiedot
+      "admin:read:accounts": Kaikkien tilien arkaluonteiset tiedot
+      "admin:read:reports": Kaikkien raporttien ja raportoitujen tilien arkaluonteiset tiedot
+      "admin:write": Muokkaa kaikkia palvelimen tietoja
+      "admin:write:accounts": Toteuttaa maltillisia tilejä
+      "admin:write:reports": Toteuttaa raportteja maltillisista toimista
+      follow: Muokata tilin suhteita
+      push: Vastaanottaa työntö-ilmoituksesi
+      read: Lue kaikki tilin tiedot
+      "read:accounts": Ks. Tilinpäätöksen tiedot
+      "read:blocks": Katso korttejasi
+      "read:bookmarks": Katso kirjanmerkkisi
+      "read:favourites": Nähdä suosikkejasi
+      "read:filters": Ks. Suodattimet
+      "read:follows": 'Katso seuraava:'
+      "read:lists": Ks. Listat
+      "read:mutes": Näe mutejasi
+      "read:notifications": Katso ilmoituksesi
+      "read:reports": Katso raporttisi
+      "read:search": Haku puolestasi
+      "read:statuses": Ks. Kaikki tilat
+      write: Muokkaa kaikkia tilin tietoja
+      "write:accounts": Muokkaa profiilia
+      "write:blocks": Lohkot ja verkkoalueet
+      "write:bookmarks": Kirjanmerkin tilat
+      "write:favourites": Suosikkitilat
+      "write:filters": Luoda suodattimia
+      "write:follows": Seuraa ihmisiä
+      "write:lists": Luoda luettelot
+      "write:media": Siirtää mediatiedostoja
+      "write:mutes": Mykät ihmiset ja keskustelut
+      "write:notifications": Poista ilmoituksesi
+      "write:reports": Raportoi muut ihmiset
+      "write:statuses": Julkaisutilat

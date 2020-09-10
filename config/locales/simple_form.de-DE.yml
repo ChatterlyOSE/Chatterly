@@ -1,0 +1,194 @@
+de:
+  simple_form:
+    hints:
+      account_alias:
+        acct: Geben Sie die Benutzername@Domäne des Accounts an, von dem aus Sie wechseln möchten.
+      account_migration:
+        acct: Geben Sie die Benutzername@Domäne des Accounts an, zu dem Sie wechseln möchten.
+      account_warning_preset:
+        text: Sie können die Toot-Syntax verwenden, wie z. B. URLs, Hashtags und Erwähnungen
+        title: Optional. Für den Empfänger nicht sichtbar
+      admin_account_action:
+        include_statuses: Der Benutzer wird sehen, welche Toots die Moderationsaktion oder -warnung verursacht haben.
+        send_email_notification: Der Benutzer erhält eine Erläuterung dessen, was mit ihrem Konto passiert ist.
+        text_html: Optional. Sie können die toot-Syntax verwenden. Sie können <a href="%{path}">Warnvoreinstellungen</a> hinzufügen, um Zeit zu sparen
+        type_html: Wählen Sie was zu tun mit <strong>%{acct}</strong>
+        warning_preset_id: Optional. Sie können dem Ende der Voreinstellung noch einen benutzerdefinierten Text hinzufügen.
+      announcement:
+        all_day: Wenn diese Option aktiviert ist, werden nur die Daten des Zeitbereichs angezeigt.
+        ends_at: Optional. Ankündigung wird zu diesem Zeitpunkt automatisch unveröffentlicht
+        scheduled_at: Leer lassen, um die Ankündigung sofort zu veröffentlichen
+        starts_at: Optional. Für den Fall, dass Ihre Ankündigung an einen bestimmten Zeitraum gebunden ist
+        text: Sie können die toot-Syntax verwenden. Bitte denken Sie an den Raum, den die Ankündigung auf dem Bildschirm des Nutzers einnehmen wird.
+      defaults:
+        autofollow: Personen, die sich durch die Einladung anmelden, werden Ihnen automatisch folgen
+        avatar: PNG, GIF oder JPG. Maximal %{size}. Wird herunterskaliert auf %{dimensions}px
+        bot: Dieses Konto führt hauptsächlich automatisierte Aktionen aus und wird möglicherweise nicht überwacht.
+        context: Ein oder mehrere Kontexte, in denen der Filter angewendet werden soll
+        current_password: Für Sicherheitszwecke geben Sie bitte das Passwort des Girokontos ein
+        current_username: Um zu bestätigen, geben Sie bitte den Benutzernamen des aktuellen Kontos ein
+        digest: Nur gesendet nach einer langen Inaktivität und nur, wenn Sie persönliche Nachrichten in Ihrer Abwesenheit erhalten haben
+        discoverable: Das Profilverzeichnis ist ein anderer Weg, mit dem Ihr Konto ein größeres Publikum erreichen kann.
+        email: Sie erhalten eine Bestätigungs-E-Mail
+        fields: Sie können bis zu 4 Elemente als Tabelle in Ihrem Profil anzeigen lassen.
+        header: PNG, GIF oder JPG. Maximal %{size}. Wird herunterskaliert auf %{dimensions}px
+        inbox_url: Kopieren Sie die URL von der Vorderseite des Relay, das Sie verwenden möchten.
+        irreversible: Gefilterte Toots werden irreversibel verschwinden, auch wenn Filter später entfernt werden
+        locale: Die Sprache der Benutzeroberfläche, E-Mails und Push-Benachrichtigungen
+        locked: Sie müssen Follower manuell genehmigen.
+        password: Verwenden Sie mindestens 8 Zeichen.
+        phrase: Wird unabhängig von Gehäuse in Text oder Inhalt Warnung eines Toot
+        scopes: Auf welche APIs die Anwendung zugreifen darf. Wenn Sie einen Bereich der höchsten Ebene auswählen, müssen Sie keine einzelnen Elemente auswählen.
+        setting_aggregate_reblogs: Zeigen Sie keine neuen Boosts für Toots, die kürzlich geboostet wurden (betrifft nur neu empfangene Boosts)
+        setting_default_sensitive: Sensitive Medien sind standardmäßig ausgeblendet und können mit einem Klick aufgedeckt werden
+        setting_display_media_default: Als sensibel gekennzeichnete Medien ausblenden
+        setting_display_media_hide_all: Datenträger immer ausblenden
+        setting_display_media_show_all: Datenträger immer anzeigen
+        setting_hide_network: Wer Ihnen folgt und wer folgt, wird nicht auf Ihrem Profil angezeigt
+        setting_noindex: Wirkt sich auf Ihr öffentliches Profil und Ihre Statusseiten aus
+        setting_show_application: Die Anwendung, die Sie auf toot verwenden, wird in der Detailansicht Ihrer Toots angezeigt
+        setting_use_blurhash: Gradienten basieren auf den Farben der versteckten Visuals, verschleiern aber alle Details
+        setting_use_pending_items: Zeitachse-Updates hinter einem Klick ausblenden, anstatt automatisch den Feed zu scrollen
+        username: Ihr Benutzername wird eindeutig sein am %{domain}
+        whole_word: Wenn das Schlüsselwort oder der Ausdruck nur alphanumerisch ist, wird es nur angewendet, wenn es mit dem ganzen Wort übereinstimmt.
+      domain_allow:
+        domain: Diese Domäne wird in der Lage sein, Daten von diesem Server abzurufen und eingehende Daten daraus zu verarbeiten und zu speichern.
+      email_domain_block:
+        domain: Dies kann der Domänenname sein, der in der E-Mail-Adresse angezeigt wird, den MX-Datensatz, in den die Domäne aufgelöst wird, oder die IP des Servers, in den der MX-Datensatz aufgelöst wird. Diese werden bei der Anmeldung überprüft und die Beschilder werden abgelehnt.
+        with_dns_records: Es wird versucht, die DNS-Datensätze der angegebenen Domäne aufzulösen, und die Ergebnisse werden ebenfalls blockiert.
+      featured_tag:
+        name: 'Möglicherweise möchten Sie eine der folgenden verwenden:'
+      form_challenge:
+        current_password: Sie betreten einen sicheren Bereich
+      imports:
+        data: CSV-Datei, die von einem anderen Mastodon-Server exportiert wurde
+      invite_request:
+        text: Dies wird uns helfen, Ihre Bewerbung zu überprüfen
+      sessions:
+        otp: 'Geben Sie den von Ihrer Telefon-App generierten Zwei-Faktor-Code ein oder verwenden Sie einen der folgenden Wiederherstellungscodes:'
+        webauthn: Wenn es sich um einen USB-Stick handelt, müssen Sie ihn einfügen und, falls erforderlich, darauf tippen.
+      tag:
+        name: Sie können nur das Gehäuse der Buchstaben ändern, zum Beispiel, um es besser lesbar zu machen
+      user:
+        chosen_languages: Wenn diese Option aktiviert ist, werden in den öffentlichen Zeitachsen nur die Unruhen in ausgewählten Sprachen angezeigt.
+    labels:
+      account:
+        fields:
+          name: Bezeichnung
+          value: Inhalt
+      account_alias:
+        acct: Griff des alten Kontos
+      account_migration:
+        acct: Kennung des neuen Kontos
+      account_warning_preset:
+        text: Voreingestellten Text
+        title: Titel
+      admin_account_action:
+        include_statuses: Gemeldete Toots in der E-Mail einschließen
+        send_email_notification: Benutzer per E-Mail benachrichtigen
+        text: Angepasste Warnung
+        type: Aktion
+        types:
+          disable: Anmeldung inaktivieren
+          none: Nichts tun
+          silence: Stille
+          suspend: Kontodaten sperren und irreversibel löschen
+        warning_preset_id: Voreingestellte Warnung verwenden
+      announcement:
+        all_day: Alltägiges Ereignis
+        ends_at: Ende des Ereignisses
+        scheduled_at: Veröffentlichung planen
+        starts_at: Beginn des Ereignisses
+        text: Ankündigung
+      defaults:
+        autofollow: Einladen, um Ihrem Konto zu folgen
+        avatar: Avatar
+        bot: Dies ist ein Bot Account
+        chosen_languages: Filtersprachen
+        confirm_new_password: Neues Kennwort bestätigen
+        confirm_password: Kennwort bestätigen
+        context: Kontexte filtern
+        current_password: Aktuelles Kennwort
+        data: Daten
+        discoverable: Dieses Konto auf dem Verzeichnis auflisten
+        display_name: Anzeigename
+        email: E-Mail-Adresse
+        expires_in: Verfallen nach
+        fields: Profilmetadaten
+        header: Header
+        inbox_url: URL des Relaisinkastens
+        irreversible: Löschen statt ausblenden
+        locale: Schnittstellensprache
+        locked: Account sperren
+        max_uses: Max. Anzahl der Verwendungen
+        new_password: Neues Kennwort
+        note: Bio
+        otp_attempt: Zwei-Faktor-Code
+        password: Kennwort
+        phrase: Schlüsselwort oder Ausdruck
+        setting_advanced_layout: Erweiterte Webschnittstelle aktivieren
+        setting_aggregate_reblogs: Gruppenbooste in Zeitachsen
+        setting_auto_play_gif: Animierte GIFs automatisch wiedergeben
+        setting_boost_modal: Bestätigungsdialog vor dem Boosting anzeigen
+        setting_crop_images: Pflanzliche Bilder in nicht erweiterten Toots auf 16x9
+        setting_default_language: Sprache veröffentlichen
+        setting_default_privacy: Datenschutz entsenden
+        setting_default_sensitive: Datenträger immer als sensitiv kennzeichnen
+        setting_delete_modal: Bestätigungsdialog anzeigen, bevor ein Toot gelöscht wird
+        setting_display_media: Medienanzeige
+        setting_display_media_default: Standard
+        setting_display_media_hide_all: Alle ausblenden
+        setting_display_media_show_all: Alle anzeigen
+        setting_expand_spoilers: Mit Inhaltswarnungen gekennzeichnete Toots immer erweitern
+        setting_hide_network: Netzwerk ausblenden
+        setting_noindex: Opt-out der Suchmaschinenindexierung
+        setting_reduce_motion: Bewegung in Animationen reduzieren
+        setting_show_application: Anwendung, die zum Senden von Toots verwendet wird
+        setting_system_font_ui: Standardschriftart des Systems verwenden
+        setting_theme: Sitethema
+        setting_trends: Aktuelle Trends anzeigen
+        setting_unfollow_modal: Bestätigungsdialog anzeigen, bevor einer der folgenden Schritte ausgeführt wird
+        setting_use_blurhash: Zeigen Sie bunte Steigungen für versteckte Medien
+        setting_use_pending_items: Langsamer Modus
+        severity: Schweregrad
+        sign_in_token_attempt: Sicherheitscode
+        type: Importtyp
+        username: Benutzername
+        username_or_email: Benutzername oder E-Mail
+        whole_word: Ganzes Wort
+      email_domain_block:
+        with_dns_records: MX-Datensätze und -IPs der Domäne einschließen
+      featured_tag:
+        name: Hashtag
+      interactions:
+        must_be_follower: Benachrichtigungen von Nicht-Followern blockieren
+        must_be_following: Blockbenachrichtigungen von Personen, denen Sie nicht folgen
+        must_be_following_dm: Blockieren Sie direkte Nachrichten von Personen, die Sie nicht verfolgen
+      invite:
+        comment: Kommentar
+      invite_request:
+        text: Warum wollen Sie beitreten?
+      notification_emails:
+        digest: Verdauliche E-Mails senden
+        favourite: Jemand hat Ihren Status als Favorit
+        follow: Jemand ist Ihnen gefolgt.
+        follow_request: Jemand hat gebeten, Ihnen zu folgen.
+        mention: Jemand hat Sie erwähnt
+        pending_account: Überprüfung des neuen Kontos
+        reblog: Jemand hat Ihren Status erhöht
+        report: Neuer Bericht wird übergeben
+        trending_tag: Ein nicht überprüfter Hashtag ist antrendbar
+      tag:
+        listable: Zulassen, dass dieser Hashtag in Suchvorgängen und im Profilverzeichnis angezeigt wird
+        name: Hashtag
+        trendable: Zulassen, dass dieser Hashtag unter Trends angezeigt wird
+        usable: Toots erlauben, diesen Hashtag zu verwenden
+    'no': 'Nein'
+    recommended: Empfohlen
+    required:
+      mark: "*"
+      text: Erforderlich
+    title:
+      sessions:
+        webauthn: Verwenden Sie einen der Sicherheitsschlüssel, um sich anzumelden.
+    'yes': 'Ja'

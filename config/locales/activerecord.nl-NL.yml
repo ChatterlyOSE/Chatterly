@@ -1,0 +1,16 @@
+nl:
+  activerecord:
+    attributes:
+      poll:
+        expires_at: Termijn
+        options: Opties
+    errors:
+      models:
+        account:
+          attributes:
+            username:
+              invalid: alleen letters, cijfers en onderstrepingstekens
+        status:
+          attributes:
+            reblog:
+              taken: van de status bestaat al
