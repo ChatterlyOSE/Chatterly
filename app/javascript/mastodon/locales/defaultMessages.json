@@ -1533,7 +1533,7 @@
         "id": "directory.local"
       },
       {
-        "defaultMessage": "From known fediverse",
+        "defaultMessage": "From Chatterly",
         "id": "directory.federated"
       }
     ],
@@ -1755,7 +1755,7 @@
         "id": "getting_started.heading"
       },
       {
-        "defaultMessage": "Profile directory",
+        "defaultMessage": "Explore",
         "id": "getting_started.directory"
       }
     ],
@@ -1864,7 +1864,7 @@
         "id": "introduction.welcome.headline"
       },
       {
-        "defaultMessage": "Welcome to the fediverse! In a few moments, you'll be able to broadcast messages and talk to your friends across a wide variety of servers. But this server, {domain}, is special—it hosts your profile, so remember its name.",
+        "defaultMessage": "Welcome to the Chatterly! In a few moments, you'll be able to broadcast messages and talk to your friends.",
         "id": "introduction.welcome.text"
       },
       {
@@ -1884,7 +1884,7 @@
         "id": "introduction.federation.local.headline"
       },
       {
-        "defaultMessage": "Public posts from people on the same server as you will appear in the local timeline.",
+        "defaultMessage": "Public posts from people on Chatterly will appear in the local timeline.",
         "id": "introduction.federation.local.text"
       },
       {
@@ -1892,7 +1892,7 @@
         "id": "introduction.federation.federated.headline"
       },
       {
-        "defaultMessage": "Public posts from other servers of the fediverse will appear in the federated timeline.",
+        "defaultMessage": "Public posts from other Chatterly servers will appear in the federated timeline.",
         "id": "introduction.federation.federated.text"
       },
       {
@@ -1920,7 +1920,7 @@
         "id": "introduction.interactions.favourite.headline"
       },
       {
-        "defaultMessage": "You can save a toot for later, and let the author know that you liked it, by favouriting it.",
+        "defaultMessage": "You can save a toot for later, and let the author know that you liked it, by favoriting it.",
         "id": "introduction.interactions.favourite.text"
       },
       {
@@ -2955,7 +2955,7 @@
         "id": "navigation_bar.lists"
       },
       {
-        "defaultMessage": "Profile directory",
+        "defaultMessage": "Explore",
         "id": "getting_started.directory"
       },
       {

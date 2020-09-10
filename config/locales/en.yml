@@ -10,7 +10,7 @@ en:
     api: API
     apps: Mobile apps
     apps_platforms: Download the Chatterly app for PC/Mac/iOS/Android
-    browse_directory: Browse a profile directory and filter by interests
+    browse_directory: Browse the explore tab and filter by interests
     browse_local_posts: Browse a live stream of public posts from this server
     browse_public_posts: Browse a live stream of public posts on Chatterly
     contact: Contact
@@ -329,7 +329,7 @@ en:
       config: Configuration
       feature_deletions: Account deletions
       feature_invites: Invite links
-      feature_profile_directory: Profile directory
+      feature_profile_directory: Explore
       feature_registrations: Registrations
       feature_relay: Federation relay
       feature_spam_check: Anti-spam
@@ -531,7 +531,7 @@ en:
         title: Show sensitive media in OpenGraph previews
       profile_directory:
         desc_html: Allow users to be discoverable
-        title: Enable profile directory
+        title: Enable explore tab.
       registrations:
         closed_message:
           desc_html: Displayed on frontpage when registrations are closed. You can use HTML tags
@@ -769,7 +769,7 @@ en:
       username_available: Your username will become available again
       username_unavailable: Your username will remain unavailable
   directories:
-    directory: Profile directory
+    directory: Explore
     explanation: Discover users based on their interests
     explore_mastodon: Explore %{title}
   domain_validator:
