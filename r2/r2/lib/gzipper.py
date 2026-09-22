@@ -24,7 +24,7 @@ import io
 import gzip
 import wsgiref.headers
 
-from paste.util.mimeparse import parse_mime_type, desired_matches
+from r2.lib.paste_compat import parse_mime_type, desired_matches
 
 
 ENCODABLE_CONTENT_TYPES = {

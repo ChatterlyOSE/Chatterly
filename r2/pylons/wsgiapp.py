@@ -113,8 +113,16 @@ class PylonsApp(object):
         if session is None:
             session = Session()
 
-        registry = Registry()
-        environ['paste.registry'] = registry
+        registry = environ.get('paste.registry')
+        owned = registry is None
+        if owned:
+            registry = Registry()
+            environ['paste.registry'] = registry
+        # The registry may be owned by RegistryMiddleware (the real stack) or
+        # by us (standalone use / tests).  Only the owner may tear it down --
+        # see __call__.
+        environ['pylons._own_registry'] = owned
+
         registry.register(_globals.request, request)
         registry.register(_globals.response, response)
         registry.register(_globals.tmpl_context, tmpl_context)
@@ -149,7 +157,10 @@ class PylonsApp(object):
             # abort()/redirect() raise these; they are responses, not errors.
             return http_error(environ, start_response)
         finally:
-            registry.pop()
+            # RegistryMiddleware owns the registry in the real stack and
+            # unbinds at the end of the request; only pop if we created it.
+            if environ.pop('pylons._own_registry', False):
+                registry.pop()
 
     def _match_routes(self, environ):
         mapper = self.config.get('routes.map')

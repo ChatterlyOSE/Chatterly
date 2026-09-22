@@ -28,16 +28,23 @@ import tempfile
 import urllib.parse as urlparse
 from threading import Lock
 import itertools
-import simplejson
+try:
+    import simplejson
+except ImportError:
+    # simplejson is a py2-era dependency; the stdlib json module is
+    # API-compatible for the dumps() call used below.
+    import json as simplejson
 
-from paste.cascade import Cascade
-from paste.errordocument import StatusBasedForward
-from paste.recursive import RecursiveMiddleware
-from paste.registry import RegistryManager
-from paste.urlparser import StaticURLParser
-from paste.deploy.converters import asbool
-from paste.request import path_info_split
 from pylons import response
+from r2.lib.paste_compat import (
+    Cascade,
+    RegistryMiddleware,
+    RecursiveMiddleware,
+    StaticURLParser,
+    StatusBasedForward,
+    asbool,
+    path_info_split,
+)
 from pylons.middleware import ErrorHandler
 from pylons.wsgiapp import PylonsApp
 from routes.middleware import RoutesMiddleware
@@ -61,16 +68,22 @@ class HTTPTooManyRequests(webob.exc.HTTPClientError):
 webob.exc.status_map[429] = HTTPTooManyRequests
 webob.util.status_reasons[429] = HTTPTooManyRequests.title
 
-# patch out SSRFable/XSSable endpoints in older versions of weberror
-import weberror.evalexception
-
-
-# We could probably just set `.exposed = False`, but this makes me feel better
-def _stub(*args, **kwargs):
+# weberror provides Paste's interactive debug error page and is py2-only.
+# Older versions of it exposed SSRF/XSS-able endpoints, so r2 stubbed out two
+# EvalException methods. Guard the patch so this module still imports when
+# weberror is absent: on a py3 runtime there is no interactive error page
+# anyway, and r2 runs with `debug = false`.
+try:
+    import weberror.evalexception
+except ImportError:
     pass
+else:
+    # We could probably just set `.exposed = False`, but this makes me feel better
+    def _stub(*args, **kwargs):
+        pass
 
-weberror.evalexception.EvalException.post_traceback = _stub
-weberror.evalexception.EvalException.relay = _stub
+    weberror.evalexception.EvalException.post_traceback = _stub
+    weberror.evalexception.EvalException.relay = _stub
 
 
 def error_mapper(code, message, environ, global_conf=None, **kw):
@@ -535,7 +548,7 @@ def make_app(global_conf, full_stack=True, **app_conf):
         app = ErrorDocuments(app, global_conf, error_mapper, **app_conf)
 
     # Establish the Registry for this application
-    app = RegistryManager(app)
+    app = RegistryMiddleware(app)
 
     # Static files
     static_app = StaticURLParser(config['pylons.paths']['static_files'])

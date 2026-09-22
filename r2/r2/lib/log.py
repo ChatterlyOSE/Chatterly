@@ -29,7 +29,7 @@ from pylons import app_globals as g
 from pylons.util import PylonsContext, AttribSafeContextObj, ContextObj
 import raven
 from raven.processors import Processor
-from weberror.reporter import Reporter
+from r2.lib.weberror_compat import Reporter
 
 from r2.lib.app_globals import Globals
 
