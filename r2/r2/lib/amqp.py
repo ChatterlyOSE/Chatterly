@@ -32,6 +32,12 @@ consume_items: For processing a queue one item at a time
   added using add_item) might block for an arbitrary amount of time
   while trying to get a connection to amqp.
 
+Amqp client note: this module used amqplib (`amqplib.client_0_8`), which is
+py2-only and abandoned.  It now uses pika, the maintained py3 AMQP 0-9-1
+client.  The public API is unchanged -- callers keep using add_item /
+handle_items / consume_items and the Message adapter below keeps the
+`msg.body` / `msg.delivery_info['message_count']` / `msg.channel` shape the
+consumers were written against.
 """
 from __future__ import print_function
 from queue import Queue
@@ -45,7 +51,9 @@ import socket
 import itertools
 import pickle
 
-from amqplib import client_0_8 as amqp
+import pika
+from pika import exceptions as pika_errors
+
 
 cfg = None
 worker = None
@@ -75,7 +83,7 @@ class Config(object):
         self.reset_caches = g.reset_caches
 
 
-class Worker:
+class Worker(object):
     def __init__(self):
         self.q = Queue()
         self.t = Thread(target=self._handle)
@@ -102,6 +110,19 @@ class Worker:
         self.q.join()
 
 
+def _parse_hostport(hostport, default_port=5672):
+    """g.amqp_host is configured as 'host' or 'host:port'."""
+    if not hostport:
+        return None, default_port
+    if ':' in hostport:
+        host, _, port = hostport.rpartition(':')
+        try:
+            return host, int(port)
+        except ValueError:
+            return hostport, default_port
+    return hostport, default_port
+
+
 class ConnectionManager(local):
     # There should be only two threads that ever talk to AMQP: the
     # worker thread and the foreground thread (whether consuming queue
@@ -115,16 +136,25 @@ class ConnectionManager(local):
     def get_connection(self):
         while not self.connection:
             try:
-                self.connection = amqp.Connection(
-                    host=cfg.amqp_host,
-                    userid=cfg.amqp_user,
-                    password=cfg.amqp_pass,
+                host, port = _parse_hostport(cfg.amqp_host)
+                credentials = pika.PlainCredentials(cfg.amqp_user,
+                                                    cfg.amqp_pass)
+                params = pika.ConnectionParameters(
+                    host=host,
+                    port=port,
                     virtual_host=cfg.amqp_virtual_host,
-                    insist=False,
+                    credentials=credentials,
+                    # pika's default is 60s; keep it explicit so long-lived
+                    # consumers detect a broker restart instead of hanging.
+                    heartbeat=60,
+                    blocked_connection_timeout=300,
                 )
-            except (socket.error, IOError) as e:
-                print ('error connecting to amqp %s @ %s (%r)' %
-                       (cfg.amqp_user, cfg.amqp_host, e))
+                self.connection = pika.BlockingConnection(params)
+            except (socket.error, IOError, OSError,
+                    pika_errors.AMQPError) as e:
+                print('error connecting to amqp %s @ %s (%r)' %
+                      (cfg.amqp_user, cfg.amqp_host, e))
+                self.connection = None
                 time.sleep(1)
 
         # don't run init_queue until someone actually needs it. this
@@ -136,13 +166,13 @@ class ConnectionManager(local):
 
         return self.connection
 
-    def get_channel(self, reconnect = False):
+    def get_channel(self, reconnect=False):
         # Periodic (and increasing with uptime) errors appearing when
         # connection object is still present, but appears to have been
         # closed.  This checks that the the connection is still open.
-        if self.connection and self.connection.channels is None:
+        if self.connection and not self.connection.is_open:
             cfg.log.error(
-                "Error: amqp.py, connection object with no available channels."
+                "Error: amqp.py, connection object is closed."
                 "  Reconnecting...")
             self.connection = None
 
@@ -151,7 +181,7 @@ class ConnectionManager(local):
             self.channel = None
             self.get_connection()
 
-        if not self.channel:
+        if not self.channel or not self.channel.is_open:
             self.channel = self.connection.channel()
 
         return self.channel
@@ -159,7 +189,7 @@ class ConnectionManager(local):
     def init_queue(self):
         chan = self.get_channel()
         chan.exchange_declare(exchange=cfg.amqp_exchange,
-                              type="direct",
+                              exchange_type="direct",
                               durable=True,
                               auto_delete=False)
 
@@ -175,11 +205,49 @@ class ConnectionManager(local):
                             exchange=cfg.amqp_exchange)
 
 
-
 DELIVERY_TRANSIENT = 1
 DELIVERY_DURABLE = 2
 
-def _add_item(routing_key, body, message_id = None,
+
+class Message(object):
+    """Adapter preserving the amqplib message shape.
+
+    Consumers were written against amqplib's message object and rely on
+    ``msg.body``, ``msg.delivery_info['message_count']``, ``msg.delivery_tag``,
+    ``msg.channel`` and ``msg.properties``.  pika hands callbacks a
+    (channel, method, properties, body) tuple, so wrap it back into that shape
+    rather than updating the consumers.
+    """
+
+    def __init__(self, channel, method, properties, body):
+        self.channel = channel
+        self.method = method
+        self.properties = properties
+        self.body = body
+        self.delivery_tag = method.delivery_tag
+        self.delivery_info = {}
+        if getattr(method, 'message_count', None) is not None:
+            self.delivery_info['message_count'] = method.message_count
+        if getattr(method, 'routing_key', None) is not None:
+            self.delivery_info['routing_key'] = method.routing_key
+        if getattr(method, 'exchange', None) is not None:
+            self.delivery_info['exchange'] = method.exchange
+        if getattr(method, 'redelivered', None) is not None:
+            self.delivery_info['redelivered'] = method.redelivered
+
+    def __repr__(self):
+        return '<Message body=%r>' % (self.body,)
+
+
+def _basic_get(channel, queue):
+    """pika's basic_get returns (None, None, None) when the queue is empty."""
+    method, properties, body = channel.basic_get(queue, auto_ack=False)
+    if method is None:
+        return None
+    return Message(channel, method, properties, body)
+
+
+def _add_item(routing_key, body, message_id=None,
               delivery_mode=DELIVERY_DURABLE, headers=None,
               exchange=None, send_stats=True):
     """adds an item onto a queue. If the connection to amqp is lost it
@@ -191,32 +259,40 @@ def _add_item(routing_key, body, message_id = None,
         exchange = cfg.amqp_exchange
 
     chan = connection_manager.get_channel()
-    msg = amqp.Message(body,
-                       timestamp = datetime.now(),
-                       delivery_mode = delivery_mode)
-    if message_id:
-        msg.properties['message_id'] = message_id
-
-    if headers:
-        msg.properties["application_headers"] = headers
+    properties = pika.BasicProperties(
+        delivery_mode=delivery_mode,
+        timestamp=int(time.time()),
+        message_id=message_id,
+        headers=headers,
+    )
 
     event_name = 'amqp.%s' % routing_key
     try:
-        chan.basic_publish(msg,
-                           exchange=exchange,
-                           routing_key = routing_key)
+        chan.basic_publish(exchange=exchange,
+                           routing_key=routing_key,
+                           body=body,
+                           properties=properties)
     except Exception as e:
         if send_stats:
             cfg.stats.event_count(event_name, 'enqueue_failed')
 
-        if e.errno == errno.EPIPE:
-            connection_manager.get_channel(True)
+        # amqplib surfaced a dropped broker as errno.EPIPE; pika reports it as
+        # an AMQPError (StreamLostError/ConnectionWrongStateError) so reconnect
+        # and retry on those too.
+        if getattr(e, 'errno', None) == errno.EPIPE or \
+                isinstance(e, (pika_errors.AMQPError, socket.error,
+                               OSError, IOError)):
+            try:
+                connection_manager.get_channel(True)
+            except Exception:
+                raise e
             add_item(routing_key, body, message_id)
         else:
             raise
     else:
         if send_stats:
             cfg.stats.event_count(event_name, 'enqueue')
+
 
 def add_item(routing_key, body, message_id=None,
              delivery_mode=DELIVERY_DURABLE, headers=None,
@@ -226,12 +302,14 @@ def add_item(routing_key, body, message_id=None,
     if exchange is None:
         exchange = cfg.amqp_exchange
 
-    worker.do(_add_item, routing_key, body, message_id = message_id,
+    worker.do(_add_item, routing_key, body, message_id=message_id,
               delivery_mode=delivery_mode, headers=headers, exchange=exchange,
               send_stats=send_stats)
 
+
 def add_kw(routing_key, **kw):
     add_item(routing_key, pickle.dumps(kw))
+
 
 def consume_items(queue, callback, verbose=True):
     """A lighter-weight version of handle_items that uses AMQP's
@@ -251,11 +329,12 @@ def consume_items(queue, callback, verbose=True):
         prefetch_size=0,
         # maximum number of prefetched messages.
         prefetch_count=10,
-        # if global, applies to the whole connection, else just this channel.
-        a_global=False
+        # if true, applies to the whole connection, else just this channel.
+        global_qos=False
     )
 
-    def _callback(msg):
+    def _callback(channel, method, properties, body):
+        msg = Message(channel, method, properties, body)
         if verbose:
             count_str = ''
             if 'message_count' in msg.delivery_info:
@@ -273,18 +352,26 @@ def consume_items(queue, callback, verbose=True):
         sys.stdout.flush()
         return ret
 
-    chan.basic_consume(queue=queue, callback=_callback)
+    chan.basic_consume(
+        queue=queue,
+        on_message_callback=_callback,
+        # we ack inside the callback
+        auto_ack=False,
+    )
 
     try:
-        while chan.callbacks:
-            try:
-                chan.wait()
-            except KeyboardInterrupt:
-                break
+        chan.start_consuming()
+    except KeyboardInterrupt:
+        pass
     finally:
         worker.join()
         if chan.is_open:
+            try:
+                chan.stop_consuming()
+            except Exception:
+                pass
             chan.close()
+
 
 def handle_items(queue, callback, ack=True, limit=1, min_size=0,
                  drain=False, verbose=True, sleep_time=1):
@@ -303,7 +390,7 @@ def handle_items(queue, callback, ack=True, limit=1, min_size=0,
         if countdown == 0:
             break
 
-        msg = chan.basic_get(queue)
+        msg = _basic_get(chan, queue)
         if not msg and drain:
             return
         elif not msg:
@@ -323,7 +410,7 @@ def handle_items(queue, callback, ack=True, limit=1, min_size=0,
                 countdown -= 1
             if len(items) >= limit:
                 break # the innermost loop only
-            msg = chan.basic_get(queue)
+            msg = _basic_get(chan, queue)
             if msg is None:
                 if len(items) < min_size:
                     time.sleep(sleep_time)
@@ -344,14 +431,14 @@ def handle_items(queue, callback, ack=True, limit=1, min_size=0,
 
             if ack:
                 # ack *all* outstanding messages
-                chan.basic_ack(0, multiple=True)
+                chan.basic_ack(delivery_tag=0, multiple=True)
 
             # flush any log messages printed by the callback
             sys.stdout.flush()
         except:
             for item in items:
                 # explicitly reject the items that we've not processed
-                chan.basic_reject(item.delivery_tag, requeue = True)
+                chan.basic_reject(item.delivery_tag, requeue=True)
             raise
 
 
@@ -368,8 +455,9 @@ def black_hole(queue):
 
     consume_items(queue, _ignore)
 
-def dedup_queue(queue, rk = None, limit=None,
-                delivery_mode = DELIVERY_DURABLE):
+
+def dedup_queue(queue, rk=None, limit=None,
+                delivery_mode=DELIVERY_DURABLE):
     """Hackily try to reduce the size of a queue by removing duplicate
        messages. The consumers of the target queue must consider
        identical messages to be idempotent. Preserves only message
@@ -382,7 +470,7 @@ def dedup_queue(queue, rk = None, limit=None,
     bodies = set()
 
     while True:
-        msg = chan.basic_get(queue)
+        msg = _basic_get(chan, queue)
 
         if msg is None:
             break
@@ -394,8 +482,8 @@ def dedup_queue(queue, rk = None, limit=None,
             limit = msg.delivery_info.get('message_count')
             if limit is None:
                 default_max = 100*1000
-                print ("Message count was unavailable, defaulting to %d"
-                       % (default_max,))
+                print("Message count was unavailable, defaulting to %d"
+                      % (default_max,))
                 limit = default_max
             else:
                 print("Grabbing %d messages" % (limit,))
@@ -410,8 +498,8 @@ def dedup_queue(queue, rk = None, limit=None,
 
     if bodies:
         for body in bodies:
-            _add_item(rk, body, delivery_mode = delivery_mode)
+            _add_item(rk, body, delivery_mode=delivery_mode)
 
         worker.join()
 
-        chan.basic_ack(0, multiple=True)
+        chan.basic_ack(delivery_tag=0, multiple=True)
