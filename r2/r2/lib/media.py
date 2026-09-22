@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -354,12 +355,12 @@ def _scrape_media(url, autoplay=False, maxwidth=600, force=False,
         # media object it just gave us. if not, null out the media object
         # to protect downstream code
         if media_object and not scraper.media_embed(media_object):
-            print "%s made a bad media obj for url %s" % (scraper, url)
+            print("%s made a bad media obj for url %s" % (scraper, url))
             media_object = None
 
         if (secure_media_object and
             not scraper.media_embed(secure_media_object)):
-            print "%s made a bad secure media obj for url %s" % (scraper, url)
+            print("%s made a bad secure media obj for url %s" % (scraper, url))
             secure_media_object = None
 
         # If thumbnail can't be found, attempt again using _ThumbnailOnlyScraper
@@ -1003,11 +1004,11 @@ def run():
         try:
             TimeoutFunction(_set_media, 30)(link, use_cache=True)
         except TimeoutFunctionException:
-            print "Timed out on %s" % fname
+            print("Timed out on %s" % fname)
         except KeyboardInterrupt:
             raise
         except:
-            print "Error fetching %s" % fname
-            print traceback.format_exc()
+            print("Error fetching %s" % fname)
+            print(traceback.format_exc())
 
     amqp.consume_items('scraper_q', process_link)

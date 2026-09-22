@@ -101,7 +101,7 @@ def field(name=None, cloudsearch_type=str, lucene_type=SAME_AS_CLOUDSEARCH):
         function = None
 
     def field_inner(fn):
-        fn.field = Field(name or fn.func_name, cloudsearch_type,
+        fn.field = Field(name or fn.__name__, cloudsearch_type,
                          lucene_type, fn)
         return fn
 

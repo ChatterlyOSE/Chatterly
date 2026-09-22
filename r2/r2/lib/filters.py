@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -108,7 +109,7 @@ def double_websafe(text=""):
     return unsafe(python_websafe(python_websafe(text)))
 
 def conditional_websafe(text = ''):
-    from wrapped import Templated, CacheStub
+    from .wrapped import Templated, CacheStub
 
     if text.__class__ == _Unsafe:
         return text

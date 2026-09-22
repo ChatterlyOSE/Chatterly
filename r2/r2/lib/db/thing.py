@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -35,6 +36,7 @@ from r2.lib import amqp, hooks
 from r2.lib.db import tdb_sql as tdb, sorts, operators
 from r2.lib.sgm import sgm
 from r2.lib.utils import class_property, Results, tup, to36
+from functools import reduce
 
 
 class NotFound(Exception):
@@ -148,7 +150,7 @@ class DataThing(object):
             attr=attr,
         )
 
-        raise AttributeError, error_msg
+        raise AttributeError(error_msg)
 
     @classmethod
     def _cache_prefix(cls):
@@ -400,7 +402,7 @@ class DataThing(object):
         # Check to see if we found everything we asked for
         missing = [_id for _id in ids if _id not in things_by_id]
         if missing and not ignore_missing:
-            raise NotFound, '%s %s' % (cls.__name__, missing)
+            raise NotFound('%s %s' % (cls.__name__, missing))
 
         if missing:
             ids = [_id for _id in ids if _id not in missing]
@@ -467,7 +469,7 @@ class DataThing(object):
         # interleave types in original order of the name
         res = []
         for fullname in names:
-            if lookup.has_key(fullname):
+            if fullname in lookup:
                 real_type, thing_id = lookup[fullname]
                 thing = identified.get(real_type, {}).get(thing_id)
                 if not thing and ignore_missing:
@@ -501,7 +503,7 @@ class ThingMeta(type):
         try:
             cls._type_id = tdb.types_name[cls._type_name].type_id
         except KeyError:
-            raise KeyError, 'is the thing database %s defined?' % name
+            raise KeyError('is the thing database %s defined?' % name)
 
         global thing_types
         thing_types[cls._type_id] = cls
@@ -763,7 +765,7 @@ class RelationMeta(type):
         try:
             cls._type_id = tdb.rel_types_name[cls._type_name].type_id
         except KeyError:
-            raise KeyError, 'is the relationship database %s defined?' % name
+            raise KeyError('is the relationship database %s defined?' % name)
 
         global rel_types
         rel_types[cls._type_id] = cls
@@ -1369,7 +1371,7 @@ class MultiCursor(object):
         if not self._cursor:
             self._cursor = self._execute(*self._execute_params)
             
-        return self._cursor.next()
+        return next(self._cursor)
                 
     def fetchall(self):
         if not self._cursor:
@@ -1536,7 +1538,7 @@ def MultiRelation(name, *relations):
             #the merge constructor
             queries = [r._query(*rules, **kw) for r in cls.rels.values()]
             if "sort" in kw:
-                print "sorting MultiRelations is not supported"
+                print("sorting MultiRelations is not supported")
             return Merge(queries)
 
         @classmethod
@@ -1556,7 +1558,7 @@ def MultiRelation(name, *relations):
             res = {}
             for types, rel in cls.rels.iteritems():
                 t1, t2 = types
-                if sub_dict.has_key(t1) and obj_dict.has_key(t2):
+                if t1 in sub_dict and t2 in obj_dict:
                     res.update(rel._fast_query(
                         sub_dict[t1], obj_dict[t2], name, eager_load=eager_load))
 

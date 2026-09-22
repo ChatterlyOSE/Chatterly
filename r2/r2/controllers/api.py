@@ -4926,7 +4926,7 @@ class ApiController(RedditController):
         if not form.has_error():
             try:
                 client.icon_url = media.upload_icon(icon_file, (72, 72))
-            except IOError, ex:
+            except IOError as ex:
                 c.errors.add(errors.BAD_IMAGE,
                              msg_params=dict(message=ex.message),
                              field='file')

@@ -101,7 +101,7 @@ class Printable(object):
 
         if style == 'htmllite':
             s.extend([c.bgcolor, c.bordercolor, 
-                      request.GET.has_key('style'),
+                      'style' in request.GET,
                       request.GET.get("expanded"),
                       getattr(wrapped, 'embed_voting_style', None)])
         return s

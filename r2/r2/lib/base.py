@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -29,7 +30,7 @@ from webob.exc import HTTPException, status_map
 from r2.lib.filters import spaceCompress, _force_unicode
 from r2.lib.template_helpers import get_domain
 from r2.lib.utils import Agent
-from utils import string2js, read_http_date
+from .utils import string2js, read_http_date
 
 import re, hashlib
 from Cookie import CookieError
@@ -205,7 +206,7 @@ class BaseController(WSGIController):
 
         if u.is_reddit_url():
             # make sure to pass the port along if not 80
-            if not kw.has_key('port'):
+            if 'port' not in kw:
                 kw['port'] = request.port
 
             # make sure the extensions agree with the current page

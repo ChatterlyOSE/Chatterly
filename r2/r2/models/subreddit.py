@@ -1,3 +1,5 @@
+from __future__ import print_function
+from __future__ import absolute_import
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -20,7 +22,6 @@
 # Inc. All Rights Reserved.
 ###############################################################################
 
-from __future__ import with_statement
 
 import base64
 import collections
@@ -43,12 +44,12 @@ from thrift.transport.TTransport import TTransportException
 
 from r2.config import feature
 from r2.lib.db.thing import Thing, Relation, NotFound
-from account import (
+from .account import (
     Account,
     FakeAccount,
     QuarantinedSubredditOptInsByAccount,
 )
-from printable import Printable
+from .printable import Printable
 from r2.lib.db.userrel import UserRel, MigratingUserRel
 from r2.lib.db.operators import lower, or_, and_, not_, desc
 from r2.lib.errors import RedditError
@@ -495,7 +496,7 @@ class Subreddit(Thing, Printable, BaseSite):
         if ret and single:
             return ret.values()[0]
         elif not ret and single:
-            raise NotFound, 'Subreddit %s' % name
+            raise NotFound('Subreddit %s' % name)
         else:
             return ret
 
@@ -655,7 +656,7 @@ class Subreddit(Thing, Printable, BaseSite):
             try:
                 sr_props = {srs[sr_name]: {} for sr_name in related_subreddits}
             except KeyError as e:
-                raise NotFound, 'Subreddit %s' % e.args[0]
+                raise NotFound('Subreddit %s' % e.args[0])
 
             multi.clear_srs()
             multi.add_srs(sr_props)
@@ -1532,7 +1533,7 @@ class SubscriptionsByDay(tdb_cassandra.View):
             microsecond=0,
             tzinfo=None,
         )
-        print "writing subscribers for %s" % date
+        print("writing subscribers for %s" % date)
 
         num_srs = 0
         num_subscribers = 0
@@ -1547,7 +1548,7 @@ class SubscriptionsByDay(tdb_cassandra.View):
             Session.commit()
             num_srs += 1
             num_subscribers += count
-        print "%s subscribers in %s subreddits" % (num_subscribers, num_srs)
+        print("%s subscribers in %s subreddits" % (num_subscribers, num_srs))
         Session.remove()
 
 

@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -263,7 +264,7 @@ def send_queued_mail(test = False):
                 print ("Got None mimetext for email from %r and to %r"
                        % (email.fr_addr, email.to_addr))
             if test:
-                print mimetext.as_string()
+                print(mimetext.as_string())
             else:
                 session.sendmail(email.fr_addr, email.to_addr,
                                  mimetext.as_string())
@@ -272,7 +273,7 @@ def send_queued_mail(test = False):
         except (smtplib.SMTPRecipientsRefused, smtplib.SMTPSenderRefused,
                 UnicodeDecodeError, AttributeError, HeaderParseError):
             # handle error and print, but don't stall the rest of the queue
-            print "Handled error sending mail (traceback to follow)"
+            print("Handled error sending mail (traceback to follow)")
             traceback.print_exc(file = sys.stdout)
             email.set_sent(rejected = True)
 

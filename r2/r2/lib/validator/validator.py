@@ -130,7 +130,7 @@ class Validator(object):
                 a.append(val)
         try:
             return self.run(*a)
-        except TypeError, e:
+        except TypeError as e:
             if str(e).startswith('run() takes'):
                 # Prepend our class name so we know *which* run()
                 raise TypeError('%s.%s' % (type(self).__name__, str(e)))
@@ -643,7 +643,7 @@ class VMarkdown(Validator):
             g.log.error("HAX by %s: %s" % (user, text))
             s = sys.exc_info()
             # reraise the original error with the original stack trace
-            raise s[1], None, s[2]
+            raise s[1].with_traceback(s[2])
 
     def param_docs(self):
         return {
@@ -1873,9 +1873,9 @@ class VMessageRecipient(VExistingUname):
             try:
                 s = Subreddit._by_name(name)
                 if isinstance(s, FakeSubreddit):
-                    raise NotFound, "fake subreddit"
+                    raise NotFound("fake subreddit")
                 if s._spam:
-                    raise NotFound, "banned subreddit"
+                    raise NotFound("banned subreddit")
                 if s.is_muted(c.user) and not c.user_is_admin:
                     self.set_error(errors.USER_MUTED)
                 return s
@@ -1945,12 +1945,12 @@ class VNumber(Validator):
                 if self.coerce:
                     val = self.min
                 else:
-                    raise ValueError, ""
+                    raise ValueError("")
             elif self.max is not None and val > self.max:
                 if self.coerce:
                     val = self.max
                 else:
-                    raise ValueError, ""
+                    raise ValueError("")
             return val
         except ValueError:
             self._set_error()

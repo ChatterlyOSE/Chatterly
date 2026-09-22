@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -294,7 +295,7 @@ class Account(Thing):
         return all_karmas
 
     def update_last_visit(self, current_time):
-        from admintools import apply_updates
+        from .admintools import apply_updates
 
         timer = g.stats.get_timer("account.update_last_visit")
         timer.start()
@@ -391,7 +392,7 @@ class Account(Thing):
         if uid:
             return cls._byID(uid, data=True)
         else:
-            raise NotFound, 'Account %s' % name
+            raise NotFound('Account %s' % name)
 
     @classmethod
     def _names_to_ids(cls, names, ignore_missing=False, allow_deleted=False,
@@ -550,7 +551,7 @@ class Account(Thing):
 
     @property
     def subreddits(self):
-        from subreddit import Subreddit
+        from .subreddit import Subreddit
         return Subreddit.user_subreddits(self)
 
     def special_distinguish(self):

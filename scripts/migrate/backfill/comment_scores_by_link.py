@@ -1,3 +1,4 @@
+from __future__ import print_function
 from datetime import datetime
 
 from pylons import app_globals as g
@@ -33,4 +34,4 @@ def run():
 
         count += 1
         if count % 1000 == 0:
-            print "processed %s rows, last seen was %s" % (count, rowkey)
+            print("processed %s rows, last seen was %s" % (count, rowkey))

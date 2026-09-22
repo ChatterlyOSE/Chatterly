@@ -54,6 +54,7 @@ Design notes
   ``timestamp:[1420000000 TO *]`` before handing the query to OpenSearch's
   Lucene-based ``query_string`` parser.
 """
+from __future__ import print_function
 
 import cPickle as pickle
 from datetime import datetime, timedelta
@@ -813,8 +814,8 @@ class OpenSearchSearchUploader(object):
         g.stats.simple_event("opensearch.uploads.deletes", delta=deletes)
 
         if not quiet:
-            print "%s Changes: +%i -%i" % (self.__class__.__name__,
-                                           adds, deletes)
+            print("%s Changes: +%i -%i" % (self.__class__.__name__,
+                                           adds, deletes))
 
         return cs_time
 
@@ -950,9 +951,9 @@ def ensure_indices(host=None, port=None, quiet=False):
         created.append(subreddits_index())
     if not quiet:
         if created:
-            print "created indices: %s" % ", ".join(created)
+            print("created indices: %s" % ", ".join(created))
         else:
-            print "indices already exist"
+            print("indices already exist")
     return created
 
 
@@ -998,7 +999,7 @@ def _rebuild_link_index(start_at=None, sleeptime=1, cls=Link,
             try:
                 uploader.inject()
             except httplib.HTTPException as err:
-                print "Got %s, sleeping %s secs" % (err, x)
+                print("Got %s, sleeping %s secs" % (err, x))
                 time.sleep(x)
                 continue
             else:
@@ -1006,7 +1007,7 @@ def _rebuild_link_index(start_at=None, sleeptime=1, cls=Link,
         else:
             raise err
         last_update = chunk[-1]
-        print "last updated %s" % last_update._fullname
+        print("last updated %s" % last_update._fullname)
         time.sleep(sleeptime)
 
 

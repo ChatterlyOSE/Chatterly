@@ -87,7 +87,7 @@ class PeekableIterator(object):
         """Get the next item in the iterable without advancing our position."""
         if not self.item:
             try:
-                self.item = self.iterator.next()
+                self.item = next(self.iterator)
             except StopIteration:
                 return None
         return self.item
@@ -136,7 +136,7 @@ def zip_timeseries(*series, **kwargs):
             # each item is (date, data)
             if item and item[0] == current_slice:
                 data.extend(item[1])
-                iterators[i].next()
+                next(iterators[i])
             else:
                 data.extend([0] * widths[i])
 
@@ -168,7 +168,7 @@ def fill_gaps_generator(time_points, query, *columns):
 
         if row and row.date == t:
             yield t, tuple(getattr(row, c) for c in columns)
-            iterator.next()
+            next(iterator)
         else:
             yield t, tuple(0 for c in columns)
 

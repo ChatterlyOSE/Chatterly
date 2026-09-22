@@ -441,7 +441,7 @@ def set_content_type():
     c.render_style = e['render_style']
     response.content_type = e['content_type']
 
-    if e.has_key('extension'):
+    if 'extension' in e:
         c.extension = ext = e['extension']
         if ext in ('embed', 'widget'):
             wrapper = request.params.get("callback", "document.write")

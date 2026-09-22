@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -640,11 +641,11 @@ class Globals(object):
         if not self.media_domain:
             self.media_domain = self.domain
         if self.media_domain == self.domain:
-            print >> sys.stderr, ("Warning: g.media_domain == g.domain. " +
-                   "This may give untrusted content access to user cookies")
+            print(("Warning: g.media_domain == g.domain. " +
+                   "This may give untrusted content access to user cookies"), file=sys.stderr)
         if self.oauth_domain == self.domain:
-            print >> sys.stderr, ("Warning: g.oauth_domain == g.domain. "
-                    "CORS requests to g.domain will be allowed")
+            print(("Warning: g.oauth_domain == g.domain. "
+                    "CORS requests to g.domain will be allowed"), file=sys.stderr)
 
         for arg in sys.argv:
             tokens = arg.split("=")
@@ -990,7 +991,7 @@ class Globals(object):
                 revision = subprocess.check_output(["git",
                                                     "--git-dir", git_dir,
                                                     "rev-parse", "HEAD"])
-            except subprocess.CalledProcessError, e:
+            except subprocess.CalledProcessError as e:
                 self.log.warning("Unable to fetch git revision: %r", e)
             else:
                 self.versions[repo_name] = revision.rstrip()

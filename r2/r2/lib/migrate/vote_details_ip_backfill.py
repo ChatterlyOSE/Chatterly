@@ -1,3 +1,4 @@
+from __future__ import print_function
 import json
 from collections import defaultdict
 from datetime import datetime, timedelta
@@ -32,10 +33,10 @@ def backfill_vote_details(cls):
                             oneweek = ""
                             if ttl < 3600 * 24 * 7:
                                 oneweek = "(<= one week left)"
-                            print "Inserting %s with IP ttl %d %s" % (redacted, ttl, oneweek)
+                            print("Inserting %s with IP ttl %d %s" % (redacted, ttl, oneweek))
                             detail_chunk[thing_id36][voter_id36] = json.dumps(redacted)
                             if ttl <= 0:
-                                print "Skipping bogus ttl for %s: %d" % (redacted, ttl)
+                                print("Skipping bogus ttl for %s: %d" % (redacted, ttl))
                                 continue
                             b.insert(thing_fullname, {voter_id36: ip}, ttl=ttl)
         except Exception:

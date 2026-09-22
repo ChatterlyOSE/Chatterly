@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -128,7 +129,7 @@ def copy_to_s3(s3_connection, local_path, dst_path, verbose=False):
 
     kw = {}
     if verbose:
-        print 'Uploading %s to %s' % (local_path, dst_path)
+        print('Uploading %s to %s' % (local_path, dst_path))
         kw['cb'] = callback
 
     k.set_contents_from_filename(logfile, **kw)

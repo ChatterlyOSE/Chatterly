@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -207,4 +208,4 @@ def spritify(css_filename, sprite_path):
 
 if __name__ == '__main__':
     import sys
-    print spritify(sys.argv[1], sys.argv[2])
+    print(spritify(sys.argv[1], sys.argv[2]))

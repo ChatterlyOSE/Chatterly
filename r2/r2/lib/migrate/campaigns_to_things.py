@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -29,7 +30,7 @@ def fix_trans_id():
     num_bad_campaigns = len(bad_campaigns)
 
     if not num_bad_campaigns:
-        print "No campaigns with trans_id == 1"
+        print("No campaigns with trans_id == 1")
         return
 
     # print some info and prompt user to continue
@@ -39,7 +40,7 @@ def fix_trans_id():
            (num_bad_campaigns, [pc._id for pc in bad_campaigns]))
     input_char = sys.stdin.read(1)
     if input_char != 'c' and input_char != 'C':
-        print "aborting..."
+        print("aborting...")
         return
 
     # log the ids for reference
@@ -48,10 +49,10 @@ def fix_trans_id():
 
     # get corresponding links and copy trans_id from link data to campaign thing
     link_ids = set([campaign.link_id for campaign in bad_campaigns])
-    print "Fetching associated links: %s" % link_ids
+    print("Fetching associated links: %s" % link_ids)
     try:
         links = Link._byID(link_ids, data=True, return_dict=False)
-    except NotFound, e:
+    except NotFound as e:
         print("Invalid data: Some promocampaigns have invalid link_ids. "
               "Please delete these campaigns or fix the data before "
               "continuing. Exception: %s" % e)
@@ -84,6 +85,6 @@ def fix_trans_id():
     # log the actions for future reference
     msg = ("%d of %d campaigns updated successfully. %d updates failed: %s" %
            (num_bad_campaigns, num_bad_campaigns - len(failed), len(failed), failed))
-    print msg
+    print(msg)
 
         

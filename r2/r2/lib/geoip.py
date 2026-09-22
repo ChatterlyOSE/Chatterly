@@ -60,7 +60,7 @@ def _location_by_ips(ips):
 
         try:
             ret.update(json.loads(json_data))
-        except ValueError, e:
+        except ValueError as e:
             g.log.warning("Invalid JSON response for GeoIP lookup: %r" % e)
             continue
     return ret
@@ -77,13 +77,13 @@ def _organization_by_ips(ips):
     try:
         response = urllib2.urlopen(url=url, timeout=3)
         json_data = response.read()
-    except urllib2.URLError, e:
+    except urllib2.URLError as e:
         g.log.warning("Failed to fetch GeoIP information: %r" % e)
         return {}
 
     try:
         return json.loads(json_data)
-    except ValueError, e:
+    except ValueError as e:
         g.log.warning("Invalid JSON response for GeoIP lookup: %r" % e)
         return {}
 

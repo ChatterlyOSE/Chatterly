@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -52,9 +53,9 @@ from r2.lib.validator import *
 from r2.lib import jsontemplates
 import r2.lib.db.thing as thing
 from r2.lib.errors import errors, ForbiddenError
-from listingcontroller import ListingController
-from oauth2 import require_oauth2_scope
-from api_docs import api_doc, api_section
+from .listingcontroller import ListingController
+from .oauth2 import require_oauth2_scope
+from .api_docs import api_doc, api_section
 
 from pylons import request
 from pylons import tmpl_context as c

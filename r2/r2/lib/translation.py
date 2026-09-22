@@ -55,7 +55,7 @@ def _get_translator(lang, graceful_fail=False, **kwargs):
     try:
         translator = translation(config['pylons.package'], I18N_PATH,
                                  languages=lang, **kwargs)
-    except IOError, ioe:
+    except IOError as ioe:
         if graceful_fail:
             translator = NullTranslations()
         else:
@@ -152,11 +152,10 @@ def validate_plural_forms(plural_forms_str):
     try:
         danger = [x for x in tokens if x[0] == token.NAME and x[1] != 'n']
     except tokenize.TokenError:
-        raise ValueError, \
-              'plural forms expression error, maybe unbalanced parenthesis'
+        raise ValueError('plural forms expression error, maybe unbalanced parenthesis')
     else:
         if danger:
-            raise ValueError, 'plural forms expression could be dangerous'
+            raise ValueError('plural forms expression could be dangerous')
 
 
 def extract_javascript_msgids(source):

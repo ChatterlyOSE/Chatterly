@@ -36,6 +36,7 @@ apply to an item. Rules may have additional RuleTargets which represent
 support exists for up to two additional RuleTargets, one for the item's
 author, and another for the parent link (if the original item was a comment).
 """
+from __future__ import print_function
 
 from collections import namedtuple
 from datetime import datetime
@@ -402,9 +403,9 @@ class RuleTarget(object):
     # valid options for changing how a field value is searched for a match
     _match_regexes = {
         "full-exact": u"^%s$",
-        "full-text": ur"^\W*%s\W*$",
+        "full-text": r"^\W*%s\W*$",
         "includes": u"%s",
-        "includes-word": ur"(?:^|\W|\b)%s(?:$|\W|\b)",
+        "includes-word": r"(?:^|\W|\b)%s(?:$|\W|\b)",
         "starts-with": u"^%s",
         "ends-with": u"%s$",
     }
@@ -753,7 +754,7 @@ class RuleTarget(object):
                     field = list(parsed_key["fields"])[0]
                     # default to handling subdomains for checks against domain only
                     if field == "domain":
-                        value_str = ur"(?:.*?\.)?" + value_str
+                        value_str = r"(?:.*?\.)?" + value_str
                     match_mod = self._match_field_defaults.get(
                         field, "includes-word")
                 else:
@@ -1538,7 +1539,7 @@ def run():
                 try:
                     rules = Ruleset(wp.content, timer)
                 except (AutoModeratorSyntaxError, AutoModeratorRuleTypeError):
-                    print "ERROR: Invalid config in /r/%s" % subreddit.name
+                    print("ERROR: Invalid config in /r/%s" % subreddit.name)
                     return
 
                 rules_by_subreddit[subreddit._id] = rules
@@ -1550,13 +1551,13 @@ def run():
 
             try:
                 TimeoutFunction(rules.apply_to_item, 2)(item)
-                print "Checked %s from /r/%s" % (item, subreddit.name)
+                print("Checked %s from /r/%s" % (item, subreddit.name))
             except TimeoutFunctionException:
-                print "Timed out on %s from /r/%s" % (item, subreddit.name)
+                print("Timed out on %s from /r/%s" % (item, subreddit.name))
             except KeyboardInterrupt:
                 raise
             except:
-                print "Error on %s from /r/%s" % (item, subreddit.name)
-                print traceback.format_exc()
+                print("Error on %s from /r/%s" % (item, subreddit.name))
+                print(traceback.format_exc())
 
     amqp.consume_items('automoderator_q', process_message, verbose=False)

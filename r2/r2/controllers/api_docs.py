@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -28,7 +29,7 @@ from os.path import abspath, relpath
 
 from pylons import app_globals as g
 from pylons.i18n import _
-from reddit_base import RedditController
+from .reddit_base import RedditController
 from r2.lib.utils import Storage
 from r2.lib.pages import BoringPage, ApiHelp
 from r2.lib.validator import validate, VOneOf

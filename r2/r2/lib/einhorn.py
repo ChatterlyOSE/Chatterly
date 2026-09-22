@@ -44,6 +44,7 @@ new worker, waits for it to acknowledge it is up and running, and then reaps an
 old worker.
 
 """
+from __future__ import print_function
 import os
 import signal
 import sys
@@ -83,7 +84,7 @@ class EinhornSyncWorker(SyncWorker):
 
 def run_gunicorn_worker():
     if not einhorn.is_worker():
-        print >> sys.stderr, "This process does not appear to be running under Einhorn."
+        print("This process does not appear to be running under Einhorn.", file=sys.stderr)
         sys.exit(1)
 
     app = PasterApplication()

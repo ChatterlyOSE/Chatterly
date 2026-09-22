@@ -23,6 +23,7 @@
 """
 Fix the urls of previously-uploaded preview images so they all work.
 """
+from __future__ import print_function
 
 import sys
 
@@ -40,10 +41,10 @@ from r2.models.media_cache import MediaByURL
 
 def good_preview_object(preview_object):
     if not preview_object or not 'url' in preview_object:
-        print '  aborting - bad preview object: %s' % preview_object
+        print('  aborting - bad preview object: %s' % preview_object)
         return False
     if not preview_object['url']:
-        print '  aborting - bad preview url: %s' % preview_object['url']
+        print('  aborting - bad preview url: %s' % preview_object['url'])
         return False
     return True
 
@@ -52,7 +53,7 @@ s3 = boto.connect_s3(g.S3KEY_ID or None, g.S3SECRET_KEY or None)
 for uid, columns in LinksByImage._cf.get_range():
 # When resuming, use:
 #for uid, columns in LinksByImage._cf.get_range(start='<uid>'):
-    print 'Looking at image %s' % uid
+    print('Looking at image %s' % uid)
     link_ids = columns.keys()
     links = Link._byID36(link_ids, return_dict=False, data=True)
     if not links:
@@ -69,7 +70,7 @@ for uid, columns in LinksByImage._cf.get_range():
     if preview_object['url'].startswith(g.media_fs_base_url_http):
         # Uploaded to the local filesystem instead of s3.  Should only be in
         # dev.
-        print '  non-s3 image'
+        print('  non-s3 image')
         continue
     elif u.hostname == 's3.amazonaws.com':
         parts = u.path.lstrip('/').split('/')
@@ -80,26 +81,26 @@ for uid, columns in LinksByImage._cf.get_range():
         bucket = u.hostname
         filename = u.path.lstrip('/')
 
-    print '  bucket: %s' % bucket
-    print '  filename: %s' % filename
+    print('  bucket: %s' % bucket)
+    print('  filename: %s' % filename)
 
     if bucket in g.s3_image_buckets:
-        print '  skipping - already in correct place'
+        print('  skipping - already in correct place')
         continue
 
     k = Key(s3.get_bucket(bucket))
     k.key = filename
     k.copy(s3.get_bucket(g.s3_image_buckets[0]), filename)
     url = 'http://s3.amazonaws.com/%s/%s' % (g.s3_image_buckets[0], filename)
-    print '  new url: %s' % url
+    print('  new url: %s' % url)
     for link in links:
-        print '  altering Link %s' % link
+        print('  altering Link %s' % link)
         if not good_preview_object(link.preview_object):
             continue
         if not link.preview_object == preview_object:
-            print "  aborting - preview objects don't match"
-            print '    first: %s' % preview_object
-            print '    ours:  %s' % link.preview_object
+            print("  aborting - preview objects don't match")
+            print('    first: %s' % preview_object)
+            print('    ours:  %s' % link.preview_object)
             continue
 
         link.preview_object['url'] = url
@@ -113,13 +114,13 @@ for uid, columns in LinksByImage._cf.get_range():
         # anything.  We'll just have to deal with those as they come up.
         image_url = _get_scrape_url(link)
         cache_key = MediaByURL._rowkey(image_url, autoplay=False, maxwidth=600)
-        print '  deleting cache with key %s' % cache_key
+        print('  deleting cache with key %s' % cache_key)
         cache = MediaByURL(_id=cache_key)
         cache._committed = True
         try:
             cache._destroy()
         except pycassa.cassandra.ttypes.InvalidRequestException as e:
-            print '    skipping cache deletion (%s)' % e.why
+            print('    skipping cache deletion (%s)' % e.why)
             continue
     # Delete *after* we've updated all the Links so they'll continue to work
     # while we're in the migration process.

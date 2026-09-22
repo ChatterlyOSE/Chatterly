@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -24,10 +25,10 @@ from pylons import request
 from pylons import tmpl_context as c
 from pylons import app_globals as g
 
-from reddit_base import RedditController
+from .reddit_base import RedditController
 from r2.controllers.oauth2 import require_oauth2_scope
 from r2.lib.utils import url_links_builder
-from reddit_base import paginated_listing
+from .reddit_base import paginated_listing
 from r2.models.wiki import (
     ContentLengthError,
     modactions,
@@ -78,7 +79,7 @@ from r2.lib.db import tdb_cassandra
 from r2.models.listing import WikiRevisionListing
 from r2.lib.pages.things import default_thing_wrapper
 from r2.lib.pages import BoringPage, CssError
-from reddit_base import base_listing
+from .reddit_base import base_listing
 from r2.models import IDBuilder, LinkListing, DefaultSR
 from r2.lib.merge import ConflictException, make_htmldiff
 from pylons.i18n import _

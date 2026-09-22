@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -128,10 +129,10 @@ def consume_link_vote_queue(qname="vote_link_q"):
         hook = hooks.get_hook('vote.validate_vote_data')
         if hook.call_until_return(msg=msg, vote_data=vote_data) is False:
             # Corrupt records in the queue. Ignore them.
-            print "Ignoring invalid vote by %s on %s %s" % (
+            print("Ignoring invalid vote by %s on %s %s" % (
                     vote_data.get('user_id', '<unknown>'),
                     vote_data.get('thing_fullname', '<unknown>'),
-                    vote_data)
+                    vote_data))
             return
 
         timer = g.stats.get_timer("link_vote_processor")
@@ -144,7 +145,7 @@ def consume_link_vote_queue(qname="vote_link_q"):
         # that the vote state and cached query are consistent
         lock_key = "vote-%s-%s" % (user._id36, link._fullname)
         with g.make_lock("voting", lock_key, timeout=5):
-            print "Processing vote by %s on %s %s" % (user, link, vote_data)
+            print("Processing vote by %s on %s %s" % (user, link, vote_data))
 
             try:
                 vote = Vote(
@@ -210,7 +211,7 @@ def consume_author_query_queue(qname="author_query_q", limit=1000):
 
         link_names = {msg.body for msg in msgs}
         links = Link._by_fullname(link_names, return_dict=False)
-        print 'Processing %r' % (links,)
+        print('Processing %r' % (links,))
 
         links_by_author_id = defaultdict(list)
         for link in links:
@@ -256,7 +257,7 @@ def consume_subreddit_query_queue(qname="subreddit_query_q", limit=1000):
 
         link_names = {msg.body for msg in msgs}
         links = Link._by_fullname(link_names, return_dict=False)
-        print 'Processing %r' % (links,)
+        print('Processing %r' % (links,))
 
         links_by_sr_id = defaultdict(list)
         for link in links:
@@ -306,7 +307,7 @@ def consume_domain_query_queue(qname="domain_query_q", limit=1000):
 
         link_names = {msg.body for msg in msgs}
         links = Link._by_fullname(link_names, return_dict=False)
-        print 'Processing %r' % (links,)
+        print('Processing %r' % (links,))
 
         links_by_domain = defaultdict(list)
         for link in links:
@@ -342,10 +343,10 @@ def consume_comment_vote_queue(qname="vote_comment_q"):
         hook = hooks.get_hook('vote.validate_vote_data')
         if hook.call_until_return(msg=msg, vote_data=vote_data) is False:
             # Corrupt records in the queue. Ignore them.
-            print "Ignoring invalid vote by %s on %s %s" % (
+            print("Ignoring invalid vote by %s on %s %s" % (
                     vote_data.get('user_id', '<unknown>'),
                     vote_data.get('thing_fullname', '<unknown>'),
-                    vote_data)
+                    vote_data))
             return
 
         timer = g.stats.get_timer("comment_vote_processor")
@@ -354,7 +355,7 @@ def consume_comment_vote_queue(qname="vote_comment_q"):
         user = Account._byID(vote_data.pop("user_id"))
         comment = Comment._by_fullname(vote_data.pop("thing_fullname"))
 
-        print "Processing vote by %s on %s %s" % (user, comment, vote_data)
+        print("Processing vote by %s on %s %s" % (user, comment, vote_data))
 
         try:
             vote = Vote(

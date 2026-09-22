@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -33,15 +34,15 @@ def generate_strings():
     # used by error pages and in the sidebar for why to create a subreddit
     for category, strings in funny_translatable_strings.iteritems():
         for string in strings:
-            print "# TRANSLATORS: Do not translate literally. Come up with a funny/relevant phrase (see the English version for ideas.) Accepts markdown formatting."
-            print "print _('" + string + "')"
+            print("# TRANSLATORS: Do not translate literally. Come up with a funny/relevant phrase (see the English version for ideas.) Accepts markdown formatting.")
+            print("print _('" + string + "')")
 
     # these are used in r2.lib.pages.trafficpages
     INTERVALS = ("hour", "day", "month")
     TYPES = ("uniques", "pageviews", "traffic", "impressions", "clicks")
     for interval in INTERVALS:
         for type in TYPES:
-            print "print _('%s by %s')" % (type, interval)
+            print("print _('%s by %s')" % (type, interval))
 
 
 if __name__ == "__main__":

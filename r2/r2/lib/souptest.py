@@ -167,12 +167,12 @@ def souptest_fragment(fragment):
         # In XML some characters are illegal even as references, thankfully
         # they're almost all control codes: (`&#x00;`, `&#x1c;`, etc.)
         if value.msg.startswith('xmlParseCharRef: invalid xmlChar '):
-            raise SoupUnsupportedEntityError, (value,), trace
+            raise SoupUnsupportedEntityError(value,).with_traceback(trace)
         undef_ent = re.match(UNDEFINED_ENTITY_RE, value.msg)
         if undef_ent:
-            raise SoupUnsupportedEntityError, (value, undef_ent.group(1)), trace
+            raise SoupUnsupportedEntityError(value, undef_ent.group(1)).with_traceback(trace)
 
-        raise SoupSyntaxError, (value,), trace
+        raise SoupSyntaxError(value,).with_traceback(trace)
 
 
 class SoupError(Exception):

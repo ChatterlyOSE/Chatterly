@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -72,7 +73,7 @@ def memoize(iden, time = 0, stale=False, timeout=30):
 def test(x, y):
     import time
     time.sleep(1)
-    print 'calculating %d + %d' % (x, y)
+    print('calculating %d + %d' % (x, y))
     if x + y == 10:
         return None
     else:

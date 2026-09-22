@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -27,8 +28,8 @@ from pylons.controllers.util import redirect
 from pylons.i18n import _
 
 from r2.lib.pages import *
-from reddit_base import set_over18_cookie, delete_over18_cookie
-from api import ApiController
+from .reddit_base import set_over18_cookie, delete_over18_cookie
+from .api import ApiController
 from r2.lib.utils import query_string, UrlParser
 from r2.lib.emailer import opt_in, opt_out
 from r2.lib.validator import *

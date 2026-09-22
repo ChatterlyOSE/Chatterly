@@ -21,6 +21,7 @@
 # Inc. All Rights Reserved.
 ###############################################################################
 
+from __future__ import print_function
 import inspect
 import sys
 import os.path
@@ -178,12 +179,12 @@ class Module(Source):
                 source = self.wrap.format(content=source, name=self.name)
 
             if self.should_compile:
-                print >> sys.stderr, "Compiling {0}...".format(self.name),
+                print("Compiling {0}...".format(self.name), end=' ', file=sys.stderr)
                 minifier.compile(source, out)
             else:
-                print >> sys.stderr, "Concatenating {0}...".format(self.name),
+                print("Concatenating {0}...".format(self.name), end=' ', file=sys.stderr)
                 out.write(source)
-        print >> sys.stderr, " done."
+        print(" done.", file=sys.stderr)
 
     def url(self, absolute=False, mangle_name=True):
         from r2.lib.template_helpers import static
@@ -259,7 +260,7 @@ class PermissionsDataSource(DataSource):
         elif isinstance(obj, basestring):
             return "r.N_(%s)" % json.dumps(obj)
         else:
-            raise ValueError, "unsupported type"
+            raise ValueError("unsupported type")
 
     def get_source(self, **kw):
         permission_set_info = {k: v.info for k, v in
@@ -380,7 +381,7 @@ class LocalizedModule(Module):
         if msgids:
             localized_appendices = localized_appendices + [StringsSource(msgids)]
 
-        print >> sys.stderr, "Creating language-specific files:"
+        print("Creating language-specific files:", file=sys.stderr)
         for lang, unused in iter_langs():
             lang_path = LocalizedModule.languagize_path(
                 self.destination_path, lang)
@@ -391,7 +392,7 @@ class LocalizedModule(Module):
                 os.unlink(lang_path)
 
             with open(lang_path, "w") as out:
-                print >> sys.stderr, "  " + lang_path
+                print("  " + lang_path, file=sys.stderr)
                 out.write(reddit_source)
                 for appendix in localized_appendices:
                     out.write(appendix.get_localized_source(lang) + ";")
@@ -778,13 +779,13 @@ def build_command(fn):
 @build_command
 def enumerate_modules():
     for name, m in module.iteritems():
-        print name
+        print(name)
 
 
 @build_command
 def dependencies(name):
     for dep in module[name].dependencies:
-        print dep
+        print(dep)
 
 
 @build_command
@@ -796,7 +797,7 @@ def enumerate_outputs(*names):
 
     for m in modules:
         for output in m.outputs:
-            print output
+            print(output)
 
 
 @build_command

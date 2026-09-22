@@ -269,7 +269,7 @@ class OAuth2Scope:
     # Special scope, granted implicitly to clients with app_type == "script"
     FULL_ACCESS = "*"
 
-    class InsufficientScopeError(StandardError):
+    class InsufficientScopeError(Exception):
         pass
 
     def __init__(self, scope_str=None, subreddits=None, scopes=None):

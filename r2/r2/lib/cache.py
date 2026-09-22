@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -347,32 +348,32 @@ class LocalCache(dict, CacheUtils):
         return not was
 
     def delete(self, key):
-        if self.has_key(key):
+        if key in self:
             del self[key]
 
     def delete_multi(self, keys):
         for key in keys:
-            if self.has_key(key):
+            if key in self:
                 del self[key]
 
     def incr(self, key, delta=1, time=0):
-        if self.has_key(key):
+        if key in self:
             self[key] = int(self[key]) + delta
 
     def decr(self, key, amt=1):
-        if self.has_key(key):
+        if key in self:
             self[key] = int(self[key]) - amt
 
     def append(self, key, val, time = 0):
-        if self.has_key(key):
+        if key in self:
             self[key] = str(self[key]) + val
 
     def prepend(self, key, val, time = 0):
-        if self.has_key(key):
+        if key in self:
             self[key] = val + str(self[key])
 
     def replace(self, key, val, time = 0):
-        if self.has_key(key):
+        if key in self:
             self[key] = val
 
     def flush_all(self):
@@ -727,10 +728,10 @@ class CacheChain(CacheUtils, local):
                             self.caches)
 
     def debug(self, key):
-        print "Looking up [%r]" % key
+        print("Looking up [%r]" % key)
         for i, c in enumerate(self.caches):
-            print "[%d] %10s has value [%r]" % (i, c.__class__.__name__,
-                                                c.get(key))
+            print("[%d] %10s has value [%r]" % (i, c.__class__.__name__,
+                                                c.get(key)))
 
     def reset(self):
         # the first item in a cache chain is a LocalCache

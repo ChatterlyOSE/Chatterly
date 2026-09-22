@@ -6,6 +6,7 @@ by Cassandra's sstableloader.
 The Cassandra jars and configuration must be on the classpath for this
 to function properly.
 """
+from __future__ import print_function
 
 import time
 import os
@@ -94,8 +95,8 @@ def convert_to_sstables(input_files, column_family,
                                          timestamp, ttl, expirationTimestampMS)
 
             if verbose and fileinput.lineno() % 10000 == 0:
-                print "%d items processed (%s)" % (fileinput.lineno(),
-                                                   fileinput.filename())
+                print("%d items processed (%s)" % (fileinput.lineno(),
+                                                   fileinput.filename()))
     except:
         # it's common that whatever causes us to fail also cases the finally
         # clause below to fail, which masks the original exception

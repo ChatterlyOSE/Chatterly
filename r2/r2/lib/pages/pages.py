@@ -21,6 +21,7 @@
 # Inc. All Rights Reserved.
 ###############################################################################
 
+from __future__ import absolute_import
 from collections import Counter, OrderedDict
 
 from r2.config import feature
@@ -171,7 +172,7 @@ from urlparse import urlparse
 
 from r2.lib.ip_events import ips_by_account_id
 
-from things import wrap_links, wrap_things, default_thing_wrapper
+from .things import wrap_links, wrap_things, default_thing_wrapper
 
 datefmt = _force_utf8(_('%d %b %Y'))
 
@@ -1351,7 +1352,7 @@ class PrefDeactivate(Templated):
 class MessagePage(Reddit):
     """Defines the content for /message/*"""
     def __init__(self, *a, **kw):
-        if not kw.has_key('show_sidebar'):
+        if 'show_sidebar' not in kw:
             kw['show_sidebar'] = False
 
         source = kw.pop("source", None)
@@ -1884,7 +1885,7 @@ class LinkInfoPage(Reddit):
             toolbar.insert(0, PageNameNav('subreddit'))
 
         if c.user_is_admin:
-            from admin_pages import AdminLinkMenu
+            from .admin_pages import AdminLinkMenu
             toolbar.append(AdminLinkMenu(self.link))
 
         return toolbar
@@ -1942,7 +1943,7 @@ class LinkInfoPage(Reddit):
 
         if not (self.link.promoted and not c.user_is_sponsor):
             if c.user_is_admin:
-                from admin_pages import AdminLinkInfoBar
+                from .admin_pages import AdminLinkInfoBar
                 rb.insert(1, AdminLinkInfoBar(a=self.link))
             else:
                 rb.insert(1, LinkInfoBar(a=self.link))
@@ -2340,7 +2341,7 @@ class ProfilePage(Reddit):
                    NavMenu(main_buttons, base_path = path, type="tabmenu")]
 
         if c.user_is_admin:
-            from admin_pages import AdminProfileMenu
+            from .admin_pages import AdminProfileMenu
             toolbar.append(AdminProfileMenu(path))
 
         return toolbar
@@ -2392,12 +2393,12 @@ class ProfilePage(Reddit):
 
         if c.user_is_admin:
             from r2.lib.pages.admin_pages import AdminNotesSidebar
-            from admin_pages import AdminSidebar
+            from .admin_pages import AdminSidebar
 
             rb.push(AdminSidebar(self.user))
             rb.push(AdminNotesSidebar('user', self.user.name))
         elif c.user_is_sponsor:
-            from admin_pages import SponsorSidebar
+            from .admin_pages import SponsorSidebar
             rb.push(SponsorSidebar(self.user))
 
         mod_sr_ids = Subreddit.reverse_moderator_ids(self.user)
@@ -4318,7 +4319,7 @@ class DetailsPage(LinkInfoPage):
     extension_handling= False
 
     def __init__(self, thing, *args, **kwargs):
-        from admin_pages import Details
+        from .admin_pages import Details
         after = kwargs.pop('after', None)
         reverse = kwargs.pop('reverse', False)
         count = kwargs.pop('count', None)
@@ -4349,7 +4350,7 @@ class DetailsPage(LinkInfoPage):
         rb = LinkInfoPage.rightbox(self)
 
         if c.user_is_admin:
-            from admin_pages import AdminDetailsBar
+            from .admin_pages import AdminDetailsBar
             rb.append(AdminDetailsBar(from_page='details'))
 
         return rb

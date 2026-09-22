@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -23,8 +24,8 @@
 import calendar
 from collections import defaultdict
 
-from utils import to36, tup, iters
-from wrapped import Wrapped, StringTemplate, CacheStub, Templated
+from .utils import to36, tup, iters
+from .wrapped import Wrapped, StringTemplate, CacheStub, Templated
 from mako.template import Template
 from r2.config import feature
 from r2.config.extensions import get_api_subtype
@@ -68,7 +69,7 @@ class ObjectTemplate(StringTemplate):
                 return dict((k, _update(v)) for k, v in obj.iteritems())
             elif isinstance(obj, (list, tuple)):
                 return map(_update, obj)
-            elif isinstance(obj, CacheStub) and kw.has_key(obj.name):
+            elif isinstance(obj, CacheStub) and obj.name in kw:
                 return kw[obj.name]
             else:
                 return obj

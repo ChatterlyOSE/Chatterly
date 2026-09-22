@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -1754,7 +1755,7 @@ def run_commentstree(qname="commentstree_q", limit=400):
     def _run_commentstree(msgs, chan):
         comments = Comment._by_fullname([msg.body for msg in msgs],
                                         data = True, return_dict = False)
-        print 'Processing %r' % (comments,)
+        print('Processing %r' % (comments,))
 
         if comments:
             add_comments(comments)

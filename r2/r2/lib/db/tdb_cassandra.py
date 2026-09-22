@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -653,7 +654,7 @@ class ThingBase(object):
             try:
                 return self.__dict__[attr]
             except KeyError:
-                raise AttributeError, attr
+                raise AttributeError(attr)
 
         if attr in self._deletes:
             raise AttributeError("%r has no %r because you deleted it", (self, attr))
@@ -783,7 +784,7 @@ class ThingBase(object):
             if not self._committed:
                 # normally we'd log this with g.log or something, but we can't
                 # guarantee that the thread destructing us has access to g
-                print "Warning: discarding uncomitted %r; this is usually a bug" % (self,)
+                print("Warning: discarding uncomitted %r; this is usually a bug" % (self,))
             elif self._dirty:
                 print ("Warning: discarding dirty %r; this is usually a bug (_dirties=%r, _deletes=%r)"
                        % (self,self._dirties,self._deletes))
@@ -1133,7 +1134,7 @@ class MultiColumnQuery(object):
         for q in self._queries:
             try:
                 gen = q.__iter__(yield_column_names=True)
-                column_name, item = gen.next()
+                column_name, item = next(gen)
                 top_items.append((column_name, item, gen))
             except StopIteration:
                 pass
@@ -1147,7 +1148,7 @@ class MultiColumnQuery(object):
 
             # Try to get a new item from the query that gave us the current one
             try:
-                column_name, item = gen.next()
+                column_name, item = next(gen)
                 top_items.append((column_name, item, gen)) # if multiple queues have the same item value the sort is somewhat undefined
                 top_items.sort(key=sort_key)
             except StopIteration:
@@ -1185,9 +1186,9 @@ class Query(object):
         q.after = q.limit = None
 
         for row in q:
-            print row
+            print(row)
             for col, val in row._t.iteritems():
-                print '\t%s: %r' % (col, val)
+                print('\t%s: %r' % (col, val))
 
     def __iter__(self):
         # n.b.: we aren't caching objects that we find this way in the

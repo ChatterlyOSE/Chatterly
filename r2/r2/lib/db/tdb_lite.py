@@ -71,7 +71,7 @@ class tdb_lite(object):
 
     def db2py(self, val, kind):
         if kind == 'bool':
-            val = True if val is 't' else False
+            val = True if val == 't' else False
         elif kind == 'num':
             try:
                 val = int(val)

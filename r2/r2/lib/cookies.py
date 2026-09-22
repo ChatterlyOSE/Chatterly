@@ -30,7 +30,7 @@ from r2.lib import utils
 from r2.models import COOKIE_TIMESTAMP_FORMAT
 
 NEVER = datetime(2037, 12, 31, 23, 59, 59)
-DELETE = datetime(1970, 01, 01, 0, 0, 1)
+DELETE = datetime(1970, 0o1, 0o1, 0, 0, 1)
 
 
 class Cookies(dict):

@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -53,13 +54,13 @@ try:
     from r2.lib.base import abort
     from r2.models.link import Link
     from r2.models.subreddit import DefaultSR, Subreddit
-except Exception, e:
+except Exception as e:
     if g.debug:
         # if debug mode, let the error filter up to pylons to be handled
         raise e
     else:
         # production environment: protect the code integrity!
-        print "HuffmanEncodingError: make sure your python compiles before deploying, stupid!"
+        print("HuffmanEncodingError: make sure your python compiles before deploying, stupid!")
         # kill this app
         os._exit(1)
 
@@ -209,7 +210,7 @@ class ErrorController(RedditController):
             if srname:
                 c.site = Subreddit._by_name(srname)
 
-            if request.GET.has_key('allow_framing'):
+            if 'allow_framing' in request.GET:
                 c.allow_framing = bool(request.GET['allow_framing'] == '1')
 
             if (error_name == 'IN_TIMEOUT' and
@@ -277,7 +278,7 @@ def handle_awful_failure(fail_text):
         import sys
         s = sys.exc_info()
         # reraise the original error with the original stack trace
-        raise s[1], None, s[2]
+        raise s[1].with_traceback(s[2])
     try:
         # log the traceback, and flag the "path" as the error location
         import traceback

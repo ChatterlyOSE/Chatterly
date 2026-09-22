@@ -21,10 +21,11 @@
 # Inc. All Rights Reserved.
 ###############################################################################
 
+from __future__ import absolute_import
 import urllib
 
-from oauth2 import require_oauth2_scope
-from reddit_base import RedditController, base_listing, paginated_listing
+from .oauth2 import require_oauth2_scope
+from .reddit_base import RedditController, base_listing, paginated_listing
 
 from r2.models import *
 from r2.models.query_cache import CachedQuery, MergedCachedQuery
@@ -57,7 +58,7 @@ from r2.lib.memoize import memoize
 from r2.lib.validator import *
 import socket
 
-from api_docs import api_doc, api_section
+from .api_docs import api_doc, api_section
 
 from pylons import app_globals as g
 from pylons.i18n import _

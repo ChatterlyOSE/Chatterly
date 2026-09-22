@@ -21,6 +21,7 @@
 ###############################################################################
 
 from __future__ import division
+from __future__ import print_function
 
 import collections
 import HTMLParser
@@ -128,7 +129,7 @@ def fetch_listing(path, limit=1000, batch_size=100):
         if after:
             params["after"] = after
 
-        print "> {}-{}".format(count, count+batch_size)
+        print("> {}-{}".format(count, count+batch_size))
         response = session.get(base_url, params=params)
         response.raise_for_status()
 
@@ -154,9 +155,9 @@ class Modeler(object):
         """Return a model of links and comments in a given subreddit."""
 
         subreddit_path = "/r/{}".format(subreddit_name)
-        print ">>>", subreddit_path
+        print(">>>", subreddit_path)
 
-        print ">> Links"
+        print(">> Links")
         titles = TextGenerator(order=5)
         selfposts = TextGenerator(order=8)
         link_count = self_count = 0
@@ -172,7 +173,7 @@ class Modeler(object):
             link_count += 1
         self_frequency = self_count / link_count
 
-        print ">> Comments"
+        print(">> Comments")
         comments = TextGenerator(order=8)
         for comment in fetch_listing(subreddit_path + "/comments"):
             self.usernames.add_sample(comment["author"])
@@ -230,10 +231,10 @@ def ensure_account(name):
     """Look up or register an account and return it."""
     try:
         account = Account._by_name(name)
-        print ">> found /u/{}".format(name)
+        print(">> found /u/{}".format(name))
         return account
     except NotFound:
-        print ">> registering /u/{}".format(name)
+        print(">> registering /u/{}".format(name))
         return register(name, "password", "127.0.0.1")
 
 
@@ -241,10 +242,10 @@ def ensure_subreddit(name, author):
     """Look up or create a subreddit and return it."""
     try:
         sr = Subreddit._by_name(name)
-        print ">> found /r/{}".format(name)
+        print(">> found /r/{}".format(name))
         return sr
     except NotFound:
-        print ">> creating /r/{}".format(name)
+        print(">> creating /r/{}".format(name))
         sr = Subreddit._new(
             name=name,
             title="/r/{}".format(name),
@@ -259,7 +260,7 @@ def ensure_subreddit(name, author):
 def inject_test_data(num_links=25, num_comments=25, num_votes=5):
     """Flood your reddit install with test data based on reddit.com."""
 
-    print ">>>> Ensuring configured objects exist"
+    print(">>>> Ensuring configured objects exist")
     system_user = ensure_account(g.system_user)
     ensure_account(g.automoderator_account)
     ensure_subreddit(g.default_sr, system_user)
@@ -267,10 +268,10 @@ def inject_test_data(num_links=25, num_comments=25, num_votes=5):
     ensure_subreddit(g.beta_sr, system_user)
     ensure_subreddit(g.promo_sr_name, system_user)
 
-    print
-    print
+    print()
+    print()
 
-    print ">>>> Fetching real data from reddit.com"
+    print(">>>> Fetching real data from reddit.com")
     modeler = Modeler()
     subreddits = [
         modeler.model_subreddit("pics"),
@@ -286,18 +287,18 @@ def inject_test_data(num_links=25, num_comments=25, num_votes=5):
         },
     }
 
-    print
-    print
+    print()
+    print()
 
-    print ">>>> Generating test data"
-    print ">>> Accounts"
+    print(">>>> Generating test data")
+    print(">>> Accounts")
     account_query = Account._query(sort="_date", limit=500, data=True)
     accounts = [a for a in account_query if a.name != g.system_user]
     accounts.extend(
         ensure_account(modeler.generate_username())
         for i in xrange(50 - len(accounts)))
 
-    print ">>> Content"
+    print(">>> Content")
     things = []
     for sr_model in subreddits:
         sr_author = random.choice(accounts)

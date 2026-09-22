@@ -21,6 +21,7 @@
 # Inc. All Rights Reserved.
 ###############################################################################
 """Tools for evaluating promoted link distribution."""
+from __future__ import print_function
 
 from collections import defaultdict
 import datetime
@@ -157,7 +158,7 @@ def compare_pageviews(daysago=0, verbose=False):
     for camp, link, bid in scheduled:
         if link not in actual_links:
             if verbose:
-                print '%s not found in actual, skipping' % link
+                print('%s not found in actual, skipping' % link)
             continue
 
         bid_by_link[link] += bid
@@ -167,7 +168,7 @@ def compare_pageviews(daysago=0, verbose=False):
         # not ideal: links shouldn't be here
         if link not in scheduled_links:
             if verbose:
-                print '%s not found in schedule, skipping' % link
+                print('%s not found in schedule, skipping' % link)
             continue
 
         pageviews_by_link[link] += pageviews
@@ -181,19 +182,19 @@ def compare_pageviews(daysago=0, verbose=False):
         difference = (realized - expected) / expected
         errors.append(difference)
         if verbose:
-            print '%s - %s - %s - %s' % (link, expected, realized, difference)
+            print('%s - %s - %s - %s' % (link, expected, realized, difference))
 
     mean_error, min_error, max_error, stdev_error = error_statistics(errors)
 
-    print '%s' % date
+    print('%s' % date)
     print ('error %s max, %s min, %s +- %s' %
            (max_error, min_error, mean_error, stdev_error))
-    print 'total bid %s' % total_bid
+    print('total bid %s' % total_bid)
     print ('pageviews for promoted links targeted only to frontpage %s' %
            total_pageviews)
     print ('frontpage pageviews for all promoted links %s' %
            sum(pageviews_by_camp.values()))
-    print 'promoted eligible pageviews %s' % get_frontpage_pageviews(date)
+    print('promoted eligible pageviews %s' % get_frontpage_pageviews(date))
 
 
 PROMOS = [('promo_%s' % i, i + 1) for i in xrange(100)]

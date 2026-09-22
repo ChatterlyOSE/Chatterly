@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -140,14 +141,14 @@ def _add_step(emr_connection, step, jobflow_name, **jobflow_kw):
         if cluster.name == jobflow_name:
             jobflowid = cluster.id
             emr_connection.add_jobflow_steps(jobflowid, step)
-            print 'Added %s to jobflow %s' % (step.name, jobflowid)
+            print('Added %s to jobflow %s' % (step.name, jobflowid))
             break
     else:
         base = TrafficBase(emr_connection, jobflow_name, steps=[step],
                            **jobflow_kw)
         base.run()
         jobflowid = base.jobflowid
-        print 'Added %s to new jobflow %s' % (step.name, jobflowid)
+        print('Added %s to new jobflow %s' % (step.name, jobflowid))
 
     return jobflowid
 
@@ -162,7 +163,7 @@ def _wait_for_step(emr_connection, step, jobflowid, sleeptime):
         sleep(sleeptime)
         step_state = get_step_state(emr_connection, jobflowid, step.name)
     end = time()
-    print '%s took %0.2fs (exit: %s)' % (step.name, end - start, step_state)
+    print('%s took %0.2fs (exit: %s)' % (step.name, end - start, step_state))
     return step_state
 
 

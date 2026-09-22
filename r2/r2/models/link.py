@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -42,20 +43,20 @@ from r2.lib.utils import (
     tup,
     UrlParser,
 )
-from account import (
+from .account import (
     Account,
     BlockedSubredditsByAccount,
     DeletedUser,
     SubredditParticipationByAccount,
 )
-from subreddit import (
+from .subreddit import (
     DefaultSR,
     DomainSR,
     FakeSubreddit,
     Subreddit,
     SubredditsActiveForFrontPage,
 )
-from printable import Printable
+from .printable import Printable
 from r2.config import extensions
 from r2.lib.memoize import memoize
 from r2.lib.wrapped import Wrapped
@@ -412,11 +413,11 @@ class Link(Thing, Printable):
 
         if style == "htmllite":
              s.extend([
-                 request.GET.has_key('twocolumn'),
+                 'twocolumn' in request.GET,
                  c.link_target,
             ])
         elif style == "xml":
-            s.append(request.GET.has_key("nothumbs"))
+            s.append("nothumbs" in request.GET)
         elif style == "compact":
             s.append(c.permalink_page)
 
@@ -2488,7 +2489,7 @@ class Message(Thing, Printable):
 
     @property
     def subreddit_slow(self):
-        from subreddit import Subreddit
+        from .subreddit import Subreddit
         if self.sr_id:
             return Subreddit._byID(self.sr_id, data=True)
 

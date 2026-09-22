@@ -105,7 +105,7 @@ class JsonResponse(object):
 
         if kw:
             for d in data:
-                if d.has_key('data'):
+                if 'data' in d:
                     d['data'].update(kw)
 
         self._data['things'] = data

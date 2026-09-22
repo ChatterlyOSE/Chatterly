@@ -134,15 +134,15 @@ class Sessionized(object):
         else:
             cols = filter(filter_fn, cls.__table__.c)
         for k, v in zip(cols, a):
-            if not kw.has_key(k.name):
+            if k.name not in kw:
                 args.append((k, cls._make_storable(v)))
             else:
-                raise TypeError,\
-                      "got multiple arguments for '%s'" % k.name
+                raise TypeError(\
+                      "got multiple arguments for '%s'" % k.name)
 
         cols = dict((x.name, x) for x in cls.__table__.c)
         for k, v in kw.iteritems():
-            if cols.has_key(k):
+            if k in cols:
                 args.append((cols[k], cls._make_storable(v)))
         return args
 
@@ -177,9 +177,9 @@ class Sessionized(object):
             if not res:
                 raise NoResultFound
         except NoResultFound: 
-            raise NotFound, "%s with %s" % \
+            raise NotFound("%s with %s" % \
                 (cls.__name__,
-                 ",".join("%s=%s" % x for x in args))
+                 ",".join("%s=%s" % x for x in args)))
         return res
 
     @classmethod

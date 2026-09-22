@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -80,8 +81,8 @@ def join_things(fields, deleted=False, spam=True):
     mr_reduce(process)
     # Print to stderr to avoid getting this caught up in the pipe of
     # compute_time_listings.
-    print >> sys.stderr, '%s items processed, %s skipped' % (
-                         counters['processed'], counters['skipped'])
+    print('%s items processed, %s skipped' % (
+                         counters['processed'], counters['skipped']), file=sys.stderr)
 
 class Mapper(object):
     def __init__(self):
@@ -117,9 +118,9 @@ def test():
     from r2.lib.mr_tools._mr_tools import keyiter
 
     for key, vals in keyiter():
-        print key, vals
+        print(key, vals)
         for val in vals:
-            print '\t', val
+            print('\t', val)
 
 class UpperMapper(Mapper):
     def process(self, values):

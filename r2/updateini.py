@@ -21,6 +21,7 @@
 # Inc. All Rights Reserved.
 ###############################################################################
 
+from __future__ import print_function
 from ConfigParser import MissingSectionHeaderError
 from StringIO import StringIO
 import sys
@@ -49,13 +50,13 @@ def main(source_ini, update_ini):
     except MissingSectionHeaderError:
         updates = "[DEFAULT]\n" + updates
         parser.readfp(StringIO(updates))
-    print HEADER
+    print(HEADER)
     parser.write(sys.stdout)
 
 if __name__ == '__main__':
     args = sys.argv
     if len(args) != 3:
-        print 'usage: %s [source] [update]' % sys.argv[0]
+        print('usage: %s [source] [update]' % sys.argv[0])
         sys.exit(1)
     else:
         main(sys.argv[1], sys.argv[2])

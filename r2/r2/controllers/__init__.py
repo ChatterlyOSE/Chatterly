@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -39,66 +40,66 @@ def add_controller(controller):
     return controller
 
 def load_controllers():
-    from listingcontroller import ListingController
-    from listingcontroller import HotController
-    from listingcontroller import NewController
-    from listingcontroller import RisingController
-    from listingcontroller import BrowseController
-    from listingcontroller import AdsController
-    from listingcontroller import UserListListingController
-    from listingcontroller import MessageController
-    from listingcontroller import RedditsController
-    from listingcontroller import ByIDController
-    from listingcontroller import RandomrisingController
-    from listingcontroller import UserController
-    from listingcontroller import CommentsController
-    from listingcontroller import GildedController
+    from .listingcontroller import ListingController
+    from .listingcontroller import HotController
+    from .listingcontroller import NewController
+    from .listingcontroller import RisingController
+    from .listingcontroller import BrowseController
+    from .listingcontroller import AdsController
+    from .listingcontroller import UserListListingController
+    from .listingcontroller import MessageController
+    from .listingcontroller import RedditsController
+    from .listingcontroller import ByIDController
+    from .listingcontroller import RandomrisingController
+    from .listingcontroller import UserController
+    from .listingcontroller import CommentsController
+    from .listingcontroller import GildedController
 
-    from listingcontroller import MyredditsController
+    from .listingcontroller import MyredditsController
 
-    from admin import AdminToolController
-    from front import FormsController
-    from front import FrontController
-    from health import HealthController
-    from buttons import ButtonsController
-    from captcha import CaptchaController
-    from embed import EmbedController
-    from error import ErrorController
-    from post import PostController
-    from toolbar import ToolbarController
-    from awards import AwardsController
-    from newsletter import NewsletterController
-    from googletagmanager import GoogleTagManagerController
-    from promotecontroller import PromoteController
-    from promotecontroller import SponsorController
-    from promotecontroller import PromoteApiController
-    from promotecontroller import PromoteListingController
-    from promotecontroller import SponsorListingController
-    from mediaembed import MediaembedController
-    from mediaembed import AdController
-    from oembed import OEmbedController
-    from policies import PoliciesController
-    from web import WebLogController
+    from .admin import AdminToolController
+    from .front import FormsController
+    from .front import FrontController
+    from .health import HealthController
+    from .buttons import ButtonsController
+    from .captcha import CaptchaController
+    from .embed import EmbedController
+    from .error import ErrorController
+    from .post import PostController
+    from .toolbar import ToolbarController
+    from .awards import AwardsController
+    from .newsletter import NewsletterController
+    from .googletagmanager import GoogleTagManagerController
+    from .promotecontroller import PromoteController
+    from .promotecontroller import SponsorController
+    from .promotecontroller import PromoteApiController
+    from .promotecontroller import PromoteListingController
+    from .promotecontroller import SponsorListingController
+    from .mediaembed import MediaembedController
+    from .mediaembed import AdController
+    from .oembed import OEmbedController
+    from .policies import PoliciesController
+    from .web import WebLogController
 
-    from wiki import WikiController
-    from wiki import WikiApiController
+    from .wiki import WikiController
+    from .wiki import WikiApiController
 
-    from api import ApiController
-    from api import ApiminimalController
-    from api_docs import ApidocsController
-    from apiv1.user import APIv1UserController
-    from apiv1.login import APIv1LoginController
-    from apiv1.gold import APIv1GoldController
-    from apiv1.scopes import APIv1ScopesController
-    from multi import MultiApiController
-    from oauth2 import OAuth2FrontendController
-    from oauth2 import OAuth2AccessController
-    from redirect import RedirectController
-    from robots import RobotsController
-    from ipn import IpnController
-    from ipn import StripeController
-    from ipn import CoinbaseController
-    from ipn import RedditGiftsController
-    from mailgun import MailgunWebhookController
+    from .api import ApiController
+    from .api import ApiminimalController
+    from .api_docs import ApidocsController
+    from .apiv1.user import APIv1UserController
+    from .apiv1.login import APIv1LoginController
+    from .apiv1.gold import APIv1GoldController
+    from .apiv1.scopes import APIv1ScopesController
+    from .multi import MultiApiController
+    from .oauth2 import OAuth2FrontendController
+    from .oauth2 import OAuth2AccessController
+    from .redirect import RedirectController
+    from .robots import RobotsController
+    from .ipn import IpnController
+    from .ipn import StripeController
+    from .ipn import CoinbaseController
+    from .ipn import RedditGiftsController
+    from .mailgun import MailgunWebhookController
 
     _reddit_controllers.update((name.lower(), obj) for name, obj in locals().iteritems())

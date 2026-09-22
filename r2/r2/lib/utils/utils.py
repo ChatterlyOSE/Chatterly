@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -91,8 +92,8 @@ class Storage(dict):
     def __getattr__(self, key):
         try:
             return self[key]
-        except KeyError, k:
-            raise AttributeError, k
+        except KeyError as k:
+            raise AttributeError(k)
 
     def __setattr__(self, key, value):
         self[key] = value
@@ -100,8 +101,8 @@ class Storage(dict):
     def __delattr__(self, key):
         try:
             del self[key]
-        except KeyError, k:
-            raise AttributeError, k
+        except KeyError as k:
+            raise AttributeError(k)
 
     def __repr__(self):
         return '<Storage ' + dict.__repr__(self) + '>'
@@ -462,7 +463,7 @@ def query_string(dict):
 # Spaces only seem to cause parsing differences when occurring directly before
 # the scheme
 URL_PROBLEMATIC_RE = re.compile(
-    ur'(\A\x20|[\x00-\x19\xA0\u1680\u180E\u2000-\u2029\u205f\u3000\\])',
+    r'(\A\x20|[\x00-\x19\xA0\u1680\u180E\u2000-\u2029\u205f\u3000\\])',
     re.UNICODE
 )
 
@@ -1160,17 +1161,17 @@ def fix_if_broken(thing, delete = True, fudge_links = False):
             if isinstance(thing, Link) and fudge_links:
                 if attr == "sr_id":
                     thing.sr_id = 6
-                    print "Fudging %s.sr_id to %d" % (thing._fullname,
-                                                      thing.sr_id)
+                    print("Fudging %s.sr_id to %d" % (thing._fullname,
+                                                      thing.sr_id))
                 elif attr == "author_id":
                     thing.author_id = 8244672
-                    print "Fudging %s.author_id to %d" % (thing._fullname,
-                                                          thing.author_id)
+                    print("Fudging %s.author_id to %d" % (thing._fullname,
+                                                          thing.author_id))
                 else:
-                    print "Got weird attr %s; can't fudge" % attr
+                    print("Got weird attr %s; can't fudge" % attr)
 
             if not thing._deleted:
-                print "%s is missing %r, deleting" % (thing._fullname, attr)
+                print("%s is missing %r, deleting" % (thing._fullname, attr))
                 thing._deleted = True
 
             thing._commit()
@@ -1211,7 +1212,7 @@ def timeit(func):
 def lineno():
     "Returns the current line number in our program."
     import inspect
-    print "%s\t%s" % (datetime.now(),inspect.currentframe().f_back.f_lineno)
+    print("%s\t%s" % (datetime.now(),inspect.currentframe().f_back.f_lineno))
 
 def IteratorFilter(iterator, fn):
     for x in iterator:
@@ -1374,7 +1375,7 @@ def in_chunks(it, size=25):
     it = iter(it)
     try:
         while True:
-            chunk.append(it.next())
+            chunk.append(next(it))
             if len(chunk) >= size:
                 yield chunk
                 chunk = []

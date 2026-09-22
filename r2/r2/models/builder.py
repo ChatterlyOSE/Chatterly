@@ -1634,7 +1634,7 @@ class MessageBuilder(Builder):
         Builder.__init__(self, **kw)
 
     def get_tree(self):
-        raise NotImplementedError, "get_tree"
+        raise NotImplementedError("get_tree")
 
     def valid_after(self, after):
         w = self.convert_items((after,))[0]

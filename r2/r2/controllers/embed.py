@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -47,10 +48,10 @@ def renderurl_cached(path):
 
     try:
         return fp, proxyurl(u)
-    except HTTPError, e:
+    except HTTPError as e:
         if e.code != 404:
-            print "error %s" % e.code
-            print e.fp.read()
+            print("error %s" % e.code)
+            print(e.fp.read())
         return (None, None)
 
 class EmbedController(RedditController):
@@ -63,7 +64,7 @@ class EmbedController(RedditController):
 
         # Replace all links to "/wiki/help/..." with "/help/..."
         for link in output.findAll('a'):
-            if link.has_key('href') and link['href'].startswith("/wiki/help"):
+            if 'href' in link and link['href'].startswith("/wiki/help"):
                 link['href'] = link['href'][5:]
 
         output = SC_OFF + unicode(output) + SC_ON

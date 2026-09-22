@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -93,10 +94,10 @@ class PluginLoader(object):
             entry_points = []
             for name in plugin_names:
                 try:
-                    entry_point = self.available_plugins(name).next()
+                    entry_point = next(self.available_plugins(name))
                 except StopIteration:
-                    print >> sys.stderr, ("Unable to locate plugin "
-                                          "%s. Skipping." % name)
+                    print(("Unable to locate plugin "
+                                          "%s. Skipping." % name), file=sys.stderr)
                     continue
                 else:
                     entry_points.append(entry_point)
@@ -110,8 +111,8 @@ class PluginLoader(object):
                     # if this plugin was specifically requested, fail.
                     raise e
                 else:
-                    print >> sys.stderr, ("Error loading plugin %s (%s)."
-                                          " Skipping." % (entry_point.name, e))
+                    print(("Error loading plugin %s (%s)."
+                                          " Skipping." % (entry_point.name, e)), file=sys.stderr)
                     continue
             self.plugins[entry_point.name] = plugin_cls(entry_point)
 

@@ -23,6 +23,7 @@
 """
 One-time use functions to migrate from one reddit-version to another
 """
+from __future__ import print_function
 from r2.lib.promote import *
 
 def add_allow_top_to_srs():
@@ -80,7 +81,7 @@ def recompute_unread(min_date = None):
     accounts_m = load_accounts(Inbox.rel(Account, Message))
     for i, a in enumerate(accounts_m):
         a = Account._byID(a)
-        print "%s / %s : %s" % (i, len(accounts_m), a)
+        print("%s / %s : %s" % (i, len(accounts_m), a))
         queries.get_unread_messages(a).update()
         queries.get_unread_comments(a).update()
         queries.get_unread_selfreply(a).update()
@@ -88,7 +89,7 @@ def recompute_unread(min_date = None):
     accounts = load_accounts(Inbox.rel(Account, Comment)) - accounts_m
     for i, a in enumerate(accounts):
         a = Account._byID(a)
-        print "%s / %s : %s" % (i, len(accounts), a)
+        print("%s / %s : %s" % (i, len(accounts), a))
         queries.get_unread_comments(a).update()
         queries.get_unread_selfreply(a).update()
 
@@ -181,7 +182,7 @@ def pushup_permacache(verbosity=1000):
     for keys in in_chunks(gen_keys(), verbosity):
         g.reset_caches()
         done += len(keys)
-        print 'Done %d: %r' % (done, keys[-1])
+        print('Done %d: %r' % (done, keys[-1]))
         populate(keys)
 
 
@@ -255,7 +256,7 @@ def populate_spam_filtered():
 
     q = Subreddit._query(sort = asc('_date'))
     for sr in fetch_things2(q):
-        print 'Processing %s' % sr.name
+        print('Processing %s' % sr.name)
         links = Thing._by_fullname(get_spam_links(sr), data=True,
                                    return_dict=False)
         comments = Thing._by_fullname(get_spam_comments(sr), data=True,

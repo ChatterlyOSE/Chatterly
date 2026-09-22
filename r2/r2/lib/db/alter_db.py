@@ -1,3 +1,5 @@
+from __future__ import print_function
+from __future__ import absolute_import
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -20,7 +22,7 @@
 # Inc. All Rights Reserved.
 ###############################################################################
 
-import tdb_sql
+from . import tdb_sql
 import sqlalchemy as sa
 
 def thing_tables():
@@ -53,12 +55,12 @@ def exec_all(command, data=False, rel = False, print_only = False):
         #print tt
         engine = tt.bind
         if print_only:
-            print command % dict(type=tt.name)
+            print(command % dict(type=tt.name))
         else:
             try:
                 engine.execute(command % dict(type=tt.name))
             except:
-                print "FAILED!"
+                print("FAILED!")
 
 "alter table %(type)s add primary key (thing_id, key)"
 "drop index idx_thing_id_%(type)s"

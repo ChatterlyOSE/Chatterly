@@ -1,3 +1,4 @@
+from __future__ import print_function
 
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
@@ -40,14 +41,14 @@ for sr in fetch_things2(all_subreddits):
     if not images:
         continue
 
-    print 'Processing /r/%s (id36: %s)' % (sr.name, sr._id36)
+    print('Processing /r/%s (id36: %s)' % (sr.name, sr._id36))
 
     # upgrade old-style image ids to urls
     for name, image_url in images.items():
         if not isinstance(image_url, int):
             continue
 
-        print "  upgrading image %r" % image_url
+        print("  upgrading image %r" % image_url)
         url = "http://%s/%s_%d.png" % (g.s3_old_thumb_bucket,
                                        sr._fullname, image_url)
         image_data = urllib2.urlopen(url).read()

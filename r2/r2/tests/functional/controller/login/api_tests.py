@@ -1,3 +1,4 @@
+from __future__ import absolute_import
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -20,7 +21,7 @@
 # Inc. All Rights Reserved.
 ###############################################################################
 from r2.tests import RedditControllerTestCase
-from common import LoginRegBase
+from .common import LoginRegBase
 
 
 class LoginRegTests(LoginRegBase, RedditControllerTestCase):

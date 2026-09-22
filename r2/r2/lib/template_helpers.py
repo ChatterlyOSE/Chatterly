@@ -1,3 +1,5 @@
+from __future__ import print_function
+from __future__ import absolute_import
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -26,7 +28,7 @@ import urllib
 
 from r2.config import feature
 from r2.models import *
-from filters import (
+from .filters import (
     _force_unicode,
     _force_utf8,
     conditional_websafe,
@@ -423,7 +425,7 @@ def replace_render(listing, item, render_func):
             rv = unsafe(res)
             if g.debug:
                 for leftover in re.findall('<\$>(.+?)(?:<|$)', rv):
-                    print "replace_render didn't replace %s" % leftover
+                    print("replace_render didn't replace %s" % leftover)
 
             return rv
 

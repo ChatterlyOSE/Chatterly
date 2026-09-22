@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -81,8 +82,8 @@ if __name__ == "__main__":
     a = "Hello people of the human rance\n\nHow are you today"
     b = "Hello people of the human race\n\nHow are you tday"
     
-    print threewaymerge(original, a, b)
+    print(threewaymerge(original, a, b))
     
     g.diff3_temp_location = '/dev/shm'
     
-    print threewaymerge(original, a, b)
+    print(threewaymerge(original, a, b))

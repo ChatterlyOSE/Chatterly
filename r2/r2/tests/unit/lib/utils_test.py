@@ -202,7 +202,7 @@ class UtilsTest(unittest.TestCase):
                 # test that exception caught here has proper stack trace
                 self.assertTrue(any(map(
                     lambda x: x[3] == "raise ValueError(\"foo %d\" % ret)",
-                    traceback.extract_tb(sys.exc_traceback))))
+                    traceback.extract_tb(sys.exc_info()[2]))))
                 error = e
 
             self.assertEquals(error.message, "foo %d" % num_retries)

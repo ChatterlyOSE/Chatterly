@@ -1,3 +1,4 @@
+from __future__ import print_function
 # The contents of this file are subject to the Common Public Attribution
 # License Version 1.0. (the "License"); you may not use this file except in
 # compliance with the License. You may obtain a copy of the License at
@@ -549,11 +550,11 @@ class SolrSearchUploader(object):
                     delta=len(warnings))
 
             if not quiet:
-                print "%s Changes: +%i -%i" % (self.__class__.__name__,
-                                               adds, deletes)
+                print("%s Changes: +%i -%i" % (self.__class__.__name__,
+                                               adds, deletes))
                 if len(warnings):
-                    print "%s Warnings: %s" % (self.__class__.__name__,
-                                               "; ".join(warnings))
+                    print("%s Warnings: %s" % (self.__class__.__name__,
+                                               "; ".join(warnings)))
 
         return cs_time    
 
@@ -603,7 +604,7 @@ def chunk_xml(xml, depth=0):
         yield data
     else:
         depth += 1
-        print "WARNING: Chunking (depth=%s)" % depth
+        print("WARNING: Chunking (depth=%s)" % depth)
         half = len(xml) / 2
         left_half = xml # for ease of reading
         right_half = etree.Element(root)
@@ -725,7 +726,7 @@ def _rebuild_link_index(start_at=None, sleeptime=1, cls=Link,
             try:
                 uploader.inject()
             except httplib.HTTPException as err:
-                print "Got %s, sleeping %s secs" % (err, x)
+                print("Got %s, sleeping %s secs" % (err, x))
                 time.sleep(x)
                 continue
             else:
@@ -733,7 +734,7 @@ def _rebuild_link_index(start_at=None, sleeptime=1, cls=Link,
         else:
             raise err
         last_update = chunk[-1]
-        print "last updated %s" % last_update._fullname
+        print("last updated %s" % last_update._fullname)
         time.sleep(sleeptime)
 
 

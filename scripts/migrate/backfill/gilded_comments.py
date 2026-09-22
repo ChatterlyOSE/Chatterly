@@ -36,7 +36,7 @@ from r2.models.query_cache import CachedQueryMutator
 
 
 date = datetime.datetime.now(g.tz)
-earliest_date = datetime.datetime(2012, 10, 01, tzinfo=g.tz)
+earliest_date = datetime.datetime(2012, 10, 0o1, tzinfo=g.tz)
 
 already_seen = set()
 
