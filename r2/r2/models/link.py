@@ -2373,7 +2373,7 @@ class Message(Thing, Printable):
 
                 if sent_by_sr:
                     if item.sr_id in blocked_srids:
-                        item.subject = _('[message from blocked subreddit]')
+                        item.subject = _('[message from blocked subforum]')
                         item.sr_blocked = True
                         item.is_collapsed = True
 
@@ -2394,12 +2394,12 @@ class Message(Thing, Printable):
                         item.hide_author = True
                         item.distinguished = "yes"
                         item.taglinetext = _(
-                            "subreddit message via %(subreddit)s sent %(when)s")
+                            "subforum message via %(subreddit)s sent %(when)s")
                     elif not item.user_is_moderator and not c.user_is_admin:
                         item.author = item.subreddit
                         item.hide_author = True
                         item.taglinetext = _(
-                            "subreddit message via %(subreddit)s sent %(when)s")
+                            "subforum message via %(subreddit)s sent %(when)s")
                         item.subreddit_distinguish = subreddit_distinguish
                     elif user_is_sender:
                         item.taglinetext = _(

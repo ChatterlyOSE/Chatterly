@@ -690,7 +690,7 @@ class Reddit(Templated):
                     box = SubscriptionBox(srs, multi_text=strings.mod_multi)
                 else:
                     box = SubscriptionBox(srs)
-                ps.append(SideContentBox(_('these subreddits'), [box]))
+                ps.append(SideContentBox(_('these subforums'), [box]))
 
         user_banned = c.user_is_loggedin and c.site.is_banned(c.user)
 
@@ -704,7 +704,7 @@ class Reddit(Templated):
                     and not (c.user_is_loggedin
                              and c.site.can_submit(c.user))):
                 if c.site.type == "archived":
-                    subtitle = _('this subreddit is archived '
+                    subtitle = _('this subforum is archived '
                                  'and no longer accepting submissions.')
                     ps.append(SideBox(title=_('Submissions disabled'),
                                       css_class="submit",
@@ -807,7 +807,7 @@ class Reddit(Templated):
                     c.user.can_create_subreddit):
                 subtitles = get_funny_translated_string("create_subreddit", 2)
                 data_attrs = {'event-action': 'createsubreddit'}
-                ps.append(SideBox(_('Create your own subreddit'),
+                ps.append(SideBox(_('Create your own subforum'),
                            '/subreddits/create', 'create',
                            subtitles=subtitles,
                            data_attrs=data_attrs,
@@ -1111,9 +1111,9 @@ class RedditFooter(CachedTemplate):
                 separator = ""),
 
             NavMenu([
-                    OffsiteButton(_("Reddit for iPhone"),
+                    OffsiteButton(_("undrfted for iPhone"),
                         "https://itunes.apple.com/us/app/reddit-the-official-app/id1064216828?mt=8"),
-                    OffsiteButton(_("Reddit for Android"),
+                    OffsiteButton(_("undrfted for Android"),
                         "https://play.google.com/store/apps/details?id=com.reddit.frontpage"),
                     OffsiteButton(_("mobile website"), "https://m.reddit.com"),
                     NamedButton("buttons", False),
@@ -1124,7 +1124,6 @@ class RedditFooter(CachedTemplate):
 
             NavMenu([
                     NamedButton("gold", False, dest="/gold/about", css_class="buygold"),
-                    OffsiteButton(_("redditgifts"), "//redditgifts.com"),
                 ],
                 title = _("<3"),
                 type = "flat_vert",
@@ -2212,7 +2211,7 @@ class EditReddit(Reddit):
             is_moderator = c.user_is_loggedin and \
                 c.site.is_moderator(c.user) or c.user_is_admin
 
-            title = (_('subreddit settings') if is_moderator else
+            title = (_('subforum settings') if is_moderator else
                      _('about %(site)s') % dict(site=c.site.name))
 
         Reddit.__init__(self, title=title, *a, **kw)
@@ -2236,7 +2235,7 @@ class SubredditsPage(Reddit):
                         *a, **kw)
         self.searchbar = SearchBar(
             prev_search = prev_search,
-            header=_('search subreddits by name'),
+            header=_('search subforums by name'),
             search_params={},
             simple=True,
             subreddit_search=True,
@@ -2280,7 +2279,7 @@ class SubredditsPage(Reddit):
         subscribe_box = SubscriptionBox(srs,
                                         multi_text=strings.subscribed_multi)
         num_reddits = len(subscribe_box.srs)
-        ps.append(SideContentBox(_("your front page subreddits (%s)") %
+        ps.append(SideContentBox(_("your front page subforums (%s)") %
                                  num_reddits, [subscribe_box]))
         return ps
 
@@ -2835,7 +2834,7 @@ class SubredditTopBar(CachedTemplate):
                                            css_class = 'bottom-option',
                                            dest = '/subreddits/'))
         return SubredditMenu(drop_down_buttons,
-                             title = _('my subreddits'),
+                             title = _('my subforums'),
                              type = 'srdrop')
 
     def subscribed_reddits(self):
@@ -2906,7 +2905,7 @@ class MultiInfoBar(Templated):
         self.description_md = multi.description_md
         self.srs = srs
         self.subreddit_selector = SubredditSelector(
-                placeholder=_("add subreddit"),
+                placeholder=_("add subforum"),
                 class_name="sr-name",
                 include_user_subscriptions=False,
                 show_add=True,
@@ -2953,7 +2952,7 @@ class SubscriptionBox(Templated):
                             Subreddit.gold_limit - Subreddit.sr_limit)
                 visible = min(len(srs), Subreddit.gold_limit)
                 bonus = {"bonus": extra}
-                self.goldmsg = _("%(bonus)s bonus subreddits") % bonus
+                self.goldmsg = _("%(bonus)s bonus subforums") % bonus
                 self.prelink = ["/wiki/faq#wiki_how_many_subreddits_can_i_subscribe_to.3F",
                                 _("%s visible") % visible]
 
@@ -3016,7 +3015,7 @@ class CreateSubreddit(Templated):
                            )
         self.color_options = Subreddit.KEY_COLORS
         self.subreddit_selector = SubredditSelector(
-                placeholder=_("add subreddit"),
+                placeholder=_("add subforum"),
                 class_name="sr-name",
                 include_user_subscriptions=False,
                 show_add=True,
@@ -5200,7 +5199,7 @@ class PromoteReport(PromoteLinkBase):
             outrow = []
         outrow.extend([_("link id"), _("owner"), _("campaign id"), _("target"),
             _("bid"), _("frontpage clicks"), _("frontpage impressions"),
-            _("subreddit clicks"), _("subreddit impressions"),
+            _("subforum clicks"), _("subforum impressions"),
             _("total clicks"), _("total impressions")])
         writer.writerow(outrow)
         for row in self.campaign_report:
@@ -5543,13 +5542,13 @@ class ListingChooser(Templated):
             self.add_item("other", _("everything"),
                           path="/me/f/all",
                           extra_class="gold-perks",
-                          description=_("from all subreddits"))
+                          description=_("from all subforums"))
         else:
             self.add_item("other", _("everything"), site=All,
-                          description=_("from all subreddits"))
+                          description=_("from all subforums"))
         if c.user_is_loggedin and c.user.is_moderator_somewhere:
             self.add_item("other", _("moderating"), site=Mod,
-                          description=_("subreddits you mod"))
+                          description=_("subforums you mod"))
 
         self.add_item("other", _("saved"), path='/user/%s/saved' % c.user.name)
 
@@ -5689,7 +5688,7 @@ class SubredditSelector(Templated):
 
         if include_user_subscriptions:
             self.subreddits.append((
-                _('your subscribed subreddits'),
+                _('your subscribed subforums'),
                 Subreddit.user_subreddits(c.user, ids=False)
             ))
 

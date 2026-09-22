@@ -27,7 +27,7 @@
 <span class="next-suggestions">
 %if thing.suggestion_type == 'explore':
   ${_('or')}
-  <a href="/explore">${_('explore some new subreddits')}</a>
+  <a href="/explore">${_('explore some new subforums')}</a>
 %elif thing.suggestion_type == 'multis':
   ${_('or try a multi:')}
   %for multi in thing.suggestions:
@@ -36,7 +36,7 @@
 %elif thing.suggestion_type == 'random':
   ${text_with_links(
     _('or try a %(random_subreddit)s'),
-    random_subreddit=dict(link_text=_("random subreddit"), path="/r/random")
+    random_subreddit=dict(link_text=_("random subforum"), path="/r/random")
   )}
 %endif
 </span>

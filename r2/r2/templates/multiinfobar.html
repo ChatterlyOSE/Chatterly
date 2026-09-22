@@ -31,7 +31,7 @@
 <%namespace file="printablebuttons.html" import="ynbutton, state_button" />
 <div class="titlebox multi-details" data-path="${thing.multi.path}">
   <h1 class="hover redditname">
-    <a href="${thing.multi.path}">${_('%s subreddits') % thing.multi.name}</a><div class="throbber"></div>
+    <a href="${thing.multi.path}">${_('%s subforums') % thing.multi.name}</a><div class="throbber"></div>
   </h1>
   <h2><a href="/user/${thing.multi.owner.name}">${_('curated by /u/%s') % thing.multi.owner.name}</a></h2>
   <div class="gray-buttons settings">
@@ -108,7 +108,7 @@
   </div>
 
   <% sr_count = format_html('<span class="count">%s</span>&#32;', len(thing.srs)) %>
-  <h3>${_wsf('%(count)s subreddits in this multi:', count=sr_count)}</h3>
+  <h3>${_wsf('%(count)s subforums in this multi:', count=sr_count)}</h3>
   <ul class="subreddits">
   %for sr in thing.srs:
     <li data-name="${sr.name}">
@@ -153,12 +153,12 @@
       <ul>
         <li>
           <a href="/r/ModeratorDuck/wiki/subreddit_classification" target="_blank">
-            ${_("check out subreddits by category")}
+            ${_("check out subforums by category")}
           </a>
         </li>
         <li>
           <a href="/r/random" target="_blank">
-            ${_("explore a random subreddit")}
+            ${_("explore a random subforum")}
           </a>
         </li>
         <li>

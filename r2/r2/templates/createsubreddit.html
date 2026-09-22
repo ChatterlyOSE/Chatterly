@@ -35,7 +35,7 @@
  
 %if not thing.site and not c.user.can_create_subreddit:
 <div class="infobar">${_md("""
-# your account is too new to create a subreddit
+# your account is too new to create a subforum
     
 try participating in other communities on reddit for a little while first before creating your own. please post to /r/help if you need more information about this restriction, or if you require a specific exemption you can [contact the admins](/contact) to request one.
 """)}</div>
@@ -96,7 +96,7 @@ try participating in other communities on reddit for a little while first before
   </%utils:line_field>
 
   <%utils:line_field title="${_('sidebar')}" css_class="usertext"
-                     description="${_('shown in the sidebar of your subreddit. 5120 characters max.')}">
+                     description="${_('shown in the sidebar of your subforum. 5120 characters max.')}">
     %if thing.site and thing.site.description:
      ${UserText(None, text=thing.site.description or "", editable=True, creating=True, name="description", have_form=False)}
     %else:
@@ -164,10 +164,10 @@ try participating in other communities on reddit for a little while first before
                   (not thing.site and (c.user.gold or c.user.gold_charter)))
           if is_gold_only:
               hover_title = "[!]"
-              hover_text = _('If you switch this subreddit to another type, you will not be able to switch back to "gold only" without the assistance of an admin')
+              hover_text = _('If you switch this subforum to another type, you will not be able to switch back to "gold only" without the assistance of an admin')
           else:
               hover_title = "[?]"
-              hover_text = unsafe(capture(_md, 'BETA: Subreddits can be created as "gold only" during creation by a user that has gold. You can find more info about this feature [here](/gold/about#gold-only-subreddits)'))
+              hover_text = unsafe(capture(_md, 'BETA: Subforums can be created as "gold only" during creation by a user that has gold. You can find more info about this feature [here](/gold/about#gold-only-subreddits)'))
       %>
       ${utils.radio_type('type', "gold_only", _("gold only"),
               _("only reddit gold members can view and submit"),
@@ -225,14 +225,14 @@ try participating in other communities on reddit for a little while first before
                            _("Only mods, approved wiki contributors, or those on a page's edit list may edit"),
                            (thing.site and thing.site.wikimode == 'modonly'))}
         ${utils.radio_type('wikimode', "anyone", _("anyone"),
-                           _("Anyone who can submit to the subreddit may edit"),
+                           _("Anyone who can submit to the subforum may edit"),
                            (thing.site and thing.site.wikimode == 'anyone'))}
       </table>
       ${error_field("INVALID_OPTION", "wikimode")}
     </div>
     <div class="usertext-edit">
     <div class="delete-field">
-    <label for="wiki_edit_karma">${_('Subreddit karma required to edit and create wiki pages:')}</label>
+    <label for="wiki_edit_karma">${_('Subforum karma required to edit and create wiki pages:')}</label>
         %if thing.site:
             <input id="wiki_edit_karma" type="text" name="wiki_edit_karma" 
                    value="${thing.site.wiki_edit_karma}"/>
@@ -318,7 +318,7 @@ try participating in other communities on reddit for a little while first before
                  %endif
           >
           <label for="allow_top">
-            ${_("allow this subreddit to be included /r/all as well as the default and trending lists")}
+            ${_("allow this subforum to be included /r/all as well as the default and trending lists")}
           </label>
         </li>
         <li>
@@ -385,7 +385,7 @@ try participating in other communities on reddit for a little while first before
                    %endif
             >
             <label class="buygold" for="hide_ads">
-              ${_("hide ads (only available for gold only subreddits)")}
+              ${_("hide ads (only available for gold only subforums)")}
             </label>
           </li>
         %endif
@@ -394,7 +394,7 @@ try participating in other communities on reddit for a little while first before
       <div class="usertext-edit">
         <label for="suggested_comment_sort">${_('suggested comment sort')}&#32;<span class="gray">${_('(all comment threads will use this sorting method by default)')}</span></label>
         <select class="nomargin" name="suggested_comment_sort" id="suggested_comment_sort">
-           <option value="">${_('none (recommended for most subreddits)')}</option>
+           <option value="">${_('none (recommended for most subforums)')}</option>
            %for sort in thing.comment_sorts:
              <option ${'selected="selected"' if thing.site and sort == thing.site.suggested_comment_sort else ''} value="${sort}">${getattr(menu, sort, sort)}</option>
            %endfor
@@ -483,9 +483,9 @@ try participating in other communities on reddit for a little while first before
 %endif
 
 %if thing.site and feature.is_enabled('related_subreddits'):
-  <%utils:line_field title="${_('related subreddits')}">
+  <%utils:line_field title="${_('related subforums')}">
     <div class="delete-field">
-      <p class="little gray">${_('similar or related subreddits.')}</p>
+      <p class="little gray">${_('similar or related subforums.')}</p>
       <ul id="related-srs" class="subreddits">
         <li id="sr-template" style="display:none">
           <a href=""></a>
@@ -538,7 +538,7 @@ try participating in other communities on reddit for a little while first before
               $('#sr-autocomplete').val('');
             })
             .fail(function() {
-              $('.SUBREDDIT_NOEXIST.field-sr').text(r._("that subreddit doesn't exist")).show();
+              $('.SUBREDDIT_NOEXIST.field-sr').text(r._("that subforum doesn't exist")).show();
             });
           }
 
@@ -603,7 +603,7 @@ try participating in other communities on reddit for a little while first before
       </li>
       %endif
       <li>
-        <p><label>${_('color')}</label> <span class="gray">${_('used as a thematic color for your subreddit on mobile')}</span></p>
+        <p><label>${_('color')}</label> <span class="gray">${_('used as a thematic color for your subforum on mobile')}</span></p>
         <ul class="colors">
           %for color, color_name in thing.color_options.iteritems():
             %if color:

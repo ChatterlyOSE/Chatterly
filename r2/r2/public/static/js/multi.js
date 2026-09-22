@@ -498,7 +498,7 @@ r.multi.MultiAddNoticeBubble = r.ui.Bubble.extend({
     render: function() {
         this.$el.html(this.template({
             awesomeness_goes_here: r._('awesomeness goes here'),
-            add_multi_sr: r._('add a subreddit to your multi.')
+            add_multi_sr: r._('add a subforum to your multi.')
         }))
     }
 })

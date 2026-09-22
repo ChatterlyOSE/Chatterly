@@ -787,7 +787,7 @@ class UserController(ListingController):
                 if self.savedcategory:
                     base_path += '/%s' % urllib.quote(self.savedcategory)
                 sr_menu = NavMenu(sr_buttons, base_path=base_path,
-                                  title=_('filter by subreddit'),
+                                  title=_('filter by subforum'),
                                   type='lightdrop')
                 res.append(sr_menu)
             categories = LinkSavesByCategory.get_saved_categories(self.vuser)
@@ -1459,7 +1459,7 @@ class RedditsController(ListingController):
     extra_page_classes = ListingController.extra_page_classes + ['subreddits-page']
 
     def title(self):
-        return _('subreddits')
+        return _('subforums')
 
     def keep_fn(self):
         base_keep_fn = ListingController.keep_fn(self)
@@ -1602,7 +1602,7 @@ class MyredditsController(ListingController):
                         default = 'subscriber', type = "flatlist")]
 
     def title(self):
-        return _('subreddits: ') + self.where
+        return _('subforums: ') + self.where
 
     def builder_wrapper(self, thing):
         w = ListingController.builder_wrapper(thing)
@@ -2022,7 +2022,7 @@ class GildedController(SubredditListingController):
         delta = timedelta(seconds=seconds)
         server_time = precise_format_timedelta(
             delta, threshold=5, locale=c.locale)
-        message = _("gildings in this subreddit have paid for %(time)s of "
+        message = _("gildings in this subforum have paid for %(time)s of "
                     "server time")
         return message % {'time': server_time}
 

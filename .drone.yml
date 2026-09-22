@@ -5,7 +5,7 @@ clone:
   recursive: false
   tags: false
   # This is explicitly set so that forks retain a constant path.
-  path: /drone/src/github.com/reddit/reddit-public
+  path: /drone/src/github.com/ChatterlyOSE/Chatterly
 
 compose:
   # Some of these aren't actively used, but are required in that import

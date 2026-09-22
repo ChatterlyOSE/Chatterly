@@ -558,10 +558,10 @@ class FrontController(RedditController):
     def GET_newreddit(self, name):
         """Create a subreddit form"""
         VNotInTimeout().run(action_name="pageview", details_text="newreddit")
-        title = _('create a subreddit')
+        title = _('create a subforum')
         captcha = Captcha() if c.user.needs_captcha() else None
         content = CreateSubreddit(name=name or '', captcha=captcha)
-        res = FormPage(_("create a subreddit"),
+        res = FormPage(_("create a subforum"),
                        content=content,
                        captcha=captcha,
                        ).render()
@@ -971,7 +971,7 @@ class FrontController(RedditController):
             "link": _("Posts only"),
             "comment": _("Comments only"),
         }
-        title_string = _("Rules for r/%(subreddit)s") % { "subreddit" : c.site.name }
+        title_string = _("Rules for r/%(subforum)s") % { "subreddit" : c.site.name }
         content = Rules(
             title=title_string,
             kind_labels=kind_labels,
@@ -1237,7 +1237,7 @@ class FrontController(RedditController):
                                                  include_over18=include_over18)
             subreddits = self._search(sr_q, num=sr_num, reverse=reverse,
                                       after=after, count=count, type='sr',
-                                      skip_deleted_authors=False, heading=_('subreddits'),
+                                      skip_deleted_authors=False, heading=_('subforums'),
                                       legacy_render_class=legacy_render_class)
 
             # backfill with facets if no subreddit search results
@@ -1402,7 +1402,7 @@ class FrontController(RedditController):
         extra_subreddits = []
         if isinstance(c.site, MultiReddit):
             extra_subreddits.append((
-                _('%s subreddits') % c.site.name,
+                _('%s subforums') % c.site.name,
                 c.site.srs
             ))
 
@@ -1860,7 +1860,7 @@ class FormsController(RedditController):
             period=None,
         )
 
-        return BoringPage(_("reddit gold"),
+        return BoringPage(_("undrfted premium"),
                           show_sidebar=False,
                           content=content,
                           page_classes=["gold-page-ga-tracking"]
@@ -1948,7 +1948,7 @@ class FormsController(RedditController):
             if not can_subscribe and goldtype == "autorenew":
                 self.redirect("/creddits", code=302)
 
-            return BoringPage(_("reddit gold"),
+            return BoringPage(_("undrfted premium"),
                               show_sidebar=False,
                               content=Gold(goldtype, period, months, signed,
                                            email, recipient,
@@ -1987,7 +1987,7 @@ class FormsController(RedditController):
             if goldtype == "creddits":
                 page_classes.append("creddits-payment")
 
-            return BoringPage(_("reddit gold"),
+            return BoringPage(_("undrfted premium"),
                               show_sidebar=False,
                               content=GoldPayment(goldtype, period, months,
                                                   signed, recipient,

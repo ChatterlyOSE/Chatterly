@@ -747,7 +747,7 @@
         <div class="label-group">
 
           <span class="label">${_("interests")}</span>
-          <small class="label">${_("targets a collection of similar subreddits")}</small>
+          <small class="label">${_("targets a collection of similar subforums")}</small>
         </div>
       </label>
       <label class="form-group">
@@ -759,8 +759,8 @@
                %endif
                >
         <div class="label-group">
-          <span class="label">${_("subreddits")}</span>
-          <small class="label">${_("targets a subreddit and its subscribers")}</small>
+          <span class="label">${_("subforums")}</span>
+          <small class="label">${_("targets a subforum and its subscribers")}</small>
         </div>
       </label>
     </div>
@@ -779,10 +779,10 @@
         </div>
         <div class="collection-subreddit-list">
           <div class="label frontpage-label">
-            ${_("subreddits included on the frontpage are based on users\' subscriptions")}
+            ${_("subforums included on the frontpage are based on users\' subscriptions")}
           </div>
           <div class="label collection-label" style="display:none;">
-            ${_('includes these subreddits')}
+            ${_('includes these subforums')}
             &#32;<a href="/wiki/advertising/interestaudiencegroups">${_('and more!')}</a>
           </div>
           <ul></ul>
@@ -794,7 +794,7 @@
              style="display:none"
            %endif
            >
-        <span class="label">subreddit</span>
+        <span class="label">subforum</span>
         ${error_field("OVERSOLD", "sr", "div")}
         ${thing.subreddit_selector}
       </div>
@@ -831,10 +831,10 @@
 </%def>
 
 <%def name="subreddit_targeting_field(subreddit_selector)">
-  <%utils:line_field title="${_('subreddit targeting')}" css_class="rounded subreddit-targeting-field">
+  <%utils:line_field title="${_('subforum targeting')}" css_class="rounded subreddit-targeting-field">
     <div class="target-group group">
       <div class="subreddit-targeting">
-        <span class="label">subreddit</span>
+        <span class="label">subforum</span>
         ${error_field("OVERSOLD", "sr", "div")}
         ${subreddit_selector}
       </div>

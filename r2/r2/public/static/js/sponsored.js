@@ -1364,7 +1364,7 @@ var exports = r.sponsored = {
         + '<%= auctionCampaigns %> auction campaign'
         + '<% auctionCampaigns > 1 && print("s") %> with a total budget of '
         + '<%= prettyTotalAuctionBudgetDollars %> in '
-        + '<%= auctionSubreddits.length %> subreddit'
+        + '<%= auctionSubreddits.length %> subforum'
         + '<% auctionSubreddits.length > 1 && print("s") %></p>'),
 
     fixed_cpm_dashboard_help_template: _.template('<p>there '
@@ -1372,7 +1372,7 @@ var exports = r.sponsored = {
         + '<%= fixedCPMCampaigns %> fixed CPM campaign'
         + '<% fixedCPMCampaigns > 1 && print("s") %> with a total budget of '
         + '<%= prettyTotalFixedCPMBudgetDollars %> in '
-        + '<%= fixedCPMSubreddits.length %> subreddit'
+        + '<%= fixedCPMSubreddits.length %> subforum'
         + '<% fixedCPMSubreddits.length > 1 && print("s") %>, amounting to a '
         + 'total of <%= totalImpressions %> impressions</p>'),
 

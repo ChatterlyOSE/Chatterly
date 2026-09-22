@@ -811,7 +811,7 @@ class SubredditTrafficReport(Templated):
         out = cStringIO.StringIO()
         writer = csv.writer(out)
 
-        writer.writerow((_("subreddit"),
+        writer.writerow((_("subforum"),
                          _("uniques"),
                          _("pageviews")))
         for (name, url), (uniques, pageviews) in self.report:

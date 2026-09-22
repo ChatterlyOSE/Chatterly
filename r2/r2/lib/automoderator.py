@@ -85,7 +85,7 @@ if g.automoderator_account:
 else:
     ACCOUNT = None
 
-DISCLAIMER = "*I am a bot, and this action was performed automatically. Please [contact the moderators of this subreddit](/message/compose/?to=/r/{{subreddit}}) if you have any questions or concerns.*"
+DISCLAIMER = "*I am a bot, and this action was performed automatically. Please [contact the moderators of this subforum](/message/compose/?to=/r/{{subreddit}}) if you have any questions or concerns.*"
 
 rules_by_subreddit = {}
 

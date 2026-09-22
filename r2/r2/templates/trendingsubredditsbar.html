@@ -28,7 +28,7 @@
   <div class="rank-spacer"></div>
   <div class="midcol-spacer"></div>
   <div class="trending-subreddits-content">
-    <strong>${_('trending subreddits')}</strong>
+    <strong>${_('trending subforums')}</strong>
     <ul>
     %for i, subreddit_name in enumerate(thing.subreddit_names):
       <li><a href="${Link.tracking_link('/r/%s'%subreddit_name, context='trending_subreddits_bar', element_name='trending_sr_%s'%(i+1))}" target="_blank">/r/${subreddit_name}</a></li>

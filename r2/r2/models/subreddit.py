@@ -1781,7 +1781,7 @@ class AllFiltered(Filtered, AllMinus):
 class _DefaultSR(FakeSubreddit):
     analytics_name = 'frontpage'
     #notice the space before reddit.com
-    name = ' reddit.com'
+    name = ' undrfted.com'
     path = '/'
     header = g.default_header_url
 
@@ -2316,8 +2316,8 @@ class LabeledMulti(tdb_cassandra.Thing, MultiReddit):
     @property
     def title(self):
         if isinstance(self.owner, Account):
-            return _('%s subreddits curated by /u/%s') % (self.name, self.owner.name)
-        return _('%s subreddits') % self.name
+            return _('%s subforums curated by /u/%s') % (self.name, self.owner.name)
+        return _('%s subforums') % self.name
 
     def is_public(self):
         return self.visibility == "public"

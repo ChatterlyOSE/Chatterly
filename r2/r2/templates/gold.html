@@ -24,7 +24,7 @@
 <%namespace file="utils/gold.html" import="gold_dropdown"/>
 
 <div class="gold-wrap">
-  <h1 class="gold-banner"><a href="/gold">${_('reddit gold')}</a></h1>
+  <h1 class="gold-banner"><a href="/gold">${_('undrfted premium')}</a></h1>
 
   <div class="fancy">
     <div class="fancy-inner">
@@ -35,10 +35,10 @@
           ${self.gold_loggedout_content()}
         %endif
         <section class="gold-question">
-          <h3 class="toggle">${_('What is reddit gold?')}</h3>
+          <h3 class="toggle">${_('What is undrfted premium?')}</h3>
           <div class="details hidden">
             <div class="container">
-              ${_('reddit gold is our premium membership.  It upgrades your account with access to extra features.')}
+              ${_('undrfted premium is our premium membership.  It upgrades your account with access to extra features.')}
               &#32;
               <a href="/gold/about">${_('Learn more')}</a>.
             </div>
@@ -79,7 +79,7 @@
 
     <section id="payment-options">
       <div class="buttons">
-        <button type="submit" class="btn gold-button">${_("buy reddit gold")}</button>
+        <button type="submit" class="btn gold-button">${_("buy undrfted premium")}</button>
       </div>
     </section>
   </form>
@@ -103,7 +103,7 @@
   <input type="hidden" name="goldtype" id="goldtype" value="${thing.goldtype}">
 
     <section class="tab-chooser">
-      <h3>${_('What type of reddit gold would you like to purchase?')}</h3>
+      <h3>${_('What type of undrfted premium would you like to purchase?')}</h3>
       <a href="#onetime" class="tab-toggle ${'active' if active_tab == 'onetime' else ''}">${_('one-time purchase')}</a>
       <a href="#autorenew" class="tab-toggle ${'active' if active_tab == 'autorenew' else ''}">${_('ongoing subscription')}</a>
       <a href="#creddits" class="tab-toggle ${'active' if active_tab == 'creddits' else ''}">${_('creddits')}</a>
@@ -116,7 +116,7 @@
         ${gold_dropdown("num_creddits", thing.months, somethings="creddits")}
 
         <section class="creddits-explained">
-          ${_('Stored as a balance on your account, creddits allow you to give gold without having to enter payment information. Each creddit you have can be converted into one month of reddit gold.')}
+          ${_('Stored as a balance on your account, creddits allow you to give gold without having to enter payment information. Each creddit you have can be converted into one month of undrfted premium.')}
           &#32;<a href="/gilding#what-are-creddits">${_('Learn more about using creddits')}</a>.
         </section>
       </section>
@@ -144,13 +144,13 @@
             <li>
             <label>
               <input type="radio" id="notgift" name="gift" value="0" ${"checked" if not is_gift else ""}>
-              ${_('purchase this reddit gold for myself')}
+              ${_('purchase this undrfted premium for myself')}
             </label>
             </li>
             <li>
             <label>
               <input type="radio" id="gift" name="gift" value="1" ${"checked" if is_gift else ""}>
-              ${_('give this reddit gold as a gift')}
+              ${_('give this undrfted premium as a gift')}
             </label>
             </li>
           </ul>

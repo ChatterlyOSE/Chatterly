@@ -148,7 +148,7 @@
         // The API gets redirected to search if the subreddit does not exist.
         // Detect that by looking for a lack of the rules or a result kind of Listing.
         if (!rulesJson['rules'] || rulesJson['kind'] === 'Listing') {
-          return $.Deferred().reject(jqXHR, rulesJson, 'No subreddit');
+          return $.Deferred().reject(jqXHR, rulesJson, 'No subforum');
         } else if (rulesJson['error']) {
           return $.Deferred().reject(jqXHR, rulesJson, rulesJson['error']);
         }

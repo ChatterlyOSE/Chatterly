@@ -130,7 +130,7 @@ class OAuth2Scope:
         "flair": {
             "id": "flair",
             "name": _("Manage My Flair"),
-            "description": _("Select my subreddit flair. "
+            "description": _("Select my subforum flair. "
                              "Change link flair on my submissions."),
         },
         "history": {
@@ -150,69 +150,69 @@ class OAuth2Scope:
             "name": _("Approve submitters and ban users"),
             "description": _(
                 "Add/remove users to approved submitter lists and "
-                "ban/unban or mute/unmute users from subreddits I moderate."
+                "ban/unban or mute/unmute users from subforums I moderate."
             ),
         },
         "modflair": {
             "id": "modflair",
             "name": _("Moderate Flair"),
             "description": _(
-                "Manage and assign flair in subreddits I moderate."),
+                "Manage and assign flair in subforums I moderate."),
         },
         "modposts": {
             "id": "modposts",
             "name": _("Moderate Posts"),
             "description": _(
                 "Approve, remove, mark nsfw, and distinguish content"
-                " in subreddits I moderate."),
+                " in subforums I moderate."),
         },
         "modconfig": {
             "id": "modconfig",
-            "name": _("Moderate Subreddit Configuration"),
+            "name": _("Moderate Subforum Configuration"),
             "description": _(
                 "Manage the configuration, sidebar, and CSS"
-                " of subreddits I moderate."),
+                " of subforums I moderate."),
         },
         "modlog": {
             "id": "modlog",
             "name": _("Moderation Log"),
             "description": _(
-                "Access the moderation log in subreddits I moderate."),
+                "Access the moderation log in subforums I moderate."),
         },
         "modothers": {
             "id": "modothers",
             "name": _("Invite or remove other moderators"),
             "description": _(
-                "Invite or remove other moderators from subreddits I moderate."
+                "Invite or remove other moderators from subforums I moderate."
             ),
         },
         "modself": {
             "id": "modself",
-            "name": _("Make changes to your subreddit moderator "
+            "name": _("Make changes to your subforum moderator "
                       "and contributor status"),
             "description": _(
-                "Accept invitations to moderate a subreddit. Remove myself as "
-                "a moderator or contributor of subreddits I moderate or "
+                "Accept invitations to moderate a subforum. Remove myself as "
+                "a moderator or contributor of subforums I moderate or "
                 "contribute to."
             ),
         },
         "modtraffic": {
             "id": "modtraffic",
-            "name": _("Subreddit Traffic"),
-            "description": _("Access traffic stats in subreddits I moderate."),
+            "name": _("Subforum Traffic"),
+            "description": _("Access traffic stats in subforums I moderate."),
         },
         "modwiki": {
             "id": "modwiki",
             "name": _("Moderate Wiki"),
             "description": _(
                 "Change editors and visibility of wiki pages"
-                " in subreddits I moderate."),
+                " in subforums I moderate."),
         },
         "mysubreddits": {
             "id": "mysubreddits",
-            "name": _("My Subreddits"),
+            "name": _("My Subforums"),
             "description": _(
-                "Access the list of subreddits I moderate, contribute to,"
+                "Access the list of subforums I moderate, contribute to,"
                 " and subscribe to."),
         },
         "privatemessages": {
@@ -245,7 +245,7 @@ class OAuth2Scope:
         "subscribe": {
             "id": "subscribe",
             "name": _("Edit My Subscriptions"),
-            "description": _('Manage my subreddit subscriptions. Manage '
+            "description": _('Manage my subforum subscriptions. Manage '
                 '"friends" - users whose content I follow.'),
         },
         "vote": {

@@ -136,7 +136,7 @@ r.login.ui = {
       } else if ($el.parents('.subscribe-button').length) {
         return {
             eventName: 'subscribe-button',
-            description: r._('You need to be logged in to subscribe to subreddits.')
+            description: r._('You need to be logged in to subscribe to subforums.')
         };
       } else if ($el.parents('.submit-link').length) {
         return {

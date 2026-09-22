@@ -62,7 +62,7 @@
     <table id="per-sr-karma"${" class='more-karmas'" if not c.user_is_admin else ""}>
      <thead>
         <tr>
-          <th id="sr-karma-header">subreddit</th>
+          <th id="sr-karma-header">subforum</th>
           <th>post</th>
           <th>comment</th>
         </tr>
@@ -76,7 +76,7 @@
        %endif
 
         % if sr_name == "ancient history":
-          <th class="helpful" title="${_('really obscure karma from before it was cool to track per-subreddit')}"><span>${_(sr_name)}</span></th>
+          <th class="helpful" title="${_('really obscure karma from before it was cool to track per-subforum')}"><span>${_(sr_name)}</span></th>
         % else:
           <th>${sr_name}</th>
         % endif
