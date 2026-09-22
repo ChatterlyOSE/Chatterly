@@ -53,7 +53,7 @@ def _keep(msg, account):
 
     return True
 
-resume_id = long(sys.argv[1]) if len(sys.argv) > 1 else None
+resume_id = int(sys.argv[1]) if len(sys.argv) > 1 else None
 
 msg_accounts = Account._query(sort=desc("_date"), data=True)
 

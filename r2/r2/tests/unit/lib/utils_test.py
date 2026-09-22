@@ -354,7 +354,7 @@ class UtilsTest(unittest.TestCase):
             [('x', 2), (None, 0), (None, 0), ('y', 3), ('z', 1)])
 
         def expect(result, random_value):
-            scaled_r = float(random_value) / sum(weights.itervalues())
+            scaled_r = float(random_value) / sum(weights.values())
             self.assertEquals(
                 result,
                 utils.weighted_lottery(weights, _random=lambda: scaled_r))

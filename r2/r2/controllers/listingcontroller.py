@@ -22,8 +22,7 @@
 ###############################################################################
 
 from __future__ import absolute_import
-import urllib
-
+import urllib.parse
 from .oauth2 import require_oauth2_scope
 from .reddit_base import RedditController, base_listing, paginated_listing
 
@@ -776,7 +775,7 @@ class UserController(ListingController):
             srnames = LinkSavesBySubreddit.get_saved_subreddits(self.vuser)
             srnames += CommentSavesBySubreddit.get_saved_subreddits(self.vuser)
             srs = Subreddit._by_name(set(srnames), stale=True)
-            srnames = [name for name, sr in srs.iteritems()
+            srnames = [name for name, sr in srs.items()
                             if sr.can_view(c.user)]
             srnames = sorted(set(srnames), key=lambda name: name.lower())
             if len(srnames) > 1:
@@ -786,7 +785,7 @@ class UserController(ListingController):
                     sr_buttons.append(QueryButton(srname, srname, query_param='sr'))
                 base_path = '/user/%s/saved' % self.vuser.name
                 if self.savedcategory:
-                    base_path += '/%s' % urllib.quote(self.savedcategory)
+                    base_path += '/%s' % urllib.parse.quote(self.savedcategory)
                 sr_menu = NavMenu(sr_buttons, base_path=base_path,
                                   title=_('filter by subforum'),
                                   type='lightdrop')
@@ -798,7 +797,7 @@ class UserController(ListingController):
                 cat_buttons = [NavButton(_('all'), '/', css_class='primary')]
                 for cat in categories:
                     cat_buttons.append(NavButton(cat,
-                                                 urllib.quote(cat),
+                                                 urllib.parse.quote(cat),
                                                  use_params=True))
                 base_path = '/user/%s/saved/' % self.vuser.name
                 cat_menu = NavMenu(cat_buttons, base_path=base_path,

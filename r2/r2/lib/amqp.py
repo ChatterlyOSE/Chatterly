@@ -34,7 +34,7 @@ consume_items: For processing a queue one item at a time
 
 """
 from __future__ import print_function
-from Queue import Queue
+from queue import Queue
 from threading import local, Thread
 from datetime import datetime
 import os
@@ -43,7 +43,7 @@ import time
 import errno
 import socket
 import itertools
-import cPickle as pickle
+import pickle
 
 from amqplib import client_0_8 as amqp
 

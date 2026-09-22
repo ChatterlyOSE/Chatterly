@@ -19,7 +19,7 @@
 # All portions of the code written by reddit are Copyright (c) 2006-2015 reddit
 # Inc. All Rights Reserved.
 ###############################################################################
-from cStringIO import StringIO
+import io
 import datetime
 import gzip
 import hashlib
@@ -136,7 +136,7 @@ class EventQueue(object):
         if vote.is_automatic_initial_vote:
             event.add("auto_self_vote", True)
 
-        for name, value in vote.effects.serializable_data.iteritems():
+        for name, value in vote.effects.serializable_data.items():
             # rename the "notes" field to "details_text" for the event
             if name == "notes":
                 name = "details_text"
@@ -702,7 +702,7 @@ class EventQueue(object):
             context=context,
         )
         event.add("request_url", request.fullpath)
-        for k, v in loid.to_dict().iteritems():
+        for k, v in loid.to_dict().items():
             event.add(k, v)
         self.save_event(event)
 
@@ -777,7 +777,7 @@ class EventQueue(object):
             event.add('user_id', user._id)
             event.add('user_name', user.name)
         if loid:
-            for k, v in loid.to_dict().iteritems():
+            for k, v in loid.to_dict().items():
                 event.add(k, v)
         self.save_event(event)
 
@@ -873,7 +873,7 @@ class Event(object):
 
     def add_text(self, key, value, obfuscate=False):
         self.add(key, value, obfuscate=obfuscate)
-        for k, v in charset_summary(value).iteritems():
+        for k, v in charset_summary(value).items():
             self.add("{}_{}".format(key, k), v)
 
     def add_target_fields(self, target):
@@ -1090,7 +1090,7 @@ class EventPublisher(object):
         use_gzip = (g.live_config.get("events_collector_use_gzip_chance", 0) >
                     random.random())
         if use_gzip:
-            f = StringIO()
+            f = io.BytesIO()
             gzip.GzipFile(fileobj=f, mode='wb').write(data)
             data = f.getvalue()
             headers["Content-Encoding"] = "gzip"

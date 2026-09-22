@@ -201,7 +201,7 @@ def add_error_codes(new_codes):
     yet translated, so they can be declared before pylons.i18n is ready.
 
     """
-    for code, message in new_codes.iteritems():
+    for code, message in new_codes.items():
         error_list[code] = _(message)
         errors[code] = code
 

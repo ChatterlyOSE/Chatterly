@@ -21,7 +21,7 @@
 ###############################################################################
 
 import sqlalchemy as sa
-import cPickle as pickle
+import pickle
 
 class tdb_lite(object):
     def __init__(self, gc):
@@ -54,9 +54,9 @@ class tdb_lite(object):
         if isinstance(val, bool):
             val = 't' if val else 'f'
             kind = 'bool'
-        elif isinstance(val, (str, unicode)):
+        elif isinstance(val, str):
             kind = 'str'
-        elif isinstance(val, (int, float, long)):
+        elif isinstance(val, (int, float)):
             kind = 'num'
         elif val is None:
             kind = 'none'

@@ -73,7 +73,7 @@ class System(object):
 
         combined_campaigns = []
         changed = False
-        for target_names_tuple, campaigns in campaigns_by_target.iteritems():
+        for target_names_tuple, campaigns in campaigns_by_target.items():
             if len(campaigns) > 1:
                 changed = True
                 name = ','.join(camp.name for camp in campaigns)
@@ -127,7 +127,7 @@ class System(object):
         campaigns_by_name = {campaign.name: campaign for campaign in campaigns}
         targets_by_name = {target.name: target for target in targets}
         changed = False
-        for target_name, campaign_names in campaign_names_by_target.iteritems():
+        for target_name, campaign_names in campaign_names_by_target.items():
             target = targets_by_name[target_name]
             campaign_impressions = sum(
                 campaigns_by_name[name].impressions for name in campaign_names)
@@ -160,7 +160,7 @@ class System(object):
             del targets_by_name[target_name]
 
         reduced_campaigns = []
-        for campaign in campaigns_by_name.itervalues():
+        for campaign in campaigns_by_name.values():
             if campaign.impressions > 0:
                 reduced_campaigns.append(campaign)
         reduced_targets = targets_by_name.values()
@@ -227,7 +227,7 @@ class System(object):
                 level_by_target_name[target.name] = level
 
         target_names_by_level = defaultdict(list)
-        for target_name, level in level_by_target_name.iteritems():
+        for target_name, level in level_by_target_name.items():
             target_names_by_level[level].append(target_name)
 
         # iterate over targets, starting at the highest level, and assign
@@ -237,7 +237,7 @@ class System(object):
         impressions_by_target = {
             target.name: target.impressions for target in self.targets}
 
-        for level in sorted(target_names_by_level.iterkeys(), reverse=True):
+        for level in sorted(target_names_by_level.keys(), reverse=True):
             target_names = target_names_by_level[level]
             campaigns = chain.from_iterable(
                 campaigns_by_target[target_name] for target_name in target_names
@@ -302,10 +302,10 @@ def campaign_to_simple_campaign(campaign):
 def get_maximized_pageviews(priority_sr_names, booked_by_target,
                             pageviews_by_sr_name):
     targets = [SimpleTarget(sr_name, pageviews) for sr_name, pageviews
-                                                in pageviews_by_sr_name.iteritems()]
+                                                in pageviews_by_sr_name.items()]
     campaigns = [
         SimpleCampaign(', '.join(sr_names), list(sr_names), impressions)
-        for sr_names, impressions in booked_by_target.iteritems()
+        for sr_names, impressions in booked_by_target.items()
     ]
     system = System(campaigns, targets, priority_sr_names)
     return system.get_free_impressions()
@@ -321,7 +321,7 @@ def run_tests():
         'games': 50000,
     }
     targets = [SimpleTarget(sr_name, pageviews) for sr_name, pageviews
-               in pageviews_by_sr_name.iteritems()]
+               in pageviews_by_sr_name.items()]
 
     campaigns = [
         SimpleCampaign('c1', ['leagueoflegends'], 20000),
@@ -352,7 +352,7 @@ def run_tests():
         'smashbros': 50000,
     }
     targets = [SimpleTarget(sr_name, pageviews) for sr_name, pageviews
-               in pageviews_by_sr_name.iteritems()]
+               in pageviews_by_sr_name.items()]
     campaigns = [
         SimpleCampaign('c1', ['leagueoflegends', 'dota2'], 25000),
         SimpleCampaign('c2', ['hearthstone', 'games'], 25000),

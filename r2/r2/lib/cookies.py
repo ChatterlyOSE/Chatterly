@@ -109,7 +109,7 @@ def change_user_cookie_security(secure, remember):
     user_name = c.user.name
     securable = (PRIVATE_SESSION_COOKIES +
                  [user_name + "_" + c_name for c_name in PRIVATE_USER_COOKIES])
-    for name, cookie in c.cookies.iteritems():
+    for name, cookie in c.cookies.items():
         if name in securable:
             cookie.secure = secure
             if name in PRIVATE_SESSION_COOKIES:

@@ -163,12 +163,12 @@ from collections import defaultdict, namedtuple
 import csv
 import hmac
 import hashlib
-import cStringIO
+import io
 import sys, random, datetime, calendar, simplejson, re, time
 import time
 from itertools import chain, product
 from urllib import quote, urlencode
-from urlparse import urlparse
+from urllib.parse import urlparse
 
 from r2.lib.ip_events import ips_by_account_id
 
@@ -1770,7 +1770,7 @@ class LinkInfoPage(Reddit):
         }
         if not self.link.nsfw:
             image_data = self._build_og_image()
-            for key, value in image_data.iteritems():
+            for key, value in image_data.items():
                 # Although the spec[0] and their docs[1] say 'og:image' and
                 # 'og:image:url' are equivalent, Facebook doesn't actually take
                 # the thumbnail from the latter form.  Even if that gets fixed,
@@ -3028,7 +3028,7 @@ class SubredditStylesheetBase(Templated):
     def __init__(self, stylesheet_contents, **kwargs):
         raw_images = ImagesByWikiPage.get_images(c.site, "config/stylesheet")
         images = {name: make_url_protocol_relative(url)
-                  for name, url in raw_images.iteritems()}
+                  for name, url in raw_images.items()}
         super(SubredditStylesheetBase, self).__init__(
             images=images,
             stylesheet_contents=stylesheet_contents,
@@ -3120,7 +3120,7 @@ class CssError(Templated):
 class UploadedImage(Templated):
     "The page rendered in the iframe during an upload of a header image"
     def __init__(self,status,img_src, name="", errors = {}, form_id = ""):
-        self.errors = list(errors.iteritems())
+        self.errors = list(errors.items())
         Templated.__init__(self, status=status, img_src=img_src, name = name,
                            form_id = form_id)
 
@@ -4420,17 +4420,17 @@ class PromoteLinkBase(Templated):
                 return name
 
         countries = [(code, country['name'], False) for code, country
-                                                    in g.locations.iteritems()]
+                                                    in g.locations.items()]
         countries.append(('', _('none'), True))
 
         countries = sorted(countries, key=location_sort)
         regions = {}
         metros = {}
-        for code, country in g.locations.iteritems():
+        for code, country in g.locations.items():
             if 'regions' in country and country['regions']:
                 regions[code] = [('', _('all'), True)]
 
-                for region_code, region in country['regions'].iteritems():
+                for region_code, region in country['regions'].items():
                     if region['metros']:
                         region_tuple = (region_code, region['name'], False)
                         regions[code].append(region_tuple)
@@ -4439,7 +4439,7 @@ class PromoteLinkBase(Templated):
                         else:
                             metros[region_code] = [('', _('all'), True)]
 
-                        for metro_code, metro in region['metros'].iteritems():
+                        for metro_code, metro in region['metros'].items():
                             metro_tuple = (metro_code, metro['name'], False)
                             metros[region_code].append(metro_tuple)
                         metros[region_code].sort(key=location_sort)
@@ -4776,7 +4776,7 @@ def make_link_child(item, show_media_preview=False):
         expand = False
         position_inline = False
 
-        if isinstance(media_object, basestring):
+        if isinstance(media_object, str):
             media_embed = media_object
         else:
             is_autoexpand_type = media_object.get('type') in g.autoexpand_media_types
@@ -4862,7 +4862,7 @@ class MediaChild(LinkChild):
         LinkChild.__init__(self, link, **kw)
 
     def content(self):
-        if isinstance(self._content, basestring):
+        if isinstance(self._content, str):
             return self._content
         return self._content.render()
 
@@ -5044,7 +5044,7 @@ class PromoteInventory(PromoteLinkBase):
         self.setup()
 
     def as_csv(self):
-        out = cStringIO.StringIO()
+        out = io.StringIO()
         writer = csv.writer(out)
 
         writer.writerow(tuple(self.header))
@@ -5064,12 +5064,12 @@ class PromoteInventory(PromoteLinkBase):
         campaigns_by_date = inventory.get_campaigns_by_date(
             srs, self.start, self.end)
         link_ids = {camp.link_id for camp
-                    in chain.from_iterable(campaigns_by_date.itervalues())}
+                    in chain.from_iterable(campaigns_by_date.values())}
         links_by_id = Link._byID(link_ids, data=True)
         dates = inventory.get_date_range(self.start, self.end)
         total_by_date = {date: Bookings() for date in dates}
         imps_by_link = defaultdict(lambda: {date: Bookings() for date in dates})
-        for date, campaigns in campaigns_by_date.iteritems():
+        for date, campaigns in campaigns_by_date.items():
             for camp in campaigns:
                 link = links_by_id[camp.link_id]
                 daily_impressions = camp.impressions / camp.ndays
@@ -5080,12 +5080,12 @@ class PromoteInventory(PromoteLinkBase):
                     total_by_date[date].subreddit += daily_impressions
                     imps_by_link[link._id][date].subreddit += daily_impressions
 
-        account_ids = {link.author_id for link in links_by_id.itervalues()}
+        account_ids = {link.author_id for link in links_by_id.values()}
         accounts_by_id = Account._byID(account_ids, data=True)
 
         self.header = ['link'] + [date.strftime("%m/%d/%Y") for date in dates] + ['total']
         rows = []
-        for link_id, imps_by_date in imps_by_link.iteritems():
+        for link_id, imps_by_date in imps_by_link.items():
             link = links_by_id[link_id]
             author = accounts_by_id[link.author_id]
             info = {
@@ -5108,7 +5108,7 @@ class PromoteInventory(PromoteLinkBase):
 
         predicted_pageviews_by_sr = inventory.get_predicted_pageviews(srs)
         predicted_pageviews = sum(pageviews for pageviews
-                                  in predicted_pageviews_by_sr.itervalues())
+                                  in predicted_pageviews_by_sr.values())
         predicted_row = Storage(
             info={'title': 'predicted'},
             is_total=True,
@@ -5168,7 +5168,7 @@ class PromoteReport(PromoteLinkBase):
                            bad_links=bad_links)
 
     def as_csv(self):
-        out = cStringIO.StringIO()
+        out = io.StringIO()
         writer = csv.writer(out)
 
         writer.writerow((_("start date"), self.start.strftime('%m/%d/%Y')))
@@ -5222,7 +5222,7 @@ class PromoteReport(PromoteLinkBase):
 
         start_date = start.date()
         ndays = (end - start).days
-        dates = {start_date + datetime.timedelta(days=i) for i in xrange(ndays)}
+        dates = {start_date + datetime.timedelta(days=i) for i in range(ndays)}
 
         # traffic database uses datetimes with no timezone, also need to shift
         # start, end to account for campaigns launching at 12:00 EST
@@ -5268,7 +5268,7 @@ class PromoteReport(PromoteLinkBase):
             bid = camp.total_budget_pennies / max(camp.ndays, 1)
             camp_ndays = max(1, (camp.end_date - camp.start_date).days)
             camp_start = camp.start_date.date()
-            days = xrange(camp_ndays)
+            days = range(camp_ndays)
             camp_dates = {camp_start + datetime.timedelta(days=i) for i in days}
 
             for date in camp_dates.intersection(dates):
@@ -5291,14 +5291,14 @@ class PromoteReport(PromoteLinkBase):
             # attributes in group_on, and create new keys with None values for
             # the attributes we aren't grouping on.
             by_group = defaultdict(list)
-            for item_key, item in items_by_key.iteritems():
+            for item_key, item in items_by_key.items():
                 attrs = [getattr(item_key, a) if a in group_on else None
                     for a in ReportKey._fields]
                 group_key = ReportKey(*attrs)
                 by_group[group_key].append(item)
 
             new_items_by_key = {}
-            for group_key, items in by_group.iteritems():
+            for group_key, items in by_group.items():
                 bid = fp_imps = sr_imps = fp_clicks = sr_clicks = 0
                 for item in items:
                     bid += item.bid
@@ -5530,7 +5530,7 @@ class ModeratorPermissions(Templated):
                            editable=editable, embedded=embedded)
 
     def items(self):
-        return self.permissions.iteritems()
+        return self.permissions.items()
 
 class ListingChooser(Templated):
     def __init__(self):

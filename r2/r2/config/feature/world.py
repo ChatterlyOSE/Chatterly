@@ -116,7 +116,7 @@ class World(object):
 
     def live_config_iteritems(self):
         live = self.stacked_proxy_safe_get(g, 'live_config', {})
-        return live.iteritems()
+        return live.items()
 
     def simple_event(self, name):
         stats = self.stacked_proxy_safe_get(g, 'stats', None)

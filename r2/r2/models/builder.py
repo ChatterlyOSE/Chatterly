@@ -116,7 +116,7 @@ class Builder(object):
 
         authors = Account._byID(aids, data=True, stale=self.stale)
         now = datetime.datetime.now(g.tz)
-        cakes = {a._id for a in authors.itervalues()
+        cakes = {a._id for a in authors.values()
                        if a.cake_expiration and a.cake_expiration >= now}
         friend_rels = user.friend_rels() if user and user.gold else {}
 
@@ -124,7 +124,7 @@ class Builder(object):
         can_ban_set = set()
 
         if user:
-            for sr_id, sr in subreddits.iteritems():
+            for sr_id, sr in subreddits.items():
                 if sr.can_ban(user):
                     can_ban_set.add(sr_id)
 
@@ -502,7 +502,7 @@ class QueryBuilder(Builder):
             srs = items_by_subreddit.keys()
             sr_dicts = get_trimmed_sr_dicts(srs, c.user)
 
-            for sr, sr_items in items_by_subreddit.iteritems():
+            for sr, sr_items in items_by_subreddit.items():
                 sr_detail = sr_dicts[sr._id]
                 for item in sr_items:
                     item.sr_detail = sr_detail
@@ -675,7 +675,7 @@ class ModActionBuilder(QueryBuilder):
             w.fullname = item._fullname
             by_render_class[w.render_class].append(w)
 
-        for render_class, _items in by_render_class.iteritems():
+        for render_class, _items in by_render_class.items():
             render_class.add_props(c.user, _items)
 
         return wrapped
@@ -1095,7 +1095,7 @@ class CommentOrderer(CommentOrdererBase):
                 return self.read_cache()
         else:
             if bucket == "100_plus":
-                for sort_name, operator in SORT_OPERATOR_BY_NAME.iteritems():
+                for sort_name, operator in SORT_OPERATOR_BY_NAME.items():
                     if operator == self.sort:
                         break
                 else:

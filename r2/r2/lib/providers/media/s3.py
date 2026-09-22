@@ -133,7 +133,7 @@ class S3MediaProvider(MediaProvider):
         bucket = self._get_bucket(bucket_name, validate=False)
         key = bucket.new_key(name)
 
-        if isinstance(contents, basestring):
+        if isinstance(contents, str):
             set_fn = key.set_contents_from_string
         else:
             set_fn = key.set_contents_from_file

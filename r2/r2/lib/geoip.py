@@ -22,12 +22,12 @@
 ###############################################################################
 
 import datetime
-import httplib
+import http.client as httplib
 import json
 import os
 import socket
-import urllib2
-
+import urllib.error
+import urllib.request as urllib2
 from pylons import app_globals as g
 
 from r2.lib.sgm import sgm
@@ -54,7 +54,7 @@ def _location_by_ips(ips):
         try:
             response = urllib2.urlopen(url=url, timeout=3)
             json_data = response.read()
-        except (urllib2.URLError, httplib.HTTPException, socket.error) as e:
+        except (urllib.error.URLError, httplib.HTTPException, socket.error) as e:
             g.log.warning("Failed to fetch GeoIP information: %r" % e)
             continue
 
@@ -77,7 +77,7 @@ def _organization_by_ips(ips):
     try:
         response = urllib2.urlopen(url=url, timeout=3)
         json_data = response.read()
-    except urllib2.URLError as e:
+    except urllib.error.URLError as e:
         g.log.warning("Failed to fetch GeoIP information: %r" % e)
         return {}
 

@@ -56,10 +56,10 @@ Design notes
 """
 from __future__ import print_function
 
-import cPickle as pickle
+import pickle
 from datetime import datetime, timedelta
 import functools
-import httplib
+import http.client as httplib
 import json
 import re
 import socket
@@ -167,10 +167,10 @@ def _bool():
 
 
 def _json_default(value):
-    """Fallback encoder: never call str() on unicode under py2."""
+    """Fallback encoder for values the json module cannot handle directly."""
     if isinstance(value, datetime):
         return int(time.mktime(value.utctimetuple()))
-    return unicode(value)
+    return str(value)
 
 
 LINK_PROPERTIES = {
@@ -285,7 +285,7 @@ def _request(method, path, body=None, host=None, port=None, timeout=None,
                     message = (error.get('reason') or error.get('type') or
                                'Unknown error')
                 else:
-                    message = unicode(error)
+                    message = str(error)
                 raise InvalidQuery(resp.status, resp.reason, message,
                                    host, path, response)
             raise SearchHTTPError(resp.status, resp.reason,
@@ -369,7 +369,7 @@ def _build_search_body(query, bq, faceting, size, start, rank):
 
     if faceting:
         aggs = {}
-        for field, options in faceting.iteritems():
+        for field, options in faceting.items():
             terms = {
                 "field": _facet_field(field),
                 "size": options.get("count", 20),
@@ -548,7 +548,7 @@ class OpenSearchSearchQuery(object):
         docs = [hit['_id'] for hit in response['hits'].get('hits', [])]
 
         facets = {}
-        for field, agg in (response.get('aggregations') or {}).iteritems():
+        for field, agg in (response.get('aggregations') or {}).items():
             facets[field] = [dict(value=bucket['key'],
                                   count=bucket['doc_count'])
                              for bucket in agg.get('buckets', [])]
@@ -754,7 +754,7 @@ class OpenSearchSearchUploader(object):
     def send_bulk(self, lines):
         '''Send a bulk request, chunked to keep individual requests small'''
         responses = []
-        for offset in xrange(0, len(lines), BULK_CHUNK_SIZE * 2):
+        for offset in range(0, len(lines), BULK_CHUNK_SIZE * 2):
             chunk = lines[offset:offset + BULK_CHUNK_SIZE * 2]
             data = ('\n'.join(chunk) + '\n').encode('utf-8')
             response = _request('POST', '/_bulk', host=self.host,
@@ -765,7 +765,7 @@ class OpenSearchSearchUploader(object):
             if response.get('errors'):
                 failures = []
                 for item in response.get('items', []):
-                    for op, result in item.iteritems():
+                    for op, result in item.items():
                         if result.get('error'):
                             failures.append('%s %s: %r' % (
                                 op, result.get('_id'), result['error']))

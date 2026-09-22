@@ -22,8 +22,8 @@
 ###############################################################################
 
 from __future__ import print_function
-from ConfigParser import MissingSectionHeaderError
-from StringIO import StringIO
+from configparser import MissingSectionHeaderError
+from io import StringIO
 import sys
 
 from r2.lib.utils import parse_ini_file

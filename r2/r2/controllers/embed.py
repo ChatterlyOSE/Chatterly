@@ -36,7 +36,7 @@ from pylons import app_globals as g
 
 from BeautifulSoup import BeautifulSoup, Tag
 
-from urllib2 import HTTPError
+from urllib.error import HTTPError
 
 @memoize("renderurl_cached", time=60)
 def renderurl_cached(path):
@@ -67,7 +67,7 @@ class EmbedController(RedditController):
             if 'href' in link and link['href'].startswith("/wiki/help"):
                 link['href'] = link['href'][5:]
 
-        output = SC_OFF + unicode(output) + SC_ON
+        output = SC_OFF + str(output) + SC_ON
 
         return HelpPage(_("help"),
                         content = Embed(content=output),

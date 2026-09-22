@@ -27,12 +27,12 @@ Tools to check if arbitrary HTML fragments would be safe to embed inline
 import os
 import re
 import sys
-import urllib
-import urlparse
+import urllib.parse
+import urllib.parse as urlparse
 
 import lxml.etree
 
-from cStringIO import StringIO
+from io import StringIO
 
 valid_link_schemes = (
     '/',
@@ -83,7 +83,7 @@ def souptest_sniff_node(node):
         if node.text.strip() not in {"SC_ON", "SC_OFF"}:
             raise SoupUnexpectedCommentError(node)
     # Looks like all nodes but `Element` have functions in `.tag`
-    elif isinstance(node.tag, basestring):
+    elif isinstance(node.tag, str):
         # namespaces are tacked onto the front of the tag / attr name if
         # applicable so we don't need to worry about checking for those.
         tag_name = node.tag
@@ -103,7 +103,7 @@ def souptest_sniff_node(node):
                 if parsed_url.hostname and len(parsed_url.hostname) > 255:
                     raise SoupDetectedCrasherError(parsed_url.hostname)
                 # work around for Chrome crash with "%%30%30" - Sep 2015
-                if "%00" in urllib.unquote(parsed_url.path):
+                if "%00" in urllib.parse.unquote(parsed_url.path):
                     raise SoupDetectedCrasherError(lv)
     else:
         # Processing instructions and friends fall down here.

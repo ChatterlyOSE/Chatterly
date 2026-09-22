@@ -149,7 +149,7 @@ def message_notification_email(data):
     # If our counter's expired, initialize it again.
     g.cache.add(MESSAGE_THROTTLE_KEY, 0, time=24*60*60)
 
-    for datum in data.itervalues():
+    for datum in data.values():
         datum = json.loads(datum)
         user = Account._byID36(datum['to'], data=True)
         comment = Comment._by_fullname(datum['comment'], data=True)

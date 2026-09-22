@@ -27,7 +27,7 @@ from babel.numbers import format_number
 import hashlib
 import hmac
 import json
-import urllib
+import urllib.parse
 import mimetypes
 import os
 
@@ -285,7 +285,7 @@ class PromoteController(RedditController):
     @validate(VSponsor())
     def GET_new_promo(self):
         ads_images = _get_ads_images(c.user)
-        images = {k: v.get("url") for k, v in ads_images.iteritems()}
+        images = {k: v.get("url") for k, v in ads_images.items()}
 
         return PromotePage(title=_("create sponsored link"),
                            content=PromoteLinkNew(images),
@@ -368,7 +368,7 @@ class SponsorController(PromoteController):
             campaign_ids = PromotionWeights.get_campaign_ids(
                 start, end, author_id=owner._id)
             campaigns = PromoCampaign._byID(campaign_ids, data=True)
-            link_ids = {camp.link_id for camp in campaigns.itervalues()}
+            link_ids = {camp.link_id for camp in campaigns.values()}
             links.extend(Link._byID(link_ids, data=True, return_dict=False))
 
         if link_text is not None:
@@ -589,7 +589,7 @@ class SponsorListingController(PromoteListingController):
                 frontbutton = NavButton('FRONTPAGE', Frontpage.name,
                                         use_params=True,
                                         aliases=['/promoted/live_promos/%s' %
-                                                 urllib.quote(Frontpage.name)])
+                                                 urllib.parse.quote(Frontpage.name)])
                 buttons.append(frontbutton)
             except KeyError:
                 pass
@@ -976,7 +976,7 @@ class PromoteApiController(ApiController):
 
         # demangle URL in canonical way
         if url:
-            if isinstance(url, (unicode, str)):
+            if isinstance(url, str):
                 form.set_inputs(url=url)
             elif isinstance(url, tuple) or isinstance(url[0], Link):
                 # there's already one or more links with this URL, but

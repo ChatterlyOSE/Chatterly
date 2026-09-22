@@ -43,10 +43,11 @@ from pycassa.system_manager import (
 from pycassa.types import DateType
 from pycassa.util import convert_uuid_to_time
 from r2.lib.utils import tup, Storage
+from r2.lib.unicode import _force_utf8
 from r2.lib.sgm import sgm
 from uuid import uuid1, UUID
 from itertools import chain
-import cPickle as pickle
+import pickle
 from pycassa.util import OrderedDict
 import base64
 
@@ -191,10 +192,9 @@ class ThingMeta(type):
         return '<thing: %s>' % cls.__name__
 
 
-class ThingBase(object):
+class ThingBase(object, metaclass=ThingMeta):
     # base class for Thing
 
-    __metaclass__ = ThingMeta
 
     _cf_name = None # the name of the ColumnFamily; defaults to the
                     # name of the class
@@ -311,7 +311,7 @@ class ThingBase(object):
             return {}
 
         # all keys must be strings or directly convertable to strings
-        assert all(isinstance(_id, basestring) or str(_id) for _id in ids)
+        assert all(isinstance(_id, str) or str(_id) for _id in ids)
 
         def reject_bad_partials(cached, still_need):
             # tell sgm that the match it found in the cache isn't good
@@ -320,7 +320,7 @@ class ThingBase(object):
             # the properties that we're after
             stillfind = set()
 
-            for k, v in cached.iteritems():
+            for k, v in cached.items():
                 if properties is None:
                     if v._partial is not None:
                         # there's a partial in the cache but we're not
@@ -350,7 +350,7 @@ class ThingBase(object):
                 # probably clipped. in this case, we should fetch the remaining
                 # columns for that row and add them to the result.
                 if cls._fetch_all_columns:
-                    for key, row in rows.iteritems():
+                    for key, row in rows.items():
                         if len(row) == max_column_count:
                             last_column_seen = next(reversed(row))
                             cols = cls._cf.xget(key,
@@ -361,7 +361,7 @@ class ThingBase(object):
                 rows = cls._cf.multiget(l_ids, columns = willask_properties)
 
             l_ret = {}
-            for t_id, row in rows.iteritems():
+            for t_id, row in rows.items():
                 t = cls._from_serialized_columns(t_id, row)
                 if properties is not None:
                     # make sure that the item is marked as a _partial
@@ -411,7 +411,7 @@ class ThingBase(object):
             by_cls.setdefault(thing_types[typ], []).append(_id)
 
         items = []
-        for typ, ids in by_cls.iteritems():
+        for typ, ids in by_cls.items():
             items.extend(typ._byID(ids).values())
 
         if is_single:
@@ -465,7 +465,7 @@ class ThingBase(object):
             try:
                 return int(val)
             except ValueError:
-                return long(val)
+                return int(val)
         elif attr in cls._float_props or (cls._value_type and cls._value_type == 'float'):
             return float(val)
         elif attr in cls._bool_props or (cls._value_type and cls._value_type == 'bool'):
@@ -481,7 +481,7 @@ class ThingBase(object):
             return val
 
         # otherwise we'll assume that it's a utf-8 string
-        return val if isinstance(val, unicode) else val.decode('utf-8')
+        return val if isinstance(val, str) else val.decode('utf-8')
 
     @classmethod
     def _serialize_column(cls, attr, val):
@@ -508,7 +508,7 @@ class ThingBase(object):
         elif attr in cls._bytes_props or (cls._value_type and cls._value_type == 'bytes'):
             return val
 
-        return unicode(val).encode('utf-8')
+        return _force_utf8(val)
 
     @classmethod
     def _serialize_date(cls, date):
@@ -532,7 +532,7 @@ class ThingBase(object):
     def _from_serialized_columns(cls, t_id, columns):
         d_columns = dict((attr, cls._deserialize_column(attr, val))
                          for (attr, val)
-                         in columns.iteritems())
+                         in columns.items())
         return cls._from_columns(t_id, d_columns)
 
     @classmethod
@@ -576,7 +576,7 @@ class ThingBase(object):
         # in the DB
         updates = dict((attr, self._serialize_column(attr, val))
                        for (attr, val)
-                       in self._dirties.iteritems()
+                       in self._dirties.items()
                        if (attr not in self._orig or
                            val != self._orig[attr]))
 
@@ -609,7 +609,7 @@ class ThingBase(object):
         wcl = self._wcl(write_consistency_level)
         with self._cf.batch(write_consistency_level = wcl) as b:
             if updates:
-                for k, v in updates.iteritems():
+                for k, v in updates.items():
                     b.insert(self._id,
                              {k: v},
                              ttl=self._column_ttls.get(k, self._ttl))
@@ -648,7 +648,7 @@ class ThingBase(object):
                         write_consistency_level=self._write_consistency_level)
 
     def __getattr__(self, attr):
-        if isinstance(attr, basestring) and attr.startswith('_'):
+        if isinstance(attr, str) and attr.startswith('_'):
             # TODO: I bet this interferes with Views whose column names can
             # start with a _
             try:
@@ -673,7 +673,7 @@ class ThingBase(object):
         if attr == '_id' and self._committed:
             raise ValueError('cannot change _id on a committed %r' % (self.__class__))
 
-        if isinstance(attr, basestring) and attr.startswith('_'):
+        if isinstance(attr, str) and attr.startswith('_'):
             # TODO: I bet this interferes with Views whose column names can
             # start with a _
             return object.__setattr__(self, attr, val)
@@ -744,7 +744,7 @@ class ThingBase(object):
 
     def _set_ttl(self, key, ttl):
         assert key in self._dirties
-        assert isinstance(ttl, (long, int))
+        assert isinstance(ttl, int)
         self._column_ttls[key] = ttl
 
     def _on_create(self):
@@ -843,7 +843,7 @@ def view_of(cls):
 
 
 
-class DenormalizedRelation(object):
+class DenormalizedRelation(object, metaclass=ThingMeta):
     """A model of many-to-many relationships, indexed by thing1.
 
     Each thing1 is represented by a row. The relationships from that thing1 to
@@ -857,7 +857,6 @@ class DenormalizedRelation(object):
     it should have its row cache disabled.
 
     """
-    __metaclass__ = ThingMeta
     _use_db = False
     _cf_name = None
     _compare_with = ASCII_TYPE
@@ -943,7 +942,7 @@ class DenormalizedRelation(object):
             # {(thing1, thing2) : value}
             thing2s_by_id = {thing2._id36 : thing2 for thing2 in thing2s}
             return {(thing1, thing2s_by_id[k]) : v
-                    for k, v in results.iteritems()}
+                    for k, v in results.items()}
         else:
             if results:
                 assert len(results) == 1
@@ -1187,7 +1186,7 @@ class Query(object):
 
         for row in q:
             print(row)
-            for col, val in row._t.iteritems():
+            for col, val in row._t.items():
                 print('\t%s: %r' % (col, val))
 
     def __iter__(self):
@@ -1301,7 +1300,7 @@ class View(ThingBase):
         # col_values =:= dict(col_name -> col_value)
 
         updates = dict((col_name, cls._serialize_column(col_name, col_val))
-                       for (col_name, col_val) in col_values.iteritems())
+                       for (col_name, col_val) in col_values.items())
 
         # if they didn't give us a TTL, use the default TTL for the
         # class. This will be further overwritten below per-column
@@ -1311,7 +1310,7 @@ class View(ThingBase):
         default_ttl = ttl or cls._ttl
 
         def do_inserts(b):
-            for k, v in updates.iteritems():
+            for k, v in updates.items():
                 b.insert(row_key, {k: v},
                          ttl=cls._default_ttls.get(k, default_ttl))
 
@@ -1345,7 +1344,7 @@ class DenormalizedView(View):
     def _thing_dumper(cls, thing):
         serialize_fn = cls._view_of._serialize_column
         serialized_columns = dict((attr, serialize_fn(attr, val)) for
-            (attr, val) in thing._orig.iteritems())
+            (attr, val) in thing._orig.items())
 
         # Encode date props which may be binary
         for attr, val in serialized_columns.items():

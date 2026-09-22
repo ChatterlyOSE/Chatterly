@@ -52,7 +52,7 @@ def add_comments(comments):
     for comment in comments:
         comments_by_link_id[comment.link_id].append(comment)
 
-    for link_id, link_comments in comments_by_link_id.iteritems():
+    for link_id, link_comments in comments_by_link_id.items():
         link = links_by_id[link_id]
 
         timer = g.stats.get_timer('comment_tree.add.1')
@@ -152,7 +152,7 @@ def get_comment_scores(link, sort, comment_ids, timer):
         # want to deal in integer IDs
         scores_by_id = {
             int(id36, 36): score
-            for id36, score in scores_by_id36.iteritems()
+            for id36, score in scores_by_id36.items()
         }
 
         scores_needed = set(comment_ids) - set(scores_by_id.keys())
@@ -166,7 +166,7 @@ def get_comment_scores(link, sort, comment_ids, timer):
                 link, sort, missing)
             scores_by_missing = {
                 int(id36, 36): score
-                for id36, score in scores_by_missing_id36.iteritems()
+                for id36, score in scores_by_missing_id36.items()
             }
 
             # up to once per minute write the scores to limit writes but
@@ -329,7 +329,7 @@ def moderator_messages(sr_ids):
     from r2.models import Subreddit
 
     srs = Subreddit._byID(sr_ids)
-    sr_ids = [sr_id for sr_id, sr in srs.iteritems()
+    sr_ids = [sr_id for sr_id, sr in srs.items()
               if sr.is_moderator_with_perms(c.user, 'mail')]
 
     def multi_load_tree(sr_ids):

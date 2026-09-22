@@ -25,8 +25,7 @@ import datetime
 import calendar
 import os
 from time import sleep
-import urllib
-
+import urllib.parse
 from boto.s3.connection import S3Connection
 from boto.emr.connection import EmrConnection
 from boto.exception import S3ResponseError
@@ -91,7 +90,7 @@ def get_aggregate(interval, category_cls):
             break
 
         # Sometimes S3 doesn't let us read immediately after key is written
-        for i in xrange(5):
+        for i in range(5):
             try:
                 txt = get_text_from_s3(s3_connection, path)
             except S3ResponseError as e:
@@ -199,10 +198,10 @@ def _report_interval(interval):
         data = get_aggregate(interval, category_cls)
         len_data = len(data)
         step = max(len_data / 5, 100)
-        for i, (name, (uniques, pageviews)) in enumerate(data.iteritems()):
+        for i, (name, (uniques, pageviews)) in enumerate(data.items()):
             try:
                 for n in tup(name):
-                    unicode(n)
+                    str(n)
             except UnicodeDecodeError:
                 print('%s - %s - %s - %s' % (category_cls.__name__, name,
                                              uniques, pageviews))
@@ -307,8 +306,8 @@ def process_month_hours(month_date, start_hour=0, days=None):
     year, month = month_date.split('-')
     year, month = int(year), int(month)
 
-    days = days or xrange(1, calendar.monthrange(year, month)[1] + 1)
-    hours = xrange(start_hour, 24)
+    days = days or range(1, calendar.monthrange(year, month)[1] + 1)
+    hours = range(start_hour, 24)
 
     for day in days:
         for hour in hours:
@@ -321,16 +320,16 @@ def process_month_hours(month_date, start_hour=0, days=None):
                     continue
             print('Processing %s' % log_path)
             process_pixel_log(log_path, fast=True)
-        hours = xrange(24)
+        hours = range(24)
 
 
 def report_entire_month(month_date, start_hour=0, start_day=1):
     """Report all hours and days from month."""
     year, month = month_date.split('-')
     year, month = int(year), int(month)
-    hours = xrange(start_hour, 24)
+    hours = range(start_hour, 24)
 
-    for day in xrange(start_day, calendar.monthrange(year, month)[1] + 1):
+    for day in range(start_day, calendar.monthrange(year, month)[1] + 1):
         for hour in hours:
             hour_date = '%04d-%02d-%02d-%02d' % (year, month, day, hour)
             try:
@@ -338,7 +337,7 @@ def report_entire_month(month_date, start_hour=0, start_day=1):
             except ValueError:
                 print('Failed for %s' % hour_date)
                 continue
-        hours = xrange(24)
+        hours = range(24)
         day_date = '%04d-%02d-%02d' % (year, month, day)
         try:
             report_interval(day_date, background=False)
@@ -354,8 +353,8 @@ def verify_month_outputs(month_date):
     year, month = int(year), int(month)
     missing = []
 
-    for day in xrange(1, calendar.monthrange(year, month)[1] + 1):
-        for hour in xrange(24):
+    for day in range(1, calendar.monthrange(year, month)[1] + 1):
+        for hour in range(24):
             hour_date = '%04d-%02d-%02d-%02d' % (year, month, day, hour)
             for category_cls in traffic_categories:
                 for d in [AGGREGATE_DIR, os.path.join(PROCESSED_DIR, 'hour')]:
@@ -389,8 +388,8 @@ def verify_month_inputs(month_date):
     year, month = int(year), int(month)
     missing = []
 
-    for day in xrange(1, calendar.monthrange(year, month)[1] + 1):
-        for hour in xrange(24):
+    for day in range(1, calendar.monthrange(year, month)[1] + 1):
+        for hour in range(24):
             hour_date = '%04d-%02d-%02d-%02d' % (year, month, day, hour)
             log_path = os.path.join(RAW_LOG_DIR, '%s.log.gz' % hour_date)
             if not s3_key_exists(s3_connection, log_path):

@@ -43,7 +43,7 @@ def get_hot_tuples(sr_ids, ageweight=None):
 
     now_seconds = epoch_seconds(datetime.now(g.tz))
 
-    for sr_id, q in queries_by_sr_id.iteritems():
+    for sr_id, q in queries_by_sr_id.items():
         if not q.data:
             continue
 

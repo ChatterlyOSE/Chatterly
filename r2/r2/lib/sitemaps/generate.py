@@ -113,7 +113,7 @@ def subreddit_sitemaps(subreddits):
 
 def sitemap_index(count):
     sm_elem = etree.Element('sitemapindex', xmlns=SITEMAP_NAMESPACE)
-    for i in xrange(count):
+    for i in range(count):
         sitemap_elem = etree.SubElement(sm_elem, 'sitemap')
         loc_elem = etree.SubElement(sitemap_elem, 'loc')
         url = '{0}/subreddit_sitemap/{1}.xml'.format(

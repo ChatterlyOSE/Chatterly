@@ -69,7 +69,7 @@ def update_prediction_data():
         min_daily_by_sr[fp] = min_daily_by_sr.get(fp, 0) + min_daily_by_sr['']
         del min_daily_by_sr['']
 
-    filtered = {sr_name: num for sr_name, num in min_daily_by_sr.iteritems()
+    filtered = {sr_name: num for sr_name, num in min_daily_by_sr.items()
                 if num > 100}
     PromoMetrics.set(MIN_DAILY_CASS_KEY, filtered)
 
@@ -100,7 +100,7 @@ def _min_daily_pageviews_by_sr(ndays=NDAYS_TO_QUERY, end_date=None):
 
 def get_date_range(start, end):
     start, end = map(to_date, [start, end])
-    dates = [start + timedelta(i) for i in xrange((end - start).days)]
+    dates = [start + timedelta(i) for i in range((end - start).days)]
     return dates
 
 
@@ -211,7 +211,7 @@ def find_campaigns(srs, start, end, ignore):
         all_sr_names |= {sr.name for sr in srs}
         new_campaigns_by_date = get_campaigns_by_date(srs, start, end, ignore)
         new_campaigns = set(chain.from_iterable(
-            new_campaigns_by_date.itervalues()))
+            new_campaigns_by_date.values()))
         all_campaigns.update(new_campaigns)
         new_sr_names = set(chain.from_iterable(
             campaign.target.subreddit_names for campaign in new_campaigns
@@ -321,7 +321,7 @@ def get_oversold(target, start, end, daily_request, ignore=None, location=None):
     available_by_date = get_available_pageviews(target, start, end, location,
                                                 datestr=True, ignore=ignore)
     oversold = {}
-    for datestr, available in available_by_date.iteritems():
+    for datestr, available in available_by_date.items():
         if available < daily_request:
             oversold[datestr] = available
     return oversold

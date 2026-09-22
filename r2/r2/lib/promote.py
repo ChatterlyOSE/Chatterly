@@ -31,8 +31,8 @@ import itertools
 import json
 import random
 import time
-import urllib
-import urlparse
+import urllib.parse
+import urllib.parse as urlparse
 
 from pylons import tmpl_context as c
 from pylons import app_globals as g
@@ -194,9 +194,9 @@ def update_query(base_url, query_updates, unset=False):
     query_dict.update(query_updates)
 
     if unset:
-        query_dict = dict((k, v) for k, v in query_dict.iteritems() if v is not None)
+        query_dict = dict((k, v) for k, v in query_dict.items() if v is not None)
 
-    query = urllib.urlencode(query_dict, doseq=True)
+    query = urllib.parse.urlencode(query_dict, doseq=True)
     return urlparse.urlunparse((scheme, netloc, path, params, query, fragment))
 
 
@@ -425,7 +425,7 @@ def edit_campaign(link, campaign, dates, target, frequency_cap,
         campaign.bid_pennies = bid_pennies
 
     change_strs = map(lambda t: '%s: %s -> %s' % (t[0], t[1][0], t[1][1]),
-                      changed.iteritems())
+                      changed.items())
     change_text = ', '.join(change_strs)
     campaign._commit()
 
@@ -1109,7 +1109,7 @@ def keywords_from_context(
 
 # special handling for memcache ascii protocol
 SPECIAL_NAMES = {" reddit.com": "_reddit.com"}
-REVERSED_NAMES = {v: k for k, v in SPECIAL_NAMES.iteritems()}
+REVERSED_NAMES = {v: k for k, v in SPECIAL_NAMES.items()}
 
 
 def _get_live_promotions(sanitized_names):
@@ -1140,9 +1140,9 @@ def get_live_promotions(sr_names):
     )
     promos_by_srname = {
         REVERSED_NAMES.get(name, name): val
-        for name, val in promos_by_sanitized_name.iteritems()
+        for name, val in promos_by_sanitized_name.items()
     }
-    return itertools.chain.from_iterable(promos_by_srname.itervalues())
+    return itertools.chain.from_iterable(promos_by_srname.values())
 
 
 def lottery_promoted_links(sr_names, n=10):

@@ -233,7 +233,7 @@ class JQueryResponse(JsonResponse):
         return self.find("*[name=%s]" % name)
 
     def set_inputs(self, **kw):
-        for k, v in kw.iteritems():
+        for k, v in kw.items():
             # Using 'val' instead of setting the 'value' attribute allows this
             # To work for non-textbox inputs, like textareas
             self.get_input(k).val(v).end()
@@ -254,7 +254,7 @@ class JQueryResponse(JsonResponse):
 
     def set(self, **kw):
         obj = self
-        for k, v in kw.iteritems():
+        for k, v in kw.items():
             obj = obj.attr(k, v)
         return obj
 

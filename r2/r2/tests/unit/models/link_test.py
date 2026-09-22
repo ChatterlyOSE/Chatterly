@@ -154,7 +154,7 @@ class LinkMock(Link):
     _nodb = True
 
     def __init__(self, **kwargs):
-        for key, value in kwargs.iteritems():
+        for key, value in kwargs.items():
             setattr(self, key, value)
 
     def __setattr__(self, attr, val):

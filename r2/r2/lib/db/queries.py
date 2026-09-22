@@ -23,9 +23,9 @@ from __future__ import print_function
 
 import collections
 from copy import deepcopy, copy
-import cPickle as pickle
+import pickle
 from datetime import datetime
-from functools import partial
+from functools import cmp_to_key, partial
 import hashlib
 import itertools
 import pytz
@@ -318,7 +318,7 @@ class MergedCachedResults(object):
         all_items = []
         for cr in results:
             all_items.extend(cr.data)
-        all_items.sort(cmp=comparator)
+        all_items.sort(key=cmp_to_key(comparator))
         self.data = all_items
 
 
@@ -1183,7 +1183,7 @@ def new_message(message, inbox_rels, add_to_sent=True, update_modmail=True):
     # light up the modmail icon for all other mods with mail access
     if update_modmail:
         mod_perms = message.subreddit_slow.moderators_with_perms()
-        mod_ids = [mod_id for mod_id, perms in mod_perms.iteritems()
+        mod_ids = [mod_id for mod_id, perms in mod_perms.items()
             if mod_id != from_user._id and perms.get('mail', False)]
         moderators = Account._byID(mod_ids, data=True, return_dict=False)
         for mod in moderators:
@@ -1357,7 +1357,7 @@ def notification_handler(thing, notify_function,
         # if the comment has been spammed, remember the previous
         # new value in case it becomes unspammed
         if thing._spam:
-            for (tupl, rel) in rels.iteritems():
+            for (tupl, rel) in rels.items():
                 if rel:
                     rel.unread_preremoval = rel.new
                     rel._commit()
@@ -1427,7 +1427,7 @@ def delete(things):
     by_srid, srs = _by_srid(things)
     by_author, authors = _by_author(things)
 
-    for sr_id, sr_things in by_srid.iteritems():
+    for sr_id, sr_things in by_srid.items():
         sr = srs[sr_id]
         links = [x for x in sr_things if isinstance(x, Link)]
         comments = [x for x in sr_things if isinstance(x, Comment)]
@@ -1444,7 +1444,7 @@ def delete(things):
                                         comments))
             query_cache_deletes.append((get_edited_comments(sr), comments))
 
-    for author_id, a_things in by_author.iteritems():
+    for author_id, a_things in by_author.items():
         author = authors[author_id]
         links = [x for x in a_things if isinstance(x, Link)]
         comments = [x for x in a_things if isinstance(x, Comment)]
@@ -1492,7 +1492,7 @@ def ban(things, filtered=True):
     query_cache_inserts, query_cache_deletes = _common_del_ban(things)
     by_srid = _by_srid(things, srs=False)
 
-    for sr_id, sr_things in by_srid.iteritems():
+    for sr_id, sr_things in by_srid.items():
         links = []
         modqueue_links = []
         comments = []
@@ -1549,7 +1549,7 @@ def _common_del_ban(things):
     query_cache_deletes = []
     by_srid, srs = _by_srid(things)
 
-    for sr_id, sr_things in by_srid.iteritems():
+    for sr_id, sr_things in by_srid.items():
         sr = srs[sr_id]
         links = [x for x in sr_things if isinstance(x, Link)]
         comments = [x for x in sr_things if isinstance(x, Comment)]
@@ -1576,7 +1576,7 @@ def unban(things, insert=True):
     if not by_srid:
         return
 
-    for sr_id, things in by_srid.iteritems():
+    for sr_id, things in by_srid.items():
         sr = srs[sr_id]
         links = [x for x in things if isinstance(x, Link)]
         comments = [x for x in things if isinstance(x, Comment)]
@@ -1655,7 +1655,7 @@ def clear_reports(things, rels):
 
     by_srid = _by_srid(things, srs=False)
 
-    for sr_id, sr_things in by_srid.iteritems():
+    for sr_id, sr_things in by_srid.items():
         links = [ x for x in sr_things if isinstance(x, Link) ]
         comments = [ x for x in sr_things if isinstance(x, Comment) ]
 
@@ -1682,7 +1682,7 @@ def clear_reports(things, rels):
                 continue
 
             by_thing1_id = _by_thing1_id(thing_rels)
-            for reporter_id, reporter_rels in by_thing1_id.iteritems():
+            for reporter_id, reporter_rels in by_thing1_id.items():
                 query_cache_deletes.append([query(reporter_id), reporter_rels])
 
     with CachedQueryMutator() as m:
@@ -1742,7 +1742,7 @@ def run_new_comments(limit=1000):
                     insert_items=comments)
 
         bysrid = _by_srid(comments, False)
-        for srid, sr_comments in bysrid.iteritems():
+        for srid, sr_comments in bysrid.items():
             add_queries([_get_sr_comments(srid)],
                         insert_items=sr_comments)
 
@@ -1780,13 +1780,13 @@ def get_stored_votes(user, things):
     results = {}
     things_by_type = _by_type(things)
 
-    for thing_class, items in things_by_type.iteritems():
+    for thing_class, items in things_by_type.items():
         if not thing_class.is_votable:
             continue
 
         rel_class = VotesByAccount.rel(thing_class)
         votes = rel_class.fast_query(user, items)
-        for cross, direction in votes.iteritems():
+        for cross, direction in votes.items():
             results[cross] = Vote.deserialize_direction(int(direction))
 
     return results
@@ -1805,7 +1805,7 @@ def get_likes(user, requested_items):
 
     items_in_grace_period = {}
     items_by_type = _by_type(requested_items)
-    for type_, items in items_by_type.iteritems():
+    for type_, items in items_by_type.items():
         if not type_.is_votable:
             # these items can't be voted on. just mark 'em as None and skip.
             for item in items:
@@ -1843,7 +1843,7 @@ def get_likes(user, requested_items):
         g.stats.simple_event(
             "vote.prequeued.fetch", delta=len(items_in_grace_period))
         r = g.gencache.get_multi(items_in_grace_period.keys())
-        for key, v in r.iteritems():
+        for key, v in r.items():
             res[items_in_grace_period[key]] = Vote.deserialize_direction(v)
 
     cassavotes = get_stored_votes(

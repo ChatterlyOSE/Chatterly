@@ -49,7 +49,7 @@ import r2.lib.validator.preferences as vprefs
 
 PREFS_JSON_SPEC = VValidatedJSON.PartialObject({
     k[len("pref_"):]: v for k, v in
-    vprefs.PREFS_VALIDATORS.iteritems()
+    vprefs.PREFS_VALIDATORS.items()
 })
 
 
@@ -129,7 +129,7 @@ class APIv1UserController(OAuth2OnlyController):
              uri='/api/v1/me/prefs')
     def PATCH_prefs(self, validated_prefs):
         user_prefs = c.user.preferences()
-        for short_name, new_value in validated_prefs.iteritems():
+        for short_name, new_value in validated_prefs.items():
             pref_name = "pref_" + short_name
             user_prefs[pref_name] = new_value
         vprefs.filter_prefs(user_prefs, c.user)

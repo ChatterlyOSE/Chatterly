@@ -26,7 +26,7 @@ from __future__ import print_function
 import os
 import argparse
 import mimetypes
-import urlparse
+import urllib.parse as urlparse
 
 import boto
 

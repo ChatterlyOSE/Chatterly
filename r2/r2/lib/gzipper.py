@@ -20,7 +20,7 @@
 # Inc. All Rights Reserved.
 ###############################################################################
 
-import cStringIO
+import io
 import gzip
 import wsgiref.headers
 
@@ -161,7 +161,7 @@ class GzipMiddleware(object):
         if response_compressible and self.request_accepts_gzip(environ):
             headers["Content-Encoding"] = "gzip"
 
-            response_buffer = cStringIO.StringIO()
+            response_buffer = io.BytesIO()
             gzipper = gzip.GzipFile(fileobj=response_buffer, mode="wb",
                                     compresslevel=self.compression_level)
             try:

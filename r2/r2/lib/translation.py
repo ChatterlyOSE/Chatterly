@@ -26,7 +26,7 @@ import token
 import tokenize
 
 from babel.messages.extract import extract_javascript
-from cStringIO import StringIO
+from io import StringIO
 
 import babel.messages.frontend
 import babel.messages.pofile

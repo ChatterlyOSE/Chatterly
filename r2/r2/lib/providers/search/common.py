@@ -24,7 +24,7 @@ from datetime import datetime
 from pylons import tmpl_context as c
 from pylons import app_globals as g
 import collections
-import httplib
+import http.client as httplib
 import time
 import re
 
@@ -51,13 +51,11 @@ def safe_xml_str(s, use_encoding="utf-8"):
     '''
     illegal_xml = re.compile(u'[\x00-\x08\x0b\x0c\x0e-\x1F\uD800-\uDFFF\uFFFE\uFFFF]')
 
-    if not isinstance(s, unicode):
-        if isinstance(s, str):
-            s = unicode(s, use_encoding, errors="replace")
+    if not isinstance(s, str):
+        if isinstance(s, bytes):
+            s = s.decode(use_encoding, errors="replace")
         else:
-            # ints will raise TypeError if the "errors" kwarg
-            # is passed, but since it's not a str no problem
-            s = unicode(s)
+            s = str(s)
     s = illegal_xml.sub(u"\uFFFD", s)
     return s
 
@@ -115,14 +113,13 @@ class FieldsMeta(type):
     def __init__(cls, name, bases, attrs):
         type.__init__(cls, name, bases, attrs)
         fields = []
-        for attr in attrs.itervalues():
+        for attr in attrs.values():
             if hasattr(attr, "field"):
                 fields.append(attr.field)
         cls._fields = tuple(fields)
 
 
-class FieldsBase(object):
-    __metaclass__ = FieldsMeta
+class FieldsBase(object, metaclass=FieldsMeta):
 
     def fields(self):
         data = {}

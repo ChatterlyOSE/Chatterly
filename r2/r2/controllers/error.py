@@ -202,7 +202,7 @@ class ErrorController(RedditController):
             takedown = request.GET.get('takedown', '')
             error_name = request.GET.get('error_name', '')
 
-            if isinstance(c.user, basestring):
+            if isinstance(c.user, str):
                 # somehow requests are getting here with c.user unset
                 c.user_is_loggedin = False
                 c.user = UnloggedUser(browser_langs=None)

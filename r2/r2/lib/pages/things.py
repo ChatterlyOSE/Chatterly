@@ -334,7 +334,7 @@ class MessageButtons(PrintableButtons):
 def make_wrapper(parent_wrapper = Wrapped, **params):
     def wrapper_fn(thing):
         w = parent_wrapper(thing)
-        for k, v in params.iteritems():
+        for k, v in params.items():
             setattr(w, k, v)
         return w
     return wrapper_fn
@@ -360,7 +360,7 @@ def wrap_links(links, wrapper = default_thing_wrapper(),
                listing_cls = LinkListing, 
                num = None, show_nums = False, nextprev = False, **kw):
     links = tup(links)
-    if not all(isinstance(x, basestring) for x in links):
+    if not all(isinstance(x, str) for x in links):
         links = [x._fullname for x in links]
     b = IDBuilder(links, num = num, wrap = wrapper, **kw)
     l = listing_cls(b, nextprev = nextprev, show_nums = show_nums)

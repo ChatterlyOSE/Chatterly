@@ -81,7 +81,7 @@ def time_listings(times = ('all',)):
                 domains = []
             ups, downs = link.ups, link.downs
 
-            for tkey, oldest in oldests.iteritems():
+            for tkey, oldest in oldests.items():
                 if timestamp > oldest:
                     sc = score(ups, downs)
                     contr = controversy(ups, downs)

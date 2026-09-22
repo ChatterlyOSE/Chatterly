@@ -65,7 +65,7 @@ class Plugin(object):
             from r2.lib import js
             module_registry = js.module
 
-        for name, module in self.js.iteritems():
+        for name, module in self.js.items():
             if name not in module_registry:
                 module_registry[name] = module
             else:
@@ -120,7 +120,7 @@ class PluginLoader(object):
         return len(self.plugins)
 
     def __iter__(self):
-        return self.plugins.itervalues()
+        return self.plugins.values()
 
     def __reversed__(self):
         return reversed(self.plugins.values())

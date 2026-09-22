@@ -116,7 +116,7 @@ def update_blob(code, updates=None):
         raise ValueError("%s doesn't have access to payment_blob %s" %
                          (c.user._id, code))
 
-    for item, value in updates.iteritems():
+    for item, value in updates.items():
         blob[item] = value
     g.hardcache.set("payment_blob-%s" % code, blob, BLOB_TTL)
 
@@ -129,7 +129,7 @@ def has_blob(custom):
     return bool(blob)
 
 def dump_parameters(parameters):
-    for k, v in parameters.iteritems():
+    for k, v in parameters.items():
         g.log.info("IPN: %r = %r" % (k, v))
 
 def check_payment_status(payment_status):

@@ -142,7 +142,7 @@ def build_arg_list(fn, env):
     """given a fn and and environment the builds a keyword argument list
     for fn"""
     kw = {}
-    argspec = inspect.getargspec(fn)
+    argspec = inspect.getfullargspec(fn)
 
     # if there is a **kw argument in the fn definition,
     # just pass along the environment
@@ -161,7 +161,7 @@ def _make_validated_kw(fn, simple_vals, param_vals, env):
     for validator in simple_vals:
         validator(env)
     kw = build_arg_list(fn, env)
-    for var, validator in param_vals.iteritems():
+    for var, validator in param_vals.items():
         kw[var] = validator(env)
     return kw
 
@@ -169,7 +169,7 @@ def set_api_docs(fn, simple_vals, param_vals, extra_vals=None):
     doc = fn._api_doc = getattr(fn, '_api_doc', {})
     param_info = doc.get('parameters', {})
     notes = doc.get('notes', [])
-    for validator in chain(simple_vals, param_vals.itervalues()):
+    for validator in chain(simple_vals, param_vals.values()):
         param_docs = validator.param_docs()
         if validator.docs:
             param_docs.update(validator.docs)
@@ -182,7 +182,7 @@ def set_api_docs(fn, simple_vals, param_vals, extra_vals=None):
     doc['notes'] = notes
 
 def _validators_handle_csrf(simple_vals, param_vals):
-    for validator in chain(simple_vals, param_vals.itervalues()):
+    for validator in chain(simple_vals, param_vals.values()):
         if getattr(validator, 'handles_csrf', False):
             return True
     return False
@@ -1645,7 +1645,7 @@ class VThrottledLogin(VRequired):
     def get_ratelimits(self, account):
         is_previously_seen_ip = request.ip in [
             j for i in IPsByAccount.get(account._id, column_count=1000)
-            for j in i.itervalues()
+            for j in i.values()
         ]
 
         # We want to maintain different rate-limit buckets depending on whether
@@ -1704,7 +1704,7 @@ class VThrottledLogin(VRequired):
                 ratelimits = self.get_ratelimits(account)
                 now = int(time.time())
 
-                for rl, max_requests in ratelimits.iteritems():
+                for rl, max_requests in ratelimits.items():
                     try:
                         failed_logins = ratelimit.get_usage(str(rl), time_slice)
 
@@ -3002,7 +3002,7 @@ class VValidatedJSON(VJSON):
                 raise RedditError('JSON_INVALID', code=400)
 
             validated_data = {}
-            for key, validator in self.spec.iteritems():
+            for key, validator in self.spec.items():
                 try:
                     validated_data[key] = validator.run(data[key])
                 except KeyError:
@@ -3014,7 +3014,7 @@ class VValidatedJSON(VJSON):
 
         def spec_docs(self):
             spec_docs = {}
-            for key, validator in self.spec.iteritems():
+            for key, validator in self.spec.items():
                 if hasattr(validator, 'spec_docs'):
                     spec_docs[key] = validator.spec_docs()
                 elif hasattr(validator, 'param_docs'):

@@ -24,7 +24,7 @@ from __future__ import absolute_import
 
 from copy import deepcopy
 from datetime import datetime
-import cPickle as pickle
+import pickle
 import logging
 from . import operators
 import re
@@ -427,7 +427,7 @@ def make_thing(type_id, ups, downs, date, deleted, spam, id=None):
         r = t.insert().execute(**params)
         new_id = r.inserted_primary_key[0]
         new_r = r.last_inserted_params()
-        for k, v in params.iteritems():
+        for k, v in params.items():
             if new_r[k] != v:
                 raise CreationError("There's shit in the plumbing. " +
                                       "expected %s, got %s" % (params,  new_r))
@@ -453,7 +453,7 @@ def set_thing_props(type_id, thing_id, **props):
     #use real columns
     def do_update(t):
         transactions.add_engine(t.bind)
-        new_props = dict((t.c[prop], val) for prop, val in props.iteritems())
+        new_props = dict((t.c[prop], val) for prop, val in props.items())
         u = t.update(t.c.thing_id == thing_id, values = new_props)
         u.execute()
 
@@ -500,7 +500,7 @@ def set_rel_props(rel_type_id, rel_id, **props):
 
     #use real columns
     transactions.add_engine(t.bind)
-    new_props = dict((t.c[prop], val) for prop, val in props.iteritems())
+    new_props = dict((t.c[prop], val) for prop, val in props.items())
     u = t.update(t.c.rel_id == rel_id, values = new_props)
     u.execute()
 
@@ -509,9 +509,9 @@ def py2db(val, return_kind=False):
     if isinstance(val, bool):
         val = 't' if val else 'f'
         kind = 'bool'
-    elif isinstance(val, (str, unicode)):
+    elif isinstance(val, str):
         kind = 'str'
-    elif isinstance(val, (int, float, long)):
+    elif isinstance(val, (int, float)):
         kind = 'num'
     elif val is None:
         kind = 'none'
@@ -547,7 +547,7 @@ def update_data(table, thing_id, **vals):
                              table.c.key == sa.bindparam('_key')))
 
     inserts = []
-    for key, val in vals.iteritems():
+    for key, val in vals.items():
         val, kind = py2db(val, return_kind=True)
 
         uresult = u.execute(_key = key, value = val, kind = kind)
@@ -564,7 +564,7 @@ def create_data(table, thing_id, **vals):
     transactions.add_engine(table.bind)
 
     inserts = []
-    for key, val in vals.iteritems():
+    for key, val in vals.items():
         val, kind = py2db(val, return_kind=True)
         inserts.append(dict(key=key, value=val, kind=kind))
 

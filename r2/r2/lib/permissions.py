@@ -46,7 +46,7 @@ class PermissionSet(dict):
     def dumps(self):
         if self.is_superuser():
             return '+all'
-        return ','.join('-+'[bool(v)] + k for k, v in sorted(self.iteritems()))
+        return ','.join('-+'[bool(v)] + k for k, v in sorted(self.items()))
 
     def is_superuser(self):
         return bool(super(PermissionSet, self).get(self.ALL))

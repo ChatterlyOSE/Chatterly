@@ -40,7 +40,7 @@ def check_controller_csrf_prevention(controller):
     # We're only interested in handlers that might mutate data
     mutating_methods = {"POST", "PUT", "PATCH", "DELETE"}
 
-    for name, func in controller.__dict__.iteritems():
+    for name, func in controller.__dict__.items():
         method, sep, action = name.partition('_')
         if not action:
             continue

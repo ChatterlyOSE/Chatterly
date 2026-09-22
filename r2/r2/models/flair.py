@@ -185,8 +185,8 @@ class FlairTemplateBySubredditIndex(tdb_cassandra.Thing):
         idx._commit()
 
     def _index_keys(self, flair_type):
-        keys = set(self._dirties.iterkeys())
-        keys |= frozenset(self._orig.iterkeys())
+        keys = set(self._dirties.keys())
+        keys |= frozenset(self._orig.keys())
         keys -= self._deletes
         key_prefix = self._key_prefixes[flair_type]
         return [k for k in keys if k.startswith(key_prefix)]

@@ -205,7 +205,7 @@ class SubredditRules(tdb_cassandra.View):
             return []
 
         result = []
-        for uuid, json_blob in query.iteritems():
+        for uuid, json_blob in query.items():
             payload = json.loads(json_blob)
             if not payload.get("created_utc"):
                 payload["created_utc"] = time.mktime(

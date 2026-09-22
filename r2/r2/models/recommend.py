@@ -103,7 +103,7 @@ class AccountSRFeedback(tdb_cassandra.DenormalizedRelation):
                                             column_count=max_column_count)
         except pycassa.NotFoundException:
             return feedback
-        for colkey, colval in row.iteritems():
+        for colkey, colval in row.items():
             action, sr_id36 = colkey.split('.')
             feedback[action].add(sr_id36)
         return feedback

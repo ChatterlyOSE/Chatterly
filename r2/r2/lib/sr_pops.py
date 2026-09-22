@@ -26,7 +26,7 @@ from r2.models import Subreddit
 
 def set_downs():
     sr_counts = count.get_sr_counts()
-    names = [k for k, v in sr_counts.iteritems() if v != 0]
+    names = [k for k, v in sr_counts.items() if v != 0]
     srs = Subreddit._by_fullname(names)
     for name in names:
         sr,c = srs[name], sr_counts[name]

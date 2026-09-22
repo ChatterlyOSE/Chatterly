@@ -21,7 +21,7 @@ def utf8(val):
     return bytes(val)
 
 def datetime(val):
-    milliseconds = long(float(val) * 1e3)
+    milliseconds = int(float(val) * 1e3)
     return ByteBuffer.allocate(8).putLong(0, milliseconds)
 
 COERCERS = dict(utf8=utf8,

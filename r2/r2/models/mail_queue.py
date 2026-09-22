@@ -422,7 +422,7 @@ class Email(object):
             if reject_newlines and '\n' in s:
                 raise HeaderParseError(
                     'header value contains unexpected newline: {!r}'.format(s))
-            return s.encode('utf8') if isinstance(s, unicode) else s
+            return s.encode('utf8') if isinstance(s, str) else s
 
         fr = '"%s" <%s>' % (
             self.from_name().replace('"', ''),

@@ -55,7 +55,7 @@ class Report(MultiRelation('report', *REPORT_RELS)):
         # check if this report exists already!
         rel = cls.rel(user, thing)
         q = rel._fast_query(user, thing, ['-1', '0', '1'])
-        q = [ report for (tupl, report) in q.iteritems() if report ]
+        q = [ report for (tupl, report) in q.items() if report ]
         if q:
             # stop if we've seen this before, so that we never get the
             # same report from the same user twice
@@ -110,7 +110,7 @@ class Report(MultiRelation('report', *REPORT_RELS)):
         for thing in things:
             things_by_cls.setdefault(thing.__class__, []).append(thing)
 
-        for thing_cls, cls_things in things_by_cls.iteritems():
+        for thing_cls, cls_things in things_by_cls.items():
             to_clear = []
             # look up all of the reports for each thing
             rel_cls = cls.rel(Account, thing_cls)

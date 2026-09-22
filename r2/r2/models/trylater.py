@@ -225,7 +225,7 @@ class TryLaterBySubject(tdb_cassandra.View):
     def unschedule(cls, rowkey, colkey, schedule_rowkey):
         colkey = tup(colkey)
         victims = cls.search(rowkey, colkey)
-        for uu in victims.itervalues():
+        for uu in victims.values():
             keys = TryLater.search(schedule_rowkey, uu).keys()
             TryLater.unschedule(schedule_rowkey, keys)
         cls._cf.remove(rowkey, colkey)

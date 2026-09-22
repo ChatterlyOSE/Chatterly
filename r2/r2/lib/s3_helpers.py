@@ -220,7 +220,7 @@ def _get_upload_policy(
     conditions.append([
         "content-length-range", 0, max_content_length])
 
-    for key, value in meta.iteritems():
+    for key, value in meta.items():
         conditions.append({key: value})
 
     if content_type:
@@ -351,7 +351,7 @@ def get_post_args(
         "value": storage_class,
     })
 
-    for key, value in meta.iteritems():
+    for key, value in meta.items():
         fields.append({
             "name": key,
             "value": value,

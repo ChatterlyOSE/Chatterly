@@ -21,15 +21,14 @@ from __future__ import print_function
 # Inc. All Rights Reserved.
 ###############################################################################
 
-import cPickle as pickle
+import pickle
 from datetime import datetime, timedelta
 import functools
-import httplib
+import http.client as httplib
 import json
 import socket
 import time
-import urllib
-
+import urllib.parse
 from lxml import etree
 from pylons import tmpl_context as c
 from pylons import app_globals as g
@@ -391,8 +390,8 @@ def _encode_query(query, faceting, size, start, rank, return_fields):
     facet_sort = []
     if faceting:
         params["facet"] = "true"
-        params["facet.field"] = ",".join(faceting.iterkeys())
-        for facet, options in faceting.iteritems():
+        params["facet.field"] = ",".join(faceting.keys())
+        for facet, options in faceting.items():
             facet_limit.append(options.get("count", 20))
             if "sort" in options:
                 if not options['sort'].split()[-1] in ['asc', 'desc']:
@@ -403,7 +402,7 @@ def _encode_query(query, faceting, size, start, rank, return_fields):
         params["facet.sort"] = params["facet.sort"] or 'score desc' 
     if return_fields:
         params["qf"] = ",".join(return_fields)
-    encoded_query = urllib.urlencode(params)
+    encoded_query = urllib.parse.urlencode(params)
     if getattr(g, 'solr_version', '1').startswith('4'):
         path = '/solr/%s/select?%s' % \
             (getattr(g, 'solr_core', 'collection1'), encoded_query)
@@ -437,7 +436,7 @@ class SolrSearchUploader(object):
         field = etree.SubElement(doc, "field", name='id')
         field.text = thing._fullname
 
-        for field_name, value in self.fields(thing).iteritems():
+        for field_name, value in self.fields(thing).items():
             field = etree.SubElement(doc, "field", name=field_name)
             field.text = safe_xml_str(value)
 
@@ -747,7 +746,7 @@ rebuild_subreddit_index = functools.partial(_rebuild_link_index,
 
 def test_run_link(start_link, count=1000):
     '''Inject `count` number of links, starting with `start_link`'''
-    if isinstance(start_link, basestring):
+    if isinstance(start_link, str):
         start_link = int(start_link, 36)
     links = Link._byID(range(start_link - count, start_link), data=True,
                        return_dict=False)

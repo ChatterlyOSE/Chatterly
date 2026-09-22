@@ -412,7 +412,7 @@ class OAuth2Client(Token):
 
     @property
     def _developer_ids(self):
-        for k, v in self._t.iteritems():
+        for k, v in self._t.items():
             if k.startswith(self._developer_colname_prefix) and v:
                 try:
                     yield int(k[len(self._developer_colname_prefix):], 36)
@@ -491,7 +491,7 @@ class OAuth2Client(Token):
             return []
 
         clients = cls._byID(cba._values().keys())
-        return [client for client in clients.itervalues()
+        return [client for client in clients.values()
                 if not client.deleted and client.has_developer(account)]
 
     @classmethod
@@ -531,7 +531,7 @@ class OAuth2Client(Token):
             else:
                 client_data['refresh_tokens'] += 1
 
-        for client_data in clients.itervalues():
+        for client_data in clients.values():
             client_data['scopes'] = OAuth2Scope.merge_scopes(client_data['scopes'])
 
         return clients
@@ -701,7 +701,7 @@ class OAuth2AccessToken(Token):
             return []
 
         tokens = cls._byID(tba._values().keys())
-        return [token for token in tokens.itervalues() if token.check_valid()]
+        return [token for token in tokens.values() if token.check_valid()]
 
 class OAuth2AccessTokensByUser(tdb_cassandra.View):
     """Index listing the outstanding access tokens for an account."""

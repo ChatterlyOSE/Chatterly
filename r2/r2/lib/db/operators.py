@@ -41,8 +41,15 @@ class op(object):
         return '<%s: %s, %s>' % (self.__class__.__name__, self.lval, self.rval)
 
     # sorts in a consistent order, required for Query._cache_key()
-    def __cmp__(self, other):
-        return cmp(repr(self), repr(other))
+    # (py2's __cmp__ is ignored on py3, so the rich comparisons replace it)
+    def __lt__(self, other):
+        return repr(self) < repr(other)
+
+    def __eq__(self, other):
+        return repr(self) == repr(other)
+
+    def __hash__(self):
+        return hash(repr(self))
 
 class eq(op): pass
 class ne(op): pass

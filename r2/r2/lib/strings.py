@@ -198,7 +198,7 @@ class StringHandler(object):
 
     def __getattr__(self, attr):
         rval = self.string_dict[attr]
-        if isinstance(rval, (str, unicode)):
+        if isinstance(rval, str):
             return _(rval)
         elif isinstance(rval, dict):
             return StringHandler(**rval)

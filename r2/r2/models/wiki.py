@@ -20,7 +20,7 @@
 # Inc. All Rights Reserved.
 ###############################################################################
 
-from ConfigParser import SafeConfigParser
+from configparser import ConfigParser as SafeConfigParser
 from datetime import datetime, timedelta
 from r2.lib.db import tdb_cassandra
 from r2.lib.db.thing import NotFound
@@ -34,7 +34,7 @@ from r2.lib.db.tdb_cassandra import NotFound
 from r2.models.printable import Printable
 from r2.models.account import Account
 from collections import OrderedDict
-from StringIO import StringIO
+from io import StringIO
 
 import pycassa.types
 
@@ -139,7 +139,7 @@ class WikiRevision(tdb_cassandra.UuidThing, Printable):
         from r2.lib.pages import WrappedUser
         authors = cls.get_authors(revisions)
         return dict([(id36, WrappedUser(v))
-                     for id36, v in authors.iteritems() if v])
+                     for id36, v in authors.items() if v])
     
     @classmethod
     def add_props(cls, user, wrapped):

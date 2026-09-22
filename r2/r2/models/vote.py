@@ -49,7 +49,7 @@ class Vote(object):
         DIRECTIONS.unvote: 0,
     }
     DESERIALIZED_DIRECTIONS = {
-        v: k for k, v in SERIALIZED_DIRECTIONS.iteritems()}
+        v: k for k, v in SERIALIZED_DIRECTIONS.items()}
 
     def __init__(self, user, thing, direction, date, data=None, effects=None,
             get_previous_vote=True, event_data=None):
@@ -224,7 +224,7 @@ class VoteEffects(object):
     def notes(self):
         notes = []
 
-        for code, message in self.note_codes.iteritems():
+        for code, message in self.note_codes.items():
             note = code
             if message:
                 note += " (%s)" % message
@@ -300,7 +300,7 @@ class VoteEffects(object):
             "affects_karma": self.affects_karma,
         }
 
-        for key, value in self.other_effects.iteritems():
+        for key, value in self.other_effects.items():
             data[key] = value
 
         if self.notes:
@@ -440,7 +440,7 @@ class VoteDetailsByThing(tdb_cassandra.View):
             ips = {}
 
         details = []
-        for voter_id36, json_data in raw_details.iteritems():
+        for voter_id36, json_data in raw_details.items():
             data = json.loads(json_data)
             data = cls.convert_old_details(data)
 

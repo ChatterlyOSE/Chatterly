@@ -35,12 +35,12 @@ class Queues(dict):
         self.declare(queues)
 
     def __iter__(self):
-        for name, queue in self.iteritems():
+        for name, queue in self.items():
             if name != "bindings":
                 yield queue
 
     def declare(self, queues):
-        for name, queue in queues.iteritems():
+        for name, queue in queues.items():
             queue.name = name
             queue.bindings = self.bindings
             if queue.bind_to_self:
@@ -95,27 +95,27 @@ def declare_queues(g):
     if g.shard_commentstree_queues:
         sharded_commentstree_queues = {"commentstree_%d_q" % i :
                                        MessageQueue(bind_to_self=True)
-                                       for i in xrange(10)}
+                                       for i in range(10)}
         queues.declare(sharded_commentstree_queues)
 
     if g.shard_author_query_queues:
         sharded_author_query_queues = {
             "author_query_%d_q" % i: MessageQueue(bind_to_self=True)
-            for i in xrange(10)
+            for i in range(10)
         }
         queues.declare(sharded_author_query_queues)
 
     if g.shard_subreddit_query_queues:
         sharded_subreddit_query_queues = {
             "subreddit_query_%d_q" % i: MessageQueue(bind_to_self=True)
-            for i in xrange(10)
+            for i in range(10)
         }
         queues.declare(sharded_subreddit_query_queues)
 
     if g.shard_domain_query_queues:
         sharded_domain_query_queues = {
             "domain_query_%d_q" % i: MessageQueue(bind_to_self=True)
-            for i in xrange(10)
+            for i in range(10)
         }
         queues.declare(sharded_domain_query_queues)
 

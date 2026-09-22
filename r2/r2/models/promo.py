@@ -292,7 +292,7 @@ class Target(object):
         if isinstance(target, Collection):
             self.collection = target
             self.is_collection = True
-        elif isinstance(target, basestring):
+        elif isinstance(target, str):
             self.subreddit_name = target
             self.is_collection = False
         else:
@@ -437,7 +437,7 @@ class PromoCampaign(Thing):
 
         state = self.__dict__
         if "_target" in state:
-            state = {k: v for k, v in state.iteritems() if k != "_target"}
+            state = {k: v for k, v in state.items() if k != "_target"}
         return state
 
     @property
@@ -869,16 +869,16 @@ class PromotionPrices(tdb_cassandra.View):
             except tdb_cassandra.NotFoundException:
                 metros = {}
 
-            for name, cpm in collections.iteritems():
+            for name, cpm in collections.items():
                 r["COLLECTION"][name] = cpm
 
-            for name, cpm in subreddits.iteritems():
+            for name, cpm in subreddits.items():
                 r["SUBREDDIT"][name] = cpm
 
-            for name, cpm in countries.iteritems():
+            for name, cpm in countries.items():
                 r["COUNTRY"][name] = cpm
 
-            for name, cpm in metros.iteritems():
+            for name, cpm in metros.items():
                 r["METRO"][name] = cpm
 
         return r

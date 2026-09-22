@@ -560,7 +560,7 @@ class SortMenu(NavMenu):
         "random": operators.shuffled('_confidence'),
         "qa": operators.desc('_qa'),
     }
-    _reverse_mapping = {v: k for k, v in _mapping.iteritems()}
+    _reverse_mapping = {v: k for k, v in _mapping.items()}
 
     @classmethod
     def operator(cls, sort):

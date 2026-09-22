@@ -120,7 +120,7 @@ class ApidocsController(RedditController):
         """
 
         api_docs = defaultdict(lambda: defaultdict(dict))
-        for name, func in controller.__dict__.iteritems():
+        for name, func in controller.__dict__.items():
             method, sep, action = name.partition('_')
             if not action:
                 continue
@@ -211,7 +211,7 @@ class ApidocsController(RedditController):
             (CaptchaController, ''),
             (FrontController, ''),
         ]
-        for name, value in vars(listingcontroller).iteritems():
+        for name, value in vars(listingcontroller).items():
             if name.endswith('Controller'):
                 api_controllers.append((value, ''))
 
@@ -224,10 +224,10 @@ class ApidocsController(RedditController):
         for controller, url_prefix in api_controllers:
             controller_docs = self.docs_from_controller(controller, url_prefix,
                                                         mode == 'oauth')
-            for section, contents in controller_docs.iteritems():
+            for section, contents in controller_docs.items():
                 api_docs[section].update(contents)
-                for variant, method_dict in contents.iteritems():
-                    for method, docs in method_dict.iteritems():
+                for variant, method_dict in contents.items():
+                    for method, docs in method_dict.items():
                         for scope in docs['oauth_scopes']:
                             oauth_index[scope].add((section, variant, method))
 

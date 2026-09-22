@@ -22,7 +22,7 @@
 
 import os
 import json
-import urllib
+import urllib.parse
 import functools
 import zlib
 
@@ -79,8 +79,8 @@ class LiveConfig(object):
     def get(self, key, default=None):
         return self.data.get(key, default)
 
-    def iteritems(self):
-        return self.data.iteritems()
+    def items(self):
+        return self.data.items()
 
     def __repr__(self):
         return "<LiveConfig %r>" % self.data
@@ -107,11 +107,11 @@ class LiveList(object):
                 self.data = self._normalize_children(children, reduce=True)
 
     def _nodepath(self, item):
-        escaped = urllib.quote(str(item), safe=":")
+        escaped = urllib.parse.quote(str(item), safe=":")
         return os.path.join(self.root, escaped)
 
     def _normalize_children(self, children, reduce):
-        unquoted = (urllib.unquote(c) for c in children)
+        unquoted = (urllib.parse.unquote(c) for c in children)
         mapped = map(self.map_fn, unquoted)
 
         if reduce:

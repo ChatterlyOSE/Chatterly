@@ -29,8 +29,7 @@ from r2.lib.db.tdb_cassandra import ThingMeta
 
 NoDefault = object()
 
-class KeyValueStore(object):
-    __metaclass__ = ThingMeta
+class KeyValueStore(object, metaclass=ThingMeta):
 
     _use_db = False
     _cf_name = None

@@ -31,8 +31,8 @@ http://developer.authorize.net/api/cim/
 """
 
 import re
-from httplib import HTTPSConnection
-from urlparse import urlparse
+from http.client import HTTPSConnection
+from urllib.parse import urlparse
 
 from BeautifulSoup import BeautifulStoneSoup
 from pylons import app_globals as g
@@ -119,7 +119,7 @@ class SimpleXMLObject(object):
 
     @staticmethod
     def simple_tag(name, content, **attrs):
-        attrs = " ".join('%s="%s"' % (k, v) for k, v in attrs.iteritems())
+        attrs = " ".join('%s="%s"' % (k, v) for k, v in attrs.items())
         if attrs:
             attrs = " " + attrs
         return ("<%(name)s%(attrs)s>%(content)s</%(name)s>" %
@@ -131,7 +131,7 @@ class SimpleXMLObject(object):
             if isinstance(v, SimpleXMLObject):
                 v = v.toXML()
             elif v is not None:
-                v = unicode(v)
+                v = str(v)
                 if k not in _no_escape_list:
                     v = escape(v) # escape &, <, and >
             if v is not None:
@@ -152,7 +152,7 @@ class SimpleXMLObject(object):
         for k in cls._keys:
             d = data.find(k.lower())
             if d and d.contents:
-                kw[k] = unicode(d.contents[0])
+                kw[k] = str(d.contents[0])
         return cls(**kw)
 
 
@@ -486,7 +486,7 @@ class CreateCustomerProfileTransactionRequest(AuthorizeNetRequest):
     @property
     def extraOptions(self):
         return "<![CDATA[%s]]>" % "&".join("%s=%s" % x
-                                            for x in self._extra.iteritems())
+                                            for x in self._extra.items())
 
     def process_response(self, res):
         return (True, self.package_response(res))
@@ -497,7 +497,7 @@ class CreateCustomerProfileTransactionRequest(AuthorizeNetRequest):
     def package_response(self, res):
         content = res.directresponse.contents[0]
         s = Storage(zip(self.response_keys, content.split(',')))
-        for name, cast in self.response_types.iteritems():
+        for name, cast in self.response_types.items():
             try:
                 s[name] = cast(s[name])
             except ValueError:

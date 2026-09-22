@@ -7,7 +7,7 @@ from r2.models.ip import IPsByAccount, AccountsByIP
 
 def ips_by_account_id(account_id, limit=None):
     ips = IPsByAccount.get(account_id, column_count=limit or 1000)
-    flattened_ips = [j for i in ips for j in i.iteritems()]
+    flattened_ips = [j for i in ips for j in i.items()]
     locations = location_by_ips(set(ip for _, ip in flattened_ips))
     orgs = organization_by_ips(set(ip for _, ip in flattened_ips))
 
@@ -50,10 +50,10 @@ def account_ids_by_ip(ip, after=None, before=None, limit=1000):
             account_ip = AccountsByIP.get(
                 ip, column_start=after, column_count=limit)
         flattened_account_ip = [j for i in account_ip
-                                for j in i.iteritems()]
+                                for j in i.items()]
         flattened_accounts[ip] = flattened_account_ip
 
-    for ip, flattened_account_ip in flattened_accounts.iteritems():
+    for ip, flattened_account_ip in flattened_accounts.items():
         for last_visit, account in flattened_account_ip:
             results.append((account, last_visit, [ip]))
     return results

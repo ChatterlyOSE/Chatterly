@@ -23,8 +23,8 @@
 
 import datetime
 import json
-import urllib
-import urlparse
+import urllib.parse
+import urllib.parse as urlparse
 
 from baseplate.crypto import MessageSigner
 from pylons import app_globals as g
@@ -64,7 +64,7 @@ def make_url(namespace, max_age):
     signature = signer.make_signature(
         namespace, max_age=datetime.timedelta(seconds=max_age))
 
-    query_string = urllib.urlencode({
+    query_string = urllib.parse.urlencode({
         "m": signature,
     })
 

@@ -257,7 +257,7 @@ class ModAction(tdb_cassandra.UuidThing):
         Get a ColumnQuery that yields ModAction objects according to
         specified criteria.
         """
-        if after and isinstance(after, basestring):
+        if after and isinstance(after, str):
             after = cls._byID(UUID(after))
         elif after and isinstance(after, UUID):
             after = cls._byID(after)

@@ -22,7 +22,7 @@ from __future__ import absolute_import
 ###############################################################################
 
 from .reddit_base import RedditController
-import StringIO
+import io
 import r2.lib.captcha as captcha
 from pylons import response
 
@@ -50,7 +50,7 @@ class CaptchaController(RedditController):
         use [/api/new_captcha](#POST_api_new_captcha).
         """
         image = captcha.get_image(iden)
-        f = StringIO.StringIO()
+        f = io.StringIO()
         image.save(f, "PNG")
         response.content_type = "image/png;"
         return f.getvalue()

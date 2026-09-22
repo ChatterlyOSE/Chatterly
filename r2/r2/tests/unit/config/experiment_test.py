@@ -49,13 +49,13 @@ class TestExperiment(TestFeatureBase):
 
     def get_loggedin_users(self, num_users):
         users = []
-        for i in xrange(num_users):
+        for i in range(num_users):
             users.append(MockAccount(name=str(i), _fullname="t2_%s" % str(i)))
         return users
 
     @staticmethod
     def get_loggedout_users(num_users):
-        return [None for _ in xrange(num_users)]
+        return [None for _ in range(num_users)]
 
     def test_calculate_bucket(self):
         """Test FeatureState's _calculate_bucket function."""
@@ -65,7 +65,7 @@ class TestExperiment(TestFeatureBase):
         # precision when checking amounts per bucket.
         NUM_USERS = FeatureState.NUM_BUCKETS * 2000
         fullnames = []
-        for i in xrange(NUM_USERS):
+        for i in range(NUM_USERS):
             fullnames.append("t2_%s" % str(i))
 
         counter = collections.Counter()
@@ -75,7 +75,7 @@ class TestExperiment(TestFeatureBase):
             # Ensure bucketing is deterministic.
             self.assertEqual(bucket, feature_state._calculate_bucket(fullname))
 
-        for bucket in xrange(FeatureState.NUM_BUCKETS):
+        for bucket in range(FeatureState.NUM_BUCKETS):
             # We want an even distribution across buckets.
             expected = NUM_USERS / FeatureState.NUM_BUCKETS
             actual = counter[bucket]
@@ -100,7 +100,7 @@ class TestExperiment(TestFeatureBase):
         }
 
         counters = collections.defaultdict(collections.Counter)
-        for bucket in xrange(FeatureState.NUM_BUCKETS):
+        for bucket in range(FeatureState.NUM_BUCKETS):
             variant = FeatureState._choose_variant(bucket, no_variants)
             if variant:
                 counters['no_variants'][variant] += 1
@@ -157,7 +157,7 @@ class TestExperiment(TestFeatureBase):
             'control_1': 49,
             'control_2': 51,
         }
-        for bucket in xrange(FeatureState.NUM_BUCKETS):
+        for bucket in range(FeatureState.NUM_BUCKETS):
             variant = FeatureState._choose_variant(bucket, fifty_fifty)
             counters['fifty_fifty'][variant] += 1
             variant = FeatureState._choose_variant(bucket, almost_fifty_fifty)

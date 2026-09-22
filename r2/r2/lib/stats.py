@@ -97,7 +97,7 @@ class CountingStatBuffer:
     def flush(self):
         """Yields accumulated counter data and resets the buffer."""
         data, self.data = self.data, collections.defaultdict(int)
-        for k, v in data.iteritems():
+        for k, v in data.items():
             yield k, str(v) + '|c'
 
 
@@ -124,8 +124,8 @@ class StringCountBuffer:
         new_data = collections.defaultdict(
             functools.partial(collections.defaultdict, int))
         data, self.data = self.data, new_data
-        for k, counts in data.iteritems():
-            for v, count in counts.iteritems():
+        for k, counts in data.items():
+            for v, count in counts.items():
                 yield k, str(count) + '|s|' + self._encode_string(v)
 
 
@@ -198,7 +198,7 @@ class StatsdClient:
 
 def _get_stat_name(*name_parts):
     def to_str(value):
-        if isinstance(value, unicode):
+        if isinstance(value, str):
             value = value.encode('utf-8', 'replace')
         return value
     return '.'.join(to_str(x) for x in name_parts if x)
@@ -345,7 +345,7 @@ class Stats:
             sample_rate = self.CACHE_SAMPLE_RATE
         counter = self.get_counter('cache')
         if counter and random.random() < sample_rate:
-            for name, delta in data.iteritems():
+            for name, delta in data.items():
                 counter.increment(name, delta=delta)
 
     def amqp_processor(self, queue_name):
@@ -527,7 +527,7 @@ class StatsCollectingConnectionPool(pool.ConnectionPool):
             for v in args:
                 if isinstance(v, cf_types):
                     return v.column_family
-            for v in kwargs.itervalues():
+            for v in kwargs.values():
                 if isinstance(v, cf_types):
                     return v.column_family
             return None
@@ -535,7 +535,7 @@ class StatsCollectingConnectionPool(pool.ConnectionPool):
         def get_cf_name_from_batch_mutation(args, kwargs):
             cf_names = set()
             mutation_map = args[0]
-            for key_mutations in mutation_map.itervalues():
+            for key_mutations in mutation_map.values():
                 cf_names.update(key_mutations)
             return list(cf_names)
 
@@ -610,7 +610,7 @@ class StatsCollectingConnectionPool(pool.ConnectionPool):
             return call_with_instrumentation
 
         wrapper = pool.ConnectionPool._get_new_wrapper(self, server)
-        for method_name, get_cf_name in instrumented_methods.iteritems():
+        for method_name, get_cf_name in instrumented_methods.items():
             f = getattr(wrapper, method_name)
             setattr(wrapper, method_name, instrument(f, get_cf_name))
         return wrapper

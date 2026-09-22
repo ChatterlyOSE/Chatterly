@@ -50,7 +50,7 @@ class SigningTests(RedditTestCase):
         else:
             self.assertEqual(len(signature.errors), 0)
         has_mac = expected.pop("has_mac", False)
-        for k, v in expected.iteritems():
+        for k, v in expected.items():
             got = getattr(signature, k)
             self.assertEqual(got, v, "signature.%s: %s != %s" % (k, got, v))
 

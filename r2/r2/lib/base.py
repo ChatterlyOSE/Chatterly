@@ -33,9 +33,9 @@ from r2.lib.utils import Agent
 from .utils import string2js, read_http_date
 
 import re, hashlib
-from Cookie import CookieError
+from http.cookies import CookieError
 from urllib import quote
-import urllib2
+import urllib.request as urllib2
 import sys
 
 

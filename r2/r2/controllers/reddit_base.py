@@ -27,13 +27,13 @@ import simplejson
 import socket
 import itertools
 
-from Cookie import CookieError
+from http.cookies import CookieError
 from copy import copy
 from datetime import datetime, timedelta
 from functools import wraps
 from hashlib import sha1, md5
 from urllib import quote, unquote
-from urlparse import urlparse
+from urllib.parse import urlparse
 
 import babel.core
 import pylibmc
@@ -164,7 +164,7 @@ class UnloggedUser(FakeAccount):
     def _decode_json(self, json_blob):
         data = json.loads(json_blob)
         validated = {}
-        for k, v in data.iteritems():
+        for k, v in data.items():
             validator = self.allowed_prefs.get(k)
             if validator:
                 try:
@@ -194,7 +194,7 @@ class UnloggedUser(FakeAccount):
                 return values
 
     def _to_cookie(self, data):
-        allowed_data = {k: v for k, v in data.iteritems()
+        allowed_data = {k: v for k, v in data.items()
                         if k in self.allowed_prefs}
         jsonified = json.dumps(allowed_data, sort_keys=True)
         c.cookies[self.COOKIE_NAME] = Cookie(value=jsonified)
@@ -207,7 +207,7 @@ class UnloggedUser(FakeAccount):
 
     def _commit(self):
         if self._dirty:
-            for k, (oldv, newv) in self._dirties.iteritems():
+            for k, (oldv, newv) in self._dirties.items():
                 self._t[k] = newv
             self._to_cookie(self._t)
 
@@ -326,7 +326,7 @@ def set_subreddit():
         base_sr_name, exclude_sr_names = sr_names[0], sr_names[1:]
         srs = Subreddit._by_name(sr_names, stale=can_stale)
         base_sr = srs.pop(base_sr_name, None)
-        exclude_srs = [sr for sr in srs.itervalues()
+        exclude_srs = [sr for sr in srs.values()
                           if not isinstance(sr, FakeSubreddit)]
 
         if base_sr == All:
@@ -576,7 +576,7 @@ def ratelimit_agents():
         return
 
     # Search anywhere in the useragent for the given regex
-    for agent_re, limit in g.user_agent_ratelimit_regexes.iteritems():
+    for agent_re, limit in g.user_agent_ratelimit_regexes.items():
         if agent_re.search(user_agent):
             ratelimit_agent(agent_re.pattern, limit)
             return
@@ -975,7 +975,7 @@ class MinimalController(BaseController):
             upgrade_cookie_security()
 
         # Don't poison the cache with uncacheable cookies
-        dirty_cookies = (k for k, v in c.cookies.iteritems() if v.dirty)
+        dirty_cookies = (k for k, v in c.cookies.items() if v.dirty)
         would_poison = any((k not in CACHEABLE_COOKIES) for k in dirty_cookies)
 
         if c.user_is_loggedin or would_poison:
@@ -1003,7 +1003,7 @@ class MinimalController(BaseController):
 
         # send cookies
         secure_cookies = feature.is_enabled("force_https")
-        for k, v in c.cookies.iteritems():
+        for k, v in c.cookies.items():
             if v.dirty:
                 v_secure = v.secure if v.secure is not None else secure_cookies
                 response.set_cookie(key=k,
@@ -1266,14 +1266,14 @@ class RedditController(OAuth2ResourceController):
         # populate c.cookies unless we're on the unsafe media_domain
         if request.host != g.media_domain or g.media_domain == g.domain:
             cookie_counts = collections.Counter()
-            for k, v in request.cookies.iteritems():
+            for k, v in request.cookies.items():
                 # minimalcontroller can still set cookies
                 if k not in c.cookies:
                     # we can unquote even if it's not quoted
                     c.cookies[k] = Cookie(value=unquote(v), dirty=False)
                     cookie_counts[Cookie.classify(k)] += 1
 
-            for cookietype, count in cookie_counts.iteritems():
+            for cookietype, count in cookie_counts.items():
                 g.stats.simple_event("cookie.%s" % cookietype, count)
 
         delete_obsolete_cookies()
@@ -1312,7 +1312,7 @@ class RedditController(OAuth2ResourceController):
             if not c.user:
                 c.user = UnloggedUser(get_browser_langs())
                 # patch for fixing mangled language preferences
-                if not isinstance(c.user.pref_lang, basestring):
+                if not isinstance(c.user.pref_lang, str):
                     c.user.pref_lang = g.lang
                     c.user._commit()
 

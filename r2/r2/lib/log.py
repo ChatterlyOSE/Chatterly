@@ -76,7 +76,7 @@ class SanitizeStackLocalsProcessor(Processor):
                         obj.pop(k)
                     elif isinstance(obj[k], self.classes_to_remove):
                         obj.pop(k)
-                    elif isinstance(obj[k], basestring):
+                    elif isinstance(obj[k], str):
                         contains_forbidden_repr = any(
                             _cls.__name__ in obj[k]
                             for _cls in self.classes_to_remove
@@ -100,7 +100,7 @@ class RavenErrorReporter(Reporter):
     def get_module_versions(cls):
         return {
             repo: commit_hash[:6]
-            for repo, commit_hash in g.versions.iteritems()
+            for repo, commit_hash in g.versions.items()
         }
 
     @classmethod
@@ -122,7 +122,7 @@ class RavenErrorReporter(Reporter):
             "referer",
         )
         headers = {
-            k: v for k, v in request.headers.iteritems()
+            k: v for k, v in request.headers.items()
             if k.lower() in HEADER_WHITELIST
         }
 

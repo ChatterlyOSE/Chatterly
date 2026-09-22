@@ -248,7 +248,7 @@ def get_comment_items(srs, src, count=4):
 def get_discovery_srid36s():
     """Get list of srs that help people discover other srs."""
     srs = Subreddit._by_name(g.live_config['discovery_srs'])
-    return [sr._id36 for sr in srs.itervalues()]
+    return [sr._id36 for sr in srs.values()]
 
 
 def random_sample(items, count):
@@ -318,7 +318,7 @@ class SRRecommendation(tdb_cassandra.View):
         Returns a list of id36s.
 
         """
-        return roundrobin(*[row._values().itervalues() for row in rows])
+        return roundrobin(*[row._values().values() for row in rows])
 
     @classmethod
     def _merge_and_sort_by_count(cls, rows):
@@ -330,13 +330,13 @@ class SRRecommendation(tdb_cassandra.View):
 
         """
         # combine recs from all input srs
-        rank_id36_pairs = chain.from_iterable(row._values().iteritems()
+        rank_id36_pairs = chain.from_iterable(row._values().items()
                                               for row in rows)
         ranks = defaultdict(list)
         for rank, id36 in rank_id36_pairs:
             ranks[id36].append(rank)
         recs = [(id36, len(ranks), max(ranks))
-                for id36, ranks in ranks.iteritems()]
+                for id36, ranks in ranks.items()]
         # first, sort ascending by rank
         recs = sorted(recs, key=itemgetter(2))
         # next, sort descending by number of times the rec appeared. since

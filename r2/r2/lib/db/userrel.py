@@ -68,7 +68,7 @@ class UserRelManager(object):
     def mutate(self, thing, user, **attrs):
         r = self.get(thing, user)
         if r:
-            for k, v in attrs.iteritems():
+            for k, v in attrs.items():
                 setattr(r, k, v)
             r._commit()
             r._permission_class = self.permission_class

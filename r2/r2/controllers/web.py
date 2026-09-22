@@ -176,10 +176,10 @@ class WebLogController(RedditController):
                 # Verify this is a JSON map of `header_name => [value, ...]`
                 if not isinstance(resp_headers, dict):
                     abort(400)
-                for hdr_name, hdr_vals in resp_headers.iteritems():
-                    if not isinstance(hdr_name, basestring):
+                for hdr_name, hdr_vals in resp_headers.items():
+                    if not isinstance(hdr_name, str):
                         abort(400)
-                    if not all(isinstance(h, basestring) for h in hdr_vals):
+                    if not all(isinstance(h, str) for h in hdr_vals):
                         abort(400)
             except ValueError:
                 abort(400)

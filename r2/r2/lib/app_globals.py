@@ -22,13 +22,14 @@ from __future__ import print_function
 ###############################################################################
 
 from datetime import datetime
-from urlparse import urlparse
+from urllib.parse import urlparse
 
 import base64
-import ConfigParser
+import configparser as ConfigParser
 import locale
 import json
 import logging
+import importlib
 import os
 import re
 import signal
@@ -117,7 +118,7 @@ def extract_live_config(config, plugins):
 
 
 def _decode_secrets(secrets):
-    return {key: base64.b64decode(value) for key, value in secrets.iteritems()}
+    return {key: base64.b64decode(value) for key, value in secrets.items()}
 
 
 def extract_secrets(config):
@@ -148,7 +149,7 @@ class PermissionFilteredEmployeeList(object):
 
     def __iter__(self):
         return (username
-                for username, permission in self.config["employees"].iteritems()
+                for username, permission in self.config["employees"].items()
                 if permission == self.type)
 
     def __getitem__(self, key):
@@ -464,7 +465,7 @@ class Globals(object):
         # the sys.path that was current when the master process was spawned
         # meaning that new plugins will be picked up on regular app reload
         # rather than having to restart the master process as well.
-        reload(site)
+        importlib.reload(site)
         self.pkg_resources_working_set = pkg_resources.WorkingSet()
 
         self.config = ConfigValueParser(global_conf)
@@ -681,7 +682,7 @@ class Globals(object):
 
         # Compile ratelimit regexs
         user_agent_ratelimit_regexes = {}
-        for agent_re, limit in self.user_agent_ratelimit_regexes.iteritems():
+        for agent_re, limit in self.user_agent_ratelimit_regexes.items():
             user_agent_ratelimit_regexes[re.compile(agent_re)] = limit
         self.user_agent_ratelimit_regexes = user_agent_ratelimit_regexes
 
@@ -926,7 +927,7 @@ class Globals(object):
         # around 'cache_chains' without being able to call getattr on
         # 'g'
         def reset_caches():
-            for name, chain in cache_chains.iteritems():
+            for name, chain in cache_chains.items():
                 if isinstance(chain, TransitionalCache):
                     chain = chain.read_chain
 
@@ -1051,7 +1052,7 @@ class Globals(object):
             return params, flags
 
         prefix = 'db_table_'
-        for k, v in self.config.raw_data.iteritems():
+        for k, v in self.config.raw_data.items():
             if not k.startswith(prefix):
                 continue
 

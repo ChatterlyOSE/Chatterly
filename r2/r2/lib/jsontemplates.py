@@ -63,10 +63,10 @@ class ObjectTemplate(StringTemplate):
 
     def update(self, kw):
         def _update(obj):
-            if isinstance(obj, (str, unicode)):
+            if isinstance(obj, str):
                 return _force_unicode(obj)
             elif isinstance(obj, dict):
-                return dict((k, _update(v)) for k, v in obj.iteritems())
+                return dict((k, _update(v)) for k, v in obj.items())
             elif isinstance(obj, (list, tuple)):
                 return map(_update, obj)
             elif isinstance(obj, CacheStub) and obj.name in kw:
@@ -194,12 +194,12 @@ class ThingJsonTemplate(JsonTemplate):
         """
         attrs = dict(self._data_attrs_)
         if hasattr(self, "_optional_data_attrs"):
-            for attr, attrv in self._optional_data_attrs.iteritems():
+            for attr, attrv in self._optional_data_attrs.items():
                 if hasattr(thing, attr):
                     attrs[attr] = attrv
 
         return dict((k, self.thing_attr(thing, v))
-                    for k, v in attrs.iteritems())
+                    for k, v in attrs.items())
 
     def thing_attr(self, thing, attr):
         """
@@ -322,7 +322,7 @@ class SubredditJsonTemplate(ThingJsonTemplate):
 
         permissions = getattr(thing, 'mod_permissions', None)
         if permissions:
-            permissions = [perm for perm, has in permissions.iteritems() if has]
+            permissions = [perm for perm, has in permissions.items() if has]
             data['mod_permissions'] = permissions
 
         return data
@@ -528,7 +528,7 @@ class IdentityJsonTemplate(ThingJsonTemplate):
         if thing.pref_hide_from_robots:
             response.headers['X-Robots-Tag'] = 'noindex, nofollow'
 
-        data = {k: self.thing_attr(thing, v) for k, v in attrs.iteritems()
+        data = {k: self.thing_attr(thing, v) for k, v in attrs.items()
                 if viewable or k in self._public_attrs}
         try:
             self.add_message_data(data, thing)
@@ -713,7 +713,7 @@ def get_media_embed_attributes(item):
     }
 
     media_object = item.media_object
-    if media_object and not isinstance(media_object, basestring):
+    if media_object and not isinstance(media_object, str):
         media_embed = get_media_embed(media_object)
         if media_embed:
             data["media_embed"] = {
@@ -724,7 +724,7 @@ def get_media_embed_attributes(item):
             }
 
     secure_media_object = item.secure_media_object
-    if secure_media_object and not isinstance(secure_media_object, basestring):
+    if secure_media_object and not isinstance(secure_media_object, str):
         secure_media_embed = get_media_embed(secure_media_object)
         if secure_media_embed:
             data["secure_media_embed"] = {
@@ -1432,7 +1432,7 @@ class StylesheetTemplate(ThingJsonTemplate):
     def images(self):
         sr_images = ImagesByWikiPage.get_images(c.site, "config/stylesheet")
         images = []
-        for name, url in sr_images.iteritems():
+        for name, url in sr_images.items():
             images.append({'name': name,
                            'link': 'url(%%%%%s%%%%)' % name,
                            'url': url})
@@ -1581,7 +1581,7 @@ class KarmaListJsonTemplate(ThingJsonTemplate):
             'sr': sr,
             'link_karma': display_link_karma(link_karma),
             'comment_karma': display_comment_karma(comment_karma),
-        } for sr, (link_karma, comment_karma) in karmas.iteritems()]
+        } for sr, (link_karma, comment_karma) in karmas.items()]
         return karmas
 
     def kind(self, wrapped):

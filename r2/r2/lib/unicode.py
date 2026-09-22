@@ -22,20 +22,22 @@
 
 
 def _force_unicode(text):
-    if text == None:
+    """Coerce anything to str: bytes are decoded, everything else stringified."""
+    if text is None:
         return u''
 
-    if isinstance(text, unicode):
+    if isinstance(text, str):
         return text
 
     try:
-        text = unicode(text, 'utf-8')
+        text = text.decode('utf-8')
     except UnicodeDecodeError:
-        text = unicode(text, 'latin1')
-    except TypeError:
-        text = unicode(text)
+        text = text.decode('latin1')
+    except AttributeError:
+        text = str(text)
     return text
 
 
 def _force_utf8(text):
-    return str(_force_unicode(text).encode('utf8'))
+    """Coerce anything to utf-8 bytes."""
+    return _force_unicode(text).encode('utf8')

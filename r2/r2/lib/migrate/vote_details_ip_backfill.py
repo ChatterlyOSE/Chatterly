@@ -46,7 +46,7 @@ def backfill_vote_details(cls):
             # Just going to brute-force this through.  We might lose 100 here and there
             # but mostly it'll be intact.
             pass
-        for votee_id36, valuedict in detail_chunk.iteritems():
+        for votee_id36, valuedict in detail_chunk.items():
             cls._set_values(votee_id36, valuedict)
 
 

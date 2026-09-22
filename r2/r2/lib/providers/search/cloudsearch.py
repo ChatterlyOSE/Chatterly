@@ -20,18 +20,17 @@ from __future__ import print_function
 # All portions of the code written by reddit are Copyright (c) 2006-2015 reddit
 # Inc. All Rights Reserved.
 ###############################################################################
-import cPickle as pickle
+import pickle
 from datetime import datetime, timedelta
 import functools
-import httplib
+import http.client as httplib
 import json
 from lxml import etree
 from pylons import tmpl_context as c
 from pylons import app_globals as g
 import socket
 import time
-import urllib
-
+import urllib.parse
 import l2cs
 
 from r2.lib import amqp, filters
@@ -106,7 +105,7 @@ class CloudSearchUploader(object):
         add = etree.Element("add", id=thing._fullname, version=str(version),
                             lang="en")
 
-        for field_name, value in self.fields(thing).iteritems():
+        for field_name, value in self.fields(thing).items():
             field = etree.SubElement(add, "field", name=field_name)
             field.text = safe_xml_str(value)
 
@@ -415,7 +414,7 @@ rebuild_subreddit_index = functools.partial(rebuild_link_index,
 
 def test_run_link(start_link, count=1000):
     '''Inject `count` number of links, starting with `start_link`'''
-    if isinstance(start_link, basestring):
+    if isinstance(start_link, str):
         start_link = int(start_link, 36)
     links = Link._byID(range(start_link - count, start_link), data=True,
                        return_dict=False)
@@ -516,17 +515,17 @@ def _encode_query(query, bq, faceting, size, start, rank, rank_expressions,
     if rank:
         params["rank"] = rank
     if rank_expressions:
-        for rank, expression in rank_expressions.iteritems():
+        for rank, expression in rank_expressions.items():
             params['rank-%s' % rank] = expression
     if faceting:
-        params["facet"] = ",".join(faceting.iterkeys())
-        for facet, options in faceting.iteritems():
+        params["facet"] = ",".join(faceting.keys())
+        for facet, options in faceting.items():
             params["facet-%s-top-n" % facet] = options.get("count", 20)
             if "sort" in options:
                 params["facet-%s-sort" % facet] = options["sort"]
     if return_fields:
         params["return-fields"] = ",".join(return_fields)
-    encoded_query = urllib.urlencode(params)
+    encoded_query = urllib.parse.urlencode(params)
     path = _SEARCH + encoded_query
     return path
 

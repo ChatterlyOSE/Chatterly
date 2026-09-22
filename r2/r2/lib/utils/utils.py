@@ -23,8 +23,8 @@ from __future__ import print_function
 
 import base64
 import codecs
-import ConfigParser
-import cPickle as pickle
+import configparser as ConfigParser
+import pickle
 import functools
 import itertools
 import math
@@ -40,8 +40,8 @@ from copy import deepcopy
 from datetime import date, datetime, timedelta
 from decimal import Decimal
 from urllib import unquote_plus, unquote
-from urllib2 import urlopen, Request
-from urlparse import urlparse, urlunparse
+from urllib.request import urlopen, Request
+from urllib.parse import urlparse, urlunparse
 
 import pytz
 import snudown
@@ -66,7 +66,7 @@ iters = (list, tuple, set)
 def randstr(length,
             alphabet='abcdefghijklmnopqrstuvwxyz0123456789'):
     """Return a string made up of random chars from alphabet."""
-    return ''.join(random.choice(alphabet) for _ in xrange(length))
+    return ''.join(random.choice(alphabet) for _ in range(length))
 
 
 class Storage(dict):
@@ -445,7 +445,7 @@ def median(l):
 
 def query_string(dict):
     pairs = []
-    for k,v in dict.iteritems():
+    for k,v in dict.items():
         if v is not None:
             try:
                 k = url_escape(_force_unicode(k))
@@ -544,7 +544,7 @@ class UrlParser(object):
         # Since in HTTP everything's a string, coercing values to strings now
         # makes equality testing easier.  Python will throw an error if you try
         # to pass in a non-string key, so that's already taken care of for us.
-        updates = {k: _force_unicode(v) for k, v in updates.iteritems()}
+        updates = {k: _force_unicode(v) for k, v in updates.items()}
         self.query_dict.update(updates)
 
     @property
@@ -636,7 +636,7 @@ class UrlParser(object):
         should call `set_extension('')` first.
         """
         new_subdomain = g.domain_prefix
-        for subdomain, subdomain_extension in g.extension_subdomains.iteritems():
+        for subdomain, subdomain_extension in g.extension_subdomains.items():
             if extension == subdomain_extension:
                 new_subdomain = subdomain
                 break
@@ -825,7 +825,7 @@ class UrlParser(object):
             r = self.hostname.split('.')
 
             if subdomains:
-                for x in xrange(len(r)-1):
+                for x in range(len(r)-1):
                     ret.add('.'.join(r[x:len(r)]))
 
             if fragments:
@@ -948,7 +948,7 @@ def unicode_safe(res):
         return str(res)
     except UnicodeEncodeError:
         try:
-            return unicode(res).encode('utf-8')
+            return _force_utf8(res)
         except UnicodeEncodeError:
             return res.decode('utf-8').encode('utf-8')
 
@@ -1599,7 +1599,7 @@ def constant_time_compare(actual, expected):
     expected_len = len(expected)
     result = actual_len ^ expected_len
     if expected_len > 0:
-        for i in xrange(actual_len):
+        for i in range(actual_len):
             result |= ord(actual[i]) ^ ord(expected[i % expected_len])
     return result == 0
 
@@ -1710,13 +1710,13 @@ def weighted_lottery(weights, _random=random.random):
     Raises ValueError if weights is empty or contains a negative weight.
     """
 
-    total = sum(weights.itervalues())
+    total = sum(weights.values())
     if total <= 0:
         raise ValueError("total weight must be positive")
 
     r = _random() * total
     t = 0
-    for key, weight in weights.iteritems():
+    for key, weight in weights.items():
         if weight < 0:
             raise ValueError("weight for %r must be non-negative" % key)
         t += weight
@@ -1831,7 +1831,7 @@ def shuffle_slice(x, start, stop=None):
     if stop is None:
         stop = len(x)
 
-    for i in reversed(xrange(start + 1, stop)):
+    for i in reversed(range(start + 1, stop)):
         j = random.randint(start, i)
         x[i], x[j] = x[j], x[i]
 
@@ -1841,7 +1841,7 @@ def partition(pred, iterable):
     "Use a predicate to partition entries into false entries and true entries"
     # partition(is_odd, range(10)) --> 0 2 4 6 8   and  1 3 5 7 9
     t1, t2 = itertools.tee(iterable)
-    return itertools.ifilterfalse(pred, t1), itertools.ifilter(pred, t2)
+    return itertools.filterfalse(pred, t1), filter(pred, t2)
 
 # http://docs.python.org/2/library/itertools.html#recipes
 def roundrobin(*iterables):
@@ -1861,7 +1861,7 @@ def roundrobin(*iterables):
 def lowercase_keys_recursively(subject):
     """Return a dict with all keys lowercased (recursively)."""
     lowercased = dict()
-    for key, val in subject.iteritems():
+    for key, val in subject.items():
         if isinstance(val, dict):
             val = lowercase_keys_recursively(val)
         lowercased[key.lower()] = val
@@ -1961,11 +1961,11 @@ def rate_limiter(max_per_second):
     last_time_called = [0.0]
 
     def throttler():
-        elapsed = time.clock() - last_time_called[0]
+        elapsed = time.perf_counter() - last_time_called[0]
         left_to_wait = min_interval - elapsed
         if left_to_wait > 0:
             time.sleep(left_to_wait)
-        last_time_called[0] = time.clock()
+        last_time_called[0] = time.perf_counter()
     return throttler
 
 

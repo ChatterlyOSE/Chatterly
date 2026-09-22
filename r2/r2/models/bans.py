@@ -54,7 +54,7 @@ class UserTempBan(object):
             return datetime.fromtimestamp(convert_uuid_to_time(uu), g.tz)
         return {
             name: convert_uuid_to_datetime(uu)
-                for name, uu in results.iteritems()
+                for name, uu in results.items()
         }
 
     @classmethod

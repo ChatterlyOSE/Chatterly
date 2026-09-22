@@ -83,7 +83,7 @@ def get_scheduled(date, sr_name=''):
 def get_campaign_pageviews(date, sr_name=''):
     # ads go live at hour=5
     start = datetime.datetime(date.year, date.month, date.day, 5, 0)
-    hours = [start + datetime.timedelta(hours=i) for i in xrange(24)]
+    hours = [start + datetime.timedelta(hours=i) for i in range(24)]
 
     traffic_cls = TargetedImpressionsByCodename
     codename_string = PC_PREFIX + '_%'
@@ -197,7 +197,7 @@ def compare_pageviews(daysago=0, verbose=False):
     print('promoted eligible pageviews %s' % get_frontpage_pageviews(date))
 
 
-PROMOS = [('promo_%s' % i, i + 1) for i in xrange(100)]
+PROMOS = [('promo_%s' % i, i + 1) for i in range(100)]
 
 
 def select_subset(n, weighted=False):
@@ -240,10 +240,10 @@ def benchmark(subsets=1440, picks=6945, weighted_subset=False,
 
     counts = {(name, weight): 0 for name, weight in PROMOS}
 
-    for i in xrange(subsets):
+    for i in range(subsets):
         subset = select_subset(subset_size, weighted=weighted_subset)
 
-        for j in xrange(picks):
+        for j in range(picks):
             name, weight = pick(subset, weighted=weighted_pick)
             counts[(name, weight)] += 1
 

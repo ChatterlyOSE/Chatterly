@@ -22,7 +22,7 @@ from __future__ import print_function
 # Inc. All Rights Reserved.
 ###############################################################################
 
-import urllib2
+import urllib.request as urllib2
 
 from pylons import app_globals as g
 

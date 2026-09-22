@@ -23,8 +23,8 @@ import csv
 from collections import defaultdict
 import hashlib
 import re
-import urllib
-import urllib2
+import urllib.parse
+import urllib.request as urllib2
 
 from r2.controllers.reddit_base import (
     abort_with_error,
@@ -136,7 +136,7 @@ from r2.models.vote import Vote
 from r2.lib.merge import ConflictException
 
 from datetime import datetime, timedelta
-from urlparse import urlparse
+from urllib.parse import urlparse
 
 
 class ApiminimalController(MinimalController):
@@ -2835,7 +2835,7 @@ class ApiController(RedditController):
         if sr and feature.is_enabled('related_subreddits'):
             keyword_fields.append('related_subreddits')
 
-        kw = {k: v for k, v in kw.iteritems() if k in keyword_fields}
+        kw = {k: v for k, v in kw.items() if k in keyword_fields}
 
         public_description = kw.pop('public_description')
         description = kw.pop('description')
@@ -3004,7 +3004,7 @@ class ApiController(RedditController):
                     msg %= (sr.name, ', '.join(collections))
                     emailer.sales_email(msg)
 
-            for k, v in kw.iteritems():
+            for k, v in kw.items():
                 if getattr(sr, k, None) != v:
                     ModAction.create(sr, c.user, action='editsettings',
                                      details=k)

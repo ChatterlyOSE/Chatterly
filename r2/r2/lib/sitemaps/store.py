@@ -43,7 +43,7 @@ have to load all of the subreddits into memory, which would be ... bad.
 
 
 import gzip
-from StringIO import StringIO
+import io
 
 from boto.s3.connection import S3Connection
 from boto.s3.key import Key
@@ -59,7 +59,7 @@ HEADERS = {
 
 
 def zip_string(string):
-    zipbuffer = StringIO()
+    zipbuffer = io.BytesIO()
     with gzip.GzipFile(mode='w', fileobj=zipbuffer) as f:
         f.write(string)
     return zipbuffer.getvalue()

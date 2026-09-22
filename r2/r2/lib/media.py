@@ -24,7 +24,7 @@ from __future__ import print_function
 import sys
 
 import base64
-import cStringIO
+import io
 import hashlib
 import json
 import math
@@ -33,9 +33,10 @@ import re
 import subprocess
 import tempfile
 import traceback
-import urllib
-import urllib2
-import urlparse
+import urllib.parse
+import urllib.error
+import urllib.request as urllib2
+import urllib.parse as urlparse
 import gzip
 
 import BeautifulSoup
@@ -68,7 +69,7 @@ from r2.models.media_cache import (
     Media,
     MediaByURL,
 )
-from urllib2 import (
+from urllib.error import (
     HTTPError,
     URLError,
 )
@@ -79,13 +80,13 @@ _IMAGE_PREVIEW_TEMPLATE = """
 
 
 def _image_to_str(image):
-    s = cStringIO.StringIO()
+    s = io.BytesIO()
     image.save(s, image.format)
     return s.getvalue()
 
 
 def str_to_image(s):
-    s = cStringIO.StringIO(s)
+    s = io.BytesIO(s)
     image = Image.open(s)
     return image
 
@@ -193,7 +194,7 @@ def _prepare_image(image):
 def _clean_url(url):
     """url quotes unicode data out of urls"""
     url = url.encode('utf8')
-    url = ''.join(urllib.quote(c) if ord(c) >= 127 else c for c in url)
+    url = ''.join(urllib.parse.quote(c) if ord(c) >= 127 else c for c in url)
     return url
 
 
@@ -221,7 +222,7 @@ def _fetch_url(url, referer=None):
     response_data = response.read()
     content_encoding = response.info().get("Content-Encoding")
     if content_encoding and content_encoding.lower() in ["gzip", "x-gzip"]:
-        buf = cStringIO.StringIO(response_data)
+        buf = io.BytesIO(response_data)
         f = gzip.GzipFile(fileobj=buf)
         response_data = f.read()
     return response.headers.get("Content-Type"), response_data
@@ -248,7 +249,7 @@ def _fetch_image_size(url, referer):
             parser.feed(chunk)
             if parser.image:
                 return parser.image.size
-    except urllib2.URLError:
+    except urllib.error.URLError:
         return None
     finally:
         if response:
@@ -282,7 +283,7 @@ def upload_media(image, file_type='.jpg', category='thumbs'):
     try:
         img = image
         do_convert = True
-        if isinstance(img, basestring):
+        if isinstance(img, str):
             img = str_to_image(img)
             if img.format == "PNG" and file_type == ".png":
                 img.verify()
@@ -800,7 +801,7 @@ class _EmbedlyScraper(Scraper):
         }
 
         param_dict.update(self.embedly_params)
-        params = urllib.urlencode(param_dict)
+        params = urllib.parse.urlencode(param_dict)
 
         timer = g.stats.get_timer("providers.embedly.oembed")
         timer.start()

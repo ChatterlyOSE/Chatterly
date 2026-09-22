@@ -95,7 +95,7 @@ PREFS_VALIDATORS = dict(
 
 
 def set_prefs(user, prefs):
-    for k, v in prefs.iteritems():
+    for k, v in prefs.items():
         if k == 'pref_beta' and v and not getattr(user, 'pref_beta', False):
             # If a user newly opted into beta, we want to subscribe them
             # to the beta subreddit.

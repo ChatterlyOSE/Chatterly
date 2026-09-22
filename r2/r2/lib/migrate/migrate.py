@@ -228,16 +228,16 @@ def port_deleted_links(after_id=None):
                 m.insert(query, [link])
 
 def convert_query_cache_to_json():
-    import cPickle
+    import pickle
     from r2.models.query_cache import json, UserQueryCache
 
     with UserQueryCache._cf.batch() as m:
         for key, columns in UserQueryCache._cf.get_range():
             out = {}
-            for ckey, cvalue in columns.iteritems():
+            for ckey, cvalue in columns.items():
                 try:
-                    raw = cPickle.loads(cvalue)
-                except cPickle.UnpicklingError:
+                    raw = pickle.loads(cvalue)
+                except pickle.UnpicklingError:
                     continue
                 out[ckey] = json.dumps(raw)
             m.insert(key, out)

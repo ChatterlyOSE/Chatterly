@@ -219,7 +219,7 @@ def consume_author_query_queue(qname="author_query_q", limit=1000):
 
         authors_by_id = Account._byID(links_by_author_id.keys())
 
-        for author_id, links in links_by_author_id.iteritems():
+        for author_id, links in links_by_author_id.items():
             with g.stats.get_timer("link_vote_processor.author_queries"):
                 author = authors_by_id[author_id]
                 add_queries(
@@ -265,7 +265,7 @@ def consume_subreddit_query_queue(qname="subreddit_query_q", limit=1000):
 
         srs_by_id = Subreddit._byID(links_by_sr_id.keys(), stale=True)
 
-        for sr_id, links in links_by_sr_id.iteritems():
+        for sr_id, links in links_by_sr_id.items():
             with g.stats.get_timer("link_vote_processor.subreddit_queries"):
                 sr = srs_by_id[sr_id]
                 add_queries(
@@ -317,7 +317,7 @@ def consume_domain_query_queue(qname="domain_query_q", limit=1000):
             for domain in parsed.domain_permutations():
                 links_by_domain[domain].append(link)
 
-        for d, links in links_by_domain.iteritems():
+        for d, links in links_by_domain.items():
             with g.stats.get_timer("link_vote_processor.domain_queries"):
                 add_queries(
                     queries=[

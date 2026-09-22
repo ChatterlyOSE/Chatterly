@@ -84,7 +84,7 @@ class TestFeatureBase(RedditTestCase):
 
     @classmethod
     def generate_loid(cls):
-        return ''.join(random.sample(string.letters + string.digits, 16))
+        return ''.join(random.sample(string.ascii_letters + string.digits, 16))
 
 
 class TestFeature(TestFeatureBase):
@@ -183,7 +183,7 @@ class TestFeature(TestFeatureBase):
     def test_percent_loggedin(self):
         num_users = 2000
         users = []
-        for i in xrange(num_users):
+        for i in range(num_users):
             users.append(MockAccount(name=str(i), _fullname="t2_%s" % str(i)))
 
         def simulate_percent_loggedin(wanted_percent):
@@ -204,7 +204,7 @@ class TestFeature(TestFeatureBase):
 
         def simulate_percent_loggedout(wanted_percent):
             cfg = {'percent_loggedout': wanted_percent}
-            for i in xrange(num_users):
+            for i in range(num_users):
                 loid = self.generate_loid()
                 self.world.current_loid = mock.Mock(return_value=loid)
                 self.world.is_user_loggedin = mock.Mock(return_value=False)

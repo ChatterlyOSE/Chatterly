@@ -24,8 +24,7 @@
 import collections
 import datetime
 import pytz
-import urllib
-
+import urllib.parse
 from pylons.i18n import _
 from pylons import request
 from pylons import tmpl_context as c
@@ -173,7 +172,7 @@ class RedditTraffic(Templated):
 
             # make a summary of the averages for each day of the week
             self.dow_summary = []
-            for dow in xrange(7):
+            for dow in range(7):
                 day_count = days_total[dow]
                 if day_count:
                     avg_uniques = uniques_total[dow] / day_count
@@ -439,7 +438,7 @@ class SubredditTraffic(RedditTraffic):
         else:
             end = date + timedelta_by_name(interval)
 
-        query = urllib.urlencode({
+        query = urllib.parse.urlencode({
             "syntax": "cloudsearch",
             "restrict_sr": "on",
             "sort": "top",
@@ -698,7 +697,7 @@ class PromotedLinkTraffic(Templated):
                     'after': None,
                     'before': display_start.strftime('%Y%m%d%H'),
                 })
-                self.prev = '%s?%s' % (request.path, urllib.urlencode(p))
+                self.prev = '%s?%s' % (request.path, urllib.parse.urlencode(p))
             else:
                 display_start = start
 
@@ -708,7 +707,7 @@ class PromotedLinkTraffic(Templated):
                     'after': display_end.strftime('%Y%m%d%H'),
                     'before': None,
                 })
-                self.next = '%s?%s' % (request.path, urllib.urlencode(p))
+                self.next = '%s?%s' % (request.path, urllib.parse.urlencode(p))
             else:
                 display_end = end
         else:
@@ -759,12 +758,12 @@ class PromotedLinkTraffic(Templated):
         """Return the traffic data in CSV format for reports."""
 
         import csv
-        import cStringIO
+        import io
 
         start, end = promote.get_traffic_dates(thing)
         history = cls.get_hourly_traffic(thing, start, end)
 
-        out = cStringIO.StringIO()
+        out = io.StringIO()
         writer = csv.writer(out)
 
         writer.writerow((_("date and time (UTC)"),
@@ -797,7 +796,7 @@ class SubredditTrafficReport(Templated):
             if subreddits:
                 self.report = make_subreddit_traffic_report(subreddits.values())
 
-            param = urllib.quote(self.textarea)
+            param = urllib.parse.quote(self.textarea)
             self.csv_url = "/traffic/subreddits/report.csv?subreddits=" + param
 
         Templated.__init__(self)
@@ -806,9 +805,9 @@ class SubredditTrafficReport(Templated):
         """Return the traffic data in CSV format for reports."""
 
         import csv
-        import cStringIO
+        import io
 
-        out = cStringIO.StringIO()
+        out = io.StringIO()
         writer = csv.writer(out)
 
         writer.writerow((_("subforum"),

@@ -22,7 +22,7 @@
 
 import os
 import sys
-import Queue
+import queue as Queue
 from unittest import TestCase
 from mock import patch, MagicMock
 from collections import defaultdict
@@ -113,7 +113,7 @@ class DiffAssertionError(AssertionError):
         s = "\n".join(
             "\t{key}: {want} != {got}".format(
                 key=key, want=repr(want), got=repr(got),
-            ) for key, (want, got) in sorted(diffs.iteritems())
+            ) for key, (want, got) in sorted(diffs.items())
         )
         super(DiffAssertionError, self).__init__(
             "Mismatched ditionaries:\n%s" % s
@@ -280,7 +280,7 @@ class RedditTestCase(TestCase):
 
         Since we do this all the time.  autpatch g with the provided kw.
         """
-        for k, v in kw.iteritems():
+        for k, v in kw.items():
             self.autopatch(g, k, v, create=not hasattr(g, k))
 
     def patch_liveconfig(self, k, v):
@@ -362,9 +362,9 @@ class RedditControllerTestCase(RedditTestCase):
         headers.setdefault('User-Agent', self.user_agent)
         if self.device_id:
             headers.setdefault('Client-Vendor-ID', self.device_id)
-        for k, v in self.additional_headers(headers, body).iteritems():
+        for k, v in self.additional_headers(headers, body).items():
             headers.setdefault(k, v)
-        headers = {k: v for k, v in headers.iteritems() if v is not None}
+        headers = {k: v for k, v in headers.items() if v is not None}
         return self.app.post(
             url_for(controller=self.CONTROLLER,
                     action=self.ACTIONS.get(action, action)),

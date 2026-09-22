@@ -1,6 +1,6 @@
 #!/usr/bin/env python2.7
 
-from Queue import Queue
+from queue import Queue
 import argparse
 import logging
 import multiprocessing

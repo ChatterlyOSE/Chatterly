@@ -128,7 +128,7 @@ STORE jsonified INTO '$OUTPUT' USING PigStorage();
 Pig.registerJar(SCRIPT_ROOT + "reddit-pig-udfs.jar")
 
 # process rels
-for rel, (cf, thing2_type) in relations.iteritems():
+for rel, (cf, thing2_type) in relations.items():
     # build source for a script
     script = "SET default_parallel 10;"
     script += load_rels

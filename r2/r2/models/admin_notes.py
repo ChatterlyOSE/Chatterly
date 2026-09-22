@@ -57,7 +57,7 @@ class AdminNotesBySystem(tdb_cassandra.View):
         except tdb_cassandra.NotFoundException:
             return []
         result = []
-        for uuid, json_blob in query.iteritems():
+        for uuid, json_blob in query.items():
             when = datetime.fromtimestamp(convert_uuid_to_time(uuid), tz=g.tz)
             payload = json.loads(json_blob)
             payload['when'] = when

@@ -147,7 +147,7 @@ class MultiApiController(RedditController):
     def _add_multi_srs(self, multi, sr_datas):
         srs = Subreddit._by_name(sr_data['name'] for sr_data in sr_datas)
 
-        for sr in srs.itervalues():
+        for sr in srs.values():
             if isinstance(sr, FakeSubreddit):
                 raise RedditError('MULTI_SPECIAL_SUBREDDIT',
                                   msg_params={'path': sr.path},
@@ -189,7 +189,7 @@ class MultiApiController(RedditController):
                 multi._revert()
                 raise
 
-        for key, val in data.iteritems():
+        for key, val in data.items():
             if key in WRITABLE_MULTI_FIELDS:
                 setattr(multi, key, val)
 

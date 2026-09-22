@@ -22,11 +22,11 @@ from __future__ import print_function
 ###############################################################################
 
 from copy import copy, deepcopy
-import cPickle as pickle
+import pickle
 from datetime import datetime, timedelta
 import hashlib
 import itertools
-import new
+import types
 import sys
 
 from _pylibmc import MemcachedError
@@ -218,7 +218,7 @@ class DataThing(object):
 
         data_props = {}
         props = {}
-        for prop, (old_value, new_value) in changes.iteritems():
+        for prop, (old_value, new_value) in changes.items():
             if prop.startswith('_'):
                 props[prop[1:]] = new_value
             else:
@@ -269,7 +269,7 @@ class DataThing(object):
         # reapply changes made to self
         self_changes = self._dirties
         self._dirties = {}
-        for data_prop, (old_val, new_val) in self_changes.iteritems():
+        for data_prop, (old_val, new_val) in self_changes.items():
             setattr(self, data_prop, new_val)
 
     @classmethod
@@ -369,7 +369,7 @@ class DataThing(object):
         ids, single = tup(ids, ret_is_single=True)
 
         for x in ids:
-            if not isinstance(x, (int, long)):
+            if not isinstance(x, int):
                 raise ValueError('non-integer thing_id in %r' % ids)
             if x > tdb.MAX_THING_ID:
                 raise NotFound('huge thing_id in %r' % ids)
@@ -423,7 +423,7 @@ class DataThing(object):
         ids = [ int(x, 36) for x in id36s ]
 
         things = cls._byID(ids, return_dict=True, **kw)
-        things = {thing._id36: thing for thing in things.itervalues()}
+        things = {thing._id36: thing for thing in things.values()}
 
         if single:
             return things.values()[0]
@@ -462,7 +462,7 @@ class DataThing(object):
 
         # lookup ids for each type
         identified = {}
-        for real_type, thing_ids in table.iteritems():
+        for real_type, thing_ids in table.items():
             i = real_type._byID(thing_ids, ignore_missing=ignore_missing, **kw)
             identified[real_type] = i
 
@@ -513,8 +513,7 @@ class ThingMeta(type):
     def __repr__(cls):
         return '<thing: %s>' % cls._type_name
 
-class Thing(DataThing):
-    __metaclass__ = ThingMeta
+class Thing(DataThing, metaclass=ThingMeta):
     _base_props = ('_ups', '_downs', '_date', '_deleted', '_spam')
     _int_props = ('_ups', '_downs')
     _type_prefix = 't'
@@ -542,7 +541,7 @@ class Thing(DataThing):
             self._spam = spam
 
         #new way
-        for k, v in attrs.iteritems():
+        for k, v in attrs.items():
             self.__setattr__(k, v, not self._created)
 
     @classmethod
@@ -562,7 +561,7 @@ class Thing(DataThing):
         data_props_by_id = tdb.get_thing_data(cls._type_id, ids)
 
         things_by_id = {}
-        for _id, props in props_by_id.iteritems():
+        for _id, props in props_by_id.items():
             data_props = data_props_by_id.get(_id, {})
             thing = cls(
                 ups=props.ups,
@@ -776,8 +775,7 @@ class RelationMeta(type):
         return '<relation: %s>' % cls._type_name
 
 def Relation(type1, type2):
-    class RelationCls(DataThing):
-        __metaclass__ = RelationMeta
+    class RelationCls(DataThing, metaclass=RelationMeta):
         if not (issubclass(type1, Thing) and issubclass(type2, Thing)):
                 raise TypeError('Relation types must be subclass of %s' % Thing)
 
@@ -800,7 +798,7 @@ def Relation(type1, type2):
             data_props_by_id = tdb.get_rel_data(cls._type_id, ids)
 
             rels_by_id = {}
-            for _id, props in props_by_id.iteritems():
+            for _id, props in props_by_id.items():
                 data_props = data_props_by_id.get(_id, {})
                 rel = cls(
                     thing1=props.thing1_id,
@@ -884,7 +882,7 @@ def Relation(type1, type2):
             DataThing.__init__(self)
 
             def id_and_obj(in_thing):
-                if isinstance(in_thing, (int, long)):
+                if isinstance(in_thing, int):
                     return in_thing
                 else:
                     return in_thing._id
@@ -906,7 +904,7 @@ def Relation(type1, type2):
                 self._name = name
                 self._date = date
 
-            for k, v in attrs.iteritems():
+            for k, v in attrs.items():
                 self.__setattr__(k, v, not self._created)
 
         @classmethod
@@ -1053,7 +1051,7 @@ def Relation(type1, type2):
             )
 
             # get the relation objects
-            rel_ids = {rel_id for rel_id in res.itervalues()
+            rel_ids = {rel_id for rel_id in res.values()
                               if rel_id is not None}
             rels = cls._byID_rel(
                 rel_ids,
@@ -1063,7 +1061,7 @@ def Relation(type1, type2):
             # Takes aggregated results from cache and db (res) and transforms
             # the values from ids to Relations.
             res_obj = {}
-            for cache_key, rel_id in res.iteritems():
+            for cache_key, rel_id in res.items():
                 t = cache_key_lookup[cache_key]
                 rel = rels[rel_id] if rel_id is not None else None
                 res_obj[t] = rel
@@ -1503,7 +1501,7 @@ class Merge(MultiQuery):
         if (any(q._sort for q in self._queries) and
             not reduce(lambda x,y: (x == y) and x,
                       (q._sort for q in self._queries))):
-            raise "The sorts should be the same"
+            raise ValueError("The sorts should be the same")
 
         return MergeCursor((q._cursor() for q in self._queries),
                            self._sort)
@@ -1513,7 +1511,7 @@ def MultiRelation(name, *relations):
     for rel in relations:
         t1, t2 = rel._type1, rel._type2
         clsname = name + '_' + t1.__name__.lower() + '_' + t2.__name__.lower()
-        cls = new.classobj(clsname, (rel,), {'__module__':t1.__module__})
+        cls = type(clsname, (rel,), {'__module__': t1.__module__})
         setattr(sys.modules[t1.__module__], clsname, cls)
         rels_tmp[(t1, t2)] = cls
 
@@ -1556,7 +1554,7 @@ def MultiRelation(name, *relations):
 
             #for each pair of types, see if we have a query to send
             res = {}
-            for types, rel in cls.rels.iteritems():
+            for types, rel in cls.rels.items():
                 t1, t2 = types
                 if t1 in sub_dict and t2 in obj_dict:
                     res.update(rel._fast_query(

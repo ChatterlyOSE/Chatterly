@@ -80,7 +80,7 @@ def time_listings(intervals, thing_type):
         thing_score = score(thing.ups, thing.downs)
         thing_controversy = controversy(thing.ups, thing.downs)
 
-        for interval, cutoff in cutoff_by_interval.iteritems():
+        for interval, cutoff in cutoff_by_interval.items():
             if thing.timestamp < cutoff:
                 continue
 

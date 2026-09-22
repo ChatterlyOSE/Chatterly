@@ -24,7 +24,7 @@ from __future__ import division
 from __future__ import print_function
 
 import collections
-import HTMLParser
+import html.parser as HTMLParser
 import itertools
 import random
 import string
@@ -63,15 +63,15 @@ class TextGenerator(object):
         self.start_lengths = collections.defaultdict(collections.Counter)
         self.models = [
             collections.defaultdict(collections.Counter)
-            for i in xrange(self.order)]
+            for i in range(self.order)]
 
     @staticmethod
     def _in_groups(input_iterable, n):
         iterables = itertools.tee(input_iterable, n)
         for offset, iterable in enumerate(iterables):
-            for _ in xrange(offset):
+            for _ in range(offset):
                 next(iterable, None)
-        return itertools.izip(*iterables)
+        return zip(*iterables)
 
     def add_sample(self, sample):
         """Add a sample to the model of text for this generator."""
@@ -107,7 +107,7 @@ class TextGenerator(object):
                     generated.append(weighted_lottery(frequencies))
                     break
             else:
-                generated.append(random.choice(string.lowercase))
+                generated.append(random.choice(string.ascii_lowercase))
 
         return "".join(generated)
 
@@ -296,7 +296,7 @@ def inject_test_data(num_links=25, num_comments=25, num_votes=5):
     accounts = [a for a in account_query if a.name != g.system_user]
     accounts.extend(
         ensure_account(modeler.generate_username())
-        for i in xrange(50 - len(accounts)))
+        for i in range(50 - len(accounts)))
 
     print(">>> Content")
     things = []
@@ -309,11 +309,11 @@ def inject_test_data(num_links=25, num_comments=25, num_votes=5):
             sr._incr("_ups", 1)
 
         # apply any custom config we need for this sr
-        for setting, value in extra_settings.get(sr.name, {}).iteritems():
+        for setting, value in extra_settings.get(sr.name, {}).items():
             setattr(sr, setting, value)
         sr._commit()
 
-        for i in xrange(num_links):
+        for i in range(num_links):
             link_author = random.choice(accounts)
             url = sr_model.generate_link_url()
             is_self = (url == "self")
@@ -330,7 +330,7 @@ def inject_test_data(num_links=25, num_comments=25, num_votes=5):
             things.append(link)
 
             comments = [None]
-            for i in xrange(fuzz_number(num_comments)):
+            for i in range(fuzz_number(num_comments)):
                 comment_author = random.choice(accounts)
                 comment, inbox_rel = Comment._new(
                     comment_author,
@@ -344,7 +344,7 @@ def inject_test_data(num_links=25, num_comments=25, num_votes=5):
                 things.append(comment)
 
     for thing in things:
-        for i in xrange(fuzz_number(num_votes)):
+        for i in range(fuzz_number(num_votes)):
             direction = random.choice([
                 Vote.DIRECTIONS.up,
                 Vote.DIRECTIONS.unvote,

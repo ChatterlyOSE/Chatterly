@@ -30,8 +30,8 @@ class TimingStatBufferTest(unittest.TestCase):
         tsb = stats.TimingStatBuffer()
         self.assertEquals([], list(tsb.flush()))
 
-        for i in xrange(1, 4):
-            for j in xrange(i):
+        for i in range(1, 4):
+            for j in range(i):
                 tsb.record(str(i), 0, 0.1 * (j + 1))
         self.assertEquals(
             set([('1', '100.0|ms'),
@@ -44,8 +44,8 @@ class CountingStatBufferTest(unittest.TestCase):
         csb = stats.CountingStatBuffer()
         self.assertEquals([], list(csb.flush()))
 
-        for i in xrange(1, 4):
-            for j in xrange(i):
+        for i in range(1, 4):
+            for j in range(i):
                 csb.record(str(i), j + 1)
         self.assertEquals(
             set([('1', '1|c'),
@@ -63,9 +63,9 @@ class StringCountBufferTest(unittest.TestCase):
         scb = stats.StringCountBuffer()
         self.assertEquals([], list(scb.flush()))
 
-        for i in xrange(1, 4):
-            for j in xrange(i):
-                for k in xrange(j + 1):
+        for i in range(1, 4):
+            for j in range(i):
+                for k in range(j + 1):
                     scb.record(str(i), str(j))
         self.assertEquals(
             set([('1', '1|s|0'),
@@ -99,7 +99,7 @@ class StatsdConnectionTest(unittest.TestCase):
 
     def test_send(self):
         conn = self.connect()
-        conn.send((i, i) for i in xrange(1, 6))
+        conn.send((i, i) for i in range(1, 6))
         self.assertEquals(
             ['1:1\n2:2\n3:3\n4:4\n5:5'],
             conn.sock.datagrams)
@@ -120,7 +120,7 @@ class StatsdConnectionTest(unittest.TestCase):
 
         # ensure send is a no-op when not connected
         conn.sock = None
-        conn.send((i, i) for i in xrange(1, 6))
+        conn.send((i, i) for i in range(1, 6))
 
 class StatsdClientUnderTest(stats.StatsdClient):
     @classmethod
@@ -170,7 +170,7 @@ class CounterAndTimerTest(unittest.TestCase):
 
     def test_timer(self):
         t = stats.Timer(self.client(), 't')
-        t._time = iter(i / 10.0 for i in xrange(10)).next
+        t._time = iter(i / 10.0 for i in range(10)).next
         self.assertRaises(AssertionError, t.intermediate, 'fail')
         self.assertRaises(AssertionError, t.stop)
 

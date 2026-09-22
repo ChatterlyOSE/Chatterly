@@ -63,4 +63,4 @@ class LastModified(tdb_cassandra.View):
         res = cls._byID(fullnames, return_dict=True)
 
         return dict((k, getattr(v, name, None))
-                    for k, v in res.iteritems())
+                    for k, v in res.items())

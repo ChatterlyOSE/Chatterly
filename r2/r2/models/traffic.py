@@ -285,7 +285,7 @@ class CoerceToLong(TypeDecorator):
 
     def process_result_value(self, value, dialect):
         if value is not None:
-            value = long(value)
+            value = int(value)
         return value
 
 

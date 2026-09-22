@@ -141,7 +141,7 @@ class Sessionized(object):
                       "got multiple arguments for '%s'" % k.name)
 
         cols = dict((x.name, x) for x in cls.__table__.c)
-        for k, v in kw.iteritems():
+        for k, v in kw.items():
             if k in cols:
                 args.append((cols[k], cls._make_storable(v)))
         return args
@@ -389,7 +389,7 @@ class PromotionWeights(Sessionized, Base):
         end_date = to_date(campaign.end_date)
         ndays = (end_date - start_date).days
         # note that end_date is not included
-        dates = [start_date + datetime.timedelta(days=i) for i in xrange(ndays)]
+        dates = [start_date + datetime.timedelta(days=i) for i in range(ndays)]
 
         sr_names = campaign.target.subreddit_names
         sr_names = {cls.filter_sr_name(sr_name) for sr_name in sr_names}

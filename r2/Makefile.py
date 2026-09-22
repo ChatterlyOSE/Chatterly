@@ -41,10 +41,10 @@ for plugin in plugins:
     print('PLUGIN_PATH_%s := %s' % (plugin.name, plugin.path))
 
 js.load_plugin_modules(plugins)
-modules = dict((k, m) for k, m in js.module.iteritems())
-print('JS_MODULES := ' + ' '.join(modules.iterkeys()))
+modules = dict((k, m) for k, m in js.module.items())
+print('JS_MODULES := ' + ' '.join(modules.keys()))
 outputs = []
-for name, module in modules.iteritems():
+for name, module in modules.items():
     outputs.extend(module.outputs)
     print('JS_MODULE_OUTPUTS_%s := %s' % (name, ' '.join(module.outputs)))
     print('JS_MODULE_DEPS_%s := %s' % (name, ' '.join(module.dependencies)))

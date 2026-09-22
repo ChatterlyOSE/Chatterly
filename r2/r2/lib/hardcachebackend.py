@@ -84,7 +84,7 @@ class HardCacheBackend(object):
             engines_by_enginename[enginename] = table
 
         self.mapping = {}
-        for category, enginenames in enginenames_by_category.iteritems():
+        for category, enginenames in enginenames_by_category.items():
             self.mapping[category] = [ engines_by_enginename[e]
                                        for e in enginenames]
 

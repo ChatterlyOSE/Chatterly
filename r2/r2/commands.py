@@ -90,7 +90,7 @@ class RunCommand(command.Command):
 
         try:
             if self.args[1:]:
-                execfile(self.args[1], loaded_namespace)
+                exec(compile(open(self.args[1]).read(), self.args[1], 'exec'), loaded_namespace)
 
             if self.options.command:
                 exec(self.options.command, loaded_namespace)

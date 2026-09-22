@@ -26,7 +26,7 @@ def run():
             float_columns = {k: float(v) for k, v in columns}
         else:
             # convert str column values to floats
-            float_columns = {k: float(v) for k, v in columns.iteritems()}
+            float_columns = {k: float(v) for k, v in columns.items()}
 
         # write with a timestamp to not overwrite any writes since our read
         CommentScoresByLink._cf.insert(

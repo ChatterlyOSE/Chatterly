@@ -16,7 +16,7 @@ EXPIRES_RELATIVE = timedelta(days=2 * 365)
 
 GLOBAL_VERSION = 0
 LOID_LENGTH = 18
-LOID_CHARSPACE = string.uppercase + string.lowercase + string.digits
+LOID_CHARSPACE = string.ascii_uppercase + string.ascii_lowercase + string.digits
 
 
 def isodate(d):
@@ -174,6 +174,6 @@ class LoId(object):
         hook = hooks.get_hook("loid.to_dict")
         hook.call(loid=self, data=d)
         if prefix:
-            d = {"{}{}".format(prefix, k): v for k, v in d.iteritems()}
+            d = {"{}{}".format(prefix, k): v for k, v in d.items()}
 
         return d

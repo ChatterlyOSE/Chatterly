@@ -486,7 +486,7 @@ class Subreddit(Thing, Printable, BaseSite):
                         pass
 
             srs = {}
-            srids = [v for v in srids_by_name.itervalues() if v != cls.SRNAME_NOTFOUND]
+            srids = [v for v in srids_by_name.values() if v != cls.SRNAME_NOTFOUND]
             if srids:
                 srs = cls._byID(srids, data=True, return_dict=False, stale=stale)
 
@@ -822,11 +822,11 @@ class Subreddit(Thing, Printable, BaseSite):
         images = ImagesByWikiPage.get_images(self, "config/stylesheet")
 
         if self.quarantine:
-            images = {name: static('blank.png') for name, url in images.iteritems()}
+            images = {name: static('blank.png') for name, url in images.items()}
 
         protocol_relative_images = {
             name: make_url_protocol_relative(url)
-            for name, url in images.iteritems()}
+            for name, url in images.items()}
         parsed, errors = cssfilter.validate_css(
             content,
             protocol_relative_images,
@@ -998,7 +998,7 @@ class Subreddit(Thing, Printable, BaseSite):
             )
             # _fast_query returns a dict of {(t1, t2, name): rel}, with rel of
             # None if the relation doesn't exist
-            rels = [rel for rel in res.itervalues() if rel]
+            rels = [rel for rel in res.values() if rel]
             for rel in rels:
                 rel_name = rel._name
                 sr_id = rel._thing1_id
@@ -2037,7 +2037,7 @@ class BaseLocalizedSubreddits(tdb_cassandra.View):
             ignore_set_errors=True,
         )
         ids_by_location = {location: [int(id36, 36) for id36 in id36s]
-                           for location, id36s in id36s_by_location.iteritems()}
+                           for location, id36s in id36s_by_location.items()}
         return ids_by_location
 
     @classmethod
@@ -2257,7 +2257,7 @@ class LabeledMulti(tdb_cassandra.Thing, MultiReddit):
 
         remaining = self.MAX_SR_COUNT + 10
         sr_columns = {}
-        for k, v in self._t.iteritems():
+        for k, v in self._t.items():
             if not k.startswith(self.SR_PREFIX):
                 continue
 
@@ -2403,7 +2403,7 @@ class LabeledMulti(tdb_cassandra.Thing, MultiReddit):
     def copy(cls, path, multi, owner, symlink=False):
         if symlink:
             # remove all the sr_ids from the properties
-            props = {k: v for k, v in multi._t.iteritems()
+            props = {k: v for k, v in multi._t.items()
                      if k not in multi.sr_columns.keys()}
             props["is_symlink"] = True
         else:
@@ -2443,7 +2443,7 @@ class LabeledMulti(tdb_cassandra.Thing, MultiReddit):
     def sr_props_to_columns(cls, sr_props):
         columns = {}
         sr_ids = []
-        for sr_id, props in sr_props.iteritems():
+        for sr_id, props in sr_props.items():
             if isinstance(sr_id, BaseSite):
                 sr_id = sr_id._id
             sr_ids.append(sr_id)
@@ -2453,8 +2453,8 @@ class LabeledMulti(tdb_cassandra.Thing, MultiReddit):
     @classmethod
     def columns_to_sr_props(cls, columns):
         ret = {}
-        for s, sr_prop_dump in columns.iteritems():
-            sr_id = long(s.strip(cls.SR_PREFIX))
+        for s, sr_prop_dump in columns.items():
+            sr_id = int(s.strip(cls.SR_PREFIX))
             sr_props = json.loads(sr_prop_dump)
             ret[sr_id] = sr_props
         return ret
@@ -2470,7 +2470,7 @@ class LabeledMulti(tdb_cassandra.Thing, MultiReddit):
         self._srs = self.srs
         sr_props = dict.fromkeys(self.srs, {})
         sr_ids, sr_columns = self.sr_props_to_columns(sr_props)
-        for attr, val in sr_columns.iteritems():
+        for attr, val in sr_columns.items():
             self.__setattr__(attr, val)
 
         self.is_symlink = False
@@ -2489,7 +2489,7 @@ class LabeledMulti(tdb_cassandra.Thing, MultiReddit):
             new_sr_ids, data=True, return_dict=False, stale=True)
         self._srs.extend(new_srs)
 
-        for attr, val in sr_columns.iteritems():
+        for attr, val in sr_columns.items():
             self.__setattr__(attr, val)
 
     def del_srs(self, sr_ids):
@@ -2500,7 +2500,7 @@ class LabeledMulti(tdb_cassandra.Thing, MultiReddit):
         sr_props = dict.fromkeys(tup(sr_ids), {})
         sr_ids, sr_columns = self.sr_props_to_columns(sr_props)
 
-        for key in sr_columns.iterkeys():
+        for key in sr_columns.keys():
             self.__delitem__(key)
 
         self._srs = [sr for sr in self._srs if sr._id not in sr_ids]
@@ -2746,7 +2746,7 @@ class SRMember(Relation(Subreddit, Account)):
         perm_set = self._permission_class.loads(self.encoded_permissions)
         if perm_set is None:
             perm_set = self._permission_class()
-        for k, v in kwargs.iteritems():
+        for k, v in kwargs.items():
             if v is None:
                 if k in perm_set:
                     del perm_set[k]
@@ -2856,7 +2856,7 @@ class SubredditTempBan(object):
                                                    g.tz)
         return {
             name: convert_uuid_to_datetime(uu)
-                for name, uu in results.iteritems()
+                for name, uu in results.items()
         }
 
     @classmethod
@@ -2871,7 +2871,7 @@ class SubredditTempBan(object):
 @trylater_hooks.on('trylater.srunban')
 def on_subreddit_unban(data):
     from r2.models.modaction import ModAction
-    for blob in data.itervalues():
+    for blob in data.values():
         baninfo = json.loads(blob)
         container = Subreddit._byID36(baninfo['sr'], data=True)
         victim = Account._byID36(baninfo['who'], data=True)
@@ -2955,7 +2955,7 @@ class MutedAccountsBySubreddit(object):
         return {
             name: datetime.datetime.fromtimestamp(convert_uuid_to_time(uu),
                     g.tz)
-                for name, uu in results.iteritems()
+                for name, uu in results.items()
         }
 
     @classmethod
@@ -2975,7 +2975,7 @@ class MutedAccountsBySubreddit(object):
 
 @trylater_hooks.on('trylater.srmute')
 def unmute_hook(data):
-    for blob in data.itervalues():
+    for blob in data.values():
         muteinfo = json.loads(blob)
         subreddit = Subreddit._byID36(muteinfo['sr'], data=True)
         user = Account._byID36(muteinfo['who'], data=True)
